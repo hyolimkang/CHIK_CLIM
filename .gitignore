@@ -1,0 +1,40 @@
+# ---- R / RStudio ----
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj.user
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Large binary data (re-download or regenerate with 02_Script/) ----
+**/*.RData
+CHIK_CLIM/01_Data/final/
+CHIK_CLIM/01_Data/worldclim_cmip6/
+CHIK_CLIM/01_Data/worldclim_historical/
+CHIK_CLIM/01_Data/future_pilot/
+CHIK_CLIM/01_Data/sinan_chik_csv/
+CHIK_CLIM/01_Data/current_covariates_upd.RData
+
+# SINAN raw zips are large; use fetch_chik_sinan_brazil.R to download.
+# Processed panels (optional local cache; regenerate with clean_chik_sinan_brazil.R)
+CHIK_CLIM/01_Data/chik_sinan_individual_*.rds
+CHIK_CLIM/01_Data/chik_brazil_muni_week_*.csv
+CHIK_CLIM/01_Data/chik_brazil_muni_week_*.rds
+CHIK_CLIM/01_Data/ibge_pop_muni_year_*.csv
+CHIK_CLIM/01_Data/ibge_pop_muni_year_*.rds
+
+# Raster / model outputs (large)
+CHIK_CLIM/01_Data/*.tif
+CHIK_CLIM/01_Data/*.zip
+
+# Month panel CSV is optional; RDS is smaller — keep CSV ignored if large
+# CHIK_CLIM/01_Data/chik_brazil_muni_month_*.csv
+
+# ---- Keep on GitHub (not ignored) ----
+# CHIK_CLIM/02_Script/*.R
+# CHIK_CLIM/01_Data/sinan_chik_docs/
+# CHIK_CLIM/03_Output/figures/
+# CHIK_CLIM/CHIK_CLIM.Rproj

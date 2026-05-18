@@ -1,0 +1,13 @@
+covariate_name,type,transform,resample_method
+Tsuit,climate,scale_log,template
+Tmin,climate,scale_no_log,project_bilinear
+PRCP,climate,scale_log,project_bilinear
+Pop_dens,demography,scale_log,project_bilinear
+GDP,socioeconomic,scale_log,project_bilinear
+Albo,vector,scale_no_log,project_bilinear
+Aegyp,vector,scale_no_log,project_bilinear
+CHIKRisk,risk_proxy,scale_log,resample_bilinear
+GDP_cap,socioeconomic,scale_log,resample_bilinear
+pop_dens,demography,scale_log,project_bilinear
+NDVI,environment,scale_no_log,project_bilinear
+DHI,health_system,none,resample_bilinear
