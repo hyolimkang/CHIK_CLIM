@@ -52,19 +52,21 @@ historical calibration and future climate and demographic trajectories.
 
 | Component | Source | Status |
 |---|---|---|
-| Monthly case notifications (Brazil) | SINAN | Available (`02_Script/01–02_*sinan*.R`) |
-| Population by state/age (Brazil) | IBGE | Available (`02_Script/03–04_*ibge*.R`) |
-| Historical monthly climate (Brazil, municipal) | TerraClimate / WorldClim | Available (`02_Script/05_build_climate_muni_month_2015_2024.R`) |
-| Future climate projections (CMIP6) | WorldClim CMIP6 | Available (`02_Script/07_fetch_worldclim_cmip6.R`) |
-| Multi-country baseline seroprevalence / mFOI | Published meta-analysis | Available (`01_Data/chik_foi.csv`) — used as an informative prior for countries without a local fit |
-| Country-level case surveillance (non-Brazil LatAm) | PAHO / national surveillance | **To be acquired** |
+| Multi-country introduction/outbreak-year history | `Data/chikungunya_intro_years_model_ready_updated.xlsx` (consumed by `country_specific_susceptible_model.R`) | Available — candidate source for the historical outbreak-year indicator series needed to fit §5's hierarchical $\alpha_c$ |
+| Multi-country FOI / seroprevalence posterior | `MainData/foi_comb_all_0707.RData` (`allfoi_s1.RData`) | Available (large, gitignored) — candidate prior for initial susceptibility, $S_{c,2014}$ |
+| Country-specific susceptibility modelling | `country_specific_susceptible_model.R`, `country_specific_sus_graph.R` | Available |
+| At-risk / focal population by country | `Data/global_all_atrisk.csv`, `Data/global_all_focal.csv` | Available |
+| Age-stratified burden and infection estimation, PSA | `age_strat_burden_estim_atrisk.R`, `chikmap_psa_final.R` | Available — provides the severity/reporting cascade needed to convert $I_{c,t}$ into cases, hospitalisations, deaths, DALYs |
+| Monthly case time series (needed to fit the renewal likelihood, §5) | Not currently in this repo; a Brazil SINAN monthly pipeline exists in the sibling `CHIK_CLIM` project | **To be acquired** for non-Brazil countries; Brazil can pilot the renewal fit using `CHIK_CLIM`'s existing SINAN extraction |
+| Historical monthly climate covariates, by country | Not currently in this repo; `CHIK_CLIM` has Brazil-only municipal climate (TerraClimate/WorldClim) | **To be acquired/extended** to country level |
+| Future climate projections (CMIP6) | Not currently in this repo; `CHIK_CLIM` has a Brazil-scoped WorldClim CMIP6 fetch | **To be acquired/extended** to country level |
 | Vaccination coverage, schedule, efficacy, waning | Programme assumptions / trial data | **To be defined** per scenario; efficacy and waning priors to be sourced from published vaccine trial data once a product/schedule is specified |
 
 Countries without their own case time series are not excluded: they enter the hierarchical
 transmissibility prior ($\alpha_c$, see §5.2) with wide uncertainty informed by the multi-country
-mFOI dataset, and their projections carry correspondingly wider intervals. This is the same
-partial-pooling logic already used for the Brazilian state-level catalytic model
-(`02_Script/26_fit_chik_catalytic_pilot.R`), extended here across countries instead of states.
+FOI dataset already assembled in this repo, and their projections carry correspondingly wider
+intervals. This is the same partial-pooling logic already implicit in
+`country_specific_susceptible_model.R`'s per-country lookup table, made explicit and probabilistic.
 
 ---
 
@@ -99,7 +101,7 @@ Country-specific baseline transmissibility $\alpha_c$ and a shared climate effec
 determine the basic reproduction number in month $t$:
 
 $$
-R_{0,c,t} = \exp\!\big(\alpha_c + \beta_C\, C_{c,t}\big)
+R_{0,c,t} = \exp\left(\alpha_c + \beta_C\, C_{c,t}\right)
 $$
 
 Susceptible depletion scales this down to an effective reproduction number:
@@ -116,7 +118,7 @@ New infections follow a discrete-time renewal process with generation-interval w
 $w_g$ ($g = 1, \dots, G$; $\sum_g w_g = 1$):
 
 $$
-I_{c,t} \sim \operatorname{NegBin}\!\left(R_{\text{eff},c,t} \sum_{g=1}^{G} w_g\, I_{c,t-g},\ \phi\right)
+I_{c,t} \sim \text{NegBin}\left(R_{\text{eff},c,t} \sum_{g=1}^{G} w_g\, I_{c,t-g},\ \phi\right)
 $$
 
 ### 5.3 Observation model
@@ -125,7 +127,7 @@ Reported cases are a downsampled, overdispersed observation of true infections t
 reporting rate $\rho_c$:
 
 $$
-Y_{c,t} \mid I_{c,t} \sim \operatorname{NegBin}\!\big(\rho_c\, I_{c,t},\ \phi\big)
+Y_{c,t} \mid I_{c,t} \sim \text{NegBin}\left(\rho_c\, I_{c,t},\ \phi\right)
 $$
 
 ### 5.4 Susceptible-state update
@@ -160,8 +162,8 @@ draw $m = 1, \dots, M$ (e.g. $M = 5{,}000$), the full parameter and state vector
 forward as the initial condition of the future simulation:
 
 $$
-\theta_c^{(m)} = \Big\{\, \alpha_c^{(m)},\ \beta_C^{(m)},\ \rho_c^{(m)},\ \phi^{(m)},\
-S_{c,2025}^{(m)},\ I_{c,2025-K:2025}^{(m)} \,\Big\}
+\theta_c^{(m)} = \left\{ \alpha_c^{(m)},\ \beta_C^{(m)},\ \rho_c^{(m)},\ \phi^{(m)},\
+S_{c,2025}^{(m)},\ I_{c,2025-K:2025}^{(m)} \right\}
 $$
 
 where $I_{c,2025-K:2025}^{(m)}$ is the last $K$ months of infection history required to seed the
@@ -179,13 +181,14 @@ sequence.
 
 **① Future climate input.** $C_{c,t}^{\text{future}}$ is obtained either by block-resampling
 historical seasonal climate (capturing observed inter-annual variability with no assumed trend)
-or by drawing from CMIP6 projections already retrieved for this project
-(`02_Script/07_fetch_worldclim_cmip6.R`). Both should be run as alternative climate arms.
+or by drawing from CMIP6 projections (a Brazil-scoped CMIP6 fetch already exists in the sibling
+`CHIK_CLIM` project and would need extending to the full country set). Both should be run as
+alternative climate arms.
 
 **② Reproduction number.**
 
 $$
-R_{0,c,t}^{(m)} = \exp\!\Big(\alpha_c^{(m)} + \beta_C^{(m)}\, C_{c,t}^{\text{future}}\Big)
+R_{0,c,t}^{(m)} = \exp\left(\alpha_c^{(m)} + \beta_C^{(m)}\, C_{c,t}^{\text{future}}\right)
 $$
 
 **③ Effective reproduction number, given current susceptibility.**
@@ -197,7 +200,7 @@ $$
 **④ Importation / seeding.**
 
 $$
-M_{c,t}^{(m)} \sim \text{Seeding process (e.g. } \operatorname{Poisson}(\lambda_{c,t})\text{)}
+M_{c,t}^{(m)} \sim \text{Seeding process (e.g. Poisson}(\lambda_{c,t})\text{)}
 $$
 
 representing travel-linked introductions, small enough to matter only when local transmission is
@@ -206,7 +209,7 @@ nearly extinct.
 **⑤ New infections.**
 
 $$
-I_{c,t}^{(m)} \sim \operatorname{NegBin}\!\left(R_{\text{eff},c,t}^{(m)} \sum_{g=1}^{G} w_g\, I_{c,t-g}^{(m)} + M_{c,t}^{(m)},\ \phi^{(m)}\right)
+I_{c,t}^{(m)} \sim \text{NegBin}\left(R_{\text{eff},c,t}^{(m)} \sum_{g=1}^{G} w_g\, I_{c,t-g}^{(m)} + M_{c,t}^{(m)},\ \phi^{(m)}\right)
 $$
 
 **⑥ Susceptible update.**
@@ -328,29 +331,31 @@ distribution of futures, not a single trajectory.
 ## 12. Feasibility Considerations and Limitations
 
 - **Geographic/administrative unit.** The renewal model is specified at country level ($c$),
-  matching a genuine multi-country Latin American analysis. Where only subnational (state/UF)
-  data exist — currently the case for Brazil in this project's pipeline — the same structure
-  applies with $c$ = state, and country-level rollups are obtained by aggregation.
-- **Heterogeneous data availability.** Several countries will have short or no case time
-  series. These are handled through the hierarchical prior on $\alpha_c$ and the mFOI-informed
-  prior on initial susceptibility (§3, §5.5) rather than excluded, but their projections should
-  be reported with visibly wider uncertainty and flagged as prior-dominated.
+  matching a genuine multi-country Latin American analysis and this repo's existing
+  country-level susceptibility/FOI infrastructure. Where only subnational (state/UF) monthly
+  case data exist — currently the case for Brazil, via the sibling `CHIK_CLIM` SINAN pipeline —
+  the same structure applies with $c$ = state for that country, and national-level rollups are
+  obtained by aggregation.
+- **Heterogeneous data availability.** Most countries will have short or no monthly case time
+  series suitable for fitting the renewal likelihood directly. These are handled through the
+  hierarchical prior on $\alpha_c$ and the FOI/introduction-history-informed prior on initial
+  susceptibility (§3, §5.5) rather than excluded, but their projections should be reported with
+  visibly wider uncertainty and flagged as prior-dominated rather than data-driven.
 - **Identifiability.** $\alpha_c$, $\beta_C$, $\rho_c$, and $\phi$ are jointly estimated from
   case counts alone in countries with limited history; weak identifiability is expected for
   short series with few outbreak events. Mitigations: shared/pooled $\beta_C$ across countries,
-  informative priors from the mFOI dataset, and reporting model priors informed by the
-  reporting-delay/under-ascertainment analysis already in this project
-  (`02_Script/27_analyse_reporting_delay.R`).
+  informative priors from the FOI/seroprevalence dataset already assembled in this repo
+  (`MainData/foi_comb_all_0707.RData`), and reporting-model priors informed by whatever
+  under-ascertainment evidence is available per country.
 - **Vaccine profile uncertainty.** Efficacy, waning duration, and achievable coverage are
   currently placeholders and should be treated as a separate uncertain input, ideally varied in
   sensitivity analysis rather than fixed at point values.
 - **Computation.** Stage 1 (historical calibration) is a latent-state renewal model best fit in
-  a probabilistic programming framework (e.g. Stan, consistent with the existing catalytic-model
-  implementation in `02_Script/stan/`) using either full Bayesian inference or a particle
-  MCMC/particle filter approach if the state-space likelihood is not analytically tractable.
-  Stage 2–3 (forward simulation and scenario comparison) is comparatively cheap — a pure forward
-  simulation over $M$ draws with no further inference — and is straightforward to parallelise
-  across countries and draws.
+  a probabilistic programming framework (e.g. Stan) using either full Bayesian inference or a
+  particle MCMC/particle filter approach if the state-space likelihood is not analytically
+  tractable. Stage 2–3 (forward simulation and scenario comparison) is comparatively cheap — a
+  pure forward simulation over $M$ draws with no further inference — and is straightforward to
+  parallelise across countries and draws.
 - **Relationship to the companion age-structured cohort model.** This renewal model handles
   short-timescale, climate-driven transmission dynamics and aggregate susceptibility. It is
   compatible with, and can supply the aggregate infection/susceptibility trajectory to, the
@@ -365,10 +370,11 @@ distribution of futures, not a single trajectory.
 ## 13. Next Steps
 
 1. Assemble the country-level case time series and covariates needed for Stage 1 (start with
-   Brazil, where the pipeline already exists; scope data availability for the remaining
-   priority countries).
-2. Implement the Stage 1 renewal + observation model in Stan, extending the existing
-   `02_Script/stan/chik_catalytic_age.stan` approach to a time-series renewal likelihood.
+   Brazil, where a monthly SINAN pipeline already exists in `CHIK_CLIM`; scope data availability
+   for the remaining priority countries using this repo's existing FOI/introduction-year assets).
+2. Implement the Stage 1 renewal + observation model in Stan as a time-series renewal
+   likelihood, reusing this repo's country-level susceptibility priors
+   (`country_specific_susceptible_model.R`) as a starting point for $S_{c,2014}$.
 3. Run the training/hindcast/refit validation sequence (§10) on Brazil first, as a proof of
    concept, before extending to the full country set.
 4. Implement Stage 2–3 as a forward-simulation module consuming Stage 1 posterior draws,
