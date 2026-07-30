@@ -91,7 +91,7 @@ difference the two scenario ensembles, draw by draw, to obtain the vaccine-attri
 
 ## 5. Stage 1 — Historical Calibration (2014–2025)
 
-For country $c$ and month $t \in \{2014, \dots, 2025\}$, let $Y_{c,t}$ denote observed
+For country $c$ and month $t$ (running monthly from 2014 to 2025), let $Y_{c,t}$ denote observed
 (reported) cases and $C_{c,t}$ a climate-suitability covariate (e.g. temperature- and
 precipitation-derived vectorial capacity index).
 
@@ -149,9 +149,9 @@ toward the regional mean and additionally informed by the mFOI prior from `chik_
 $\beta_C$ is shared across countries (pooled climate effect), optionally with a
 country-level random slope if the data support it.
 
-Fitting this stage to 2014–2025 case counts yields a joint posterior over
-$\{\alpha_c, \beta_C, \rho_c, \phi\}$ and over every latent trajectory
-$\{I_{c,t}, S_{c,t}, R_{0,c,t}, R_{\text{eff},c,t}\}_{t=2014}^{2025}$.
+Fitting this stage to 2014–2025 case counts yields a joint posterior over the parameters
+$\alpha_c, \beta_C, \rho_c, \phi$ and over every latent trajectory
+$I_{c,t}, S_{c,t}, R_{0,c,t}, R_{\text{eff},c,t}$ for $t = 2014, \dots, 2025$.
 
 ---
 
@@ -162,8 +162,8 @@ draw $m = 1, \dots, M$ (e.g. $M = 5{,}000$), the full parameter and state vector
 forward as the initial condition of the future simulation:
 
 $$
-\theta_c^{(m)} = \left\{ \alpha_c^{(m)},\ \beta_C^{(m)},\ \rho_c^{(m)},\ \phi^{(m)},\
-S_{c,2025}^{(m)},\ I_{c,2025-K:2025}^{(m)} \right\}
+\theta_c^{(m)} = \left( \alpha_c^{(m)},\ \beta_C^{(m)},\ \rho_c^{(m)},\ \phi^{(m)},\
+S_{c,2025}^{(m)},\ I_{c,2025-K:2025}^{(m)} \right)
 $$
 
 where $I_{c,2025-K:2025}^{(m)}$ is the last $K$ months of infection history required to seed the
