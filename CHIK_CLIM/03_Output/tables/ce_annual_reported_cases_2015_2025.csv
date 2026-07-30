@@ -1,0 +1,12 @@
+year,cases_confirmed,cases_notified,n_weeks,population,attack_rate_pct,attack_rate_per100k,data_note
+2015,25,686,52,8904459,0,0.3,complete year
+2016,30862,50713,52,8963663,0.344,344.3,complete year
+2017,107421,139840,53,9020460,1.191,1190.9,complete year
+2018,1454,5259,52,9075649,0.016,16,complete year
+2019,1202,5797,52,9132078,0.013,13.2,complete year
+2020,1013,3712,52,9187103,0.011,11,complete year
+2021,1318,5351,52,9240580,0.014,14.3,complete year
+2022,50986,80251,52,8794957,0.58,579.7,complete year
+2023,2017,9484,53,9014301,0.022,22.4,complete year
+2024,882,9736,52,9233656,0.01,9.6,partial through 2024-12-29
+2025,0,0,0,NA,NA,NA,no data in panel
