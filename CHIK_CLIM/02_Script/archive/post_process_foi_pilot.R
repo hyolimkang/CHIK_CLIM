@@ -24,7 +24,7 @@
 #   FOI_<scenario>_median_masked_<tag>.tif           # masked FOI raster
 #   foi_comb_all_df_<scenario>_<tag>.RData           # FOI x population table
 #
-# Run AFTER 02_Script/predict_future_PRCP_pilot.R has produced the median
+# Run AFTER 02_Script/archive/predict_future_PRCP_pilot.R has produced the median
 # rasters for the active CONFIG (N_MODELS_PILOT, SSPS_PILOT).
 # =============================================================================
 
@@ -113,7 +113,7 @@ missing <- foi_paths[!vapply(foi_paths, file.exists, logical(1))]
 if (length(missing) > 0) {
   stop("Missing FOI median rasters:\n  ",
        paste(unlist(missing), collapse = "\n  "),
-       "\nRun 02_Script/predict_future_PRCP_pilot.R first.")
+       "\nRun 02_Script/archive/predict_future_PRCP_pilot.R first.")
 }
 foi_rasters <- lapply(foi_paths, terra::rast)
 

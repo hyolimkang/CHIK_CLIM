@@ -23,7 +23,7 @@ suppressPackageStartupMessages({
 })
 
 if (!exists("fit_v12e")) {
-  stop("Missing fit_v12e. Run source('02_Script/fit_chik_ceara_stan_weekly.R') first.")
+  stop("Missing fit_v12e. Run source('02_Script/10_sir_transmission_model/02_fit_chik_ceara_stan_weekly.R') first.")
 }
 
 key_pars <- c(

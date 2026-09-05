@@ -63,7 +63,7 @@ raster_to_plot_df <- function(r, fun = "max") {
 # ---- Default range mask path (c_mask) used to grey-out non-range countries --
 # Priority order:
 #   1) The combined (cell-level x country-level) mask produced by
-#      02_Script/post_process_foi_pilot.R, if it exists.
+#      02_Script/archive/post_process_foi_pilot.R, if it exists.
 #   2) Otherwise the cell-level CHIK binmap on disk, which matches the old
 #      chik_binary used in the original masking step.
 DEFAULT_CMASK_PATH <- {

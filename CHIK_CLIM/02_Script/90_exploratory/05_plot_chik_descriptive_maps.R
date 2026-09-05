@@ -57,7 +57,7 @@ CASE_VAR <- "cases_notified"
 
 if (!file.exists(PANEL_PATH))
   stop("Panel not found: ", PANEL_PATH,
-       "\nRun 02_Script/clean_chik_sinan_brazil.R first.")
+       "\nRun 02_Script/00_data_prep/02_clean_chik_sinan_brazil.R first.")
 
 panel <- readRDS(PANEL_PATH) %>%
   rename(cases = !!sym(CASE_VAR)) %>%

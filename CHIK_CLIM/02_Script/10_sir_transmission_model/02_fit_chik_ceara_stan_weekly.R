@@ -120,7 +120,7 @@ if (is.null(uf_prior)) {
   ))
 }
 
-source(here::here("02_Script/build_uf_weekly_panel.R"))
+source(here::here("02_Script/10_sir_transmission_model/01_build_uf_weekly_panel.R"))
 
 # ---- Step 3. State-week panel (muni -> UF aggregate) -----------------------
 panel_week <- load_weekly_panel()
