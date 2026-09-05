@@ -8,7 +8,7 @@ library(randomForest)
 # Full  mode            : N_MODELS_PILOT = 100 SSPS_PILOT = c("245", "585")
 #
 # Inputs assumed in environment OR loadable:
-#   - rf_mod_hyper : list of trained RF models (built in 02_Script/precip_pilot.R)
+#   - rf_mod_hyper : list of trained RF models (built in 02_Script/archive/precip_pilot.R)
 #   - covlist_upd  : current covariate stack (saved by 01_Data/current_covariates_baseline.R)
 #   - future PRCP rasters from 01_Data/build_future_PRCP_pilot.R
 #   - raw TerraClim PRCP raster (for recovering training scaling parameters)
@@ -38,7 +38,7 @@ tag <- sprintf("n%d_%s", N_MODELS_PILOT, paste0("SSP", SSPS_PILOT, collapse = "_
 if (!exists("rf_mod_hyper")) {
   stop(
     "`rf_mod_hyper` not found in environment.\n",
-    "  Run 02_Script/precip_pilot.R first to train the RF models,\n",
+    "  Run 02_Script/archive/precip_pilot.R first to train the RF models,\n",
     "  or load a saved RData that contains it."
   )
 }

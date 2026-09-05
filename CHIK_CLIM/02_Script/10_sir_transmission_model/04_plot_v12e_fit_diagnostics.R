@@ -39,7 +39,7 @@ if (length(missing_objects) > 0) {
   stop(
     "Missing required objects: ",
     paste(missing_objects, collapse = ", "),
-    "\nRun source('02_Script/fit_chik_ceara_stan_weekly.R') first."
+    "\nRun source('02_Script/10_sir_transmission_model/02_fit_chik_ceara_stan_weekly.R') first."
   )
 }
 

@@ -54,7 +54,7 @@ OUTBREAK_YEAR_FRAC <- 0.15
 
 if (!file.exists(PANEL_PATH))
   stop("Panel not found: ", PANEL_PATH,
-       "\nRun 02_Script/clean_chik_sinan_brazil.R first.")
+       "\nRun 02_Script/00_data_prep/02_clean_chik_sinan_brazil.R first.")
 
 panel <- readRDS(PANEL_PATH) %>%
   rename(cases = !!sym(CASE_VAR)) %>%
@@ -156,7 +156,7 @@ p_state <- state |>
 # Later year outbreaks: Sao Paulo/Goias/Minas Gerais/Espirito Santo
 
 # 4. phenotype classification
-source("02_Script/fetch_ibge_population.R")
+source("02_Script/00_data_prep/03_fetch_ibge_population.R")
 pop <- readRDS("01_Data/ibge_pop_muni_year_2015_2024.rds")
 
 state_pop <- pop |>
