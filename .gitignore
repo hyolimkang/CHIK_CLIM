@@ -44,6 +44,13 @@ CHIK_CLIM/01_Data/chik_dlnm_panel_muni_week_*.rds
 # with 00_data_prep/06_fetch_muni_centroids.R
 CHIK_CLIM/01_Data/ibge_muni_polygons.rds
 
+# Renewal-model Stan fits and compiled-model caches (21-153MB each, one
+# already exceeds GitHub's 100MB limit) — regenerate with
+# 40_renewal_model/02_fit_renewal_v1.R / 02_fit_renewal_v2.R
+CHIK_CLIM/02_Script/stan/renewal_ceara_v1.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v2.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v2_fit*.rds
+
 # Raster / model outputs (large)
 CHIK_CLIM/01_Data/*.tif
 CHIK_CLIM/01_Data/*.zip
