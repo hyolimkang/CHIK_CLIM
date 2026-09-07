@@ -6,14 +6,14 @@
 #        produce three analysis-ready datasets:
 #
 #          1. individual-level cleaned cases
-#             -> 01_Data/chik_sinan_individual_2015_2024.rds
+#             -> 01_Data/chik_sinan_individual_2015_2025.rds
 #
 #          2. municipality x month case-count panel (regression-ready,
 #             zero-case months explicitly filled)
-#             -> 01_Data/chik_brazil_muni_month_2015_2024.rds (+ .csv)
+#             -> 01_Data/chik_brazil_muni_month_2015_2025.rds (+ .csv)
 #
 #          3. municipality x epi-week case-count panel
-#             -> 01_Data/chik_brazil_muni_week_2015_2024.rds  (+ .csv)
+#             -> 01_Data/chik_brazil_muni_week_2015_2025.rds  (+ .csv)
 #
 # Reference : 01_Data/sinan_chik_docs/dic_dados_chikungunya.pdf
 #
@@ -83,7 +83,7 @@ suppressPackageStartupMessages({
 # ---- 1. Config ------------------------------------------------------------
 
 YEAR_START <- 2015
-YEAR_END   <- 2024
+YEAR_END   <- 2025
 
 DATA_DIR  <- here::here("01_Data")
 RAW_DIR   <- file.path(DATA_DIR, "sinan_chik_csv")

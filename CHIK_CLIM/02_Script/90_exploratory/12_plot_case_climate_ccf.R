@@ -106,7 +106,7 @@ if (sys.nframe() == 0) {
   UF_NAME <- "Ceara (CE)"
   MAX_LAG <- 16
 
-  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2024.rds"))
+  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))
   fig <- plot_case_climate_ccf(panel, UF_CODE, UF_NAME, MAX_LAG)
 
   out_path <- here::here(sprintf("03_Output/figures/case_climate_ccf_%s.png", tolower(UF_CODE)))

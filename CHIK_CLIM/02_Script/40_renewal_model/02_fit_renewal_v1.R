@@ -73,7 +73,7 @@ if (sys.nframe() == 0) {
   N_CHAINS    <- 4
   # ============================================================
 
-  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2024.rds"))
+  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))
   ceara_weekly <- build_state_weekly(panel, UF_CODE) |>
     dplyr::filter(week_start >= DATE_START, week_start <= DATE_END)
 

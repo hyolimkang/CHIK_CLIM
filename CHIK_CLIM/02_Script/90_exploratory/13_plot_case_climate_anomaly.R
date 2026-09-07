@@ -148,7 +148,7 @@ if (sys.nframe() == 0) {
   UF_CODE <- "23"
   UF_NAME <- "Ceara (CE)"
 
-  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2024.rds"))
+  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))
   state_weekly <- build_state_anomaly_weekly(panel, UF_CODE)
 
   fig_ts  <- plot_anomaly_timeseries(state_weekly, UF_NAME)

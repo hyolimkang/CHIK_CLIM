@@ -96,7 +96,7 @@ if (sys.nframe() == 0) {
   if (N_WARMUP >= N_ITER) stop("RENEWAL_V2_WARMUP must be smaller than RENEWAL_V2_ITER")
   if (P_SYMP <= 0 || P_SYMP >= 1) stop("RENEWAL_V2_P_SYMP must lie strictly between 0 and 1")
 
-  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2024.rds"))
+  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))
   ceara_weekly <- build_state_weekly(panel, UF_CODE) |>
     dplyr::filter(week_start >= DATE_START, week_start <= DATE_END)
 

@@ -32,6 +32,12 @@ CHIK_CLIM/01_Data/chik_brazil_muni_week_*.rds
 CHIK_CLIM/01_Data/ibge_pop_muni_year_*.csv
 CHIK_CLIM/01_Data/ibge_pop_muni_year_*.rds
 
+# IBGE UF-level population projection revision 2024 (renewal-model state
+# population) — regenerate with 00_data_prep/07_fetch_ibge_population_projection_uf.R
+CHIK_CLIM/01_Data/ibge_cache/
+CHIK_CLIM/01_Data/ibge_population_projection_uf_2024revision.csv
+CHIK_CLIM/01_Data/ibge_population_projection_uf_2024revision.rds
+
 # ERA5-Land raw NetCDF cache (national grid, several GB) — regenerate with
 # 30_climate_covariates_dlnm/04_fetch_era5land_temperature.R + 05_fetch_era5land_precip.R
 CHIK_CLIM/01_Data/era5_cache/
@@ -44,19 +50,42 @@ CHIK_CLIM/01_Data/chik_dlnm_panel_muni_week_*.rds
 # with 00_data_prep/06_fetch_muni_centroids.R
 CHIK_CLIM/01_Data/ibge_muni_polygons.rds
 
-# Renewal-model Stan fits and compiled-model caches (21-153MB each, one
-# already exceeds GitHub's 100MB limit) — regenerate with
-# 40_renewal_model/02_fit_renewal_v1.R / 02_fit_renewal_v2.R
+# SINASC national yearly source files (100-900MB each) and derived Ceara
+# demographic series — regenerate with 00_data_prep/09_fetch_ce_sinasc_weekly_births.R
+# and 00_data_prep/10_build_ceara_weekly_demography.R
+CHIK_CLIM/01_Data/sinasc_cache/
+CHIK_CLIM/01_Data/ce_sinasc_births_daily.csv
+CHIK_CLIM/01_Data/ce_sinasc_births_daily.rds
+CHIK_CLIM/01_Data/ce_sinasc_births_weekly.csv
+CHIK_CLIM/01_Data/ce_sinasc_births_weekly.rds
+CHIK_CLIM/01_Data/ceara_weekly_demography.csv
+CHIK_CLIM/01_Data/ceara_weekly_demography.rds
+
+# Renewal-model Stan fits and compiled-model caches (21MB-451MB each,
+# several exceed GitHub's 100MB limit) — regenerate with
+# 40_renewal_model/02_fit_renewal_v1.R / 02_fit_renewal_v2.R /
+# 02_fit_renewal_v2_1.R / 02_fit_renewal_v2_1_full_period.R /
+# 02_fit_renewal_v2_2.R
 CHIK_CLIM/02_Script/stan/renewal_ceara_v1.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v2.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v2_fit*.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v2_1.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v2_1_fit*.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v2_1_full_period_fit*.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v2_2.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v2_2_fit*.rds
 
 # Raster / model outputs (large)
 CHIK_CLIM/01_Data/*.tif
 CHIK_CLIM/01_Data/*.zip
 
-# Month panel CSV is optional; RDS is smaller — keep CSV ignored if large
-# CHIK_CLIM/01_Data/chik_brazil_muni_month_*.csv
+# Month panel is a regeneratable byproduct of 02_clean_chik_sinan_brazil.R
+# (19MB CSV) -- keep ignored like the week panel above.
+CHIK_CLIM/01_Data/chik_brazil_muni_month_*.csv
+CHIK_CLIM/01_Data/chik_brazil_muni_month_*.rds
+
+# Accidental Windows Explorer copy-paste duplicates
+CHIK_CLIM/03_Output/**/* - 복사본.*
 
 # ---- Keep on GitHub (not ignored) ----
 # CHIK_CLIM/02_Script/*.R

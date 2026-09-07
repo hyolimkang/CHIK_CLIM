@@ -100,7 +100,7 @@ if (sys.nframe() == 0) {
   # Case panel's first week (2014-12-28) needs late-Dec-2014 daily data,
   # so YEAR_START stays 2014 even though most analysis years are 2015+.
   YEAR_START <- 2014
-  YEAR_END   <- 2024
+  YEAR_END   <- 2025
   # ============================================================
 
   ecmwfr::wf_set_key(key = CDS_KEY)

@@ -26,11 +26,11 @@
 #                     2023 muni 인구를 채운다. Brazil 공중보건 연구에서
 #                     널리 쓰는 표준 workaround.
 #
-# 이렇게 합치면 muni × year (2015-2024) 인구를 끊김 없이 만들 수 있다.
+# 이렇게 합치면 muni × year (2015-2025) 인구를 끊김 없이 만들 수 있다.
 #
 # 출력
 # ----
-#   01_Data/ibge_pop_muni_year_2015_2024.rds   (+ .csv)
+#   01_Data/ibge_pop_muni_year_2015_2025.rds   (+ .csv)
 #     columns : muni7        IBGE 7-digit municipality code
 #               muni6        6-digit code (SINAN과 join용)
 #               uf           2-character state abbreviation (e.g. "BA")
@@ -61,7 +61,7 @@ suppressPackageStartupMessages({
 # ---- 1. Config -----------------------------------------------------------
 
 YEAR_START <- 2015
-YEAR_END   <- 2024
+YEAR_END   <- 2025
 
 DATA_DIR <- here::here("01_Data")
 dir.create(DATA_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -122,7 +122,7 @@ fetch_one_year <- function(yr, table, variable) {
 # fetch loop이 이 표를 그대로 따라간다.
 
 year_plan <- dplyr::bind_rows(
-  tibble::tibble(year = c(2015:2021, 2024), table = 6579, variable = 9324),
+  tibble::tibble(year = c(2015:2021, 2024:2025), table = 6579, variable = 9324),
   tibble::tibble(year = 2022L,              table = 4714, variable = 93)
   # 2023은 IBGE에서 muni-level 자료가 없어서 fetch 단계에서는 skip하고,
   # 아래(step 5)에서 2022-2024 사이 선형 보간으로 채운다.

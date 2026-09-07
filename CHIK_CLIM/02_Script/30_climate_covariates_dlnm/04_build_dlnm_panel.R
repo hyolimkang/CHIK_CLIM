@@ -25,7 +25,7 @@
 #
 # Output
 # ------
-#   01_Data/chik_dlnm_panel_muni_week_2015_2024.rds
+#   01_Data/chik_dlnm_panel_muni_week_2015_2025.rds
 #     columns: muni6, week_start, year, week_of_year, t,
 #              cases_confirmed, population, PRCP, Tmin, Tmax, Tmean
 # ===========================================================================
@@ -111,13 +111,13 @@ build_dlnm_panel <- function(case_panel, climate, population) {
 }
 
 if (sys.nframe() == 0) {
-  case_panel <- readRDS(here::here("01_Data/chik_brazil_muni_week_2015_2024.rds"))
-  climate    <- readRDS(here::here("01_Data/chik_muni_week_climate_2015_2024.rds"))
-  population <- readRDS(here::here("01_Data/ibge_pop_muni_year_2015_2024.rds"))
+  case_panel <- readRDS(here::here("01_Data/chik_brazil_muni_week_2015_2025.rds"))
+  climate    <- readRDS(here::here("01_Data/chik_muni_week_climate_2015_2025.rds"))
+  population <- readRDS(here::here("01_Data/ibge_pop_muni_year_2015_2025.rds"))
 
   dlnm_panel <- build_dlnm_panel(case_panel, climate, population)
 
-  out_path <- here::here("01_Data/chik_dlnm_panel_muni_week_2015_2024.rds")
+  out_path <- here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds")
   saveRDS(dlnm_panel, out_path)
   readr::write_csv(dlnm_panel, sub("\\.rds$", ".csv", out_path))
 

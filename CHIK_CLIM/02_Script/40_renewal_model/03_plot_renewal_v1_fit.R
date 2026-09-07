@@ -46,7 +46,7 @@ if (sys.nframe() == 0) {
   DATE_START <- as.Date("2015-06-01")
   DATE_END   <- as.Date("2018-06-30")
 
-  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2024.rds"))
+  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))
   ceara_weekly <- build_state_weekly(panel, "23") |>
     dplyr::filter(week_start >= DATE_START, week_start <= DATE_END)
 

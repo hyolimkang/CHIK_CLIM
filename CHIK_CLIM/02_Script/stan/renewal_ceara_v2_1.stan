@@ -1,0 +1,207 @@
+// renewal_ceara_v2_1.stan
+//
+// Dynamic susceptible-depletion renewal model for weekly chikungunya cases
+// in Ceara. X[t] is true incident infection count, not reported incidence.
+// A smooth weekly R0[t] random walk provides process variation. For efficient
+// HMC, the model is parameterized by weekly log infection hazards and R0[t] is
+// recovered from the renewal equation; this is the same deterministic renewal
+// process expressed in coordinates directly informed by observed incidence.
+// Reporting is separated into an estimated symptomatic probability and a
+// monotonically increasing symptomatic-case reporting probability.
+//
+// The observed state population can vary by week. Positive net population
+// changes enter the susceptible state; negative changes remove people in
+// proportion to the post-infection susceptible fraction. Immunity is lifelong
+// over the fitting period. State attack rates are averaged over each survey's
+// collection window and linked to site prevalence through a non-centered
+// geographic log-odds offset.
+
+data {
+  int<lower=2> N;
+  int<lower=1> G;
+  int<lower=1> seed_weeks;
+  array[N] int<lower=0> C;
+  simplex[G] w;
+
+  vector<lower=1>[N] N_pop_t;
+  vector[N] time_scaled;
+
+  vector[seed_weeks] log_seed_prior_mean;
+  real<lower=0> seed_prior_sd;
+  real<lower=0> reporting_region_sd;
+
+  int<lower=1> J;
+  array[J] int<lower=1, upper=N> sero_window_start;
+  array[J] int<lower=1, upper=N> sero_window_end;
+  array[J] int<lower=0> sero_positive;
+  array[J] int<lower=1> sero_n;
+}
+
+parameters {
+  real<lower=0> sigma_R;
+  real log_infection_scale;
+  vector[N - 1] log_hazard_relative;
+
+  real<lower=0, upper=1> p_symp;
+  real<lower=0, upper=1> rho_sym_brazil;
+  real logit_rho_sym_ceara_mid;
+  real<lower=0> reporting_trend;
+
+  real<lower=0> sigma_geo;
+  vector[J] z_site;
+  real<lower=0> phi_obs;
+}
+
+transformed parameters {
+  vector[N] log_infection_hazard;
+  vector[N] log_R0;
+  vector[N] R0_t;
+  vector[N] R_eff_t;
+  vector[N] X;
+  vector[N] S;
+  vector[N] immune_prop;
+  vector[N] rho_sym_t;
+  vector[N] rho_total_t;
+  vector[N] expected_reported_cases;
+  real<lower=0, upper=1> rho_sym_ceara_mid;
+  real reporting_ceara_offset;
+  vector[J] state_attack_window;
+  vector[J] sero_geographic_offset;
+  vector[J] p_site;
+
+  {
+    S[1] = N_pop_t[1];
+
+    log_infection_hazard[1] = log_infection_scale;
+    for (t in 2:N) {
+      log_infection_hazard[t] = log_infection_scale
+                                + log_hazard_relative[t - 1];
+    }
+
+    rho_sym_ceara_mid = inv_logit(logit_rho_sym_ceara_mid);
+    reporting_ceara_offset = logit_rho_sym_ceara_mid
+                             - logit(rho_sym_brazil);
+
+    for (t in 1:N) {
+      if (S[t] < 0 || S[t] > N_pop_t[t]) {
+        reject("Susceptible count is outside the weekly population bounds at week ", t);
+      }
+
+      rho_sym_t[t] = inv_logit(
+        logit_rho_sym_ceara_mid + reporting_trend * time_scaled[t]
+      );
+      rho_total_t[t] = p_symp * rho_sym_t[t];
+
+      X[t] = S[t] * (-expm1(-exp(log_infection_hazard[t])));
+
+      if (t > seed_weeks) {
+        real infectiousness = 0;
+        for (g in 1:G) {
+          infectiousness += w[g] * X[t - g];
+        }
+        log_R0[t] = log_infection_hazard[t] + log(N_pop_t[t])
+                    - log(infectiousness);
+        R0_t[t] = exp(log_R0[t]);
+      } else {
+        // R0 is not identified before a complete generation-interval history
+        // exists. Fill these output positions after the recursion below.
+        log_R0[t] = 0;
+        R0_t[t] = 1;
+      }
+
+      R_eff_t[t] = R0_t[t] * S[t] / N_pop_t[t];
+      immune_prop[t] = 1 - (S[t] - X[t]) / N_pop_t[t];
+      expected_reported_cases[t] = rho_total_t[t] * X[t] + 1e-9;
+
+      if (t < N) {
+        real S_after_infection = S[t] - X[t];
+        real population_change = N_pop_t[t + 1] - N_pop_t[t];
+
+        if (population_change >= 0) {
+          S[t + 1] = S_after_infection + population_change;
+        } else {
+          S[t + 1] = S_after_infection * N_pop_t[t + 1] / N_pop_t[t];
+        }
+      }
+    }
+
+    // The seed-period values are display placeholders, explicitly copied from
+    // the first estimable R0. Downstream plots omit these first seed weeks.
+    for (t in 1:seed_weeks) {
+      log_R0[t] = log_R0[seed_weeks + 1];
+      R0_t[t] = R0_t[seed_weeks + 1];
+      R_eff_t[t] = R0_t[t];
+    }
+  }
+
+  for (j in 1:J) {
+    state_attack_window[j] = mean(segment(
+      immune_prop,
+      sero_window_start[j],
+      sero_window_end[j] - sero_window_start[j] + 1
+    ));
+    sero_geographic_offset[j] = sigma_geo * z_site[j];
+    p_site[j] = inv_logit(
+      logit(state_attack_window[j]) + sero_geographic_offset[j]
+    );
+  }
+}
+
+model {
+  // Smooth time-varying basic reproduction number.
+  sigma_R ~ normal(0, 0.10);
+  log_R0[seed_weeks + 1] ~ normal(log(1.0), 0.5);
+  for (t in (seed_weeks + 2):N) {
+    log_R0[t] ~ normal(log_R0[t - 1], sigma_R);
+  }
+
+  // Weak seed information is expressed on the corresponding low-incidence
+  // count scale: log(hazard) is approximately log(X) - log(N_pop_t).
+  segment(log_infection_hazard, 1, seed_weeks) ~ normal(
+    log_seed_prior_mean - log(segment(N_pop_t, 1, seed_weeks)),
+    seed_prior_sd
+  );
+
+  // Brazil-wide long-run symptomatic reporting, with a Ceara offset and a
+  // non-negative linear change on the logit scale during the fitting window.
+  p_symp ~ beta(30, 28);
+  rho_sym_brazil ~ beta(20, 60);
+  logit_rho_sym_ceara_mid ~ normal(
+    logit(rho_sym_brazil), reporting_region_sd
+  );
+  reporting_trend ~ normal(0, 0.75);
+
+  // Non-centered geographic heterogeneity around each window-mean state
+  // attack rate.
+  sigma_geo ~ normal(0, 1);
+  z_site ~ normal(0, 1);
+
+  phi_obs ~ gamma(2, 0.1);
+
+  C ~ neg_binomial_2(expected_reported_cases, phi_obs);
+  for (j in 1:J) {
+    sero_positive[j] ~ binomial(sero_n[j], p_site[j]);
+  }
+}
+
+generated quantities {
+  array[N] int C_pred;
+  vector[N] log_lik_cases;
+  vector[N] overall_detection;
+  array[J] int sero_positive_pred;
+  vector[J] log_lik_serology;
+
+  for (t in 1:N) {
+    C_pred[t] = neg_binomial_2_rng(expected_reported_cases[t], phi_obs);
+    log_lik_cases[t] = neg_binomial_2_lpmf(
+      C[t] | expected_reported_cases[t], phi_obs
+    );
+    overall_detection[t] = p_symp * rho_sym_t[t];
+  }
+  for (j in 1:J) {
+    sero_positive_pred[j] = binomial_rng(sero_n[j], p_site[j]);
+    log_lik_serology[j] = binomial_lpmf(
+      sero_positive[j] | sero_n[j], p_site[j]
+    );
+  }
+}

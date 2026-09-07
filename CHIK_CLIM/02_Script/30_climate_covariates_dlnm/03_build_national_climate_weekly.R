@@ -54,7 +54,7 @@
 #
 # Output
 # ------
-#   01_Data/chik_muni_week_climate_2015_2024.rds
+#   01_Data/chik_muni_week_climate_2015_2025.rds
 #     columns: muni6, week_start, PRCP, Tmin, Tmax, Tmean, n_days
 # ===========================================================================
 
@@ -185,11 +185,11 @@ build_national_climate_weekly <- function(cache_dir, polygons, week_start_vec) {
 if (sys.nframe() == 0) {
   cache_dir <- here::here("01_Data/era5_cache")
   polygons  <- readRDS(here::here("01_Data/ibge_muni_polygons.rds"))
-  panel     <- readRDS(here::here("01_Data/chik_brazil_muni_week_2015_2024.rds"))
+  panel     <- readRDS(here::here("01_Data/chik_brazil_muni_week_2015_2025.rds"))
 
   weekly_climate <- build_national_climate_weekly(cache_dir, polygons, panel$week_start)
 
-  out_path <- here::here("01_Data/chik_muni_week_climate_2015_2024.rds")
+  out_path <- here::here("01_Data/chik_muni_week_climate_2015_2025.rds")
   saveRDS(weekly_climate, out_path)
   readr::write_csv(weekly_climate, sub("\\.rds$", ".csv", out_path))
 

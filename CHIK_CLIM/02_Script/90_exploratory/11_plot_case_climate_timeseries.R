@@ -93,7 +93,7 @@ if (sys.nframe() == 0) {
   UF_NAME <- "Ceara (CE)"
   # ============================================================
 
-  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2024.rds"))
+  panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))
   fig <- plot_case_climate_timeseries(panel, UF_CODE, UF_NAME)
 
   out_path <- here::here(sprintf("03_Output/figures/case_climate_timeseries_%s.png", tolower(UF_CODE)))

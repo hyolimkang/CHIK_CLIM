@@ -23,7 +23,7 @@ suppressPackageStartupMessages({ library(here); library(curl) })
 # ---- 1. Config ------------------------------------------------------------
 
 YEAR_START <- 2015        # first year with national CHIKBR file
-YEAR_END   <- 2024        # exclude 2025-2026 (reporting still incomplete)
+YEAR_END   <- 2025        # 2025 confirmed available and fully past; 2026 excluded (current year, reporting still incomplete)
 
 ZIP_DIR <- here::here("01_Data", "sinan_chik_csv")
 DOC_DIR <- here::here("01_Data", "sinan_chik_docs")
