@@ -149,7 +149,7 @@ if (sys.nframe() == 0) {
     check.names = FALSE
   )
 
-  output_dir <- here::here("03_Output/tables")
+  output_dir <- here::here("03_Output/tables/renewal_v2_1/full_period_stress_test")
   dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
   tag <- Sys.getenv("RENEWAL_V2_1_FULL_DECOMP_TAG", unset = "")
   suffix <- if (nzchar(tag)) paste0("_", tag) else ""

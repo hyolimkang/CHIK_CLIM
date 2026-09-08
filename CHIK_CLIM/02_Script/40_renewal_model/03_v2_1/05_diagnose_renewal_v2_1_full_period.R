@@ -348,8 +348,8 @@ if (sys.nframe() == 0) {
     sampler_worsening_flags
   )
 
-  figure_dir <- here::here("03_Output/figures")
-  table_dir <- here::here("03_Output/tables")
+  figure_dir <- here::here("03_Output/figures/renewal_v2_1/full_period_stress_test")
+  table_dir <- here::here("03_Output/tables/renewal_v2_1/full_period_stress_test")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   tag <- Sys.getenv("RENEWAL_V2_1_FULL_DIAG_TAG", unset = "")

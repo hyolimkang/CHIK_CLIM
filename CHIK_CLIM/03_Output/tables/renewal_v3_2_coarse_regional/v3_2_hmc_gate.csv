@@ -1,0 +1,9 @@
+"metric","value"
+"divergences",0
+"treedepth_hits",1000
+"max_rhat",1.89091674332176
+"rhat_gt_1.01",18531
+"min_bulk_ess",5.8671776619427
+"min_tail_ess",6.21797526605533
+"elapsed_seconds",5350.54
+"gate_pass",0

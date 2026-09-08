@@ -12,7 +12,7 @@
 
 # Source v2.1 for its package checks and shared non-model helpers. Its main
 # block is guarded, so sourcing does not run a fit.
-source(here::here("02_Script/40_renewal_model/02_fit_renewal_v2_1.R"))
+source(here::here("02_Script/40_renewal_model/03_v2_1/02_fit_renewal_v2_1.R"))
 
 if (sys.nframe() == 0) {
   UF_CODE <- "23"

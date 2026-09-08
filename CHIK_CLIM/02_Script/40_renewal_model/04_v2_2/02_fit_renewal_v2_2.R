@@ -45,7 +45,7 @@ suppressPackageStartupMessages({
 rstan_options(auto_write = TRUE)
 options(mc.cores = min(4, parallel::detectCores()))
 
-source(here::here("02_Script/40_renewal_model/01_build_ceara_state_weekly.R"))
+source(here::here("02_Script/40_renewal_model/00_shared/01_build_ceara_state_weekly.R"))
 
 discretize_gamma_generation_interval <- function(mean_weeks, sd_weeks, G) {
   shape <- (mean_weeks / sd_weeks)^2

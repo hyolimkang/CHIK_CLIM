@@ -62,10 +62,9 @@ CHIK_CLIM/01_Data/ceara_weekly_demography.csv
 CHIK_CLIM/01_Data/ceara_weekly_demography.rds
 
 # Renewal-model Stan fits and compiled-model caches (21MB-451MB each,
-# several exceed GitHub's 100MB limit) — regenerate with
-# 40_renewal_model/02_fit_renewal_v1.R / 02_fit_renewal_v2.R /
-# 02_fit_renewal_v2_1.R / 02_fit_renewal_v2_1_full_period.R /
-# 02_fit_renewal_v2_2.R
+# several exceed GitHub's 100MB limit) — regenerate with the fit scripts
+# under each 40_renewal_model/0X_v*/ subfolder (v1, v2, v2_1, v2_2,
+# v3_0_spatial, v3_1_minimal_spatial, v3_2_coarse_regional).
 CHIK_CLIM/02_Script/stan/renewal_ceara_v1.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v2.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v2_fit*.rds
@@ -74,6 +73,15 @@ CHIK_CLIM/02_Script/stan/renewal_ceara_v2_1_fit*.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v2_1_full_period_fit*.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v2_2.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v2_2_fit*.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_0_spatial.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_0_spatial_debug_pilot.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_0_spatial_fit*.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_1_minimal_spatial.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_1_minimal_spatial_pilot.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_1_minimal_spatial_fit*.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_2_coarse_regional.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_2_coarse_regional_pilot.rds
+CHIK_CLIM/02_Script/stan/renewal_ceara_v3_2_coarse_regional_fit*.rds
 
 # Raster / model outputs (large)
 CHIK_CLIM/01_Data/*.tif

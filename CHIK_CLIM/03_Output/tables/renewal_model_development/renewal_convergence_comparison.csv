@@ -1,0 +1,9 @@
+development_order,model,fit_scope,max_rhat,n_rhat_gt_1_01,min_ess_or_bulk_ess,divergences,treedepth_hits,min_bfmi,convergence_assessment
+1,v1,main state fit,1.011363,1,382.8643,0,0,0.361768,best observed sampler performance; near the usual R-hat threshold but otherwise adequate for an initial fit
+2,v2,main state fit,1.193740,222,16.5348,0,0,0.539078,not converged
+3,v2_1,main 2015-2019 state fit,1.031782,487,97.8334,0,0,0.370562,improved over v2 but not fully converged
+3,v2_1_full_period,2015-2025 stress test,1.235887,5369,11.2814,0,23,0.351170,not converged; stress-test only
+4,v2_2,main state fit,1.092098,2485,2.0030,0,0,0.415323,not converged
+5,v3_0_spatial,debug pilot,NA,NA,NA,34,5,0.691034,failed pilot with divergences
+6,v3_1_minimal_spatial,pilot,2.676892,NA,7.7162,27,0,0.331407,failed pilot with divergences and severe non-mixing
+7,v3_2_coarse_regional,pilot,1.890917,18531,5.8672,0,1000,0.789474,failed pilot with universal maximum-treedepth saturation and severe non-mixing

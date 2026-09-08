@@ -18,7 +18,7 @@ suppressPackageStartupMessages({
   library(here); library(rstan); library(ggplot2); library(dplyr); library(patchwork)
 })
 
-source(here::here("02_Script/40_renewal_model/01_build_ceara_state_weekly.R"))
+source(here::here("02_Script/40_renewal_model/00_shared/01_build_ceara_state_weekly.R"))
 
 COL_OBS <- "#2a78d6"
 COL_FIT <- "#eb6834"
@@ -79,7 +79,7 @@ if (sys.nframe() == 0) {
 
   fig <- p_fit / p_R + patchwork::plot_layout(heights = c(1.5, 1))
 
-  out_path <- here::here("03_Output/figures/renewal_v1_fit_ceara.png")
+  out_path <- here::here("03_Output/figures/renewal_v1/renewal_v1_fit_ceara.png")
   dir.create(dirname(out_path), recursive = TRUE, showWarnings = FALSE)
   ggsave(out_path, fig, width = 9, height = 8, dpi = 150)
   message("[save] ", out_path)

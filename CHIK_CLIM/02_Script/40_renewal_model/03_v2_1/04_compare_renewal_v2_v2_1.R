@@ -484,8 +484,8 @@ if (sys.nframe() == 0) {
     theme_minimal(base_size = 9) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1), panel.grid = element_blank())
 
-  figure_dir <- here::here("03_Output/figures")
-  table_dir <- here::here("03_Output/tables")
+  figure_dir <- here::here("03_Output/figures/renewal_v2_1/compare_v2_vs_v2_1")
+  table_dir <- here::here("03_Output/tables/renewal_v2_1/compare_v2_vs_v2_1")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   tag <- Sys.getenv("RENEWAL_V2_COMPARE_TAG", unset = "")

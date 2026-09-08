@@ -1,0 +1,185 @@
+"muni6","municipality_name","health_region_22","official_macroregion_5","final_model_unit","source_reference","unit_index"
+"230010","Abaiara","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230015","Acarape","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230020","Acaraú","12ª Região Acaraú","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230030","Acopiara","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230040","Aiuaba","14ª Região Tauá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230050","Alcântaras","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230060","Altaneira","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230070","Alto Santo","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230075","Amontada","6ª Região Itapipoca","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230080","Antonina do Norte","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230090","Apuiarés","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230100","Aquiraz","1ª Região Fortaleza","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230110","Aracati","7ª Região Aracati","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230120","Aracoiaba","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230125","Ararendá","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230130","Araripe","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230140","Aratuba","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230150","Arneiroz","14ª Região Tauá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230160","Assaré","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230170","Aurora","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230180","Baixio","17ª Região Icó","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230185","Banabuiú","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230190","Barbalha","21ª Região Juazeiro do Norte","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230195","Barreira","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230200","Barro","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230205","Barroquinha","16ª Região Camocim","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230210","Baturité","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230220","Beberibe","22ª Região Cascavel","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230230","Bela Cruz","12ª Região Acaraú","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230240","Boa Viagem","5ª Região Canindé","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230250","Brejo Santo","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230260","Camocim","16ª Região Camocim","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230270","Campos Sales","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230280","Canindé","5ª Região Canindé","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230290","Capistrano","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230300","Caridade","5ª Região Canindé","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230310","Cariré","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230320","Caririaçu","21ª Região Juazeiro do Norte","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230330","Cariús","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230340","Carnaubal","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230350","Cascavel","22ª Região Cascavel","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230360","Catarina","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230365","Catunda","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230370","Caucaia","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230380","Cedro","17ª Região Icó","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230390","Chaval","16ª Região Camocim","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230393","Choró","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230395","Chorozinho","22ª Região Cascavel","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230400","Coreaú","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230410","Crateús","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230420","Crato","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230423","Croatá","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230425","Cruz","12ª Região Acaraú","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230426","Deputado Irapuan Pinheiro","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230427","Ereré","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230428","Eusébio","1ª Região Fortaleza","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230430","Farias Brito","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230435","Forquilha","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230440","Fortaleza","1ª Região Fortaleza","Fortaleza","Fortaleza","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",1
+"230445","Fortim","7ª Região Aracati","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230450","Frecheirinha","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230460","General Sampaio","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230465","Graça","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230470","Granja","16ª Região Camocim","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230480","Granjeiro","21ª Região Juazeiro do Norte","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230490","Groaíras","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230495","Guaiúba","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230500","Guaraciaba do Norte","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230510","Guaramiranga","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230520","Hidrolândia","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230523","Horizonte","22ª Região Cascavel","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230526","Ibaretama","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230530","Ibiapina","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230533","Ibicuitinga","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230535","Icapuí","7ª Região Aracati","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230540","Icó","17ª Região Icó","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230550","Iguatu","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230560","Independência","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230565","Ipaporanga","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230570","Ipaumirim","17ª Região Icó","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230580","Ipu","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230590","Ipueiras","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230600","Iracema","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230610","Irauçuba","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230620","Itaiçaba","7ª Região Aracati","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230625","Itaitinga","1ª Região Fortaleza","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230630","Itapajé","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230640","Itapipoca","6ª Região Itapipoca","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230650","Itapiúna","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230655","Itarema","12ª Região Acaraú","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230660","Itatira","5ª Região Canindé","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230670","Jaguaretama","9ª Região Russas","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230680","Jaguaribara","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230690","Jaguaribe","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230700","Jaguaruana","9ª Região Russas","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230710","Jardim","21ª Região Juazeiro do Norte","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230720","Jati","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230725","Jijoca de Jericoacoara","12ª Região Acaraú","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230730","Juazeiro do Norte","21ª Região Juazeiro do Norte","Cariri","Juazeiro_do_Norte","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",5
+"230740","Jucás","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230750","Lavras da Mangabeira","17ª Região Icó","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230760","Limoeiro do Norte","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230763","Madalena","5ª Região Canindé","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230765","Maracanaú","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230770","Maranguape","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230780","Marco","12ª Região Acaraú","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230790","Martinópole","16ª Região Camocim","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230800","Massapê","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230810","Mauriti","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230820","Meruoca","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230830","Milagres","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230835","Milhã","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"230837","Miraíma","6ª Região Itapipoca","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230840","Missão Velha","21ª Região Juazeiro do Norte","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230850","Mombaça","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230860","Monsenhor Tabosa","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230870","Morada Nova","9ª Região Russas","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"230880","Moraújo","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230890","Morrinhos","12ª Região Acaraú","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230900","Mucambo","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230910","Mulungu","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230920","Nova Olinda","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230930","Nova Russas","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230940","Novo Oriente","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"230945","Ocara","22ª Região Cascavel","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230950","Orós","17ª Região Icó","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"230960","Pacajus","22ª Região Cascavel","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230970","Pacatuba","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230980","Pacoti","4ª Região Baturité","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"230990","Pacujá","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231000","Palhano","9ª Região Russas","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"231010","Palmácia","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231020","Paracuru","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231025","Paraipaba","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231030","Parambu","14ª Região Tauá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"231040","Paramoti","5ª Região Canindé","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"231050","Pedra Branca","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"231060","Penaforte","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231070","Pentecoste","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231080","Pereiro","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"231085","Pindoretama","22ª Região Cascavel","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231090","Piquet Carneiro","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231095","Pires Ferreira","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231100","Poranga","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231110","Porteiras","19ª Região Brejo Santo","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231120","Potengi","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231123","Potiretama","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"231126","Quiterianópolis","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231130","Quixadá","8ª Região Quixadá","Sertao_Central","Quixada","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",7
+"231135","Quixelô","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231140","Quixeramobim","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"231150","Quixeré","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"231160","Redenção","3ª Região Maracanaú","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231170","Reriutaba","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231180","Russas","9ª Região Russas","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"231190","Saboeiro","18ª Região Iguatú","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231195","Salitre","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231200","Santana do Acaraú","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231210","Santana do Cariri","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231220","Santa Quitéria","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231230","São Benedito","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231240","São Gonçalo do Amarante","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231250","São João do Jaguaribe","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"231260","São Luís do Curu","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231270","Senador Pompeu","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"231280","Senador Sá","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231290","Sobral","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231300","Solonópole","8ª Região Quixadá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"231310","Tabuleiro do Norte","10ª Região Limoeiro do Norte","Litoral_Leste_Jaguaribe","Litoral_Leste_Jaguaribe","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",8
+"231320","Tamboril","15ª Região Crateús","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231325","Tarrafas","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231330","Tauá","14ª Região Tauá","Sertao_Central","Sertao_Central_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",6
+"231335","Tejuçuoca","2ª Região Caucaia","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231340","Tianguá","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231350","Trairi","6ª Região Itapipoca","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231355","Tururu","6ª Região Itapipoca","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231360","Ubajara","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231370","Umari","17ª Região Icó","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231375","Umirim","6ª Região Itapipoca","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231380","Uruburetama","6ª Região Itapipoca","Fortaleza","Fortaleza_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",2
+"231390","Uruoca","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231395","Varjota","11ª Região Sobral","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
+"231400","Várzea Alegre","20ª Região Crato","Cariri","Cariri_remainder","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",4
+"231410","Viçosa do Ceará","13ª Região Tianguá","Norte_Sobral","Norte_Sobral","DATASUS-IBGE_regional_2019 + SESA-CE_PES_2020-2023 (see docs/v3_2_regional_mapping_validation.md)",3
