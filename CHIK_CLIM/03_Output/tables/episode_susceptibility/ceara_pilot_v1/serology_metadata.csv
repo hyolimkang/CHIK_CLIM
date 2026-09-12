@@ -1,0 +1,3 @@
+"study_id","state","municipality","survey_start","survey_end","n_tested","n_positive","geographic_scale","source","primary_state_likelihood"
+"juazeiro_2018","Ceara","Juazeiro do Norte",2018-06-03,2018-12-30,404,103,"municipality","Survey specifications supplied for renewal v2.1; publication provenance not stored in this repository.",FALSE
+"quixada_2018_2019","Ceara","Quixada",2018-06-03,2019-12-29,409,289,"municipality","Survey specifications supplied for renewal v2.1; publication provenance not stored in this repository.",FALSE

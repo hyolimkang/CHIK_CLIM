@@ -1,0 +1,32 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+[grid susceptibility] AC
+[grid susceptibility] AL
+[grid susceptibility] AM
+[grid susceptibility] AP
+[grid susceptibility] BA
+[grid susceptibility] CE
+[grid susceptibility] DF
+[grid susceptibility] ES
+[grid susceptibility] GO
+[grid susceptibility] MA
+[grid susceptibility] MG
+[grid susceptibility] MS
+[grid susceptibility] MT
+[grid susceptibility] PA
+[grid susceptibility] PB
+[grid susceptibility] PE
+[grid susceptibility] PI
+[grid susceptibility] PR
+[grid susceptibility] RJ
+[grid susceptibility] RN
+[grid susceptibility] RO
+[grid susceptibility] RR
+[grid susceptibility] RS
+[grid susceptibility] SC
+[grid susceptibility] SE
+[grid susceptibility] SP
+[grid susceptibility] TO

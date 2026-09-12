@@ -57,8 +57,10 @@ v3_1_hmc_diagnostics <- function(fit) {
     names(convergence)[names(convergence) == ".variable"] <- "variable"
   }
   finite_rhat <- convergence$rhat[is.finite(convergence$rhat)]
-  worst <- convergence[order(convergence$rhat, decreasing = TRUE,
-                             na.last = NA), , drop = FALSE]
+  worst <- convergence[order(convergence$rhat,
+    decreasing = TRUE,
+    na.last = NA
+  ), , drop = FALSE]
   list(
     divergences = rstan::get_num_divergent(fit),
     max_treedepth_hits = rstan::get_num_max_treedepth(fit),
@@ -72,7 +74,7 @@ v3_1_hmc_diagnostics <- function(fit) {
 }
 
 write_v3_1_implementation_report <- function(prepared, compiled, pilot = NULL,
-                                              elapsed_seconds = NULL) {
+                                             elapsed_seconds = NULL) {
   report_path <- here::here(
     "03_Output/tables/renewal_v3_1/renewal_v3_1_minimal_spatial_implementation_report.md"
   )
@@ -85,10 +87,14 @@ write_v3_1_implementation_report <- function(prepared, compiled, pilot = NULL,
   } else {
     c(
       sprintf("- Four-chain pilot elapsed time: %.1f seconds.", elapsed_seconds),
-      sprintf("- Divergences: %d; treedepth hits: %d; maximum Rhat: %.3f.",
-              pilot$divergences, pilot$max_treedepth_hits, pilot$max_rhat),
-      sprintf("- Minimum bulk ESS: %.1f; minimum tail ESS: %.1f; minimum BFMI: %.3f.",
-              pilot$min_bulk_ess, pilot$min_tail_ess, min(pilot$bfmi)),
+      sprintf(
+        "- Divergences: %d; treedepth hits: %d; maximum Rhat: %.3f.",
+        pilot$divergences, pilot$max_treedepth_hits, pilot$max_rhat
+      ),
+      sprintf(
+        "- Minimum bulk ESS: %.1f; minimum tail ESS: %.1f; minimum BFMI: %.3f.",
+        pilot$min_bulk_ess, pilot$min_tail_ess, min(pilot$bfmi)
+      ),
       "- This short pilot is a computational diagnostic, not a converged production analysis."
     )
   }
@@ -99,9 +105,11 @@ write_v3_1_implementation_report <- function(prepared, compiled, pilot = NULL,
     "## Model structure",
     "",
     "- Six units: Fortaleza, Juazeiro do Norte, Quixada, and fixed high/moderate/low burden pooled strata.",
-    sprintf("- Fixed thresholds: high >= %g total cases; moderate %g to < %g; low < %g.",
-            prepared$config$high_burden_min, prepared$config$moderate_burden_min,
-            prepared$config$high_burden_min, prepared$config$moderate_burden_min),
+    sprintf(
+      "- Fixed thresholds: high >= %g total cases; moderate %g to < %g; low < %g.",
+      prepared$config$high_burden_min, prepared$config$moderate_burden_min,
+      prepared$config$high_burden_min, prepared$config$moderate_burden_min
+    ),
     "- The named municipalities are excluded from pooled strata before threshold assignment.",
     "- Unit-specific S/U/X states use the v2.2 demographic recursion; statewide susceptibility is population-weighted and derived.",
     "- Serology likelihood includes only Juazeiro and Quixada. Fortaleza is external only.",
@@ -109,12 +117,18 @@ write_v3_1_implementation_report <- function(prepared, compiled, pilot = NULL,
     "",
     "## Checks",
     "",
-    sprintf("- %d municipalities collapsed to %d units across %d weeks.",
-            d$municipalities_all_ceara, d$units, d$weeks),
-    sprintf("- Maximum deterministic S + U accounting error: %.3g.",
-            d$maximum_accounting_error),
-    sprintf("- Maximum municipality-sum versus v2.2 state population gap: %.3f%%.",
-            100 * d$maximum_population_relative_gap),
+    sprintf(
+      "- %d municipalities collapsed to %d units across %d weeks.",
+      d$municipalities_all_ceara, d$units, d$weeks
+    ),
+    sprintf(
+      "- Maximum deterministic S + U accounting error: %.3g.",
+      d$maximum_accounting_error
+    ),
+    sprintf(
+      "- Maximum municipality-sum versus v2.2 state population gap: %.3f%%.",
+      100 * d$maximum_population_relative_gap
+    ),
     sprintf("- Unit assignment: %s.", prepared$assignment_path),
     sprintf("- Stan parameter dimension: %d.", v3_1_parameter_count(x)),
     sprintf("- Stan compilation: %s.", if (compiled) "successful" else "not completed"),
@@ -125,9 +139,9 @@ write_v3_1_implementation_report <- function(prepared, compiled, pilot = NULL,
     "",
     "## Remaining limitations",
     "",
-    "- Municipality deaths remain an explicit population-share allocation of the Ceará annual total before aggregation, not observed municipality mortality.",
+    "- Municipality deaths remain an explicit population-share allocation of the Cear<U+00E1> annual total before aggregation, not observed municipality mortality.",
     "- No serology anchor is created for Fortaleza or pooled units; their uncertainty should remain data-driven.",
-    "- Reporting, seeding, and susceptibility can remain confounded. The intended future test is robustness of the Ceará trajectory to refined pooling, not a preferred point estimate."
+    "- Reporting, seeding, and susceptibility can remain confounded. The intended future test is robustness of the Cear<U+00E1> trajectory to refined pooling, not a preferred point estimate."
   )
   writeLines(lines, report_path, useBytes = TRUE)
   report_path
@@ -164,7 +178,8 @@ run_v3_1_minimal_spatial <- function() {
         log_seed_hazard = log(10) -
           log(data$N_start[, seq_len(data$seed_weeks), drop = FALSE]) +
           matrix(stats::rnorm(data$K * data$seed_weeks, 0, 0.02),
-                 nrow = data$K),
+            nrow = data$K
+          ),
         p_symp = 0.52,
         rho_sym = 0.25,
         phi_obs = 20
@@ -193,19 +208,24 @@ run_v3_1_minimal_spatial <- function() {
       "02_Script/stan/renewal_ceara_v3_1_minimal_spatial_pilot.rds"
     )
     saveRDS(
-      list(fit = fit, prepared = prepared, pilot_diagnostics = pilot,
-           elapsed_seconds = elapsed_seconds),
+      list(
+        fit = fit, prepared = prepared, pilot_diagnostics = pilot,
+        elapsed_seconds = elapsed_seconds
+      ),
       out_path
     )
     message("[pilot save] ", out_path)
   }
 
   report_path <- write_v3_1_implementation_report(
-    prepared, compiled = TRUE, pilot = pilot, elapsed_seconds = elapsed_seconds
+    prepared,
+    compiled = TRUE, pilot = pilot, elapsed_seconds = elapsed_seconds
   )
   message("[report] ", report_path)
-  invisible(list(model = model, prepared = prepared, pilot = pilot,
-                 report_path = report_path))
+  invisible(list(
+    model = model, prepared = prepared, pilot = pilot,
+    report_path = report_path
+  ))
 }
 
 if (sys.nframe() == 0) {

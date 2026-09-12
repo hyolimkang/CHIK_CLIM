@@ -150,8 +150,8 @@ if (sys.nframe() == 0) {
   shared_r0 <- posterior_interval(exp(mu_r_draws)) |>
     mutate(week_start = dates[seed_weeks + t], number = "Shared R0(t)")
 
-  r_eff_draws <- rstan::extract(fit, pars = "R_eff", permuted = TRUE)$R_eff  # [draws, M, N]
-  weights <- N_start[, 1]  # municipality population share, fixed at series start
+  r_eff_draws <- rstan::extract(fit, pars = "R_eff", permuted = TRUE)$R_eff # [draws, M, N]
+  weights <- N_start[, 1] # municipality population share, fixed at series start
   r_eff_weighted <- apply(r_eff_draws, c(1, 3), function(x) stats::weighted.mean(x, w = weights))
   r_eff_summary <- posterior_interval(r_eff_weighted) |>
     mutate(week_start = dates[t], number = "Weighted Reff(t)") |>
@@ -213,13 +213,13 @@ if (sys.nframe() == 0) {
 
   p_attack <- ggplot(immune_df, aes(week_start)) +
     geom_ribbon(aes(ymin = q025, ymax = q975), fill = COL_GREEN, alpha = 0.16) +
-    geom_line(aes(y = median, colour = "Ceará (weighted)"), linewidth = 0.7) +
+    geom_line(aes(y = median, colour = "Cear<U+00E1> (weighted)"), linewidth = 0.7) +
     geom_errorbar(data = sero_observed, aes(week_start, ymin = lower, ymax = upper, colour = "Site observed"), width = 18, linewidth = 0.55) +
     geom_point(data = sero_observed, aes(week_start, estimate, colour = "Site observed"), shape = 18, size = 2.3) +
     geom_errorbar(data = sero_model, aes(week_start, ymin = q025, ymax = q975, colour = "Site model (direct)"), width = 18, linewidth = 0.55) +
     geom_point(data = sero_model, aes(week_start, median, colour = "Site model (direct)"), shape = 16, size = 1.8) +
     scale_colour_manual(values = c(
-      "Ceará (weighted)" = COL_GREEN, "Site observed" = COL_ORANGE, "Site model (direct)" = COL_PURPLE
+      "Cear<U+00E1> (weighted)" = COL_GREEN, "Site observed" = COL_ORANGE, "Site model (direct)" = COL_PURPLE
     )) +
     scale_y_continuous(labels = scales::label_percent(accuracy = 1), limits = c(0, NA), expand = expansion(mult = c(0, 0.07))) +
     x_scale +
@@ -236,11 +236,11 @@ if (sys.nframe() == 0) {
     (p_immunity | p_reproduction) /
     (p_reporting | p_attack) +
     patchwork::plot_annotation(
-      title = "Chikungunya transmission, municipality-level renewal model, Ceará, Brazil",
+      title = "Chikungunya transmission, municipality-level renewal model, Cear<U+00E1>, Brazil",
       subtitle = if (is_debug_subset) {
         sprintf("v3.0 spatial DEBUG PILOT (%d municipalities) -- computational smoke test only, not a scientific fit", length(muni_ids))
       } else {
-        "Bayesian renewal model v3.0 (spatial), weekly observations from 2015 to 2019, all 184 Ceará municipalities"
+        "Bayesian renewal model v3.0 (spatial), weekly observations from 2015 to 2019, all 184 Cear<U+00E1> municipalities"
       },
       tag_levels = "A",
       theme = theme(
@@ -255,7 +255,7 @@ if (sys.nframe() == 0) {
   # v3.0's whole contribution over v2.2 is per-municipality S/U; a state-
   # aggregate figure alone would hide it, so the final-week susceptible
   # proportion (and its posterior width) is mapped directly.
-  s_prop_draws <- rstan::extract(fit, pars = "S_prop", permuted = TRUE)$S_prop  # [draws, M, N]
+  s_prop_draws <- rstan::extract(fit, pars = "S_prop", permuted = TRUE)$S_prop # [draws, M, N]
   final_week <- dim(s_prop_draws)[3]
   s_prop_final <- s_prop_draws[, , final_week]
   muni_summary <- tibble::tibble(
@@ -304,7 +304,7 @@ if (sys.nframe() == 0) {
       length(muni_ids)
     )
   } else {
-    "All 184 Ceará municipalities fitted."
+    "All 184 Cear<U+00E1> municipalities fitted."
   }
   spatial_figure <- (p_map_median | p_map_width) +
     patchwork::plot_annotation(

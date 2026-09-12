@@ -1,0 +1,37 @@
+definition,metric,value,states
+permissive,total_ufs,27,NA
+permissive,ufs_with_at_least_one_accepted_episode,27,NA
+permissive,ufs_with_no_accepted_episode,0,
+permissive,total_accepted_episodes,102,NA
+permissive,first_episodes,27,NA
+permissive,recurrent_episodes,75,NA
+permissive,episodes_primary_Re_prefit_eligible,70,NA
+permissive,recurrent_episodes_primary_Re_prefit_eligible,49,NA
+permissive,states_contributing_at_least_2_accepted_episodes,24,AC; AL; AM; AP; BA; CE; DF; ES; GO; MA; MG; MS; MT; PA; PE; PI; PR; RJ; RO; RR; RS; SE; SP; TO
+permissive,states_contributing_at_least_2_Re_eligible_episodes,21,AL; AM; BA; CE; DF; ES; GO; MA; MG; MS; MT; PA; PE; PI; PR; RJ; RO; RS; SE; SP; TO
+permissive,median_episodes_per_affected_state,3,NA
+permissive,maximum_episodes_in_one_state,8,NA
+primary,total_ufs,27,NA
+primary,ufs_with_at_least_one_accepted_episode,25,NA
+primary,ufs_with_no_accepted_episode,2,AM; RS
+primary,total_accepted_episodes,61,NA
+primary,first_episodes,25,NA
+primary,recurrent_episodes,36,NA
+primary,episodes_primary_Re_prefit_eligible,51,NA
+primary,recurrent_episodes_primary_Re_prefit_eligible,30,NA
+primary,states_contributing_at_least_2_accepted_episodes,19,AC; AL; AP; BA; CE; ES; MA; MG; MS; MT; PE; PI; PR; RJ; RO; RR; SE; SP; TO
+primary,states_contributing_at_least_2_Re_eligible_episodes,15,AL; BA; CE; ES; MA; MG; MS; MT; PE; PI; PR; RJ; RO; SE; SP
+primary,median_episodes_per_affected_state,2,NA
+primary,maximum_episodes_in_one_state,4,NA
+strict,total_ufs,27,NA
+strict,ufs_with_at_least_one_accepted_episode,24,NA
+strict,ufs_with_no_accepted_episode,3,AM; RS; SC
+strict,total_accepted_episodes,44,NA
+strict,first_episodes,24,NA
+strict,recurrent_episodes,20,NA
+strict,episodes_primary_Re_prefit_eligible,42,NA
+strict,recurrent_episodes_primary_Re_prefit_eligible,20,NA
+strict,states_contributing_at_least_2_accepted_episodes,17,AC; AL; AP; BA; CE; ES; MA; MG; MT; PE; PI; PR; RJ; RR; SE; SP; TO
+strict,states_contributing_at_least_2_Re_eligible_episodes,16,AC; AL; BA; CE; ES; MA; MG; MT; PE; PI; PR; RJ; RR; SE; SP; TO
+strict,median_episodes_per_affected_state,2,NA
+strict,maximum_episodes_in_one_state,3,NA

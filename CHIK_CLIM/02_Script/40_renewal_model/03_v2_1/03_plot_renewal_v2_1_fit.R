@@ -239,7 +239,7 @@ if (sys.nframe() == 0) {
     x_scale +
     labs(
       title = "Time-varying reproduction numbers",
-      subtitle = expression(R[eff](t) == R[0](t) %*% S(t-1)/N(t-1)),
+      subtitle = expression(R[eff](t) == R[0](t) %*% S(t - 1) / N(t - 1)),
       x = NULL, y = "Reproduction number"
     ) +
     theme_publication()
@@ -342,7 +342,7 @@ if (sys.nframe() == 0) {
     x_scale +
     labs(
       title = "Cumulative infection and serological anchors",
-      subtitle = "Shaded fields: Juazeiro do Norte (orange) and Quixadá (teal) survey windows",
+      subtitle = "Shaded fields: Juazeiro do Norte (orange) and Quixad<U+00E1> (teal) survey windows",
       x = NULL, y = "Cumulative proportion infected"
     ) +
     guides(colour = guide_legend(nrow = 1, byrow = TRUE)) +
@@ -408,7 +408,7 @@ if (sys.nframe() == 0) {
     scale_y_continuous(labels = scales::label_percent(accuracy = 1), limits = c(0, 1)) +
     labs(
       title = "Serology hierarchy: state pooling to site-level validation",
-      subtitle = "State window mean → geographic-offset-adjusted site estimate → observed seroprevalence",
+      subtitle = "State window mean <U+2192> geographic-offset-adjusted site estimate <U+2192> observed seroprevalence",
       x = NULL, y = "Cumulative attack proportion"
     ) +
     theme_publication()
@@ -417,7 +417,7 @@ if (sys.nframe() == 0) {
     (p_immunity | p_reproduction) /
     (p_reporting | p_attack) +
     patchwork::plot_annotation(
-      title = "Chikungunya transmission and population susceptibility in Ceará, Brazil",
+      title = "Chikungunya transmission and population susceptibility in Cear<U+00E1>, Brazil",
       subtitle = if (FULL_PERIOD) {
         "Bayesian renewal model v2.1 stress test, weekly observations from 2015 to 2025"
       } else {

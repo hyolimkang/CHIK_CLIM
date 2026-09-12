@@ -1,0 +1,8 @@
+"episode_id","wave_id","onset","peak_week","peak_cases","total_episode_cases","duration_weeks","passes_major_threshold"
+"CE_major_wave_01",1,2016-02-07,2017-04-30,12843,194224,124,TRUE
+"CE_major_wave_02",2,2019-02-03,2019-05-05,316,4364,22,TRUE
+"CE_major_wave_03",3,2020-02-02,2020-03-01,147,692,6,FALSE
+"CE_major_wave_04",4,2020-04-19,2020-04-26,129,1661,16,FALSE
+"CE_major_wave_05",5,2021-04-11,2021-06-27,274,3344,20,FALSE
+"CE_major_wave_06",6,2021-12-05,2022-05-15,5070,89068,88,TRUE
+"CE_major_wave_07",7,2024-01-21,2024-03-31,651,8692,31,TRUE

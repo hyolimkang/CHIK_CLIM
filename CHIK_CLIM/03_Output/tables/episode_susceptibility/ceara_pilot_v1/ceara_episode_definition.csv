@@ -1,0 +1,8 @@
+"state","episode_id","episode_start","episode_end","reported_cases_episode_audit","duration_weeks_audit"
+"Ceara","CE_wave_01",2016-02-07,2018-06-17,194224,124
+"Ceara","CE_wave_02",2019-02-03,2019-06-30,4364,22
+"Ceara","CE_wave_03",2020-02-02,2020-03-08,692,6
+"Ceara","CE_wave_04",2020-04-19,2020-08-02,1661,16
+"Ceara","CE_wave_05",2021-04-11,2021-08-22,3344,20
+"Ceara","CE_wave_06",2021-12-05,2023-08-06,89068,88
+"Ceara","CE_wave_07",2024-01-21,2024-08-18,8692,31

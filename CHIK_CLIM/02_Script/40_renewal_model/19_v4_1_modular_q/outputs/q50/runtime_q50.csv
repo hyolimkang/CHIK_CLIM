@@ -1,0 +1,2 @@
+node_id,wall_clock_seconds,v4_0_td14_benchmark_seconds,ratio_vs_benchmark,seconds_per_iteration,flag
+q50,2472.146188020706,1478.0156469345093,1.6726116486980918,0.30901827350258826,normal

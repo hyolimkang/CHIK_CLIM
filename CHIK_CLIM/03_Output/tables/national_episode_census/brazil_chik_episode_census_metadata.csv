@@ -1,0 +1,8 @@
+field,value
+analysis_period,2015-01-04 through 2025-12-28; the partial 2014-12-28 week is excluded
+case_definition,"cases_confirmed, consistently for all 27 UFs; matches the existing Ceara early-Re weekly input"
+weekly_case_input,01_Data/chik_brazil_muni_week_2015_2025.rds
+population_input,01_Data/ibge_population_projection_uf_2024revision.rds
+quiet_period_interpretation,A completed quiet period enables the next onset search; isolated low-level reports after it do not constitute a new episode.
+quiet_weeks_before_episode,Length of the most recent completed qualifying quiet run that enabled onset; it is not necessarily contiguous with onset.
+downstream_model_fitting,None: this task performs episode detection and Re pre-fit eligibility assessment only.

@@ -52,7 +52,9 @@ discretize_gamma_generation_interval <- function(mean_weeks, sd_weeks, G) {
 
 env_integer <- function(name, default) {
   value <- Sys.getenv(name, unset = "")
-  if (!nzchar(value)) return(default)
+  if (!nzchar(value)) {
+    return(default)
+  }
   parsed <- suppressWarnings(as.integer(value))
   if (is.na(parsed) || parsed < 1) stop(name, " must be a positive integer")
   parsed
@@ -60,7 +62,9 @@ env_integer <- function(name, default) {
 
 env_numeric <- function(name, default) {
   value <- Sys.getenv(name, unset = "")
-  if (!nzchar(value)) return(default)
+  if (!nzchar(value)) {
+    return(default)
+  }
   parsed <- suppressWarnings(as.numeric(value))
   if (!is.finite(parsed)) stop(name, " must be numeric")
   parsed

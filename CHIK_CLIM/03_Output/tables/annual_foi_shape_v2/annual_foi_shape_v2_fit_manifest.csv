@@ -1,0 +1,7 @@
+fit_id,model,sigma_scale,foi_sd_multiplier,elapsed_seconds,path
+M1v2_SHAPE_s0_5,SHAPE,0.5,1,19.83494997024536,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/stan/annual_foi_shape_v2_M1v2_SHAPE_s0_5.rds
+M1v2_SHAPE_s0_75,SHAPE,0.75,1,21.61794900894165,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/stan/annual_foi_shape_v2_M1v2_SHAPE_s0_75.rds
+M1v2_SHAPE_s1_0,SHAPE,1,1,14.199581861495972,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/stan/annual_foi_shape_v2_M1v2_SHAPE_s1_0.rds
+M1v2_SHAPE_foisd1_5,SHAPE,0.75,1.5,17.857933044433594,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/stan/annual_foi_shape_v2_M1v2_SHAPE_foisd1_5.rds
+M1v2_SHAPE_foisd2,SHAPE,0.75,2,19.616583108901978,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/stan/annual_foi_shape_v2_M1v2_SHAPE_foisd2.rds
+M1v2_NB_s0_75,NB,0.75,1,17.053736925125122,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/stan/annual_foi_shape_v2_M1v2_NB_s0_75.rds

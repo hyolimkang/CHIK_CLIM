@@ -1,0 +1,183 @@
+﻿Rscript.exe : here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+At line:8 char:3
++   & "C:\Program Files\R\R-4.3.3\bin\Rscript.exe" $script *> $log 2>&1
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (here() starts a..._CLIM/CHIK_CLIM:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+[q0.20] v4.7 fixed-q FULL PERIOD (2015-2025) | q=0.2
+[q0.20] 2015-01-04 to 2025-12-21 | 573 weeks
+starting worker pid=41600 on localhost:11339 at 02:15:42.657
+starting worker pid=39504 on localhost:11339 at 02:15:42.757
+starting worker pid=35872 on localhost:11339 at 02:15:42.855
+starting worker pid=2960 on localhost:11339 at 02:15:42.954
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000736 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 7.36 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 1: Iteration:  25 / 600 [  4%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000816 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 8.16 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 2: Iteration:  25 / 600 [  4%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 0.000757 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 7.57 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:   1 / 600 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 0.000745 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 7.45 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:   1 / 600 [  0%]  (Warmup)
+Chain 4: Iteration:  25 / 600 [  4%]  (Warmup)
+Chain 3: Iteration:  25 / 600 [  4%]  (Warmup)
+Chain 1: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 2: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 4: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration:  75 / 600 [ 12%]  (Warmup)
+Chain 3: Iteration:  50 / 600 [  8%]  (Warmup)
+Chain 1: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 2: Iteration:  75 / 600 [ 12%]  (Warmup)
+Chain 4: Iteration:  75 / 600 [ 12%]  (Warmup)
+Chain 1: Iteration: 125 / 600 [ 20%]  (Warmup)
+Chain 1: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 1: Iteration: 175 / 600 [ 29%]  (Warmup)
+Chain 1: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 3: Iteration:  75 / 600 [ 12%]  (Warmup)
+Chain 1: Iteration: 225 / 600 [ 37%]  (Warmup)
+Chain 1: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 1: Iteration: 275 / 600 [ 45%]  (Warmup)
+Chain 2: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 4: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 1: Iteration: 325 / 600 [ 54%]  (Warmup)
+Chain 4: Iteration: 125 / 600 [ 20%]  (Warmup)
+Chain 1: Iteration: 350 / 600 [ 58%]  (Warmup)
+Chain 1: Iteration: 375 / 600 [ 62%]  (Warmup)
+Chain 4: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 125 / 600 [ 20%]  (Warmup)
+Chain 1: Iteration: 400 / 600 [ 66%]  (Warmup)
+Chain 1: Iteration: 401 / 600 [ 66%]  (Sampling)
+Chain 1: Iteration: 425 / 600 [ 70%]  (Sampling)
+Chain 1: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 2: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 4: Iteration: 175 / 600 [ 29%]  (Warmup)
+Chain 1: Iteration: 475 / 600 [ 79%]  (Sampling)
+Chain 4: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 1: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 1: Iteration: 525 / 600 [ 87%]  (Sampling)
+Chain 2: Iteration: 175 / 600 [ 29%]  (Warmup)
+Chain 4: Iteration: 225 / 600 [ 37%]  (Warmup)
+Chain 1: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 1: Iteration: 575 / 600 [ 95%]  (Sampling)
+Chain 4: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 3: Iteration: 100 / 600 [ 16%]  (Warmup)
+Chain 1: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 33.893 seconds (Warm-up)
+Chain 1:                4.816 seconds (Sampling)
+Chain 1:                38.709 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 4: Iteration: 275 / 600 [ 45%]  (Warmup)
+Chain 2: Iteration: 225 / 600 [ 37%]  (Warmup)
+Chain 4: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 4: Iteration: 325 / 600 [ 54%]  (Warmup)
+Chain 2: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 4: Iteration: 350 / 600 [ 58%]  (Warmup)
+Chain 2: Iteration: 275 / 600 [ 45%]  (Warmup)
+Chain 4: Iteration: 375 / 600 [ 62%]  (Warmup)
+Chain 3: Iteration: 125 / 600 [ 20%]  (Warmup)
+Chain 2: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 4: Iteration: 400 / 600 [ 66%]  (Warmup)
+Chain 4: Iteration: 401 / 600 [ 66%]  (Sampling)
+Chain 4: Iteration: 425 / 600 [ 70%]  (Sampling)
+Chain 2: Iteration: 325 / 600 [ 54%]  (Warmup)
+Chain 4: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 3: Iteration: 150 / 600 [ 25%]  (Warmup)
+Chain 2: Iteration: 350 / 600 [ 58%]  (Warmup)
+Chain 4: Iteration: 475 / 600 [ 79%]  (Sampling)
+Chain 4: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 2: Iteration: 375 / 600 [ 62%]  (Warmup)
+Chain 4: Iteration: 525 / 600 [ 87%]  (Sampling)
+Chain 2: Iteration: 400 / 600 [ 66%]  (Warmup)
+Chain 2: Iteration: 401 / 600 [ 66%]  (Sampling)
+Chain 4: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 4: Iteration: 575 / 600 [ 95%]  (Sampling)
+Chain 3: Iteration: 175 / 600 [ 29%]  (Warmup)
+Chain 2: Iteration: 425 / 600 [ 70%]  (Sampling)
+Chain 4: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 41.415 seconds (Warm-up)
+Chain 4:                4.733 seconds (Sampling)
+Chain 4:                46.148 seconds (Total)
+Chain 4: 
+Chain 2: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 3: Iteration: 200 / 600 [ 33%]  (Warmup)
+Chain 2: Iteration: 475 / 600 [ 79%]  (Sampling)
+Chain 3: Iteration: 225 / 600 [ 37%]  (Warmup)
+Chain 2: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 3: Iteration: 250 / 600 [ 41%]  (Warmup)
+Chain 2: Iteration: 525 / 600 [ 87%]  (Sampling)
+Chain 3: Iteration: 275 / 600 [ 45%]  (Warmup)
+Chain 2: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 3: Iteration: 300 / 600 [ 50%]  (Warmup)
+Chain 2: Iteration: 575 / 600 [ 95%]  (Sampling)
+Chain 3: Iteration: 325 / 600 [ 54%]  (Warmup)
+Chain 2: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 45.689 seconds (Warm-up)
+Chain 2:                6.168 seconds (Sampling)
+Chain 2:                51.857 seconds (Total)
+Chain 2: 
+Chain 3: Iteration: 350 / 600 [ 58%]  (Warmup)
+Chain 3: Iteration: 375 / 600 [ 62%]  (Warmup)
+Chain 3: Iteration: 400 / 600 [ 66%]  (Warmup)
+Chain 3: Iteration: 401 / 600 [ 66%]  (Sampling)
+Chain 3: Iteration: 425 / 600 [ 70%]  (Sampling)
+Chain 3: Iteration: 450 / 600 [ 75%]  (Sampling)
+Chain 3: Iteration: 475 / 600 [ 79%]  (Sampling)
+Chain 3: Iteration: 500 / 600 [ 83%]  (Sampling)
+Chain 3: Iteration: 525 / 600 [ 87%]  (Sampling)
+Chain 3: Iteration: 550 / 600 [ 91%]  (Sampling)
+Chain 3: Iteration: 575 / 600 [ 95%]  (Sampling)
+Chain 3: Iteration: 600 / 600 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 53.002 seconds (Warm-up)
+Chain 3:                4.141 seconds (Sampling)
+Chain 3:                57.143 seconds (Total)
+Chain 3: 
+[q0.20] DONE | HMC gate: PASS | elapsed=71s | saved: C:/Users/user/OneDrive - London School of Hygiene and Tropical Med
+icine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/40_renewal_model/26_v4_7_fixed_q_full_period/outputs/q0.20/renewal
+_ceara_v4_7_fit_q0.20.rds
+Warning message:
+Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 

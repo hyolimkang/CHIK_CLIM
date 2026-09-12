@@ -121,7 +121,7 @@ if (sys.nframe() == 0) {
 
   figure <- (p_incidence | p_raw_cases | p_population) +
     patchwork::plot_annotation(
-      title = "Ceará municipalities: case burden vs. population size, 2015-2019",
+      title = "Cear<U+00E1> municipalities: case burden vs. population size, 2015-2019",
       subtitle = sprintf(
         "%d/%d municipalities reach >=100 cases per 100,000; %d reach >=500; %d reach >=1,000",
         sum(muni_summary$has_epidemic_signal_100), nrow(muni_summary),

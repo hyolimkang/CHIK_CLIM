@@ -4,7 +4,7 @@
 # Purpose
 # -------
 # Fit Stage 1 of the renewal-equation transmission model (stan/renewal_ceara_v1.stan)
-# to Ceará's state-weekly case series: constant R, no susceptible depletion,
+# to Cear<U+00E1>'s state-weekly case series: constant R, no susceptible depletion,
 # lognormal process noise on latent infections, NegBin observation model.
 # This stage only checks that the renewal machinery (generation interval
 # convolution + seeding + process noise + NegBin observation) fits cleanly
@@ -16,7 +16,7 @@
 # human incubation/infectious period) is commonly cited in the literature
 # around 10-20 days; a discretized Gamma with mean 2 weeks and SD 1 week is
 # used here as a starting assumption (NOT estimated from data at this
-# stage) — discretized via the standard renewal-model convention
+# stage) <U+2014> discretized via the standard renewal-model convention
 # w_tau = pgamma(tau) - pgamma(tau-1), truncated at G weeks and renormalized
 # to sum to 1. Revisit this once the basic model fits cleanly.
 #
@@ -24,7 +24,7 @@
 # --------------------------------------------------------------
 # First attempt fit the full 523-week series and it was numerically
 # unstable (neg_binomial_2_rng exceptions during warmup from I_t exploding
-# to astronomical values). This isn't a bug — it's the expected consequence
+# to astronomical values). This isn't a bug <U+2014> it's the expected consequence
 # of a *constant* R with *no* susceptible depletion applied over a decade
 # containing multiple outbreak/quiet cycles: any warmup draw with R > 1
 # grows the renewal recursion exponentially for the rest of the series with
@@ -38,13 +38,17 @@
 #
 # Output
 # ------
-#   02_Script/stan/renewal_ceara_v1.rds — the fitted stanfit object
+#   02_Script/stan/renewal_ceara_v1.rds <U+2014> the fitted stanfit object
 # ===========================================================================
 
 for (p in c("here", "rstan", "posterior", "dplyr")) {
   if (!requireNamespace(p, quietly = TRUE)) install.packages(p)
 }
-suppressPackageStartupMessages({ library(here); library(rstan); library(dplyr) })
+suppressPackageStartupMessages({
+  library(here)
+  library(rstan)
+  library(dplyr)
+})
 
 rstan_options(auto_write = TRUE)
 options(mc.cores = min(4, parallel::detectCores()))
@@ -53,7 +57,7 @@ source(here::here("02_Script/40_renewal_model/00_shared/01_build_ceara_state_wee
 
 discretize_gamma_generation_interval <- function(mean_weeks, sd_weeks, G) {
   shape <- (mean_weeks / sd_weeks)^2
-  rate  <- mean_weeks / sd_weeks^2
+  rate <- mean_weeks / sd_weeks^2
   cdf <- pgamma(0:G, shape = shape, rate = rate)
   w <- diff(cdf)
   w / sum(w)
@@ -61,16 +65,16 @@ discretize_gamma_generation_interval <- function(mean_weeks, sd_weeks, G) {
 
 if (sys.nframe() == 0) {
   # ============================================================
-  UF_CODE     <- "23"
-  DATE_START  <- as.Date("2015-06-01")  # single-outbreak window (2016-17 wave)
-  DATE_END    <- as.Date("2018-06-30")  # see header comment for why not the full series
-  G           <- 8    # max generation-interval lag, weeks
-  SEED_WEEKS  <- 8    # must be >= G
-  GI_MEAN     <- 2    # weeks
-  GI_SD       <- 1    # weeks
-  N_ITER      <- 2000
-  N_WARMUP    <- 1000
-  N_CHAINS    <- 4
+  UF_CODE <- "23"
+  DATE_START <- as.Date("2015-06-01") # single-outbreak window (2016-17 wave)
+  DATE_END <- as.Date("2018-06-30") # see header comment for why not the full series
+  G <- 8 # max generation-interval lag, weeks
+  SEED_WEEKS <- 8 # must be >= G
+  GI_MEAN <- 2 # weeks
+  GI_SD <- 1 # weeks
+  N_ITER <- 2000
+  N_WARMUP <- 1000
+  N_CHAINS <- 4
   # ============================================================
 
   panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))

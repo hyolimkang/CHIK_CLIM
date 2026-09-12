@@ -49,7 +49,12 @@
 #
 # Output
 # ------
-#   01_Data/ceara_weekly_demography.rds (+ .csv)
+#   01_Data/ceara_weekly_demography_2015_2025.rds (+ .csv) -- named for the
+#   analysis period, matching this repo's other 2015-2025 files, even
+#   though the earliest row is week_start 2014-01-05 (see the note by
+#   out_path below). Rerun 09's SINASC fetch with a wider YEAR_START/
+#   YEAR_END first if the underlying coverage ever changes, then update
+#   this filename to match:
 #     week_start, week_end, N_start, N_end, births, all_cause_deaths,
 #     net_population_reconciliation, population_revision,
 #     population_reference_date_rule, birth_source, death_source,
@@ -141,7 +146,13 @@ if (sys.nframe() == 0) {
     stop("Interpolated population must be strictly positive")
   }
 
-  out_path <- here::here("01_Data/ceara_weekly_demography.rds")
+  # Named "2015_2025" to match this repo's other 2015-2025 analysis-period
+  # files (e.g. chik_dlnm_panel_muni_week_2015_2025), even though the
+  # earliest row is week_start 2014-01-05 -- that stub year is only present
+  # so 2015's own weeks have a full prior year of population/flow context
+  # to interpolate from, the same convention the DLNM panel uses (its own
+  # earliest week_start is 2014-12-28).
+  out_path <- here::here("01_Data/ceara_weekly_demography_2015_2025.rds")
   saveRDS(weekly_demography, out_path)
   readr::write_csv(weekly_demography, sub("\\.rds$", ".csv", out_path))
 

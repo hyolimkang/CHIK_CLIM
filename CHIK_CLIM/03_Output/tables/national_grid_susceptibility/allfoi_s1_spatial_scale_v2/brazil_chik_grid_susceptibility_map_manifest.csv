@@ -1,0 +1,4 @@
+figure,path,summary
+timevarying_susceptibility,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/03_Output/figures/national_grid_susceptibility/allfoi_s1_spatial_scale_v2/brazil_chik_grid_susceptibility_timevarying_selected_years.png,posterior/ensemble median
+cumulative_infected_2025,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/03_Output/figures/national_grid_susceptibility/allfoi_s1_spatial_scale_v2/brazil_chik_grid_cumulative_infected_fraction_2025.png,posterior/ensemble median
+susceptibility_change_2015_2025,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/03_Output/figures/national_grid_susceptibility/allfoi_s1_spatial_scale_v2/brazil_chik_grid_susceptibility_change_2015_2025.png,posterior/ensemble median

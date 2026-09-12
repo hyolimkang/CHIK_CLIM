@@ -54,7 +54,9 @@ discretize_gamma_generation_interval <- function(mean_weeks, sd_weeks, G) {
 
 env_integer <- function(name, default) {
   value <- Sys.getenv(name, unset = "")
-  if (!nzchar(value)) return(default)
+  if (!nzchar(value)) {
+    return(default)
+  }
   parsed <- suppressWarnings(as.integer(value))
   if (is.na(parsed) || parsed < 1) stop(name, " must be a positive integer")
   parsed
@@ -136,14 +138,14 @@ if (sys.nframe() == 0) {
   sero_window_start <- match(SERO_WINDOW_START, ceara_weekly$week_start)
   sero_window_end <- match(SERO_WINDOW_END, ceara_weekly$week_start)
   if (anyNA(sero_window_start) || anyNA(sero_window_end) ||
-      any(sero_window_start > sero_window_end)) {
+    any(sero_window_start > sero_window_end)) {
     stop("Serology collection windows must be complete, ordered weekly intervals")
   }
 
   w <- discretize_gamma_generation_interval(GI_MEAN, GI_SD, G)
   N_pop_t <- as.numeric(ceara_weekly$population)
   if (length(N_pop_t) != nrow(ceara_weekly) ||
-      any(!is.finite(N_pop_t)) || any(N_pop_t < 1)) {
+    any(!is.finite(N_pop_t)) || any(N_pop_t < 1)) {
     stop("Weekly state population must be finite and at least one in every week")
   }
   time_scaled <- seq(-0.5, 0.5, length.out = nrow(ceara_weekly))
@@ -277,10 +279,12 @@ if (sys.nframe() == 0) {
     ),
     symptomatic_reporting_vs_overall_detection = vapply(
       seq_len(stan_data_v2_1$N),
-      function(t) stats::cor(
-        posterior_draws$rho_sym_t[, t],
-        posterior_draws$overall_detection[, t]
-      ),
+      function(t) {
+        stats::cor(
+          posterior_draws$rho_sym_t[, t],
+          posterior_draws$overall_detection[, t]
+        )
+      },
       numeric(1)
     )
   )

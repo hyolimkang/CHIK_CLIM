@@ -1,0 +1,4 @@
+setting,smoothing_weeks,peak_neighborhood_weeks,trough_fraction,trough_persistence_weeks,onset_amplitude_fraction,absolute_case_minimum,cumulative_incidence_minimum
+permissive,3,3,0.4,2,0.025,50,2
+primary,3,3,0.3,3,0.05,100,5
+strict,3,3,0.2,4,0.1,200,10

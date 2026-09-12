@@ -58,8 +58,8 @@ CHIK_CLIM/01_Data/ce_sinasc_births_daily.csv
 CHIK_CLIM/01_Data/ce_sinasc_births_daily.rds
 CHIK_CLIM/01_Data/ce_sinasc_births_weekly.csv
 CHIK_CLIM/01_Data/ce_sinasc_births_weekly.rds
-CHIK_CLIM/01_Data/ceara_weekly_demography.csv
-CHIK_CLIM/01_Data/ceara_weekly_demography.rds
+CHIK_CLIM/01_Data/ceara_weekly_demography_*.csv
+CHIK_CLIM/01_Data/ceara_weekly_demography_*.rds
 
 # Renewal-model Stan fits and compiled-model caches (21MB-451MB each,
 # several exceed GitHub's 100MB limit) — regenerate with the fit scripts
@@ -82,6 +82,23 @@ CHIK_CLIM/02_Script/stan/renewal_ceara_v3_1_minimal_spatial_fit*.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v3_2_coarse_regional.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v3_2_coarse_regional_pilot.rds
 CHIK_CLIM/02_Script/stan/renewal_ceara_v3_2_coarse_regional_fit*.rds
+
+# Every later model track (v2_3_state, v4_0-v4_7, episode/wave/susceptibility/
+# annual-FOI analyses) follows the same convention: compiled Stan models and
+# stanfit bundles are large (often 20MB-700MB, some >1GB) and fully
+# regenerable from the corresponding fit scripts, so ignore ALL .rds
+# anywhere under 02_Script/ and 03_Output/ by default rather than listing
+# every model version individually going forward. This does not affect the
+# small foundational data caches already tracked under 01_Data/ or
+# 02_Script/stan/ceara_weekly*.rds.
+CHIK_CLIM/02_Script/**/*.rds
+CHIK_CLIM/03_Output/**/*.rds
+
+# Raw per-chain CmdStan-style sampler progress CSVs (used only for
+# real-time HMC monitoring while a fit runs; can total several GB) and the
+# legacy top-level progress-CSV cache -- regenerate by rerunning the fit.
+CHIK_CLIM/02_Script/**/chains/
+CHIK_CLIM/02_Script/stan/sampling_progress/
 
 # Raster / model outputs (large)
 CHIK_CLIM/01_Data/*.tif

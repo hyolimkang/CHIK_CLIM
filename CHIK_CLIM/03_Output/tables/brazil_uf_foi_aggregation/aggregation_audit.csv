@@ -1,0 +1,15 @@
+metric,value
+brazil_grid_cells,411118
+brazil_population_represented,217541847.9698228
+cells_missing_population,398
+cells_with_all_100_member_predictions,408462
+cells_missing_any_member_prediction,2656
+raw_unmatched_cells,3375
+raw_ambiguous_cells,0
+nearest_fallback_cells,3375
+near_uf_boundary_cells,15347
+maximum_nearest_fallback_distance_m,655290.2502172322
+minimum_state_coverage,0.7830500150470286
+median_state_coverage,0.9693018122225221
+n_states_below_99pct_coverage,15
+n_states_below_95pct_coverage,10

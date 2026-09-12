@@ -31,7 +31,9 @@ COLORS <- c("v2" = "#0072B2", "v2.1" = "#D55E00")
 
 fit_path <- function(env_name, default_filename) {
   override <- Sys.getenv(env_name, unset = "")
-  if (nzchar(override)) return(override)
+  if (nzchar(override)) {
+    return(override)
+  }
   here::here("02_Script/stan", default_filename)
 }
 
@@ -39,7 +41,7 @@ read_fit_bundle <- function(path, label) {
   if (!file.exists(path)) stop(label, " fit bundle not found: ", path)
   bundle <- readRDS(path)
   if (!is.list(bundle) || !inherits(bundle$fit, "stanfit") ||
-      is.null(bundle$stan_data) || is.null(bundle$weekly_data)) {
+    is.null(bundle$stan_data) || is.null(bundle$weekly_data)) {
     stop(label, " file is not a renewal fit bundle with fit, stan_data, and weekly_data")
   }
   bundle
@@ -49,7 +51,9 @@ as_draw_matrix <- function(x) {
   # rstan::extract(fit, pars = ...) returns even a scalar parameter as a
   # 1-D array (dim = n_draws, not NULL) rather than a plain vector, so the
   # dimensionality check must look at length(dim(x)), not just is.null().
-  if (is.null(dim(x)) || length(dim(x)) == 1L) return(matrix(as.vector(x), ncol = 1L))
+  if (is.null(dim(x)) || length(dim(x)) == 1L) {
+    return(matrix(as.vector(x), ncol = 1L))
+  }
   x
 }
 
@@ -167,7 +171,7 @@ extract_v2_1 <- function(bundle) {
 
 make_serology_draws <- function(model) {
   if (ncol(model$sero_pred_counts) != length(model$sero_sites) ||
-      length(model$sero_sites) != length(model$sero_n)) {
+    length(model$sero_sites) != length(model$sero_n)) {
     stop(model$label, " serology draws and metadata have incompatible dimensions")
   }
   dplyr::bind_rows(lapply(seq_along(model$sero_sites), function(j) {
@@ -304,7 +308,8 @@ if (sys.nframe() == 0) {
     tibble::tibble(version = model$label, week_start = model$dates, observed = model$observed_cases)
   }))
 
-  p_cases <- ggplot(dplyr::filter(trajectories, quantity == "posterior_predictive_cases"),
+  p_cases <- ggplot(
+    dplyr::filter(trajectories, quantity == "posterior_predictive_cases"),
     aes(week_start, median)
   ) +
     geom_ribbon(aes(ymin = q025, ymax = q975), fill = "#56B4E9", alpha = 0.25) +
@@ -338,7 +343,8 @@ if (sys.nframe() == 0) {
     scale_colour_manual(values = COLORS) +
     scale_fill_manual(values = COLORS) +
     labs(title = "Symptomatic probability", subtitle = "v2 is fixed; v2.1 is estimated", x = expression(p[symp]), y = "Posterior density") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
   p_case_ascertainment <- (p_reporting | p_p_symp) + patchwork::plot_layout(guides = "collect")
 
   reproduction <- dplyr::bind_rows(
@@ -357,7 +363,8 @@ if (sys.nframe() == 0) {
     scale_colour_manual(values = COLORS) +
     scale_fill_manual(values = COLORS) +
     labs(title = "Basic and effective reproduction numbers", x = NULL, y = "Reproduction number", colour = "Model", fill = "Model") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
 
   serology_draws <- dplyr::bind_rows(lapply(models, make_serology_draws))
   serology_observed <- dplyr::bind_rows(lapply(models, make_serology_observed))
@@ -372,7 +379,8 @@ if (sys.nframe() == 0) {
     scale_fill_manual(values = COLORS) +
     scale_x_continuous(labels = scales::label_percent(accuracy = 1)) +
     labs(title = "Posterior-predicted site seroprevalence", subtitle = "Dashed line: observed proportion", x = "Seroprevalence", y = "Posterior density") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
 
   site_offsets <- dplyr::bind_rows(lapply(models, make_site_offset_draws))
   sigma_draws <- dplyr::bind_rows(lapply(models, function(model) {
@@ -384,7 +392,8 @@ if (sys.nframe() == 0) {
     scale_colour_manual(values = COLORS) +
     scale_fill_manual(values = COLORS) +
     labs(title = "Site-level geographic log-odds offsets", x = "Site random effect", y = "Posterior density") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
   p_sigma_geo <- ggplot(dplyr::filter(sigma_draws, !fixed), aes(sigma_geo, colour = version, fill = version)) +
     geom_density(alpha = 0.17, linewidth = 0.55) +
     geom_vline(
@@ -394,7 +403,8 @@ if (sys.nframe() == 0) {
     scale_colour_manual(values = COLORS) +
     scale_fill_manual(values = COLORS) +
     labs(title = expression(sigma[geo]), subtitle = "v2 is fixed; v2.1 is estimated", x = expression(sigma[geo]), y = "Posterior density") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
   p_serology_geo <- (p_serology / (p_offsets | p_sigma_geo)) + patchwork::plot_layout(heights = c(1, 1))
 
   parameter_diag <- dplyr::bind_rows(lapply(models, function(model) {
@@ -419,14 +429,16 @@ if (sys.nframe() == 0) {
       title = "Posterior predictive check: Pearson residuals", subtitle = "Weeks after model seeding only",
       x = NULL, y = "Pearson residual"
     ) +
-    theme_classic(base_size = 10) + theme(legend.position = "none")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "none")
   p_residuals_hist <- ggplot(residuals_data, aes(pearson_resid, fill = version)) +
     geom_histogram(bins = 30, alpha = 0.75, position = "identity") +
     geom_vline(xintercept = 0, linetype = "22", colour = "grey40") +
     facet_wrap(~version, ncol = 1, scales = "free_y") +
     scale_fill_manual(values = COLORS) +
     labs(title = "Residual distribution", x = "Pearson residual", y = "Weeks") +
-    theme_classic(base_size = 10) + theme(legend.position = "none")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "none")
   p_ppc_residuals <- p_residuals_series | p_residuals_hist
 
   # ---- v2.1-only: p_symp identifiability over time -------------------------
@@ -460,7 +472,8 @@ if (sys.nframe() == 0) {
       subtitle = "Posterior correlation between p_symp and time-varying reporting quantities",
       x = NULL, y = "Correlation", colour = NULL
     ) +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
   diagnostic_plot_data <- sampler_diag |>
     dplyr::select(version, max_rhat, min_ess, divergences, max_treedepth_hits, min_bfmi) |>
     tidyr::pivot_longer(-version, names_to = "metric", values_to = "value")

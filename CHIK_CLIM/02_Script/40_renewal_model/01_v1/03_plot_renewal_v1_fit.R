@@ -6,7 +6,7 @@
 # Visual check for the Stage 1 renewal fit: observed weekly cases vs the
 # model's posterior median I_t (+ 95% credible band), and the posterior for
 # the single constant R. Confirms in a figure what the diagnostics already
-# suggested — a constant R can't reproduce the epidemic's rise/peak/decline
+# suggested <U+2014> a constant R can't reproduce the epidemic's rise/peak/decline
 # shape on its own, so the large process-noise term is doing that work
 # instead (motivating Stage 2's time-varying R).
 # ===========================================================================
@@ -15,7 +15,11 @@ for (p in c("here", "rstan", "ggplot2", "dplyr", "patchwork")) {
   if (!requireNamespace(p, quietly = TRUE)) install.packages(p)
 }
 suppressPackageStartupMessages({
-  library(here); library(rstan); library(ggplot2); library(dplyr); library(patchwork)
+  library(here)
+  library(rstan)
+  library(ggplot2)
+  library(dplyr)
+  library(patchwork)
 })
 
 source(here::here("02_Script/40_renewal_model/00_shared/01_build_ceara_state_weekly.R"))
@@ -44,14 +48,14 @@ theme_fit <- function() {
 
 if (sys.nframe() == 0) {
   DATE_START <- as.Date("2015-06-01")
-  DATE_END   <- as.Date("2018-06-30")
+  DATE_END <- as.Date("2018-06-30")
 
   panel <- readRDS(here::here("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds"))
   ceara_weekly <- build_state_weekly(panel, "23") |>
     dplyr::filter(week_start >= DATE_START, week_start <= DATE_END)
 
   fit <- readRDS(here::here("02_Script/stan/renewal_ceara_v1.rds"))
-  I_draws <- rstan::extract(fit, pars = "I")$I  # [draws, N]
+  I_draws <- rstan::extract(fit, pars = "I")$I # [draws, N]
 
   fit_summary <- tibble::tibble(
     week_start = ceara_weekly$week_start,
@@ -66,8 +70,10 @@ if (sys.nframe() == 0) {
     geom_line(aes(y = I_median, color = "Model I_t (median, 95% CrI)"), linewidth = 0.8) +
     geom_point(aes(y = observed, color = "Observed cases"), size = 1) +
     scale_color_manual(values = c("Observed cases" = COL_OBS, "Model I_t (median, 95% CrI)" = COL_FIT)) +
-    labs(title = "Stage 1 renewal fit — Ceara 2016-17 wave (constant R, no depletion)",
-         x = NULL, y = "Weekly cases") +
+    labs(
+      title = "Stage 1 renewal fit <U+2014> Ceara 2016-17 wave (constant R, no depletion)",
+      x = NULL, y = "Weekly cases"
+    ) +
     theme_fit()
 
   R_draws <- rstan::extract(fit, pars = "R")$R

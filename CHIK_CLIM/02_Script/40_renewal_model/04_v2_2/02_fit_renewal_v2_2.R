@@ -56,7 +56,9 @@ discretize_gamma_generation_interval <- function(mean_weeks, sd_weeks, G) {
 
 env_integer <- function(name, default) {
   value <- Sys.getenv(name, unset = "")
-  if (!nzchar(value)) return(default)
+  if (!nzchar(value)) {
+    return(default)
+  }
   parsed <- suppressWarnings(as.integer(value))
   if (is.na(parsed) || parsed < 1) stop(name, " must be a positive integer")
   parsed
@@ -101,7 +103,7 @@ if (sys.nframe() == 0) {
   ceara_weekly_cases <- build_state_weekly(panel, UF_CODE) |>
     dplyr::filter(week_start >= DATE_START, week_start <= DATE_END)
 
-  demography <- readRDS(here::here("01_Data/ceara_weekly_demography.rds")) |>
+  demography <- readRDS(here::here("01_Data/ceara_weekly_demography_2015_2025.rds")) |>
     dplyr::filter(week_start >= DATE_START, week_start <= DATE_END)
 
   ceara_weekly <- ceara_weekly_cases |>
@@ -128,7 +130,7 @@ if (sys.nframe() == 0) {
   sero_window_start <- match(SERO_WINDOW_START, ceara_weekly$week_start)
   sero_window_end <- match(SERO_WINDOW_END, ceara_weekly$week_start)
   if (anyNA(sero_window_start) || anyNA(sero_window_end) ||
-      any(sero_window_start > sero_window_end)) {
+    any(sero_window_start > sero_window_end)) {
     stop("Serology collection windows must be complete, ordered weekly intervals")
   }
 
@@ -262,7 +264,7 @@ if (sys.nframe() == 0) {
       serology_positive = SERO_POSITIVE,
       serology_n = SERO_N,
       demographic_mechanism = "explicit S/U accounting from real weekly births (SINASC), day-weighted annual deaths (IBGE), and exact reconciliation residual",
-      demography_source = "01_Data/ceara_weekly_demography.rds",
+      demography_source = "01_Data/ceara_weekly_demography_2015_2025.rds",
       iterations = N_ITER,
       warmup = N_WARMUP,
       chains = N_CHAINS,

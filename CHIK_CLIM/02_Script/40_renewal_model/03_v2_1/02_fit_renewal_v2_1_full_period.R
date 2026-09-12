@@ -48,7 +48,7 @@ if (sys.nframe() == 0) {
     stop("Ceara data do not form the expected complete, ordered weekly sequence")
   }
   if (anyNA(ceara_weekly$cases) || any(ceara_weekly$cases < 0) ||
-      any(abs(ceara_weekly$cases - round(ceara_weekly$cases)) > 1e-8)) {
+    any(abs(ceara_weekly$cases - round(ceara_weekly$cases)) > 1e-8)) {
     stop("Weekly case counts must be complete, non-negative integers")
   }
   if (SEED_WEEKS < G || SEED_WEEKS >= nrow(ceara_weekly)) {
@@ -58,13 +58,13 @@ if (sys.nframe() == 0) {
   sero_window_start <- match(SERO_WINDOW_START, ceara_weekly$week_start)
   sero_window_end <- match(SERO_WINDOW_END, ceara_weekly$week_start)
   if (anyNA(sero_window_start) || anyNA(sero_window_end) ||
-      any(sero_window_start > sero_window_end)) {
+    any(sero_window_start > sero_window_end)) {
     stop("Serology collection windows must be complete, ordered weekly intervals")
   }
 
   N_pop_t <- as.numeric(ceara_weekly$population)
   if (length(N_pop_t) != nrow(ceara_weekly) ||
-      any(!is.finite(N_pop_t)) || any(N_pop_t < 1)) {
+    any(!is.finite(N_pop_t)) || any(N_pop_t < 1)) {
     stop("Weekly state population must be finite and at least one in every week")
   }
   w <- discretize_gamma_generation_interval(GI_MEAN, GI_SD, G)

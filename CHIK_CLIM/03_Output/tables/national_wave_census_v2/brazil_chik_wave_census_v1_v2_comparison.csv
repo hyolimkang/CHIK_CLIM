@@ -1,0 +1,12 @@
+version,metric,value
+V1 activity-period,number_of_events,61
+V2 peak-trough major-wave,number_of_events,145
+V1 activity-period,median_duration_weeks,108
+V2 peak-trough major-wave,median_duration_weeks,49
+V1 activity-period,maximum_duration_weeks,521
+V2 peak-trough major-wave,maximum_duration_weeks,108
+V1 activity-period,recurrent_event_count,36
+V2 peak-trough major-wave,recurrent_event_count,119
+V1 activity-period,re6_eligible_count,51
+V2 peak-trough major-wave,re6_eligible_count,120
+V1 activity-period,V1_multiyear_episodes_split_into_at_least_2_V2_major_waves,27

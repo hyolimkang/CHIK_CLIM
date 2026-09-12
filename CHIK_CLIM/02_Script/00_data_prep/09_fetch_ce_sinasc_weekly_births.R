@@ -107,14 +107,12 @@ fetch_ce_births_one_year <- function(year, cache_dir) {
 }
 
 if (sys.nframe() == 0) {
-  # Scoped to cover the v2.2 short-period fit window (2015-2019). YEAR_END
-  # is one year past the last fit year because a Sunday-start week
-  # containing December 2019 dates (e.g. week_start 2019-12-29) needs
-  # January-2020 days to be complete -- rerun with a wider range later to
-  # extend to the full 2015-2025 period; already-downloaded years are
+  # Extended to the full 2015-2025 period (2026-09-08). 2014-2020 were
+  # already cached from the original v2.2 short-period-window fetch;
+  # 2021-2025 are downloaded fresh here. Already-downloaded years are
   # cached and skipped.
   YEAR_START <- 2014L
-  YEAR_END <- 2020L
+  YEAR_END <- 2025L
 
   cache_dir <- here::here("01_Data/sinasc_cache")
   daily <- purrr::map_dfr(YEAR_START:YEAR_END, fetch_ce_births_one_year, cache_dir = cache_dir)

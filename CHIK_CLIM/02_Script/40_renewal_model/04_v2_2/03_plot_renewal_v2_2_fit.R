@@ -254,7 +254,7 @@ if (sys.nframe() == 0) {
     x_scale +
     labs(
       title = "Cumulative infection and serological anchors",
-      subtitle = "Shaded fields: Juazeiro do Norte (orange) and Quixadá (teal) survey windows", x = NULL, y = "Cumulative proportion infected"
+      subtitle = "Shaded fields: Juazeiro do Norte (orange) and Quixad<U+00E1> (teal) survey windows", x = NULL, y = "Cumulative proportion infected"
     ) +
     guides(colour = guide_legend(nrow = 1, byrow = TRUE)) +
     theme_publication(base_size = 8) +
@@ -264,7 +264,7 @@ if (sys.nframe() == 0) {
     (p_immunity | p_reproduction) /
     (p_reporting | p_attack) +
     patchwork::plot_annotation(
-      title = "Chikungunya transmission with explicit demographic accounting, Ceará, Brazil",
+      title = "Chikungunya transmission with explicit demographic accounting, Cear<U+00E1>, Brazil",
       subtitle = "Bayesian renewal model v2.2, weekly observations from 2015 to 2019",
       tag_levels = "A",
       theme = theme(

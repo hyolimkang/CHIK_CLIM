@@ -1,0 +1,2 @@
+term,estimate,std_error,statistic,p_value,model
+is_recurrenceTRUE,-0.18367035770248852,0.09219456638638102,-1.9922037154851275,0.048804595183333334,M_climate_S_plus_is_recurrence

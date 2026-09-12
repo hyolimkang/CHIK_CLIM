@@ -1,0 +1,6 @@
+field,value
+case_definition,cases_confirmed for all UFs; same definition as Ceara early-Re input
+smoothing,Centered 3-week mean used exclusively for detection and boundaries
+raw_incidence_use,"All cases, burden, and early-Re pre-fit metrics use raw weekly cases"
+reporting_anomaly_screen,Automated flag when one raw week accounts for >=80% of first-six-week cases; no external anomaly register was supplied
+downstream_fitting,None: no Re or renewal fit is run by this script

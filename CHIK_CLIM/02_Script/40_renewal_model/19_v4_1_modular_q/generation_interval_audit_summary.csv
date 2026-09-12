@@ -1,0 +1,12 @@
+field,value
+source_file,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/40_renewal_model/17_v4_0_minimal_no_vaccine/01_fit_v4_0_minimal_no_vaccine.R
+distribution,"Gamma(shape, rate), discretised weekly"
+shape,4
+rate,2
+mean_weeks,2
+mean_days,14
+sd_weeks,1
+sd_days,7
+discretisation_method,"w_g = [pgamma(g, shape, rate) - pgamma(g-1, shape, rate)] for g=1..G, then renormalised to sum to 1"
+truncation_G_weeks,8
+total_probability_retained_before_renormalisation,0.999906858387057

@@ -1,0 +1,2 @@
+hmc_gate,divergences,max_treedepth_hits,max_rhat,n_rhat_gt_1_01,min_bulk_ess,min_tail_ess,min_bfmi,elapsed_seconds
+FAIL,1,0,1.0353191751043023,71,179.67126663155742,877.1804172489564,0.12295318561056294,38.37873697280884

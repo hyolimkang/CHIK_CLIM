@@ -1,0 +1,2 @@
+audit_period_start,audit_period_end,quiet_threshold_per_100k,quiet_duration_weeks,longest_consecutive_quiet_weeks,qualifying_quiet_interval_start,qualifying_quiet_interval_end,classification,primary_episodes_overlapping_2016_2017
+2016-01-03,2017-12-31,0.1,8,4,NA,NA,retain: no qualifying 8-week quiet interval between the 2016--2017 calendar years,1

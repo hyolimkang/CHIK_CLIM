@@ -1,0 +1,2 @@
+fit_id,model,scenario,elapsed_seconds,path
+M1_Q1,M1_dynamic_AR1,Q1_primary_product_anchor,38.37873697280884,C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/stan/dynamic_annual_foi_ceara_M1_Q1.rds

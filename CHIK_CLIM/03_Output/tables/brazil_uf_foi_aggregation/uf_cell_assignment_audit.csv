@@ -1,0 +1,51 @@
+uf_abbr,state_name,assignment_method,n_cells,n_near_uf_boundary
+AC,Acre,nearest_uf_fallback,236,1
+AC,Acre,within,7786,239
+AL,Alagoas,nearest_uf_fallback,32,2
+AL,Alagoas,within,1326,191
+AM,Amazonas,nearest_uf_fallback,407,2
+AM,Amazonas,within,73187,1239
+AP,Amapa,nearest_uf_fallback,172,1
+AP,Amapa,within,6625,221
+BA,Bahia,nearest_uf_fallback,130,3
+BA,Bahia,within,27034,1040
+CE,Ceara,nearest_uf_fallback,73,2
+CE,Ceara,within,6999,337
+DF,Distrito Federal,within,276,71
+ES,Espirito Santo,nearest_uf_fallback,63,1
+ES,Espirito Santo,within,2291,212
+GO,Goias,within,16566,991
+MA,Maranhao,nearest_uf_fallback,150,0
+MA,Maranhao,within,15470,764
+MG,Minas Gerais,within,28902,1277
+MS,Mato Grosso do Sul,nearest_uf_fallback,176,1
+MS,Mato Grosso do Sul,within,17806,501
+MT,Mato Grosso,nearest_uf_fallback,123,2
+MT,Mato Grosso,within,43403,1115
+PA,Para,nearest_uf_fallback,219,4
+PA,Para,within,57999,1218
+PB,Paraiba,nearest_uf_fallback,12,2
+PB,Paraiba,within,2673,414
+PE,Pernambuco,nearest_uf_fallback,37,1
+PE,Pernambuco,within,4628,592
+PI,Piaui,nearest_uf_fallback,10,2
+PI,Piaui,within,11878,781
+PR,Parana,nearest_uf_fallback,65,3
+PR,Parana,within,10233,477
+RJ,Rio de Janeiro,nearest_uf_fallback,133,0
+RJ,Rio de Janeiro,within,2202,221
+RN,Rio Grande do Norte,nearest_uf_fallback,53,2
+RN,Rio Grande do Norte,within,2482,248
+RO,Rondonia,nearest_uf_fallback,178,0
+RO,Rondonia,within,11310,458
+RR,Roraima,nearest_uf_fallback,242,1
+RR,Roraima,within,10473,323
+RS,Rio Grande do Sul,nearest_uf_fallback,650,2
+RS,Rio Grande do Sul,within,14417,210
+SC,Santa Catarina,nearest_uf_fallback,103,6
+SC,Santa Catarina,within,5011,383
+SE,Sergipe,nearest_uf_fallback,20,3
+SE,Sergipe,within,1042,156
+SP,Sao Paulo,nearest_uf_fallback,91,2
+SP,Sao Paulo,within,12532,732
+TO,Tocantins,within,13192,893

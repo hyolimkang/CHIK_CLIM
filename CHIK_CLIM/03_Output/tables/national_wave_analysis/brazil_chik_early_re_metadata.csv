@@ -1,0 +1,2 @@
+gi_distribution,gi_mean_weeks,gi_sd_weeks,discretization,truncation_weeks,weights,primary_window_weeks,sensitivity_windows_weeks,hmc_gate
+"Gamma(shape = 4, rate = 2)",2,1,weekly interval probabilities,8,0.1428898;0.4236928;0.2822925;0.1088339;0.03204705;0.008045009;0.001817712;0.0003811424,6,4;8,0 batch divergences; 0 batch max-treedepth hits; Re-specific Rhat <= 1.01; Re-specific bulk/tail ESS >= 400; batch BFMI >= 0.30.

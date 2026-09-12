@@ -31,8 +31,10 @@ discretize_gamma_generation_interval <- function(mean_weeks, sd_weeks, G) {
 
 matrix_from_muni_week <- function(data, muni_ids, week_dates, value) {
   index <- match(
-    paste(rep(muni_ids, each = length(week_dates)),
-          rep(as.character(week_dates), times = length(muni_ids))),
+    paste(
+      rep(muni_ids, each = length(week_dates)),
+      rep(as.character(week_dates), times = length(muni_ids))
+    ),
     paste(data$muni6, as.character(data$week_start))
   )
   values <- data[[value]][index]
@@ -88,7 +90,8 @@ read_muni_births_from_sinasc_cache <- function(muni_ids, date_start, date_end) {
   }
 
   births <- data.table::rbindlist(pieces)[
-    , .(births = sum(births)), by = .(muni6, week_start)
+    , .(births = sum(births)),
+    by = .(muni6, week_start)
   ]
   births[, muni6 := as.character(muni6)]
   as.data.frame(births)
@@ -99,8 +102,10 @@ interpolate_muni_population <- function(population, muni_ids, boundary_dates) {
   # as 1-January anchors and linearly interpolated only between adjacent
   # observed annual stocks; no population series is created in Stan.
   population <- population |>
-    dplyr::transmute(muni6 = as.character(muni6), year = as.integer(year),
-                     population = as.numeric(population)) |>
+    dplyr::transmute(
+      muni6 = as.character(muni6), year = as.integer(year),
+      population = as.numeric(population)
+    ) |>
     dplyr::filter(muni6 %in% muni_ids)
 
   if (anyDuplicated(population[c("muni6", "year")])) {
@@ -112,8 +117,10 @@ interpolate_muni_population <- function(population, muni_ids, boundary_dates) {
     all(required_years %in% population$year[population$muni6 == m])
   }, logical(1))
   if (any(!coverage_ok)) {
-    stop("Annual population coverage is incomplete for ", sum(!coverage_ok),
-         " municipalities; cannot construct N_start/N_end")
+    stop(
+      "Annual population coverage is incomplete for ", sum(!coverage_ok),
+      " municipalities; cannot construct N_start/N_end"
+    )
   }
 
   anchor_dates <- as.Date(sprintf("%d-01-01", population$year))
@@ -216,8 +223,10 @@ prepare_renewal_v3_0_spatial_data <- function(debug_subset = FALSE, min_total_ca
   muni_ids_all <- sort(unique(panel$muni6))
   expected_rows <- length(muni_ids_all) * length(week_dates)
   if (nrow(panel) != expected_rows) {
-    stop("Ceara panel is not a complete municipality x week rectangle: got ",
-         nrow(panel), ", expected ", expected_rows)
+    stop(
+      "Ceara panel is not a complete municipality x week rectangle: got ",
+      nrow(panel), ", expected ", expected_rows
+    )
   }
   if (anyDuplicated(panel[c("muni6", "week_start")])) {
     stop("Duplicated municipality-week rows in the Ceara case panel")
@@ -226,7 +235,7 @@ prepare_renewal_v3_0_spatial_data <- function(debug_subset = FALSE, min_total_ca
     stop("Week dates are incomplete or not in the intended Sunday-start sequence")
   }
   if (anyNA(panel$cases) || any(panel$cases < 0) ||
-      any(abs(panel$cases - round(panel$cases)) > 1e-8)) {
+    any(abs(panel$cases - round(panel$cases)) > 1e-8)) {
     stop("Reported municipality-week cases must be complete non-negative integers")
   }
 
@@ -254,14 +263,17 @@ prepare_renewal_v3_0_spatial_data <- function(debug_subset = FALSE, min_total_ca
     muni_ids_all, DATE_START, DATE_END + 6
   )
   birth_index <- match(
-    paste(rep(muni_ids_all, each = length(week_dates)),
-          rep(as.character(week_dates), times = length(muni_ids_all))),
+    paste(
+      rep(muni_ids_all, each = length(week_dates)),
+      rep(as.character(week_dates), times = length(muni_ids_all))
+    ),
     paste(births_long$muni6, as.character(births_long$week_start))
   )
   birth_values <- births_long$births[birth_index]
   birth_values[is.na(birth_values)] <- 0
   births_all <- matrix(
-    birth_values, nrow = length(muni_ids_all), ncol = length(week_dates),
+    birth_values,
+    nrow = length(muni_ids_all), ncol = length(week_dates),
     byrow = TRUE
   )
 
@@ -277,21 +289,22 @@ prepare_renewal_v3_0_spatial_data <- function(debug_subset = FALSE, min_total_ca
   # limitation rather than an unrecorded Stan-side assumption.
   deaths_all <- sweep(N_start_all, 2, colSums(N_start_all), "/") *
     matrix(rep(state_deaths, each = nrow(N_start_all)),
-           nrow = nrow(N_start_all), ncol = length(state_deaths))
+      nrow = nrow(N_start_all), ncol = length(state_deaths)
+    )
 
   if (any(births_all < 0) || any(deaths_all < 0) ||
-      any(!is.finite(births_all)) || any(!is.finite(deaths_all))) {
+    any(!is.finite(births_all)) || any(!is.finite(deaths_all))) {
     stop("Births and deaths must be finite and non-negative")
   }
   if (max(abs(N_end_all[, -ncol(N_end_all), drop = FALSE] -
-              N_start_all[, -1, drop = FALSE])) > 1e-6) {
+    N_start_all[, -1, drop = FALSE])) > 1e-6) {
     stop("N_end[m,t] does not equal N_start[m,t+1]; demographic stocks are discontinuous")
   }
   accounting_error <- check_demographic_accounting(
     N_start_all, N_end_all, births_all, deaths_all
   )
 
-  state_demography <- readRDS(here::here("01_Data/ceara_weekly_demography.rds")) |>
+  state_demography <- readRDS(here::here("01_Data/ceara_weekly_demography_2015_2025.rds")) |>
     dplyr::filter(week_start %in% week_dates) |>
     dplyr::arrange(week_start)
   if (!identical(state_demography$week_start, week_dates)) {
@@ -304,7 +317,7 @@ prepare_renewal_v3_0_spatial_data <- function(debug_subset = FALSE, min_total_ca
   }
 
   if (!all(serology$muni6 %in% muni_ids_all) ||
-      !fortaleza_ppc$muni6 %in% muni_ids_all) {
+    !fortaleza_ppc$muni6 %in% muni_ids_all) {
     stop("One or more hard-coded IBGE municipality codes are absent from the Ceara panel")
   }
   sero_start_all <- match(serology$window_start, week_dates)
@@ -322,10 +335,12 @@ prepare_renewal_v3_0_spatial_data <- function(debug_subset = FALSE, min_total_ca
   if (debug_subset) {
     remaining <- setdiff(muni_ids_all, required)
     high <- remaining[order(total_cases[match(remaining, muni_ids_all)],
-                            decreasing = TRUE)][seq_len(min(5L, length(remaining)))]
+      decreasing = TRUE
+    )][seq_len(min(5L, length(remaining)))]
     remaining <- setdiff(remaining, high)
     low <- remaining[order(total_cases[match(remaining, muni_ids_all)],
-                           decreasing = FALSE)][seq_len(min(5L, length(remaining)))]
+      decreasing = FALSE
+    )][seq_len(min(5L, length(remaining)))]
     muni_ids <- unique(c(required, high, low))
   } else if (!is.null(min_total_cases)) {
     # Case counts are extremely concentrated in Ceara: 56 of 184 municipalities

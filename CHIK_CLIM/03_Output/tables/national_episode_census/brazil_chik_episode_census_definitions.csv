@@ -1,0 +1,4 @@
+definition,onset_threshold,quiet_weeks,minimum_cumulative_incidence
+permissive,0.1,6,2
+primary,0.2,8,5
+strict,0.5,12,10

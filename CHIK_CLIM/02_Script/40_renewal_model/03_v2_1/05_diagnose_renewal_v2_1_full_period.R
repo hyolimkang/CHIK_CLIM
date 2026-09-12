@@ -144,7 +144,8 @@ if (sys.nframe() == 0) {
     scale_fill_manual(values = c("Susceptible" = "#009E73", "Cumulative attack rate" = "#CC79A7")) +
     scale_y_continuous(labels = scales::label_percent(accuracy = 1), limits = c(0, 1)) +
     labs(title = "Susceptibility and cumulative attack rate", x = NULL, y = "Proportion") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
 
   reproduction <- dplyr::bind_rows(
     get_summary("R0") |> dplyr::mutate(number = "R0"),
@@ -162,7 +163,8 @@ if (sys.nframe() == 0) {
     scale_colour_manual(values = c("R0" = "#0072B2", "Reff" = "#D55E00")) +
     scale_fill_manual(values = c("R0" = "#0072B2", "Reff" = "#D55E00")) +
     labs(title = "Basic and effective reproduction numbers", x = NULL, y = "Reproduction number") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
 
   reporting <- dplyr::bind_rows(
     get_summary("symptomatic_reporting") |> dplyr::mutate(component = "Symptomatic reporting"),
@@ -175,7 +177,8 @@ if (sys.nframe() == 0) {
     scale_fill_manual(values = c("Symptomatic reporting" = "#76558F", "Overall detection" = "#E69F00")) +
     scale_y_continuous(labels = scales::label_percent(accuracy = 1), limits = c(0, 1)) +
     labs(title = "Long-term case ascertainment", x = NULL, y = "Probability") +
-    theme_classic(base_size = 10) + theme(legend.position = "top")
+    theme_classic(base_size = 10) +
+    theme(legend.position = "top")
 
   p_population <- ggplot(tibble::tibble(week_start = dates, population = N_pop_t), aes(week_start, population)) +
     geom_line(colour = "#4D4D4D", linewidth = 0.6) +
@@ -367,7 +370,8 @@ if (sys.nframe() == 0) {
     figure_dir, paste0("renewal_v2_1_trajectories_ceara_full", suffix, ".png")
   )
   ggplot2::ggsave(
-    trajectory_path, trajectory_figure, width = 15, height = 14,
+    trajectory_path, trajectory_figure,
+    width = 15, height = 14,
     units = "in", dpi = 220, bg = "white"
   )
   message("[save] ", trajectory_path)

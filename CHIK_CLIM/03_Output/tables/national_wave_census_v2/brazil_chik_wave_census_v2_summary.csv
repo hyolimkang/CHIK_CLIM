@@ -1,0 +1,43 @@
+segmentation_definition,metric,value,states
+permissive,total_ufs,27,NA
+permissive,states_with_at_least_1_major_epidemic,25,NA
+permissive,states_with_no_major_epidemic,2,AM; RS
+permissive,total_candidate_waves,534,NA
+permissive,total_primary_major_epidemic_waves,147,NA
+permissive,first_major_epidemics,25,NA
+permissive,recurrent_major_epidemic_waves,122,NA
+permissive,primary_re6_eligible_major_waves,122,NA
+permissive,recurrent_re6_eligible_major_waves,105,NA
+permissive,major_waves_without_primary_re6_eligibility,25,NA
+permissive,states_with_at_least_2_major_waves,23,AC; AL; AP; BA; CE; DF; ES; GO; MA; MG; MS; MT; PA; PB; PE; PI; PR; RJ; RN; RO; SE; SP; TO
+permissive,states_with_at_least_2_re6_eligible_waves,19,AL; BA; CE; ES; GO; MA; MG; MS; MT; PA; PB; PE; PI; PR; RJ; RN; SE; SP; TO
+permissive,median_major_wave_duration_weeks,45,NA
+permissive,maximum_major_wave_duration_weeks,110,NA
+primary,total_ufs,27,NA
+primary,states_with_at_least_1_major_epidemic,26,NA
+primary,states_with_no_major_epidemic,1,RS
+primary,total_candidate_waves,392,NA
+primary,total_primary_major_epidemic_waves,145,NA
+primary,first_major_epidemics,26,NA
+primary,recurrent_major_epidemic_waves,119,NA
+primary,primary_re6_eligible_major_waves,120,NA
+primary,recurrent_re6_eligible_major_waves,102,NA
+primary,major_waves_without_primary_re6_eligibility,25,NA
+primary,states_with_at_least_2_major_waves,23,AC; AL; AP; BA; CE; DF; ES; GO; MA; MG; MS; MT; PA; PB; PE; PI; PR; RJ; RN; RO; SE; SP; TO
+primary,states_with_at_least_2_re6_eligible_waves,19,AL; BA; CE; ES; GO; MA; MG; MS; MT; PA; PB; PE; PI; PR; RJ; RN; SE; SP; TO
+primary,median_major_wave_duration_weeks,49,NA
+primary,maximum_major_wave_duration_weeks,108,NA
+strict,total_ufs,27,NA
+strict,states_with_at_least_1_major_epidemic,25,NA
+strict,states_with_no_major_epidemic,2,AM; RS
+strict,total_candidate_waves,301,NA
+strict,total_primary_major_epidemic_waves,131,NA
+strict,first_major_epidemics,25,NA
+strict,recurrent_major_epidemic_waves,106,NA
+strict,primary_re6_eligible_major_waves,115,NA
+strict,recurrent_re6_eligible_major_waves,95,NA
+strict,major_waves_without_primary_re6_eligibility,16,NA
+strict,states_with_at_least_2_major_waves,23,AC; AL; AP; BA; CE; DF; ES; GO; MA; MG; MS; MT; PA; PB; PE; PI; PR; RJ; RN; RO; SE; SP; TO
+strict,states_with_at_least_2_re6_eligible_waves,21,AL; BA; CE; DF; ES; GO; MA; MG; MS; MT; PA; PB; PE; PI; PR; RJ; RN; RO; SE; SP; TO
+strict,median_major_wave_duration_weeks,47,NA
+strict,maximum_major_wave_duration_weeks,169,NA

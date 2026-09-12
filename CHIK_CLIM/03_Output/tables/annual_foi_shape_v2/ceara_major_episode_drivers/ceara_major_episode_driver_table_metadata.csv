@@ -1,0 +1,6 @@
+field,definition
+episode inclusion,"Existing audit-defined Ceara episodes with total reported cases >= 4,000."
+Re_early_primary,Median effective reproduction number from the fixed first 6 reported weeks.
+S_onset,Annual FOI posterior S/N at the start of the onset calendar year; it is not a weekly S(t) estimate.
+climate lag,Population-weighted state mean of weeks 2 through 6 before the audit-defined onset.
+time_since_previous_epidemic,Weeks from the prior included episode's audit end to this episode's audit onset.

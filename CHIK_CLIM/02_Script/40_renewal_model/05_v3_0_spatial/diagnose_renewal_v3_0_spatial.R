@@ -61,7 +61,8 @@ summarise_v3_0_fit <- function(bundle) {
 
   time_summary <- rbind(
     summarise_time_draws(draws$C_ceara_pred, dates, "Ceara posterior-predicted cases",
-                         observed = draws$C_ceara[1, ]),
+      observed = draws$C_ceara[1, ]
+    ),
     summarise_time_draws(draws$X_ceara_total, dates, "Ceara latent infections"),
     summarise_time_draws(draws$S_ceara_prop, dates, "Ceara susceptible proportion"),
     summarise_time_draws(draws$immune_ceara_prop, dates, "Ceara immune proportion")
@@ -139,36 +140,46 @@ plot_v3_0_diagnostics <- function(diagnostics, output_path) {
   on.exit(grDevices::dev.off(), add = TRUE)
 
   case <- time[time$variable == "Ceara posterior-predicted cases", ]
-  graphics::plot(case$week_start, case$observed, type = "h", col = "grey50",
-                 xlab = "", ylab = "weekly cases",
-                 main = "Ceara observed and posterior-predicted cases")
+  graphics::plot(case$week_start, case$observed,
+    type = "h", col = "grey50",
+    xlab = "", ylab = "weekly cases",
+    main = "Ceara observed and posterior-predicted cases"
+  )
   graphics::lines(case$week_start, case$median, col = "#0072B2", lwd = 2)
   graphics::lines(case$week_start, case$q2.5, col = "#0072B2", lty = 2)
   graphics::lines(case$week_start, case$q97.5, col = "#0072B2", lty = 2)
 
   latent <- time[time$variable == "Ceara latent infections", ]
-  graphics::plot(latent$week_start, latent$median, type = "l", col = "#D55E00", lwd = 2,
-                 ylim = range(c(latent$q2.5, latent$q97.5)),
-                 xlab = "", ylab = "weekly latent infections",
-                 main = "Ceara latent infections")
+  graphics::plot(latent$week_start, latent$median,
+    type = "l", col = "#D55E00", lwd = 2,
+    ylim = range(c(latent$q2.5, latent$q97.5)),
+    xlab = "", ylab = "weekly latent infections",
+    main = "Ceara latent infections"
+  )
   graphics::lines(latent$week_start, latent$q2.5, col = "#D55E00", lty = 2)
   graphics::lines(latent$week_start, latent$q97.5, col = "#D55E00", lty = 2)
 
   susceptible <- time[time$variable == "Ceara susceptible proportion", ]
   immune <- time[time$variable == "Ceara immune proportion", ]
-  graphics::plot(susceptible$week_start, susceptible$median, type = "l", col = "#009E73",
-                 ylim = c(0, 1), lwd = 2, xlab = "", ylab = "proportion",
-                 main = "Population-weighted Ceará susceptibility and immunity")
+  graphics::plot(susceptible$week_start, susceptible$median,
+    type = "l", col = "#009E73",
+    ylim = c(0, 1), lwd = 2, xlab = "", ylab = "proportion",
+    main = "Population-weighted Cear<U+00E1> susceptibility and immunity"
+  )
   graphics::lines(susceptible$week_start, susceptible$q2.5, col = "#009E73", lty = 2)
   graphics::lines(susceptible$week_start, susceptible$q97.5, col = "#009E73", lty = 2)
   graphics::lines(immune$week_start, immune$median, col = "#CC79A7", lwd = 2)
-  graphics::legend("right", c("susceptible", "immune"), col = c("#009E73", "#CC79A7"),
-                   lty = 1, bty = "n")
+  graphics::legend("right", c("susceptible", "immune"),
+    col = c("#009E73", "#CC79A7"),
+    lty = 1, bty = "n"
+  )
 
   reporting <- diagnostics$reporting
-  graphics::barplot(reporting$median, names.arg = reporting$parameter, las = 2,
-                    ylim = c(0, max(reporting$q97.5, 0.1)),
-                    ylab = "probability", main = "Pooled reporting parameters")
+  graphics::barplot(reporting$median,
+    names.arg = reporting$parameter, las = 2,
+    ylim = c(0, max(reporting$q97.5, 0.1)),
+    ylab = "probability", main = "Pooled reporting parameters"
+  )
   graphics::arrows(
     x0 = seq_len(nrow(reporting)), y0 = reporting$q2.5,
     x1 = seq_len(nrow(reporting)), y1 = reporting$q97.5,

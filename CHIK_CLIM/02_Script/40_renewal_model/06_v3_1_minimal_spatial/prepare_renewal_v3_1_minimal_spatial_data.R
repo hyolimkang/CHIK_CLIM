@@ -35,9 +35,9 @@ unit_labels_v3_1 <- c(
 )
 
 make_v3_1_assignment <- function(municipality_ids, cases, high_burden_min,
-                                  moderate_burden_min) {
+                                 moderate_burden_min) {
   if (!is.finite(high_burden_min) || !is.finite(moderate_burden_min) ||
-      high_burden_min <= moderate_burden_min || moderate_burden_min < 0) {
+    high_burden_min <= moderate_burden_min || moderate_burden_min < 0) {
     stop("Require fixed thresholds high_burden_min > moderate_burden_min >= 0")
   }
 
@@ -55,7 +55,7 @@ make_v3_1_assignment <- function(municipality_ids, cases, high_burden_min,
   named_codes <- c("230440", "230730", "231130")
   named_indices <- match(named_codes, assignment$muni6)
   if (anyNA(named_indices)) {
-    stop("Fortaleza, Juazeiro do Norte, or Quixada is absent from the Ceará panel")
+    stop("Fortaleza, Juazeiro do Norte, or Quixada is absent from the Cear<U+00E1> panel")
   }
   assignment$unit_index[named_indices] <- 1:3
 
@@ -96,8 +96,9 @@ write_v3_1_assignment <- function(assignment, high_burden_min,
 }
 
 prepare_renewal_v3_1_minimal_spatial_data <- function(
-    high_burden_min = 250,
-    moderate_burden_min = 25) {
+  high_burden_min = 250,
+  moderate_burden_min = 25
+) {
   # v3.0 supplies explicitly constructed municipality N_start/N_end, births,
   # deaths, and its complete-panel checks. No municipality data are invented
   # here; this function only sums them within pre-specified strata.
@@ -129,7 +130,7 @@ prepare_renewal_v3_1_minimal_spatial_data <- function(
     stop("Aggregated births and deaths must be non-negative")
   }
   if (max(abs(N_end[, -ncol(N_end), drop = FALSE] -
-              N_start[, -1, drop = FALSE])) > 1e-6) {
+    N_start[, -1, drop = FALSE])) > 1e-6) {
     stop("Aggregated demographic stocks are discontinuous between weeks")
   }
   accounting_error <- check_demographic_accounting(N_start, N_end, births, deaths)

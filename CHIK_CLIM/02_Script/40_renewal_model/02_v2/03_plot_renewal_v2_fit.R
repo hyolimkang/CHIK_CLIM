@@ -219,7 +219,7 @@ if (sys.nframe() == 0) {
     x_scale +
     labs(
       title = "Time-varying reproduction numbers",
-      subtitle = expression(R[eff](t) == R[0](t) %*% S(t-1)/N),
+      subtitle = expression(R[eff](t) == R[0](t) %*% S(t - 1) / N),
       x = NULL, y = "Reproduction number"
     ) +
     theme_publication()
@@ -268,7 +268,8 @@ if (sys.nframe() == 0) {
 
   p_attack <- ggplot(attack, aes(week_start)) +
     annotate(
-      "rect", xmin = as.Date("2018-06-01"), xmax = as.Date("2018-12-31"),
+      "rect",
+      xmin = as.Date("2018-06-01"), xmax = as.Date("2018-12-31"),
       ymin = -Inf, ymax = Inf, fill = COL_ORANGE, alpha = 0.055
     ) +
     geom_ribbon(aes(ymin = q025, ymax = q975), fill = COL_GREEN, alpha = 0.14) +

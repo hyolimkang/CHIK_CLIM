@@ -1,0 +1,4 @@
+metric,value
+weekly_case_95pct_predictive_coverage,0.9790575916230366
+weekly_case_median_RMSE,669.6260052529283
+weekly_case_median_MAE,211.0523560209424

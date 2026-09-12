@@ -1,0 +1,23 @@
+metric,weekly_low_q_mode,weekly_high_q_mode,fourweek_A4_no_serology,fourweek_B4_with_serology
+n_observation_units,313,313,78,78
+observation_unit,weekly count,weekly count,4-week block sum,4-week block sum
+q_median,0.05,0.83,0.3285,0.1130
+q_95CrI_low,0.03,0.75,0.1562,0.0434
+q_95CrI_high,0.08,0.90,0.6749,0.2257
+n_chains_this_region,3 of 3 (dedicated lowclean run),4 of 4 (dedicated modeB_high run),4 of 4 (all chains merged into one region, started split 2 low / 2 high),4 of 4 (all chains merged into one region, started split 2 low / 2 high)
+exp_alpha_R_median,1.97,1.06,0.928,1.138
+frac_growth_weeks_Reff_gt1,0.521,0.375,NA_not_computed_4week,NA_not_computed_4week
+immune_prop_2018_median,0.285,0.0152,0.0513,0.2163
+immune_prop_2018_vs_observed_juazeiro_0.255,within_interval,far_below_impossible,below_but_closer,within_interval
+sero_pred_median_of_404,113,4,20,84
+sero_pred_observed_103_covered,yes,no,no,yes
+lag1_residual_acf,0.858,0.806,0.790,0.817
+hmc_gate_divergences,0,0,19,0
+hmc_gate_max_treedepth_hits,0,0,0,0
+hmc_gate_max_rhat,NA_see_v4_3_reports,NA_see_v4_3_reports,1.057,1.034
+hmc_gate_min_bulk_ess,NA_see_v4_3_reports,NA_see_v4_3_reports,53.1,164.7
+hmc_gate_pass,NA_see_v4_3_reports,NA_see_v4_3_reports,FAIL,FAIL_marginal_rhat_only
+bridge_sampling_relative_mass,0.0065,0.9935,not_applicable_unimodal,not_applicable_unimodal
+total_case_count_observed,NA_weekly_not_blocked,NA_weekly_not_blocked,140959,140959
+total_case_count_ppc_median,NA_weekly_not_blocked,NA_weekly_not_blocked,152391,189473
+block_level_95pct_ppc_coverage,NA_weekly_not_blocked,NA_weekly_not_blocked,0.985,0.969

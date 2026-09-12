@@ -90,8 +90,10 @@ write_v3_0_implementation_report <- function(prepared, compiled, pilot = NULL, s
     )
   } else {
     c(
-      sprintf("- HMC run on the %s (%d municipalities, %d chain(s)): divergences %d; maximum-treedepth hits %d; minimum E-BFMI %.3f.",
-              selection_label, p$M, sampling_chains, pilot$divergences, pilot$max_treedepth_hits, pilot$min_bfmi),
+      sprintf(
+        "- HMC run on the %s (%d municipalities, %d chain(s)): divergences %d; maximum-treedepth hits %d; minimum E-BFMI %.3f.",
+        selection_label, p$M, sampling_chains, pilot$divergences, pilot$max_treedepth_hits, pilot$min_bfmi
+      ),
       if (sampling_chains == 1L) {
         "- One short chain is a computational smoke test and has no convergence claim (Rhat is undefined with a single chain)."
       } else {
@@ -116,34 +118,48 @@ write_v3_0_implementation_report <- function(prepared, compiled, pilot = NULL, s
     "- Applies the v2.2 demographic recursion independently to every municipality.",
     "- Replaces state-to-site serology offsets with direct municipality-window immune proportions.",
     "- Uses one shared weekly log-R0 random walk plus non-centred municipality R0 offsets.",
-    "- Uses one common reporting level (p_symp * rho_sym_global); v2.2's Ceará reporting offset and trend are omitted.",
+    "- Uses one common reporting level (p_symp * rho_sym_global); v2.2's Cear<U+00E1> reporting offset and trend are omitted.",
     "",
     "## Data and deterministic checks",
     "",
-    sprintf("- Fitting period: %s to %s; %d complete weeks.",
-            prepared$config$date_start, prepared$config$date_end, d$weeks),
-    sprintf("- Ceará panel: %d municipality-week rows, %d municipalities. Stan data: %d municipalities.",
-            d$panel_rows, d$municipalities_all_ceara, d$municipalities_in_stan_data),
-    sprintf("- Maximum demographic identity error |S + U - N_start| in deterministic recursion: %.3g.",
-            d$maximum_accounting_error),
-    sprintf("- Maximum absolute difference between summed municipality population and v2.2 state stock: %.3f%%.",
-            100 * d$maximum_population_relative_gap),
+    sprintf(
+      "- Fitting period: %s to %s; %d complete weeks.",
+      prepared$config$date_start, prepared$config$date_end, d$weeks
+    ),
+    sprintf(
+      "- Cear<U+00E1> panel: %d municipality-week rows, %d municipalities. Stan data: %d municipalities.",
+      d$panel_rows, d$municipalities_all_ceara, d$municipalities_in_stan_data
+    ),
+    sprintf(
+      "- Maximum demographic identity error |S + U - N_start| in deterministic recursion: %.3g.",
+      d$maximum_accounting_error
+    ),
+    sprintf(
+      "- Maximum absolute difference between summed municipality population and v2.2 state stock: %.3f%%.",
+      100 * d$maximum_population_relative_gap
+    ),
     sprintf("- Births: %s.", d$births_source),
     sprintf("- Deaths: %s.", d$deaths_source),
     "",
     "## Serology mapping",
     "",
-    sprintf("- %s (IBGE municipality code %s): %d/%d, %s to %s.",
-            s$site[1], s$muni6[1], s$positive[1], s$n[1], s$window_start[1], s$window_end[1]),
-    sprintf("- %s (IBGE municipality code %s): %d/%d, %s to %s.",
-            s$site[2], s$muni6[2], s$positive[2], s$n[2], s$window_start[2], s$window_end[2]),
+    sprintf(
+      "- %s (IBGE municipality code %s): %d/%d, %s to %s.",
+      s$site[1], s$muni6[1], s$positive[1], s$n[1], s$window_start[1], s$window_end[1]
+    ),
+    sprintf(
+      "- %s (IBGE municipality code %s): %d/%d, %s to %s.",
+      s$site[2], s$muni6[2], s$positive[2], s$n[2], s$window_start[2], s$window_end[2]
+    ),
     "- Fortaleza is retained only for an external posterior predictive comparison and is not in the likelihood.",
     "",
     "## Model size and compilation",
     "",
-    sprintf("- Estimated parameter dimension: %d (%d municipality seed hazards, %d shared-week R0 states, %d municipality R0 standard-normal effects, and 5 scalar parameters).",
-            v3_0_parameter_count(p), p$M * p$seed_weeks,
-            p$N - p$seed_weeks, p$M),
+    sprintf(
+      "- Estimated parameter dimension: %d (%d municipality seed hazards, %d shared-week R0 states, %d municipality R0 standard-normal effects, and 5 scalar parameters).",
+      v3_0_parameter_count(p), p$M * p$seed_weeks,
+      p$N - p$seed_weeks, p$M
+    ),
     sprintf("- Stan compilation: %s.", if (compiled) "successful" else "not completed"),
     "",
     "## Pilot HMC",
@@ -152,10 +168,10 @@ write_v3_0_implementation_report <- function(prepared, compiled, pilot = NULL, s
     "",
     "## Remaining warnings",
     "",
-    "- Municipal all-cause deaths are a transparent population-share allocation of the documented Ceará annual total, not municipality-specific mortality observations.",
+    "- Municipal all-cause deaths are a transparent population-share allocation of the documented Cear<U+00E1> annual total, not municipality-specific mortality observations.",
     "- Municipality annual population stocks are linearly interpolated between 1-January annual anchors; their summed stock is checked against the v2.2 state demographic series.",
     "- Reporting, initial infections, and susceptibility remain potentially confounded. Compilation or a short pilot is not scientific validation.",
-    "- A future all-Ceará 2015-2019 production fit must be assessed with multi-chain convergence, posterior predictive, serology, and sensitivity diagnostics before interpretation."
+    "- A future all-Cear<U+00E1> 2015-2019 production fit must be assessed with multi-chain convergence, posterior predictive, serology, and sensitivity diagnostics before interpretation."
   )
   writeLines(lines, report_path, useBytes = TRUE)
   report_path
@@ -179,7 +195,7 @@ run_v3_0_spatial <- function() {
   adapt_delta <- as.numeric(Sys.getenv("RENEWAL_V3_0_ADAPT_DELTA", "0.90"))
   max_treedepth <- as.integer(Sys.getenv("RENEWAL_V3_0_MAX_TREEDEPTH", "12"))
   if (is.na(pilot_iter) || pilot_iter < 20L || is.na(pilot_warmup) ||
-      pilot_warmup < 1L || pilot_warmup >= pilot_iter) {
+    pilot_warmup < 1L || pilot_warmup >= pilot_iter) {
     stop("Iteration settings require iter >= 20 and 1 <= warmup < iter")
   }
   if (is.na(pilot_chains) || pilot_chains < 1L) {
@@ -239,7 +255,8 @@ run_v3_0_spatial <- function() {
   }
 
   report_path <- write_v3_0_implementation_report(
-    prepared, compiled = TRUE, pilot = pilot, sampling_chains = pilot_chains
+    prepared,
+    compiled = TRUE, pilot = pilot, sampling_chains = pilot_chains
   )
   message("[report] ", report_path)
   invisible(list(model = model, prepared = prepared, pilot = pilot, report_path = report_path))

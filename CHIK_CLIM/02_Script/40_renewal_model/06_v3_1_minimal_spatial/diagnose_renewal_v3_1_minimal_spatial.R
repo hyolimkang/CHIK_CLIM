@@ -78,7 +78,8 @@ summarise_v3_1_fit <- function(bundle) {
 
   time <- rbind(
     summarise_time(draws$C_ceara_pred, dates, "Ceara posterior-predicted cases",
-                   observed = draws$C_ceara[1, ]),
+      observed = draws$C_ceara[1, ]
+    ),
     summarise_time(draws$X_ceara_total, dates, "Ceara latent infections"),
     summarise_time(draws$S_ceara_prop, dates, "Ceara susceptible proportion"),
     summarise_time(draws$immune_ceara_prop, dates, "Ceara immune proportion"),
@@ -122,9 +123,14 @@ summarise_v3_1_fit <- function(bundle) {
   contribution$inferred_infection_contribution <-
     contribution$inferred_infections_median / sum(contribution$inferred_infections_median)
 
-  reporting <- do.call(rbind, lapply(c("p_symp", "rho_sym", "overall_detection"),
-    function(name) data.frame(parameter = name, t(posterior_interval(draws[[name]])),
-                              row.names = NULL)
+  reporting <- do.call(rbind, lapply(
+    c("p_symp", "rho_sym", "overall_detection"),
+    function(name) {
+      data.frame(
+        parameter = name, t(posterior_interval(draws[[name]])),
+        row.names = NULL
+      )
+    }
   ))
 
   serology <- do.call(rbind, lapply(seq_len(nrow(prepared$serology)), function(j) {
@@ -146,13 +152,15 @@ summarise_v3_1_fit <- function(bundle) {
   }))
 
   hmc <- if (!is.null(bundle$pilot_diagnostics) &&
-             all(c("convergence", "max_rhat") %in% names(bundle$pilot_diagnostics))) {
+    all(c("convergence", "max_rhat") %in% names(bundle$pilot_diagnostics))) {
     bundle$pilot_diagnostics
   } else {
     fit_hmc_diagnostics_v3_1(fit)
   }
-  worst <- hmc$convergence[order(hmc$convergence$rhat, decreasing = TRUE,
-                                 na.last = NA), , drop = FALSE]
+  worst <- hmc$convergence[order(hmc$convergence$rhat,
+    decreasing = TRUE,
+    na.last = NA
+  ), , drop = FALSE]
   list(
     time = time,
     unit_susceptibility = unit_susceptibility,
@@ -161,10 +169,14 @@ summarise_v3_1_fit <- function(bundle) {
     reporting = reporting,
     serology = serology,
     hmc_summary = data.frame(
-      metric = c("divergences", "max_treedepth_hits", "min_bfmi",
-                 "max_rhat", "min_bulk_ess", "min_tail_ess"),
-      value = c(hmc$divergences, hmc$max_treedepth_hits, min(hmc$bfmi),
-                hmc$max_rhat, hmc$min_bulk_ess, hmc$min_tail_ess)
+      metric = c(
+        "divergences", "max_treedepth_hits", "min_bfmi",
+        "max_rhat", "min_bulk_ess", "min_tail_ess"
+      ),
+      value = c(
+        hmc$divergences, hmc$max_treedepth_hits, min(hmc$bfmi),
+        hmc$max_rhat, hmc$min_bulk_ess, hmc$min_tail_ess
+      )
     ),
     hmc_convergence = hmc$convergence,
     worst_mixing = utils::head(worst, 10),
@@ -177,58 +189,73 @@ plot_v3_1_diagnostics <- function(d, output_path) {
   on.exit(grDevices::dev.off(), add = TRUE)
 
   cases <- d$time[d$time$variable == "Ceara posterior-predicted cases", ]
-  graphics::plot(cases$week_start, cases$observed, type = "h", col = "grey50",
-                 xlab = "", ylab = "weekly cases",
-                 main = "Ceara observed and posterior-predicted cases")
+  graphics::plot(cases$week_start, cases$observed,
+    type = "h", col = "grey50",
+    xlab = "", ylab = "weekly cases",
+    main = "Ceara observed and posterior-predicted cases"
+  )
   graphics::lines(cases$week_start, cases$median, col = "#0072B2", lwd = 2)
   graphics::lines(cases$week_start, cases$q2.5, col = "#0072B2", lty = 2)
   graphics::lines(cases$week_start, cases$q97.5, col = "#0072B2", lty = 2)
 
   latent <- d$time[d$time$variable == "Ceara latent infections", ]
-  graphics::plot(latent$week_start, latent$median, type = "l", col = "#D55E00", lwd = 2,
-                 ylim = range(c(latent$q2.5, latent$q97.5)),
-                 xlab = "", ylab = "weekly latent infections",
-                 main = "Total latent infections")
+  graphics::plot(latent$week_start, latent$median,
+    type = "l", col = "#D55E00", lwd = 2,
+    ylim = range(c(latent$q2.5, latent$q97.5)),
+    xlab = "", ylab = "weekly latent infections",
+    main = "Total latent infections"
+  )
   graphics::lines(latent$week_start, latent$q2.5, col = "#D55E00", lty = 2)
   graphics::lines(latent$week_start, latent$q97.5, col = "#D55E00", lty = 2)
 
   s <- d$time[d$time$variable == "Ceara susceptible proportion", ]
   u <- d$time[d$time$variable == "Ceara immune proportion", ]
-  graphics::plot(s$week_start, s$median, type = "l", col = "#009E73", ylim = c(0, 1),
-                 xlab = "", ylab = "proportion",
-                 main = "Population-weighted Ceara susceptibility and immunity")
+  graphics::plot(s$week_start, s$median,
+    type = "l", col = "#009E73", ylim = c(0, 1),
+    xlab = "", ylab = "proportion",
+    main = "Population-weighted Ceara susceptibility and immunity"
+  )
   graphics::lines(s$week_start, s$q2.5, col = "#009E73", lty = 2)
   graphics::lines(s$week_start, s$q97.5, col = "#009E73", lty = 2)
   graphics::lines(u$week_start, u$median, col = "#CC79A7", lwd = 2)
   graphics::legend("right", c("susceptible", "immune"),
-                   col = c("#009E73", "#CC79A7"), lty = 1, bty = "n")
+    col = c("#009E73", "#CC79A7"), lty = 1, bty = "n"
+  )
 
   r0 <- d$time[d$time$variable == "Shared R0", ]
   reff <- d$time[d$time$variable == "Population-weighted Ceara Reff", ]
-  graphics::plot(r0$week_start, r0$median, type = "l", col = "#0072B2", lwd = 2,
-                 ylim = range(c(r0$q2.5, r0$q97.5, reff$q2.5, reff$q97.5)),
-                 xlab = "", ylab = "reproduction number",
-                 main = "Shared R0 and weighted effective reproduction number")
+  graphics::plot(r0$week_start, r0$median,
+    type = "l", col = "#0072B2", lwd = 2,
+    ylim = range(c(r0$q2.5, r0$q97.5, reff$q2.5, reff$q97.5)),
+    xlab = "", ylab = "reproduction number",
+    main = "Shared R0 and weighted effective reproduction number"
+  )
   graphics::lines(r0$week_start, r0$q2.5, col = "#0072B2", lty = 2)
   graphics::lines(r0$week_start, r0$q97.5, col = "#0072B2", lty = 2)
   graphics::lines(reff$week_start, reff$median, col = "#E69F00", lwd = 2)
   graphics::abline(h = 1, lty = 3)
-  graphics::legend("topright", c("R0", "Reff"), col = c("#0072B2", "#E69F00"),
-                   lty = 1, bty = "n")
+  graphics::legend("topright", c("R0", "Reff"),
+    col = c("#0072B2", "#E69F00"),
+    lty = 1, bty = "n"
+  )
 
   graphics::par(mfrow = c(2, 3))
   for (k in 1:6) {
     x <- d$unit_susceptibility[d$unit_susceptibility$unit_index == k, ]
-    graphics::plot(x$week_start, x$median, type = "l", ylim = c(0, 1),
-                   xlab = "", ylab = "S/N", main = x$unit[1])
+    graphics::plot(x$week_start, x$median,
+      type = "l", ylim = c(0, 1),
+      xlab = "", ylab = "S/N", main = x$unit[1]
+    )
     graphics::lines(x$week_start, x$q2.5, lty = 2)
     graphics::lines(x$week_start, x$q97.5, lty = 2)
   }
   graphics::par(mfrow = c(1, 1))
 
-  graphics::barplot(d$reporting$median, names.arg = d$reporting$parameter, las = 2,
-                    ylim = c(0, max(d$reporting$q97.5, 0.1)),
-                    ylab = "probability", main = "Pooled detection parameters")
+  graphics::barplot(d$reporting$median,
+    names.arg = d$reporting$parameter, las = 2,
+    ylim = c(0, max(d$reporting$q97.5, 0.1)),
+    ylab = "probability", main = "Pooled detection parameters"
+  )
 }
 
 run_v3_1_diagnostics <- function() {
@@ -246,9 +273,11 @@ run_v3_1_diagnostics <- function() {
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
-  for (name in c("time", "unit_susceptibility", "endpoints", "contribution",
-                 "reporting", "serology", "hmc_summary", "hmc_convergence",
-                 "worst_mixing")) {
+  for (name in c(
+    "time", "unit_susceptibility", "endpoints", "contribution",
+    "reporting", "serology", "hmc_summary", "hmc_convergence",
+    "worst_mixing"
+  )) {
     utils::write.csv(diagnostics[[name]], file.path(
       table_dir, paste0("renewal_v3_1_", name, ".csv")
     ), row.names = FALSE)

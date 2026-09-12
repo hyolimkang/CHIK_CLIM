@@ -7,7 +7,7 @@
 # model track. Cases are summed and temperature/precip are population-
 # weighted means, same logic as 90_exploratory/11_plot_case_climate_timeseries.R.
 # The STATE TOTAL population, however, is not the sum of the muni-level
-# annual estimates used elsewhere in this repo — those mix vintages (SIDRA
+# annual estimates used elsewhere in this repo <U+2014> those mix vintages (SIDRA
 # annual estimates, the 2022 Census, and 2023 interpolation) and produce a
 # spurious ~450k (~5%) dip-and-recover in Ceara's population across 2021-23
 # that has nothing to do with real demographic change (see
@@ -15,20 +15,23 @@
 # Since the renewal model drives weekly susceptible-pool changes directly
 # off population deltas, that artifact would read as a mass migration
 # event. Instead, state population is joined in from IBGE's population
-# projection revision 2024 — a single internally consistent UF-level series
+# projection revision 2024 <U+2014> a single internally consistent UF-level series
 # for the whole 2015-2025 span.
 #
 # Output
 # ------
 # A data.frame with one row per week: week_start, week_of_year, t (time
-# index), year, cases, population, Tmean, PRCP — not saved to disk, this is
+# index), year, cases, population, Tmean, PRCP <U+2014> not saved to disk, this is
 # meant to be sourced by the fit scripts in this folder.
 # ===========================================================================
 
 for (p in c("here", "dplyr")) {
   if (!requireNamespace(p, quietly = TRUE)) install.packages(p)
 }
-suppressPackageStartupMessages({ library(here); library(dplyr) })
+suppressPackageStartupMessages({
+  library(here)
+  library(dplyr)
+})
 
 build_state_weekly <- function(panel, uf_code) {
   target_uf_code <- as.integer(uf_code)
@@ -46,7 +49,7 @@ build_state_weekly <- function(panel, uf_code) {
       # far less sensitive to which population vintage is used than the
       # state TOTAL below, which is what the renewal model actually reads.
       Tmean = weighted.mean(Tmean, w = population, na.rm = TRUE),
-      PRCP  = weighted.mean(PRCP, w = population, na.rm = TRUE),
+      PRCP = weighted.mean(PRCP, w = population, na.rm = TRUE),
       .groups = "drop"
     ) |>
     dplyr::left_join(uf_population, by = "year") |>

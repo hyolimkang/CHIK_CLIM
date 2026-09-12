@@ -1,0 +1,9 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+[grid susceptibility] AC
+Error in base[["q10"]] : subscript out of bounds
+Calls: run_brazil_grid_susceptibility ... reconstruct_state_grid -> t -> vapply -> FUN -> weighted_heterogeneity
+Execution halted

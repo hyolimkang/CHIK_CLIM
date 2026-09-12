@@ -1,0 +1,4 @@
+scenario,q_logit_prior_mean,q_logit_prior_sd,prior_description
+Q1_primary_product_anchor,-1.9330444138017369,0.26918963121916156,Moment-matched logit-normal approximation to p_symp * rho_sym_Brazil
+Q2_broader_product_anchor,-1.9330444138017369,0.5383792624383231,Same centre as Q1 with twice the logit-scale SD
+Q3_lower_detection,-2.689687323425837,0.26918963121916156,"Half the Q1 median detection probability, with Q1 logit-scale SD"
