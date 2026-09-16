@@ -1,0 +1,7 @@
+wave_id,observed_peak_week,observed_peak_cases,observed_total,predicted_total_median,predicted_peak_week_median
+RJ_wave_04,2016-04-10,112,1314,1293,2016-04-24
+RJ_wave_05,2017-01-22,176,3725,4018,2017-04-23
+RJ_wave_06,2018-04-29,1571,27994,26354,2018-04-29
+RJ_wave_07,2019-05-05,5711,81290,78252.5,2019-04-21
+RJ_wave_10,2024-04-07,197,4476,4531,2024-04-14
+RJ_wave_11,2025-02-16,112,1833,1756,2025-02-16

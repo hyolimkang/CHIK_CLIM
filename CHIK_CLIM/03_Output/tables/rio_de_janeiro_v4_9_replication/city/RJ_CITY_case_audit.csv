@@ -1,0 +1,2 @@
+muni6,n_weeks,n_weeks_expected,week_continuity_ok,n_missing_weeks,n_duplicate_weeks,n_na_cases,n_negative_cases,total_cases,max_weekly_cases,max_weekly_cases_week,population_min,population_max
+330455,573,573,TRUE,0,0,0,0,53957,3058,2019-05-05,6211223,6775561

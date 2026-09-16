@@ -1,0 +1,9 @@
+metric,city_cases_only,city_cases_plus_u10
+q_city (median [95% CrI]),"0.0150 [0.0129,0.0180]","0.0128 [0.0113,0.0145]"
+"cor(logit_q, alpha_R)",-0.702,-0.538
+U10-window immunity (median [95% CrI]),"0.0957 [0.0780,0.1170]","0.1335 [0.1159,0.1543]"
+immune_2025 (median),0.4881,0.5335
+min S/N (median),0.5094,0.4645
+max R0 (median),2.60,2.83
+HMC divergences,0,0
+HMC pass,TRUE,TRUE

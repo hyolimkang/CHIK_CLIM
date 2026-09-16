@@ -1,0 +1,10 @@
+quantity,value
+posterior_median,0.13348787327911632
+posterior_lo50,0.12723472555568813
+posterior_hi50,0.14005922473508153
+posterior_lo95,0.11585652205119376
+posterior_hi95,0.15426142711759372
+observed_weighted,0.18
+observed_ci_lo,0.148
+observed_ci_hi,0.212
+prob_in_observed_ci,0.07425

@@ -1,0 +1,2 @@
+n_municipalities,first_observation_date,last_observation_date,n_weeks_full_series,n_weeks_expected_full,n_missing_weeks,n_duplicate_weeks,n_na_cases,n_negative_cases,n_weeks_model_window,n_weeks_model_window_expected,total_cases_2015_2025,max_weekly_cases,max_weekly_cases_week,population_min,population_max
+92,2014-12-28,2025-12-28,575,575,0,0,0,0,573,573,126428,5711,2019-05-05,16971856,17223547

@@ -1,0 +1,6 @@
+wave_id,era,observed_peak_week,observed_peak_cases,observed_total,predicted_total_median,predicted_total_lo95,predicted_total_hi95,predicted_peak_week_median,predicted_peak_cases_median
+MT_wave_05,early (2017-2019),2017-03-26,217,2929,3647.5,2756,4911.15,2017-04-02,381
+MT_wave_06,early (2017-2019),2018-01-21,1275,13419,9955,7780.725,12708.025,2018-02-18,934.5
+MT_wave_07,early (2017-2019),2020-03-01,17,247,231,173,300,2020-02-23,19
+MT_wave_13,late (2024-2025),2024-05-05,1178,19449,20849,15709.975,28569.275,2024-04-07,2233.5
+MT_wave_14,late (2024-2025),2025-01-26,3858,47315,46248.5,36092.525,58394.40000000001,2025-02-16,4013

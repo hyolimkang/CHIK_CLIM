@@ -1,0 +1,19 @@
+check,value
+n_weeks_cases,573
+n_weeks_demography,573
+date_range_cases,2015-01-04 to 2025-12-21
+date_range_demography,2015-01-04 to 2025-12-21
+n_expected_weeks,573
+cases_dates_continuous,TRUE
+demography_dates_continuous,TRUE
+cases_duplicate_weeks,0
+demography_duplicate_weeks,0
+n_weeks_joined,573
+join_matches_both_inputs,TRUE
+max_abs_demographic_accounting_error,0
+total_cases,92498
+population_range,14440779 to 14879706
+mean_weekly_cases,161.42757417103
+zero_case_weeks,4
+max_weekly_cases,1499
+max_weekly_cases_week,2024-03-17

@@ -1,0 +1,9 @@
+model,quantity,cor_with_q
+A_case_only,immune_2018,-0.903311882860238
+A_case_only,immune_2025,-0.9524595377876519
+A_case_only,alpha_R,-0.9216766175893742
+A_case_only,phi_obs,-0.11605060222709897
+B_U14_serology,immune_2018,-0.9024461624423075
+B_U14_serology,immune_2025,-0.9415107772659951
+B_U14_serology,alpha_R,-0.9077128404538652
+B_U14_serology,phi_obs,-0.1980842042933535

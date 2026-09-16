@@ -1,0 +1,4 @@
+"chain","branch","n_sampling","divergent","max_treedepth_hits","mean_stepsize","mean_leapfrog","mean_accept"
+2,"LOW",500,1,0,0.103802,37.582,0.91962627555888
+4,"INTERMEDIATE",500,0,0,0.106171,33.56,0.94231163182
+5,"HIGH",500,0,0,0.0977767,42.968,0.955950552

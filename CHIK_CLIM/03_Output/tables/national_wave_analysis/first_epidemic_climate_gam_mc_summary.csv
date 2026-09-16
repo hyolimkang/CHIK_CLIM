@@ -1,0 +1,2 @@
+n_mc_iterations,n_successful,edf_temperature_median,edf_temperature_lo95,edf_temperature_hi95,edf_precipitation_median,edf_precipitation_lo95,edf_precipitation_hi95,dev_explained_median
+200,200,1.000006739186615,1.0000003383079215,2.1083917801466874,1.000013468362032,1.0000040240750603,1.8613770854688159,0.6662065704847983

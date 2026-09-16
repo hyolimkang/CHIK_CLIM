@@ -1,0 +1,28 @@
+state,first_episode_id,episode_start,episode_end,total_reported_cases,peak_week,peak_cases,eligible_for_climate_analysis,reason_for_exclusion
+AC,AC_wave_07,2018-05-27,2019-03-31,232,2018-10-28,25,NO,fewer than 30 raw cases
+AL,AL_wave_02,2016-01-31,2017-10-29,9621,2016-05-29,562,YES,NA
+AM,AM_wave_15,2022-08-28,2024-05-26,217,2023-04-02,14,NO,fewer than 30 raw cases
+AP,AP_wave_02,2016-02-07,2017-01-15,183,2016-10-02,12,NO,too few nonzero raw incidence weeks; fewer than 30 raw cases
+BA,BA_wave_02,2016-01-24,2016-08-28,5863,2016-03-06,503,YES,NA
+CE,CE_wave_02,2016-03-13,2016-12-18,30516,2016-05-29,2236,YES,NA
+DF,DF_wave_12,2021-11-07,2022-11-06,471,2022-05-01,27,NO,too few nonzero raw incidence weeks; fewer than 30 raw cases
+ES,ES_wave_02,2016-12-18,2017-07-16,629,2017-03-12,45,YES,NA
+GO,GO_wave_15,2021-11-28,2022-12-18,4122,2022-03-27,208,YES,NA
+MA,MA_wave_02,2016-02-28,2016-10-02,7016,2016-04-24,870,YES,NA
+MG,MG_wave_05,2017-01-08,2017-10-01,13438,2017-03-12,1265,YES,NA
+MS,MS_wave_05,2017-12-10,2018-07-29,187,2018-03-11,10,NO,fewer than 30 raw cases
+MT,MT_wave_05,2016-12-11,2017-10-01,2929,2017-03-26,217,YES,NA
+PA,PA_wave_04,2016-04-24,2017-10-08,8315,2017-01-22,602,YES,NA
+PB,PB_wave_03,2016-02-07,2016-12-04,7712,2016-05-08,696,YES,NA
+PE,PE_wave_03,2015-11-29,2017-12-17,15850,2016-02-28,825,YES,NA
+PI,PI_wave_03,2016-03-27,2016-11-06,1200,2016-05-08,122,YES,NA
+PR,PR_wave_17,2023-01-22,2023-11-05,1587,2023-03-26,128,YES,NA
+RJ,RJ_wave_04,2015-12-06,2016-09-11,1314,2016-04-17,105,YES,NA
+RN,RN_wave_03,2016-01-24,2016-12-18,3561,2016-05-08,179,YES,NA
+RO,RO_wave_19,2023-12-31,2024-06-02,146,2024-03-03,18,NO,fewer than 30 raw cases
+RR,RR_wave_03,2017-01-29,2018-01-21,3910,2017-07-23,362,YES,NA
+RS,NA,NA,NA,NA,NA,NA,NO,no qualifying major epidemic wave in the national wave census (wave_order==1 does not exist for this UF)
+SC,SC_wave_19,2025-01-26,2025-08-24,673,2025-03-23,103,YES,NA
+SE,SE_wave_02,2015-08-30,2015-12-27,116,2015-11-08,14,NO,too few nonzero raw incidence weeks; fewer than 30 raw cases
+SP,SP_wave_06,2021-01-10,2021-10-31,13438,2021-03-28,1243,YES,NA
+TO,TO_wave_03,2016-01-17,2016-08-07,233,2016-05-29,23,NO,fewer than 30 raw cases

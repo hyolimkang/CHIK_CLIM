@@ -1,0 +1,5 @@
+wave_id,wave_order,onset_week,end_week,previous_end,weeks_since_previous_wave
+MT_wave_06,2,2017-12-17,2019-08-18,2017-10-01,11
+MT_wave_07,3,2019-09-08,2020-06-28,2019-08-18,3
+MT_wave_13,4,2024-01-07,2024-10-06,2020-06-28,184
+MT_wave_14,5,2024-12-01,2025-12-28,2024-10-06,8

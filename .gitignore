@@ -5,6 +5,7 @@
 .RDataTmp*
 .Ruserdata
 *.Rproj.user
+Rplots.pdf
 
 # ---- OS ----
 .DS_Store
@@ -61,6 +62,31 @@ CHIK_CLIM/01_Data/ce_sinasc_births_weekly.rds
 CHIK_CLIM/01_Data/ceara_weekly_demography_*.csv
 CHIK_CLIM/01_Data/ceara_weekly_demography_*.rds
 
+# Same SINASC-derived birth/demography convention for the other replication
+# states (Bahia, Pernambuco, Rio de Janeiro state + city, Mato Grosso) —
+# regenerate with 00_data_prep/09b-09f_fetch_*_sinasc_weekly_births.R and
+# 10b-10f_build_*_weekly_demography.R
+CHIK_CLIM/01_Data/bahia_sinasc_births_*.csv
+CHIK_CLIM/01_Data/bahia_sinasc_births_*.rds
+CHIK_CLIM/01_Data/bahia_weekly_demography_*.csv
+CHIK_CLIM/01_Data/bahia_weekly_demography_*.rds
+CHIK_CLIM/01_Data/pernambuco_sinasc_births_*.csv
+CHIK_CLIM/01_Data/pernambuco_sinasc_births_*.rds
+CHIK_CLIM/01_Data/pernambuco_weekly_demography_*.csv
+CHIK_CLIM/01_Data/pernambuco_weekly_demography_*.rds
+CHIK_CLIM/01_Data/rio_de_janeiro_sinasc_births_*.csv
+CHIK_CLIM/01_Data/rio_de_janeiro_sinasc_births_*.rds
+CHIK_CLIM/01_Data/rio_de_janeiro_weekly_demography_*.csv
+CHIK_CLIM/01_Data/rio_de_janeiro_weekly_demography_*.rds
+CHIK_CLIM/01_Data/riodejaneiro_city_sinasc_births_*.csv
+CHIK_CLIM/01_Data/riodejaneiro_city_sinasc_births_*.rds
+CHIK_CLIM/01_Data/riodejaneiro_city_weekly_demography_*.csv
+CHIK_CLIM/01_Data/riodejaneiro_city_weekly_demography_*.rds
+CHIK_CLIM/01_Data/mato_grosso_sinasc_births_*.csv
+CHIK_CLIM/01_Data/mato_grosso_sinasc_births_*.rds
+CHIK_CLIM/01_Data/mato_grosso_weekly_demography_*.csv
+CHIK_CLIM/01_Data/mato_grosso_weekly_demography_*.rds
+
 # Renewal-model Stan fits and compiled-model caches (21MB-451MB each,
 # several exceed GitHub's 100MB limit) — regenerate with the fit scripts
 # under each 40_renewal_model/0X_v*/ subfolder (v1, v2, v2_1, v2_2,
@@ -97,7 +123,7 @@ CHIK_CLIM/03_Output/**/*.rds
 # Raw per-chain CmdStan-style sampler progress CSVs (used only for
 # real-time HMC monitoring while a fit runs; can total several GB) and the
 # legacy top-level progress-CSV cache -- regenerate by rerunning the fit.
-CHIK_CLIM/02_Script/**/chains/
+CHIK_CLIM/02_Script/**/chains*/
 CHIK_CLIM/02_Script/stan/sampling_progress/
 
 # Raster / model outputs (large)

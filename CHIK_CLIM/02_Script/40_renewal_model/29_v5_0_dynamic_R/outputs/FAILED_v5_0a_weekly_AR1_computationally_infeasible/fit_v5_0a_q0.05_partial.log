@@ -1,0 +1,87 @@
+﻿Rscript.exe : here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+At line:5 char:1
++ & "C:\Program Files\R\R-4.3.3\bin\Rscript.exe" $script *> $log 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (here() starts a..._CLIM/CHIK_CLIM:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+[q0.05] v5.0a dynamic-R (direct serology) | q=0.05
+starting worker pid=46956 on localhost:11925 at 15:38:32.844
+starting worker pid=18864 on localhost:11925 at 15:38:32.954
+starting worker pid=24952 on localhost:11925 at 15:38:33.059
+starting worker pid=41212 on localhost:11925 at 15:38:33.163
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000848 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 8.48 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 1200 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.00089 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 8.9 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 1200 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 0.003255 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 32.55 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 3: Iteration:    1 / 1200 [  0%]  (Warmup)
+Chain 4: 
+Chain 4: Gradient evaluation took 0.00081 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 8.1 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 1200 [  0%]  (Warmup)
+Chain 1: Iteration:   25 / 1200 [  2%]  (Warmup)
+Chain 3: Iteration:   25 / 1200 [  2%]  (Warmup)
+Chain 2: Iteration:   25 / 1200 [  2%]  (Warmup)
+Chain 4: Iteration:   25 / 1200 [  2%]  (Warmup)
+Chain 1: Iteration:   50 / 1200 [  4%]  (Warmup)
+Chain 3: Iteration:   50 / 1200 [  4%]  (Warmup)
+Chain 2: Iteration:   50 / 1200 [  4%]  (Warmup)
+Chain 4: Iteration:   50 / 1200 [  4%]  (Warmup)

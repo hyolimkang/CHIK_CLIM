@@ -1,0 +1,3 @@
+model,n_episodes,correlation_with_Re_obs,MAE,RMSE,classification_agreement_Re_gt1
+A: climate-only (R_climate_hat),16,0.41136426339662097,0.7831201239446344,0.8693363718605283,1
+B: climate x susceptibility (Re_pred),16,0.36987502402517725,0.7326563770892707,0.8267617365231029,1

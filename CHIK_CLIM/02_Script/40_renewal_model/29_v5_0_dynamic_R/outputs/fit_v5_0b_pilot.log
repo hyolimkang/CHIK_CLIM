@@ -1,0 +1,224 @@
+﻿Rscript.exe : here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+At line:6 char:1
++ & "C:\Program Files\R\R-4.3.3\bin\Rscript.exe" $script *> $log 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (here() starts a..._CLIM/CHIK_CLIM:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+here() starts at C:/Users/user/OneDrive - London School of Hygiene and Tropical 
+Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM
+[q0.05_pilot] v5.0b low-rank dynamic-R | q=0.05 | PILOT (geometry check only)
+starting worker pid=3288 on localhost:11507 at 15:55:44.408
+starting worker pid=29312 on localhost:11507 at 15:55:44.525
+starting worker pid=42220 on localhost:11507 at 15:55:44.635
+starting worker pid=30996 on localhost:11507 at 15:55:44.746
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.001113 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 11.13 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:   1 / 250 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000917 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 9.17 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:   1 / 250 [  0%]  (Warmup)
+Chain 2: Iteration:  10 / 250 [  4%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 0.001053 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 10.53 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:   1 / 250 [  0%]  (Warmup)
+Chain 3: Iteration:  10 / 250 [  4%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 0.00116 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 11.6 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:   1 / 250 [  0%]  (Warmup)
+Chain 4: Iteration:  10 / 250 [  4%]  (Warmup)
+Chain 2: Iteration:  20 / 250 [  8%]  (Warmup)
+Chain 1: Iteration:  10 / 250 [  4%]  (Warmup)
+Chain 3: Iteration:  20 / 250 [  8%]  (Warmup)
+Chain 4: Iteration:  20 / 250 [  8%]  (Warmup)
+Chain 2: Iteration:  30 / 250 [ 12%]  (Warmup)
+Chain 1: Iteration:  20 / 250 [  8%]  (Warmup)
+Chain 3: Iteration:  30 / 250 [ 12%]  (Warmup)
+Chain 4: Iteration:  30 / 250 [ 12%]  (Warmup)
+Chain 2: Iteration:  40 / 250 [ 16%]  (Warmup)
+Chain 1: Iteration:  30 / 250 [ 12%]  (Warmup)
+Chain 3: Iteration:  40 / 250 [ 16%]  (Warmup)
+Chain 4: Iteration:  40 / 250 [ 16%]  (Warmup)
+Chain 2: Iteration:  50 / 250 [ 20%]  (Warmup)
+Chain 1: Iteration:  40 / 250 [ 16%]  (Warmup)
+Chain 3: Iteration:  50 / 250 [ 20%]  (Warmup)
+Chain 4: Iteration:  50 / 250 [ 20%]  (Warmup)
+Chain 2: Iteration:  60 / 250 [ 24%]  (Warmup)
+Chain 1: Iteration:  50 / 250 [ 20%]  (Warmup)
+Chain 3: Iteration:  60 / 250 [ 24%]  (Warmup)
+Chain 4: Iteration:  60 / 250 [ 24%]  (Warmup)
+Chain 2: Iteration:  70 / 250 [ 28%]  (Warmup)
+Chain 1: Iteration:  60 / 250 [ 24%]  (Warmup)
+Chain 3: Iteration:  70 / 250 [ 28%]  (Warmup)
+Chain 4: Iteration:  70 / 250 [ 28%]  (Warmup)
+Chain 2: Iteration:  80 / 250 [ 32%]  (Warmup)
+Chain 1: Iteration:  70 / 250 [ 28%]  (Warmup)
+Chain 3: Iteration:  80 / 250 [ 32%]  (Warmup)
+Chain 4: Iteration:  80 / 250 [ 32%]  (Warmup)
+Chain 2: Iteration:  90 / 250 [ 36%]  (Warmup)
+Chain 1: Iteration:  80 / 250 [ 32%]  (Warmup)
+Chain 3: Iteration:  90 / 250 [ 36%]  (Warmup)
+Chain 4: Iteration:  90 / 250 [ 36%]  (Warmup)
+Chain 2: Iteration: 100 / 250 [ 40%]  (Warmup)
+Chain 1: Iteration:  90 / 250 [ 36%]  (Warmup)
+Chain 3: Iteration: 100 / 250 [ 40%]  (Warmup)
+Chain 4: Iteration: 100 / 250 [ 40%]  (Warmup)
+Chain 2: Iteration: 110 / 250 [ 44%]  (Warmup)
+Chain 1: Iteration: 100 / 250 [ 40%]  (Warmup)
+Chain 3: Iteration: 110 / 250 [ 44%]  (Warmup)
+Chain 4: Iteration: 110 / 250 [ 44%]  (Warmup)
+Chain 2: Iteration: 120 / 250 [ 48%]  (Warmup)
+Chain 1: Iteration: 110 / 250 [ 44%]  (Warmup)
+Chain 3: Iteration: 120 / 250 [ 48%]  (Warmup)
+Chain 4: Iteration: 120 / 250 [ 48%]  (Warmup)
+Chain 2: Iteration: 130 / 250 [ 52%]  (Warmup)
+Chain 1: Iteration: 120 / 250 [ 48%]  (Warmup)
+Chain 3: Iteration: 130 / 250 [ 52%]  (Warmup)
+Chain 4: Iteration: 130 / 250 [ 52%]  (Warmup)
+Chain 2: Iteration: 140 / 250 [ 56%]  (Warmup)
+Chain 1: Iteration: 130 / 250 [ 52%]  (Warmup)
+Chain 3: Iteration: 140 / 250 [ 56%]  (Warmup)
+Chain 4: Iteration: 140 / 250 [ 56%]  (Warmup)
+Chain 2: Iteration: 150 / 250 [ 60%]  (Warmup)
+Chain 2: Iteration: 151 / 250 [ 60%]  (Sampling)
+Chain 1: Iteration: 140 / 250 [ 56%]  (Warmup)
+Chain 4: Iteration: 150 / 250 [ 60%]  (Warmup)
+Chain 3: Iteration: 150 / 250 [ 60%]  (Warmup)
+Chain 4: Iteration: 151 / 250 [ 60%]  (Sampling)
+Chain 3: Iteration: 151 / 250 [ 60%]  (Sampling)
+Chain 2: Iteration: 160 / 250 [ 64%]  (Sampling)
+Chain 1: Iteration: 150 / 250 [ 60%]  (Warmup)
+Chain 1: Iteration: 151 / 250 [ 60%]  (Sampling)
+Chain 4: Iteration: 160 / 250 [ 64%]  (Sampling)
+Chain 3: Iteration: 160 / 250 [ 64%]  (Sampling)
+Chain 2: Iteration: 170 / 250 [ 68%]  (Sampling)
+Chain 1: Iteration: 160 / 250 [ 64%]  (Sampling)
+Chain 4: Iteration: 170 / 250 [ 68%]  (Sampling)
+Chain 3: Iteration: 170 / 250 [ 68%]  (Sampling)
+Chain 2: Iteration: 180 / 250 [ 72%]  (Sampling)
+Chain 1: Iteration: 170 / 250 [ 68%]  (Sampling)
+Chain 4: Iteration: 180 / 250 [ 72%]  (Sampling)
+Chain 3: Iteration: 180 / 250 [ 72%]  (Sampling)
+Chain 2: Iteration: 190 / 250 [ 76%]  (Sampling)
+Chain 1: Iteration: 180 / 250 [ 72%]  (Sampling)
+Chain 4: Iteration: 190 / 250 [ 76%]  (Sampling)
+Chain 3: Iteration: 190 / 250 [ 76%]  (Sampling)
+Chain 2: Iteration: 200 / 250 [ 80%]  (Sampling)
+Chain 1: Iteration: 190 / 250 [ 76%]  (Sampling)
+Chain 4: Iteration: 200 / 250 [ 80%]  (Sampling)
+Chain 3: Iteration: 200 / 250 [ 80%]  (Sampling)
+Chain 2: Iteration: 210 / 250 [ 84%]  (Sampling)
+Chain 1: Iteration: 200 / 250 [ 80%]  (Sampling)
+Chain 4: Iteration: 210 / 250 [ 84%]  (Sampling)
+Chain 3: Iteration: 210 / 250 [ 84%]  (Sampling)
+Chain 2: Iteration: 220 / 250 [ 88%]  (Sampling)
+Chain 1: Iteration: 210 / 250 [ 84%]  (Sampling)
+Chain 4: Iteration: 220 / 250 [ 88%]  (Sampling)
+Chain 3: Iteration: 220 / 250 [ 88%]  (Sampling)
+Chain 2: Iteration: 230 / 250 [ 92%]  (Sampling)
+Chain 1: Iteration: 220 / 250 [ 88%]  (Sampling)
+Chain 4: Iteration: 230 / 250 [ 92%]  (Sampling)
+Chain 3: Iteration: 230 / 250 [ 92%]  (Sampling)
+Chain 2: Iteration: 240 / 250 [ 96%]  (Sampling)
+Chain 1: Iteration: 230 / 250 [ 92%]  (Sampling)
+Chain 4: Iteration: 240 / 250 [ 96%]  (Sampling)
+Chain 3: Iteration: 240 / 250 [ 96%]  (Sampling)
+Chain 2: Iteration: 250 / 250 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 1396.95 seconds (Warm-up)
+Chain 2:                1082.88 seconds (Sampling)
+Chain 2:                2479.82 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 240 / 250 [ 96%]  (Sampling)
+Chain 4: Iteration: 250 / 250 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 1488.65 seconds (Warm-up)
+Chain 4:                1065.91 seconds (Sampling)
+Chain 4:                2554.56 seconds (Total)
+Chain 4: 
+Chain 3: Iteration: 250 / 250 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 1489.53 seconds (Warm-up)
+Chain 3:                1087.12 seconds (Sampling)
+Chain 3:                2576.65 seconds (Total)
+Chain 3: 
+Chain 1: Iteration: 250 / 250 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 1533.11 seconds (Warm-up)
+Chain 1:                1074.42 seconds (Sampling)
+Chain 1:                2607.53 seconds (Total)
+Chain 1: 
+[q0.05_pilot] seconds/iteration (wall, across 4 chains): 2.621
+[q0.05_pilot] DONE | HMC gate: FAIL | elapsed=2621s | saved: C:/Users/user/OneDrive - London School of Hygiene and 
+Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM/02_Script/40_renewal_model/29_v5_0_dynamic_R/outputs/v5_0b_q0.05
+_pilot/renewal_ceara_v5_0b_fit_q0.05_pilot.rds
+Warning messages:
+1: There were 2 divergent transitions after warmup. See
+https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+to find out why this is a problem and how to eliminate them. 
+2: There were 398 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 14. See
+https://mc-stan.org/misc/warnings.html#maximum-treedepth-exceeded 
+3: Examine the pairs() plot to diagnose sampling problems
+ 
+4: The largest R-hat is NA, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+5: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+6: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 

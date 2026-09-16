@@ -1,0 +1,7 @@
+state,state_name,outcome_status_8w,n_opportunities,median_R_climate,median_S_pre_prop,median_R_pred
+BA,Bahia,No major wave within 8 weeks,411,2.1119355685288252,0.9765292207802976,2.06637795673887
+BA,Bahia,Major wave within 8 weeks,57,2.0987185777784187,0.9799203753220704,2.05301176717877
+MT,Mato Grosso,No major wave within 8 weeks,282,2.3962341021714675,0.9033041683872767,2.099649245082552
+MT,Mato Grosso,Major wave within 8 weeks,14,2.292665073385839,0.903762911682475,2.0476740188191798
+RJ,Rio de Janeiro,No major wave within 8 weeks,272,2.296768867377657,0.5652138676708912,1.3421184268328212
+RJ,Rio de Janeiro,Major wave within 8 weeks,37,2.214417681492036,0.871727518544607,1.9616220429937108

@@ -1,0 +1,2 @@
+sero_id,location,survey_start,survey_end,n_tested,n_positive,observed_prevalence,start_idx,n_weeks,first_week,last_week
+U14,Recife,2018-08-01,2019-02-28,2070,770,0.3719806763285024,188,30,2018-08-05,2019-02-24

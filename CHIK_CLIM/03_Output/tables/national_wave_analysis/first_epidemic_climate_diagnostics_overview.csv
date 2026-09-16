@@ -1,0 +1,2 @@
+n_eligible_ufs,n_weekly_re_observations,obs_per_uf,temperature_min,temperature_max,precipitation_min,precipitation_max,loo_median_pct_spread,loo_max_pct_spread,n_loo_precip_significance_flips
+18,54,3,21.581677946893915,28.422377674850186,12.679687293721942,341.2434788791577,6.278280146274697,10.280980900657712,1
