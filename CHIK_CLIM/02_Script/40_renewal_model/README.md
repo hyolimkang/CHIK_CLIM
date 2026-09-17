@@ -1,5 +1,25 @@
 # Renewal-model development order
 
+## CURRENT CÉARA PRODUCTION WORKFLOW
+
+**For the current Ceará analysis (climate-forced v4.9 transmission model,
+age reconstruction, and the historical age-12 vaccine counterfactual +
+NNV), use `38_ceara_current_pipeline/`.** Start with its
+`00_README_EXECUTION_ORDER.md`.
+
+Use folders `01` -> `09` there for current analyses. Folders `01_v1`
+through `37_ceara_historical_age12_vaccine_counterfactual` below primarily
+document model development, replication across other states, or prior
+analysis structure, and should **not** be manually executed sequentially
+for the current Ceará analysis — `38_ceara_current_pipeline/` sources the
+specific frozen functions it still depends on directly, so you should not
+need to open those folders yourself.
+
+The rest of this document (below) is retained as the historical
+development-order record and is unchanged by that refactor.
+
+---
+
 The R scripts are organised in the order in which the renewal models were developed. Stan source files and saved posterior objects remain in `02_Script/stan/` because fitters refer to that central, versioned location.
 
 1. `00_shared/` — state-weekly panel builder shared by the state-level models.

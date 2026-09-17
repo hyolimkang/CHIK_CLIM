@@ -89,13 +89,23 @@ weak VE, which have not been evaluated here.
 **Substantially, and non-monotonically** — this is one of the most
 important findings of the NNV module. Two complementary views are provided:
 Figure NNV-1 shows cumulative NNV at *programme-start-relative* horizons
-(1/2/3/5 years after 2015-01-04); Figure NNV-2 shows the same underlying
-quantity at *calendar year-end* (31 December of each year), as discrete
-bars with 95% credible intervals — every bar is a **cumulative-since-
-programme-start** value through that year-end, never an annual (year-only)
-doses/effect ratio, and every bar's height is the posterior median of the
-draw-level ratio `cumulative_doses[d]/cumulative_infections_averted[d]`,
-not a ratio of medians.
+(1/2/3/5 years after 2015-01-04); Figure NNV-2 gives the calendar-year
+picture in four panels, deliberately mixing annual (year-only) and
+cumulative (since-programme-start) quantities so the reader can see both
+the raw yearly pattern and the accumulating NNV it produces:
+
+- **Panel A** — annual infections, no-vaccine vs vaccine (counts, not a
+  ratio), by calendar year.
+- **Panel B** — annual infections averted, `I^NV_y - I^V_y` (no-vaccine
+  minus vaccine, that single year only), with a zero baseline so that
+  negative (rebound) years are immediately visible by colour.
+- **Panel C** — cumulative infections averted (entire population), since
+  programme start, through each year-end.
+- **Panel D** — cumulative NNV per infection averted: the posterior median
+  of the **draw-level ratio** `cumulative_doses[d]/cumulative_infections_averted[d]`
+  computed through each year-end, never a ratio of medians and never an
+  annual (year-only) doses/effect ratio (panels A-B use raw annual counts
+  and their difference only, exactly to avoid that).
 
 | Year-end | Cumulative doses | Cumulative infections averted | NNV per infection averted |
 |---|---|---|---|
@@ -126,17 +136,30 @@ the *informative* years into an unreadably narrow band.
 By the end of 2017 — immediately after Ceará's largest epidemic in this
 window — cumulative infections averted (730,941) actually *exceeds* the
 eventual 2021 total (538,773), giving the **lowest (most efficient)
-year-end NNV of the whole follow-up period, ≈0.56**. From 2018 onward,
-cumulative infections averted **declines** (Figure NNV-2, panel D) because
-of the post-epidemic transmission rebound already documented in the main
-report (blunting 2017 leaves more natural susceptibles to sustain smaller
-subsequent waves), while cumulative doses keep climbing linearly as new
-cohorts turn 12 every year (panel C). The two trends combine to push NNV
-from 0.56 (2017) back up to 1.69 (2021). **A single "the NNV of this
-programme" number is therefore highly sensitive to when it is measured —
-this is a real property of the transmission dynamics in this window, not
-noise**, and is the same phenomenon shown from the start-relative-horizon
-angle in Figure NNV-1 (Section 9 below).
+year-end NNV of the whole follow-up period, ≈0.56** (Figure NNV-2, panel D).
+Panels A-B make the underlying mechanism explicit: 2016 and 2017 are the
+only two years where the vaccine arm has meaningfully fewer infections than
+the no-vaccine arm (annual infections averted +151,419 and +580,216
+respectively — panel B, blue). In **every year from 2018 to 2021, annual
+infections averted is *negative*** (panel B, orange: −25,211 in 2018,
+−60,824 in 2019, −62,303 in 2020, −42,126 in 2021 — median values, with
+100% of the 200 draws negative in each of these four years, i.e. this is
+not a chance sampling artefact). This is the post-epidemic transmission
+rebound already documented in the main report: blunting the 2017 wave
+leaves more natural (non-vaccine) susceptibles un-infected, who then
+sustain modestly larger secondary waves in the vaccine arm than in the
+no-vaccine arm during 2018–2021. Because cumulative infections averted
+(panel C) is the running total of panel B's year-by-year values, it rises
+sharply through 2017 and then **declines** every subsequent year as the
+negative annual contributions accumulate, while cumulative doses keep
+climbing linearly (Table `table_nnv_year_end_cumulative.csv`) as new
+cohorts turn 12 every year regardless. The two trends combine to push
+cumulative NNV (panel D) from 0.56 (2017) back up to 1.69 (2021). **A
+single "the NNV of this programme" number is therefore highly sensitive to
+when it is measured — this is a real property of the transmission dynamics
+in this window, not noise**, and is the same phenomenon shown from the
+start-relative-horizon angle in Figure NNV-1 (Section 9 below). The
+underlying annual figures are saved in full in `tables/nnv/table_nnv_annual.csv`.
 
 ## 6. How much does indirect protection contribute to programme efficiency? (Figure NNV-4, Figure S-violin)
 
@@ -281,8 +304,8 @@ posterior draws never trigger on their own.
 ## Files produced by this module (current, post-revision)
 
 - Scripts: `scripts/11_calculate_nnv.R`, `scripts/12_plot_nnv.R`, `scripts/13_validate_nnv.R`
-- Results: `results/nnv/nnv_posterior_draws.{rds,csv}`, `nnv_by_horizon.rds`, `nnv_year_end_cumulative_by_draw.rds`, `nnv_cumulative_by_week.rds`, `nnv_age_specific_by_draw.rds`, `nnv_susceptibility_link.rds`
-- Tables (main): `tables/nnv/table_nnv_primary.{csv,rds}`, `table_nnv_probability_benefit.csv`, `table_nnv_by_horizon.csv`, `table_nnv_year_end_cumulative.csv`, `table_nnv_by_week_summary.csv`, `table_nnv_age_specific_benefit.csv`, `table_nnv_susceptibility_link.csv`, `table_nnv_susceptibility_spearman.csv`
+- Results: `results/nnv/nnv_posterior_draws.{rds,csv}`, `nnv_by_horizon.rds`, `nnv_year_end_cumulative_by_draw.rds`, `nnv_annual_by_draw.rds`, `nnv_cumulative_by_week.rds`, `nnv_age_specific_by_draw.rds`, `nnv_susceptibility_link.rds`
+- Tables (main): `tables/nnv/table_nnv_primary.{csv,rds}`, `table_nnv_probability_benefit.csv`, `table_nnv_by_horizon.csv`, `table_nnv_year_end_cumulative.csv`, `table_nnv_annual.csv`, `table_nnv_by_week_summary.csv`, `table_nnv_age_specific_benefit.csv`, `table_nnv_susceptibility_link.csv`, `table_nnv_susceptibility_spearman.csv`
 - Figures (main, `03_Output/figures/ceara_historical_age12_vaccine_counterfactual/nnv/`): `fig_nnv1_primary_nnv`, `fig_nnv2_year_end_cumulative_nnv`, `fig_nnv3_susceptibility_vs_nnv`, `fig_nnv4_effect_decomposition_interval`, `fig_nnv5_age_specific_benefit` (each `.pdf`/`.svg`/`.png`, ≥600dpi)
 - Figures (supplementary, `.../supplementary/`): `fig_s_nnv_posterior_distributions_violin`
 - Diagnostics: `diagnostics/nnv/NNV_VALIDATION.md`, `NNV_QA_summary.csv`, `DIAGNOSTIC_doses_per_infection_by_group.csv` (explicitly non-NNV, not a main output)
