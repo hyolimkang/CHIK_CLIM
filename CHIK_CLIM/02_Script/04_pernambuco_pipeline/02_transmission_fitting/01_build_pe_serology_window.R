@@ -57,11 +57,11 @@ build_pe_sero_stan_fields <- function(dates, surveys = pe_primary_serosurvey) {
 
 if (sys.nframe() == 0L) {
   root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-  weekly <- readRDS(file.path(root, "03_Output/tables/pernambuco_v4_9_replication/pernambuco_weekly_input.rds"))
+  weekly <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/pernambuco_weekly_input.rds"))
   dates <- as.Date(weekly$week_start)
   built <- build_pe_sero_stan_fields(dates)
   print(as.data.frame(built$audit))
-  out_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication")
+  out_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication")
   write_csv(built$audit, file.path(out_dir, "pernambuco_serology_window_audit.csv"))
   message("[saved] ", file.path(out_dir, "pernambuco_serology_window_audit.csv"))
 }

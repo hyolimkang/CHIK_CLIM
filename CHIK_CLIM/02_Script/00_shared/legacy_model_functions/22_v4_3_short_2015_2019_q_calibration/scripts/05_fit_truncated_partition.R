@@ -29,13 +29,13 @@ here::i_am("CHIK_CLIM.Rproj")
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v4_0_minimal_no_vaccine", "01_fit_v4_0_minimal_no_vaccine.R"))
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 q_cut <- 0.25
 
 run_fit_truncated_partition <- function(region = Sys.getenv("REGION", "low")) {
   if (!region %in% c("low", "high")) stop("REGION must be 'low' or 'high'.")
   tag <- paste0("partition_", region)
-  stan_path <- file.path(root, "02_Script", "stan",
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "ceara",
                           if (region == "low") "renewal_ceara_v4_3_weak_q_truncated.stan" else "renewal_ceara_v4_3_weak_q_truncated_high.stan")
 
   out_dir <- file.path(base_dir, "outputs", tag)

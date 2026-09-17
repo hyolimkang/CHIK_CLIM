@@ -9,8 +9,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2); library(tibble) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication/city")
-figure_dir <- file.path(root, "03_Output/figures/rio_de_janeiro_v4_9_replication/city")
+table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication/city")
+figure_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/figures/rio_de_janeiro_v4_9_replication/city")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 

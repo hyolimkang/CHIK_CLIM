@@ -352,7 +352,7 @@ make_qc_table <- function(primary) {
 }
 
 make_v1_comparison <- function(root, primary) {
-  v1_path <- file.path(root, "03_Output", "tables", "national_episode_census", "brazil_chik_episode_census.csv")
+  v1_path <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_episode_census", "brazil_chik_episode_census.csv")
   if (!file.exists(v1_path)) return(tibble())
   v1 <- read_csv(v1_path, show_col_types = FALSE) |>
     mutate(onset_week = as.Date(onset_week), end_week = as.Date(end_week))
@@ -413,8 +413,8 @@ write_visual_audit <- function(state_week, primary, path) {
 
 build_brazil_chik_wave_census_v2 <- function() {
   root <- project_root_wave_v2()
-  table_dir <- file.path(root, "03_Output", "tables", "national_wave_census_v2")
-  figure_dir <- file.path(root, "03_Output", "figures", "national_wave_census_v2")
+  table_dir <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_wave_census_v2")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_wave_census_v2")
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE); dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   panel_path <- file.path(root, "01_Data", "chik_brazil_muni_week_2015_2025.rds")
   population_path <- file.path(root, "01_Data", "ibge_population_projection_uf_2024revision.rds")

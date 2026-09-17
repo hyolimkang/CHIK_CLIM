@@ -28,9 +28,9 @@ paths <- ensure_national_output_dirs()
 PRIMARY_STATES <- c("BA", "RJ", "MT")
 PRIMARY_WINDOW_WEEKS <- 6L
 state_fit_paths <- c(
-  BA = file.path(root, "03_Output/model_fits/bahia/v4_9_replication/outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds"),
-  RJ = file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication/outputs/caseonly/rj_global_q_case_only.rds"),
-  MT = file.path(root, "03_Output/model_fits/mato_grosso/v4_9_replication/outputs/caseonly/mt_global_q_case_only.rds")
+  BA = file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication/outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds"),
+  RJ = file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication/outputs/caseonly/rj_global_q_case_only.rds"),
+  MT = file.path(root, "03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication/outputs/caseonly/mt_global_q_case_only.rds")
 )
 if (!all(file.exists(state_fit_paths))) {
   stop("One or more primary-state fitted reconstructions are missing. Run the existing state analyses first.")

@@ -142,9 +142,9 @@ trace_data_v2 <- function(fit, parameters) {
 
 diagnose_annual_foi_shape_v2 <- function(primary_fit = "M1v2_SHAPE_s0_75") {
   root <- project_root_v2()
-  table_dir <- file.path(root, "03_Output", "tables", "annual_foi_shape_v2")
-  figure_dir <- file.path(root, "03_Output", "figures", "annual_foi_shape_v2")
-  stan_dir <- file.path(root, "02_Script", "stan")
+  table_dir <- file.path(root, "03_Output", "07_national_pipeline", "tables", "annual_foi_shape_v2")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "annual_foi_shape_v2")
+  stan_dir <- file.path(root, "03_Output", "07_national_pipeline", "model_fits", "annual_foi_shape_v2")
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 

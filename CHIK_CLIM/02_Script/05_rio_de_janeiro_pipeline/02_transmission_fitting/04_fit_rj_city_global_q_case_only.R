@@ -18,10 +18,10 @@ here::i_am("CHIK_CLIM.Rproj")
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/17_v4_0_minimal_no_vaccine/01_fit_v4_0_minimal_no_vaccine.R"))
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/22_v4_3_short_2015_2019_q_calibration/scripts/02_fit_v4_3.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication")
+base_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
 out_dir <- file.path(base_dir, "outputs", "city_caseonly")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication/city")
+table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication/city")
 
 LOGIT_Q_PRIOR_MEAN <- qlogis(0.10) # SAME broad prior family as the state model -- not tuned
 LOGIT_Q_PRIOR_SD <- 1.0
@@ -87,7 +87,7 @@ run_fit_rj_city_case_only <- function() {
     message(sprintf("  chain %d: logit_q=%.4f (q=%.4f), alpha_R=%.4f", i, v$logit_q, plogis(v$logit_q), v$alpha_R))
   }
 
-  stan_path <- file.path(root, "02_Script/stan/renewal_bahia_v4_9_global_q_multisite_serology.stan")
+  stan_path <- file.path(root, "02_Script/00_shared/stan/current/multistate/renewal_bahia_v4_9_global_q_multisite_serology.stan")
   sample_file <- file.path(progress_dir, "chain")
 
   started <- Sys.time()

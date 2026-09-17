@@ -11,9 +11,9 @@ suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
 source(file.path(root, "02_Script/00_shared/functions/01_build_ceara_state_weekly.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication")
-table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication")
-figure_dir <- file.path(root, "03_Output/figures/rio_de_janeiro_v4_9_replication")
+base_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
+table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/figures/rio_de_janeiro_v4_9_replication")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 

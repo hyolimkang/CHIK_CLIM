@@ -128,7 +128,7 @@ append_window_results <- function(output, batch, fitted, window) {
 write_early_re_posterior_draws <- function(fit_bundle, paths) {
   # Compact, analysis-facing posterior draw file.  The complete stanfit
   # objects (including posterior-predictive I_rep) remain in the companion
-  # fit bundle under 02_Script/stan/national_wave_analysis.
+  # fit bundle under 03_Output/07_national_pipeline/model_fits/national_wave_analysis.
   draws <- bind_rows(lapply(names(fit_bundle$fits), function(key) {
     entry <- fit_bundle$fits[[key]]
     if (!identical(entry$fitted$status, "fitted")) return(tibble())
@@ -150,7 +150,7 @@ run_national_early_re <- function() {
   paths <- ensure_national_output_dirs()
   major <- read_national_wave_census() |> dplyr::filter(major_epidemic_primary) |> arrange(state, onset_week)
   weekly_cases <- read_national_state_week()
-  model <- rstan::stan_model(national_path("02_Script", "stan", "renewal_ceara_episode_re.stan"))
+  model <- rstan::stan_model(national_path("02_Script", "00_shared", "stan", "current", "national", "renewal_ceara_episode_re.stan"))
   output <- major; fit_bundle <- list(config = early_re_settings, gi_weights = early_re_settings$weights, fits = list())
   for (window in early_re_settings$windows) {
     message(sprintf("[early-Re] %d-week batch", window))

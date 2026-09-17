@@ -50,17 +50,17 @@ message("[saved] ", file.path(paths$table, "RECURRENT_EPISODES.csv"))
 # long-term reconstruction. IDENTIFICATION STATUS is carried explicitly.
 # ================================================================
 state_fits <- list(
-  BA = list(path = file.path(root, "03_Output/model_fits/bahia/v4_9_replication/outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds"),
+  BA = list(path = file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication/outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds"),
             identification_status = "serology_anchored", q_scenario = NA_character_),
-  RJ = list(path = file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication/outputs/caseonly/rj_global_q_case_only.rds"),
+  RJ = list(path = file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication/outputs/caseonly/rj_global_q_case_only.rds"),
             identification_status = "partially_identified_case_only", q_scenario = NA_character_),
-  MT = list(path = file.path(root, "03_Output/model_fits/mato_grosso/v4_9_replication/outputs/caseonly/mt_global_q_case_only.rds"),
+  MT = list(path = file.path(root, "03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication/outputs/caseonly/mt_global_q_case_only.rds"),
             identification_status = "case_based_partial_identification", q_scenario = NA_character_)
 )
 CE_Q_SCENARIOS <- c("0.05", "0.10", "0.15", "0.20")
 for (q in CE_Q_SCENARIOS) {
   state_fits[[paste0("CE_q", q)]] <- list(
-    path = file.path(root, sprintf("03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs/q%s/renewal_ceara_v4_9_fit_q%s.rds", q, q)),
+    path = file.path(root, sprintf("03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs/q%s/renewal_ceara_v4_9_fit_q%s.rds", q, q)),
     identification_status = "conditional_fixed_q_sensitivity", q_scenario = q
   )
 }

@@ -8,9 +8,9 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble); library(tidyr) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-pe_root <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_model")
-turnover_table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+pe_root <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_model")
+turnover_table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
 
 b <- readRDS(file.path(pe_root, "outputs/spatial5/pe_5strata_pilot.rds"))
 fit <- b$fit

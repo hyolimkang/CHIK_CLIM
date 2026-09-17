@@ -7,9 +7,9 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble); library(ggplot2); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication")
-table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication/city")
-figure_dir <- file.path(root, "03_Output/figures/rio_de_janeiro_v4_9_replication/city")
+base_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
+table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication/city")
+figure_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/figures/rio_de_janeiro_v4_9_replication/city")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 b <- readRDS(file.path(base_dir, "outputs/city_caseonly/rj_city_global_q_case_only.rds"))

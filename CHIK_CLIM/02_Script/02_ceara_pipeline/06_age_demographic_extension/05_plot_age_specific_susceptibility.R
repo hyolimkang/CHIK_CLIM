@@ -9,9 +9,9 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(here); library(dplyr); library(readr); library(tibble); library(tidyr); library(ggplot2); library(patchwork) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/ceara/climate_forced_v4_9")
-table_dir <- file.path(root, "03_Output/tables/climate_forced_v4_9")
-figure_dir <- file.path(root, "03_Output/figures/climate_forced_v4_9")
+base_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/climate_forced")
+table_dir <- file.path(root, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9")
+figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/climate_forced_v4_9")
 theme_v4 <- theme_classic(base_size = 9) + theme(panel.grid.major.y = element_line(colour = "grey90"))
 
 arr <- readRDS(file.path(base_dir, "outputs/ce_canary/age_diagnostic_arrays.rds"))

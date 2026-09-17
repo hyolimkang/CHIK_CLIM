@@ -276,13 +276,13 @@ diagnostics) and should only be scoped in detail if explicitly requested.
 
 ## Files produced
 
-- `02_Script/stan/renewal_ceara_v4_8_seeded_recurrence.stan`
+- `02_Script/00_shared/stan/current/ceara/renewal_ceara_v4_8_seeded_recurrence.stan`
 - `02_Script/40_renewal_model/27_v4_8_seeded_recurrence/scripts/01_fit_v4_8.R`
 - `02_Script/40_renewal_model/27_v4_8_seeded_recurrence/scripts/02_plot_v4_8_sweep.R`
 - `02_Script/40_renewal_model/27_v4_8_seeded_recurrence/outputs/q{0.05..0.30}/renewal_ceara_v4_8_fit_q*.rds`
 - `02_Script/40_renewal_model/27_v4_8_seeded_recurrence/v4_8_seeded_recurrence_comparison.csv`
 - `02_Script/40_renewal_model/27_v4_8_seeded_recurrence/v4_7_ascertainment_multiplier_diagnostic.csv`
-- `03_Output/figures/renewal_v4_8_seeded_recurrence/v4_8_seeded_recurrence_summary.png`
+- `03_Output/02_ceara_pipeline/figures/transmission/renewal_v4_8_seeded_recurrence/v4_8_seeded_recurrence_summary.png`
 - This document.
 
 All v1-v4.7 model versions, scripts, and outputs are untouched.

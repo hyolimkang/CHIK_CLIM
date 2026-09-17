@@ -15,12 +15,12 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(tibble); library(lubridate) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_spatial_turnover_diagnostic")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_spatial_turnover_diagnostic")
 
 bahia_panel <- readRDS(file.path(table_dir, "bahia_municipality_week_panel.rds"))
 
 # ---- Section 2: existing objective Bahia major-wave definitions ----------
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"),
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"),
                          show_col_types = FALSE)
 
 bahia_waves <- wave_census |>

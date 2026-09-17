@@ -28,14 +28,14 @@ reattach_live_log_prob <- function(bundle, model) {
 
 run_partition_bridge_sampling <- function() {
   root <- bridge_root()
-  base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+  base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 
   low_bundle <- readRDS(file.path(base_dir, "outputs/partition_low/renewal_ceara_v4_3_fit_partition_low.rds"))
   high_bundle <- readRDS(file.path(base_dir, "outputs/partition_high/renewal_ceara_v4_3_fit_partition_high.rds"))
 
   message("[partition bridge] recompiling both truncated stanmodels...")
-  low_model <- rstan::stan_model(file.path(root, "02_Script/stan/renewal_ceara_v4_3_weak_q_truncated.stan"))
-  high_model <- rstan::stan_model(file.path(root, "02_Script/stan/renewal_ceara_v4_3_weak_q_truncated_high.stan"))
+  low_model <- rstan::stan_model(file.path(root, "02_Script/00_shared/stan/current/ceara/renewal_ceara_v4_3_weak_q_truncated.stan"))
+  high_model <- rstan::stan_model(file.path(root, "02_Script/00_shared/stan/current/ceara/renewal_ceara_v4_3_weak_q_truncated_high.stan"))
   low_bundle$fit <- reattach_live_log_prob(low_bundle, low_model)
   high_bundle$fit <- reattach_live_log_prob(high_bundle, high_model)
 

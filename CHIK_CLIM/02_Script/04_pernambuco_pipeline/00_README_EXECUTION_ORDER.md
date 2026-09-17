@@ -58,12 +58,10 @@ Sys.setenv(RUN_FROM_STAGE = "1", RUN_TO_STAGE = "5")
 source("02_Script/04_pernambuco_pipeline/99_run_pernambuco_pipeline.R")
 ```
 
-Outputs remain at their original locations under
-`40_renewal_model/33_pernambuco_v4_9_replication/outputs*/` and
-`03_Output/tables|figures/pernambuco_v4_9_replication/` — this refactor did
-not move or rename any existing result (a separate, not-yet-completed step
-will migrate these to `03_Output/model_fits/pernambuco/...` under the
-project's extension-based output rule).
+Outputs live under `03_Output/04_pernambuco_pipeline/`: fitted Stan objects
+in `model_fits/v4_9_replication/`, tables/figures in
+`tables|figures/{pernambuco_v4_9_replication,pernambuco_v4_9_curved_reparam,
+pernambuco_v4_9_ridge_reparam}/`, and design/result reports in `reports/`.
 
 See `REFACTOR_MIGRATION_MAP.csv` (in `02_ceara_pipeline/`, extended with a
 Pernambuco section) for the full old -> new script mapping.

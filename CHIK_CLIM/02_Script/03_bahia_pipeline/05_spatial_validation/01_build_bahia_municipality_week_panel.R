@@ -16,7 +16,7 @@ root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile)
 setwd(root)
 source(file.path(root, "02_Script/00_shared/functions/01_build_ceara_state_weekly.R"))
 
-table_dir <- file.path(root, "03_Output/tables/bahia_spatial_turnover_diagnostic")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_spatial_turnover_diagnostic")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 DATE_START <- as.Date("2015-01-04")

@@ -14,7 +14,7 @@ if (!exists("ROOT")) {
 }
 STAGE_DIR <- project_path("02_Script/05_rio_de_janeiro_pipeline/02_transmission_fitting")
 ALLOW_REFIT <- identical(Sys.getenv("RIO_DE_JANEIRO_ALLOW_REFIT", "FALSE"), "TRUE")
-BASE_OUT <- project_path("03_Output/model_fits/rio_de_janeiro/v4_9_replication")
+BASE_OUT <- project_path("03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
 
 message("\n[Stage 02] 01/06: fit_rj_global_q_case_only (state) ...")
 fp <- file.path(BASE_OUT, "outputs/caseonly/rj_global_q_case_only.rds")

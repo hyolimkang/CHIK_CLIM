@@ -13,7 +13,7 @@ root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine
 setwd(root)
 source(file.path(root, "02_Script/00_shared/functions/01_build_ceara_state_weekly.R"))
 
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 DATE_START <- as.Date("2015-01-04")
@@ -56,7 +56,7 @@ saveRDS(weekly, file.path(table_dir, "pernambuco_weekly_input.rds"))
 message("\n[saved] ", file.path(table_dir, "pernambuco_weekly_input.rds"), " (audited weekly input for Stan)")
 
 # ---- Section 3: seed-qualification check, SAME rule as Ceara/Bahia --------
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
 pe_major_waves <- wave_census |> dplyr::filter(state == "PE", major_epidemic_primary == TRUE) |>
   transmute(wave_id, wave_order,
             onset_week = as.Date(onset_week, format = "%m/%d/%Y"),

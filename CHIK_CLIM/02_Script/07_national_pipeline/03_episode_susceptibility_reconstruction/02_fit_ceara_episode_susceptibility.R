@@ -117,9 +117,9 @@ run_ceara_episode_susceptibility_fit <- function() {
   prepared <- prepare_ceara_episode_periods()
   periods <- prepared$periods
 
-  stan_source <- project_path("02_Script", "stan", "episode_sequential_susceptibility.stan")
-  output_path <- project_path("02_Script", "stan", "ceara_episode_susceptibility_pilot_v1_fit.rds")
-  table_directory <- project_path("03_Output", "tables", "episode_susceptibility", "ceara_pilot_v1")
+  stan_source <- project_path("02_Script", "00_shared", "stan", "current", "national", "episode_sequential_susceptibility.stan")
+  output_path <- project_path("03_Output", "07_national_pipeline", "model_fits", "episode_susceptibility", "ceara_episode_susceptibility_pilot_v1_fit.rds")
+  table_directory <- project_path("03_Output", "07_national_pipeline", "tables", "episode_susceptibility", "ceara_pilot_v1")
   dir.create(table_directory, recursive = TRUE, showWarnings = FALSE)
 
   model <- rstan::stan_model(stan_source)

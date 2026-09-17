@@ -13,7 +13,7 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 
 audit_one_q <- function(qval) {
   tag <- paste0("q", sprintf("%.2f", qval))

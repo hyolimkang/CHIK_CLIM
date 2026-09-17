@@ -51,7 +51,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 }
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication")
+base_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
 
 plot_rj_panel <- function(tag = "caseonly", fit_path = NULL, show_u10 = FALSE) {
   if (is.null(fit_path)) fit_path <- file.path(base_dir, "outputs", tag, "rj_global_q_case_only.rds")
@@ -189,8 +189,8 @@ plot_rj_panel <- function(tag = "caseonly", fit_path = NULL, show_u10 = FALSE) {
                                               plot.subtitle = element_text(size = 9.5, colour = COL_MUTED, margin = margin(b = 8)),
                                               plot.tag = element_text(size = 11, face = "bold")))
 
-  figure_dir <- file.path(root, "03_Output/figures/rio_de_janeiro_v4_9_replication", tag)
-  table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication")
+  figure_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/figures/rio_de_janeiro_v4_9_replication", tag)
+  table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
   output_base <- paste0("rio_de_janeiro_trajectories_", tag)

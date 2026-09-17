@@ -19,12 +19,12 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(ggplot2); library(tibble) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/modelD_curved_reparam")
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_curved_reparam")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/modelD_curved_reparam")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_curved_reparam")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
-b <- readRDS(file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication/outputs/modelC/pe_ridge_U14_full.rds"))
+b <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication/outputs/modelC/pe_ridge_U14_full.rds"))
 fit <- b$fit
 
 EXISTING_B1 <- b$config$ridge_slope           # -0.45, the fixed affine slope already used

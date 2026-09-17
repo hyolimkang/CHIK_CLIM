@@ -52,7 +52,7 @@ read_positive_integer_env <- function(name, default) {
 }
 
 read_major_episode_definition <- function(settings) {
-  audit_path <- here::here("03_Output", "tables", "chik_state_epidemic_wave_audit.csv")
+  audit_path <- here::here("03_Output", "07_national_pipeline", "tables", "chik_state_epidemic_wave_audit.csv")
   audit <- read.csv(audit_path, stringsAsFactors = FALSE)
 
   candidates <- audit |>
@@ -163,10 +163,10 @@ run_major_episode_fit <- function() {
   )
   stan_data <- make_stan_data(episode_data)
 
-  stan_source <- here::here("02_Script", "stan", "renewal_ceara_episode_re.stan")
-  output_path <- here::here("02_Script", "stan", "renewal_ceara_major_episode_re6_fit.rds")
+  stan_source <- here::here("02_Script", "00_shared", "stan", "current", "national", "renewal_ceara_episode_re.stan")
+  output_path <- here::here("03_Output", "07_national_pipeline", "model_fits", "major_episode_renewal", "renewal_ceara_major_episode_re6_fit.rds")
   table_directory <- here::here(
-    "03_Output", "tables", "renewal_major_episode_re", "ceara_major_outbreaks_6wk"
+    "03_Output", "07_national_pipeline", "tables", "renewal_major_episode_re", "ceara_major_outbreaks_6wk"
   )
   dir.create(table_directory, recursive = TRUE, showWarnings = FALSE)
 

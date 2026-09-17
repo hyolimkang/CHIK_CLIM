@@ -7,9 +7,9 @@
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
 source(file.path(root, "02_Script/05_rio_de_janeiro_pipeline/03_model_diagnostics/02_plot_rj_six_panel.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication")
+base_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
 fixedq_dir <- file.path(base_dir, "outputs/fixedq")
-figure_dir <- file.path(root, "03_Output/figures/rio_de_janeiro_v4_9_replication/fixedq")
+figure_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/figures/rio_de_janeiro_v4_9_replication/fixedq")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 plot_rj_fixedq_panel <- function(fit_path, q_target, show_u10 = FALSE) {

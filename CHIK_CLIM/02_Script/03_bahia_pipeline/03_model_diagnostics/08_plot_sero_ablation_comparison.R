@@ -7,8 +7,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(ggplot2) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
-figure_dir <- file.path(root, "03_Output/figures/renewal_bahia_v4_9_global_q_multisite_serology/comparison")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_global_q_multisite_serology/comparison")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 theme_v4 <- theme_classic(base_size = 9) + theme(panel.grid.major.y = element_line(colour = "grey90"))

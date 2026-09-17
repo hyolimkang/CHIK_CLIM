@@ -6,7 +6,7 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_global_q_local_consistency_audit")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_global_q_local_consistency_audit")
 
 # ---- Section 11: pre-2015 exposure check -----------------------------------
 message("=== Section 11: pre-2015 Bahia chikungunya data check ===")

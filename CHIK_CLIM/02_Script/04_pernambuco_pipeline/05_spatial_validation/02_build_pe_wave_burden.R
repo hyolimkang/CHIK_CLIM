@@ -15,12 +15,12 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(tibble); library(lubridate) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
 
 pe_panel <- readRDS(file.path(table_dir, "pe_municipality_week_panel.rds"))
 
 # ---- Section 2: existing objective PE major-wave definitions --------------
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"),
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"),
                          show_col_types = FALSE)
 
 pe_waves <- wave_census |>

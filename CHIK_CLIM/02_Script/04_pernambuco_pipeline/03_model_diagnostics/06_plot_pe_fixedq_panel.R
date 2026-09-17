@@ -48,7 +48,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 }
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
+base_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 
 plot_pe_fixedq_panel <- function(qval, stage = "pilot") {
   tag <- paste0("q", sprintf("%.2f", qval))
@@ -147,8 +147,8 @@ plot_pe_fixedq_panel <- function(qval, stage = "pilot") {
                                               plot.subtitle = element_text(size = 9.5, colour = COL_MUTED, margin = margin(b = 8)),
                                               plot.tag = element_text(size = 11, face = "bold")))
 
-  figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/fixed_q_sweep")
-  table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/fixed_q_sweep")
+  figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/fixed_q_sweep")
+  table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/fixed_q_sweep")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE); dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   output_base <- paste0("pernambuco_fixedq_trajectories_", tag)
   ggsave(file.path(figure_dir, paste0(output_base, ".png")), figure, width = 183, height = 290, units = "mm", dpi = 300, bg = "white")

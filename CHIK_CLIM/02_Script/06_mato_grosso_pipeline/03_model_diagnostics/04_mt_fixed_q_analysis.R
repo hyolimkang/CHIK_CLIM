@@ -11,10 +11,10 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble); library(ggplot2); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/mato_grosso/v4_9_replication")
+base_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication")
 out_dir <- file.path(base_dir, "outputs", "fixedq")
-table_dir <- file.path(root, "03_Output/tables/mato_grosso_v4_9_replication")
-figure_dir <- file.path(root, "03_Output/figures/mato_grosso_v4_9_replication")
+table_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/tables/mato_grosso_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/figures/mato_grosso_v4_9_replication")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 Q_GRID <- c(0.020, 0.030, 0.040, 0.050, 0.070)
@@ -23,7 +23,7 @@ theme_v4 <- theme_classic(base_size = 9) + theme(panel.grid.major.y = element_li
 bundles <- lapply(Q_GRID, function(q) readRDS(file.path(out_dir, sprintf("mt_fixedq_q%.3f.rds", q))))
 names(bundles) <- sprintf("q%.3f", Q_GRID)
 
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
 mt_waves <- wave_census |> dplyr::filter(state == "MT", major_epidemic_primary == TRUE) |>
   transmute(wave_id, start_week = as.Date(onset_week, format = "%m/%d/%Y"), end_week = as.Date(end_week, format = "%m/%d/%Y")) |>
   mutate(era = if_else(start_week < as.Date("2021-01-01"), "early", "late"))

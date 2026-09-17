@@ -27,7 +27,7 @@ setwd(root)
 here::i_am("CHIK_CLIM.Rproj")
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v4_0_minimal_no_vaccine", "01_fit_v4_0_minimal_no_vaccine.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 
 stage_settings <- function(stage) {
   switch(stage,
@@ -76,7 +76,7 @@ eta_q_init_values <- qlogis(c(0.02, 0.05, 0.10, 0.20))
 q_init_values_legacy <- qbeta(c(.20, .40, .60, .80), 16.2, 108.7)
 
 load_td14_scalar_inits <- function(root, n_chains = 4L, seed = 20260912L) {
-  td14_path <- file.path(root, "02_Script", "stan", "renewal_ceara_v4_0_minimal_no_vaccine_fit_td14.rds")
+  td14_path <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "initialization", "renewal_ceara_v4_0_minimal_no_vaccine_fit_td14.rds")
   td14 <- readRDS(td14_path)
   draws <- rstan::extract(td14$fit, pars = c("alpha_R", "beta_sin", "beta_cos", "phi_obs"), permuted = TRUE)
   set.seed(seed)
@@ -131,7 +131,7 @@ run_fit_v4_3 <- function(fit_id = Sys.getenv("FIT", "A"), stage = Sys.getenv("ST
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_init_function(prepared$stan_data$Y, td14_scalar_inits, if (is_legacy) "legacy" else "weak")
 
-  stan_path <- file.path(root, "02_Script", "stan", if (is_legacy) "renewal_ceara_v4_3_legacy_prior.stan" else "renewal_ceara_v4_3_weak_q.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "ceara", if (is_legacy) "renewal_ceara_v4_3_legacy_prior.stan" else "renewal_ceara_v4_3_weak_q.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

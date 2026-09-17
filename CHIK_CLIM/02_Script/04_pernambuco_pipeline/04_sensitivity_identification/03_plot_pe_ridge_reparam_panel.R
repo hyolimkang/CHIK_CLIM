@@ -44,7 +44,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
 FIT_TAG <- Sys.getenv("FIT_TAG", "pe_ridge_U14_full")
-bundle <- readRDS(file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication/outputs/modelC", paste0(FIT_TAG, ".rds")))
+bundle <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication/outputs/modelC", paste0(FIT_TAG, ".rds")))
 fit <- bundle$fit; weekly <- bundle$weekly_data; dates <- as.Date(weekly$week_start)
 
 pars <- c("X", "S_prop", "immune_prop", "R0_t", "R_eff_t", "expected_reported_cases", "C_pred")
@@ -146,8 +146,8 @@ figure <- (p_cases | p_infections) / (p_immunity | p_reproduction) / (p_ascertai
                                             plot.subtitle = element_text(size = 9, colour = COL_MUTED, margin = margin(b = 8)),
                                             plot.tag = element_text(size = 11, face = "bold")))
 
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/modelC_ridge_reparam")
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_ridge_reparam")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/modelC_ridge_reparam")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_ridge_reparam")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE); dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 output_base <- paste0("pernambuco_modelC_ridge_reparam_trajectories_", bundle$config$stage)
 ggsave(file.path(figure_dir, paste0(output_base, ".png")), figure, width = 183, height = 290, units = "mm", dpi = 300, bg = "white")

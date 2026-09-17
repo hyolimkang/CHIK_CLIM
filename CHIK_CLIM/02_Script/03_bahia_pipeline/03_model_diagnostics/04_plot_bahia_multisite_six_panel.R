@@ -5,7 +5,7 @@
 # (p_state_window, no geo offset) vs geographically-adjusted site
 # prediction (p_site_window).
 #
-# Figures saved under 03_Output/figures/renewal_bahia_v4_9_multisite_serology/.
+# Figures saved under 03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_multisite_serology/.
 #
 # Usage: QVAL=0.05 STAGE=pilot Rscript 08_plot_bahia_multisite_six_panel.R
 
@@ -56,7 +56,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 }
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 
 plot_bahia_multisite_six_panel <- function(qval, stage = "pilot") {
   tag <- paste0("q", sprintf("%.2f", qval))
@@ -199,8 +199,8 @@ plot_bahia_multisite_six_panel <- function(qval, stage = "pilot") {
       )
     )
 
-  figure_dir <- file.path(root, "03_Output/figures/renewal_bahia_v4_9_multisite_serology")
-  table_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_multisite_serology")
+  figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_multisite_serology")
+  table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_multisite_serology")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 

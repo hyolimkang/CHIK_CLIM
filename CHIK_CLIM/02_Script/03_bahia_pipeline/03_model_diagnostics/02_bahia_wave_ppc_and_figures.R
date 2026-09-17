@@ -1,7 +1,7 @@
 # Bahia wave-level PPC, susceptibility trajectories, HMC diagnostics table,
 # and required figures 1-6 (BAHIA_V4_9_FROZEN_MODEL_ASSESSMENT.md Section
 # 8/9/13). Uses the 9 objectively pre-defined Bahia major-epidemic waves
-# from 03_Output/tables/national_wave_analysis/brazil_chik_wave_analysis_master.csv
+# from 03_Output/07_national_pipeline/tables/national_wave_analysis/brazil_chik_wave_analysis_master.csv
 # (NOT re-derived here -- the existing wave-census pipeline's own onset/end
 # dates are used as-is, per instruction not to redefine wave boundaries).
 # All figures saved INSIDE the Bahia subfolder (not 03_Output/figures/).
@@ -12,10 +12,10 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble); library(readr); library(ggplot2); library(patchwork) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 Q_GRID <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30)
 
-waves <- read_csv(file.path(root, "03_Output/tables/national_wave_analysis/brazil_chik_wave_analysis_master.csv"), show_col_types = FALSE) |>
+waves <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_analysis/brazil_chik_wave_analysis_master.csv"), show_col_types = FALSE) |>
   dplyr::filter(state == "BA") |>
   transmute(wave_id, wave_order, onset_week = as.Date(onset_week), end_week = as.Date(end_week), total_cases_census = total_cases)
 message("[bahia] ", nrow(waves), " major-epidemic waves loaded from the existing wave-census pipeline (not re-derived).")
@@ -83,7 +83,7 @@ add_tail_ess <- function(df, q) {
 
 message("[bahia] computing wave-level PPC across the q grid...")
 all_rows <- bind_rows(lapply(Q_GRID, function(q) add_tail_ess(analyse_one_q(q), q)))
-table_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_replication")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_replication")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 write_csv(all_rows, file.path(table_dir, "bahia_wave_level_ppc_summary.csv"))
 message("[bahia] saved: ", file.path(table_dir, "bahia_wave_level_ppc_summary.csv"))
@@ -170,7 +170,7 @@ fig6 <- ggplot(hmc_table, aes(q, max_rhat, colour = hmc_pass)) +
   labs(title = "FIGURE 6. Bahia HMC gate (max Rhat) across q", x = "q", y = "max Rhat", colour = "HMC pass") +
   theme_v4 + theme(legend.position = "bottom")
 
-figure_dir <- file.path(root, "03_Output/figures/renewal_bahia_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_replication")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 ggsave(file.path(figure_dir, "bahia_figure1_weekly_ppc_by_q.png"), fig1, width = 220, height = 260, units = "mm", dpi = 300)
 ggsave(file.path(figure_dir, "bahia_figure2_susceptibility_by_q.png"), fig2, width = 200, height = 140, units = "mm", dpi = 300)

@@ -12,7 +12,7 @@ root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine
 setwd(root)
 source(file.path(root, "02_Script/00_shared/functions/01_build_ceara_state_weekly.R"))
 
-table_dir <- file.path(root, "03_Output/tables/mato_grosso_v4_9_replication")
+table_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/tables/mato_grosso_v4_9_replication")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 DATE_START <- as.Date("2015-01-04")
@@ -58,7 +58,7 @@ saveRDS(weekly, file.path(table_dir, "mato_grosso_weekly_input.rds"))
 message("\n[saved] ", file.path(table_dir, "mato_grosso_weekly_input.rds"), " (audited weekly input for Stan)")
 
 # ---- Seed-qualification check, SAME rule as CE/BA/PE/RJ ---------------------
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
 mt_major_waves <- wave_census |> dplyr::filter(state == "MT", major_epidemic_primary == TRUE) |>
   transmute(wave_id, wave_order,
             onset_week = as.Date(onset_week, format = "%m/%d/%Y"),
@@ -107,14 +107,14 @@ md <- c(
   sprintf("- Max inter-major-wave gap: %.0f weeks (vs %.0f-week Ceara-2022 seeding standard) -- NO SEED USED", max(gaps$weeks_since_previous_wave), CEARA_2022_GAP_WEEKS),
   "", "## Sources reused (unmodified)", "",
   "- `02_Script/00_shared/functions/01_build_ceara_state_weekly.R` (`build_state_weekly()`, UF-agnostic)",
-  "- `02_Script/stan/renewal_bahia_v4_9_global_q_multisite_serology.stan` (global-q, J_sero>=0, state-agnostic)",
+  "- `02_Script/00_shared/stan/current/multistate/renewal_bahia_v4_9_global_q_multisite_serology.stan` (global-q, J_sero>=0, state-agnostic)",
   "- `02_Script/00_shared/legacy_model_functions/17_v4_0_minimal_no_vaccine/01_fit_v4_0_minimal_no_vaccine.R` (`generation_weights()`, `compute_hmc_gate()`)",
   "- `02_Script/00_shared/legacy_model_functions/22_v4_3_short_2015_2019_q_calibration/scripts/02_fit_v4_3.R` (`make_v4_3_data()`, `load_td14_scalar_inits()`)",
-  "- `03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv` (episode definitions, MT rows, unmodified)",
+  "- `03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv` (episode definitions, MT rows, unmodified)",
   "", "## MT-specific preprocessing (unavoidable, mechanical only)", "",
   "- `02_Script/00_data_prep/09f_fetch_mato_grosso_sinasc_weekly_births.R` (UF_PREFIX=\"51\", verbatim copy of the RJ script)",
   "- `02_Script/00_data_prep/10f_build_mato_grosso_weekly_demography.R` (UF_CODE=51L, verbatim copy)",
   "", "CE/BA/PE/RJ models/results/scripts are UNMODIFIED by this work."
 )
-writeLines(md, file.path(root, "03_Output/model_fits/mato_grosso/v4_9_replication/MT_DATA_AUDIT.md"))
+writeLines(md, file.path(root, "03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication/MT_DATA_AUDIT.md"))
 message("[saved] MT_DATA_AUDIT.md")

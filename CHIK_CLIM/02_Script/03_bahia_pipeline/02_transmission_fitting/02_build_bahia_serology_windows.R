@@ -62,11 +62,11 @@ build_bahia_sero_stan_fields <- function(dates, surveys = bahia_primary_serosurv
 
 if (sys.nframe() == 0L) {
   root <- ROOT # from 00_project_setup.R (sourced by .Rprofile) -- no scientific change
-  b <- readRDS(file.path(root, "03_Output/model_fits/bahia/v4_9_replication/outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds"))
+  b <- readRDS(file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication/outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds"))
   dates <- as.Date(b$weekly_data$week_start)
   built <- build_bahia_sero_stan_fields(dates)
   print(as.data.frame(built$audit))
-  out_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_replication")
+  out_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_replication")
   dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
   write_csv(built$audit, file.path(out_dir, "bahia_serology_window_audit.csv"))
   message("[saved] ", file.path(out_dir, "bahia_serology_window_audit.csv"))

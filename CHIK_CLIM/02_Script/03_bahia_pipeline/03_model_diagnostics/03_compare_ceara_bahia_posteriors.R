@@ -10,11 +10,11 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble); library(readr); library(ggplot2) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 Q_GRID <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30)
 Q_GRID_CEARA_AVAILABLE <- c(0.05, 0.10, 0.15, 0.20) # Ceara v4.9 was only run at q=0.05 (privileged as reference) plus a partial grid up to 0.20; 0.25/0.30 were never completed for Ceara per user instruction
 
-load_ceara <- function(q) readRDS(file.path(root, "03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs",
+load_ceara <- function(q) readRDS(file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs",
                                               paste0("q", sprintf("%.2f", q)), paste0("renewal_ceara_v4_9_fit_q", sprintf("%.2f", q), ".rds")))
 load_bahia <- function(q) readRDS(file.path(base_dir, "outputs", paste0("q", sprintf("%.2f", q)), paste0("renewal_bahia_v4_9_fit_q", sprintf("%.2f", q), ".rds")))
 
@@ -46,7 +46,7 @@ comparison <- bind_rows(lapply(Q_GRID, function(q) {
   }
   bind_rows(rows)
 }))
-table_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_replication")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_replication")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 write_csv(comparison, file.path(table_dir, "ceara_vs_bahia_posterior_comparison.csv"))
 message("[compare] saved: ", file.path(table_dir, "ceara_vs_bahia_posterior_comparison.csv"))
@@ -65,7 +65,7 @@ p_Ayear <- ggplot(comparison, aes(q, A_year_sd_across_years, colour = state)) +
   geom_line() + geom_point() + labs(title = "SD of A_year across years: Ceara vs Bahia", x = "q", y = "SD(A_year)") +
   theme_v4 + theme(legend.position = "bottom")
 
-figure_dir <- file.path(root, "03_Output/figures/renewal_bahia_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_replication")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 library(patchwork)
 ggsave(file.path(figure_dir, "ceara_vs_bahia_parameter_comparison.png"), (p_alpha | p_phi) / p_Ayear, width = 220, height = 200, units = "mm", dpi = 300)

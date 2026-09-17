@@ -147,7 +147,7 @@ run_v4_0_simulation_recovery <- function() {
   saveRDS(list(
     fit = recovery_fit, synthetic_data = synthetic_data, truth = truth,
     simulated = simulated, hmc = hmc, config = settings, elapsed_seconds = elapsed_seconds
-  ), file.path(root, "02_Script", "stan", "renewal_ceara_v4_0_minimal_no_vaccine_recovery_fit.rds"))
+  ), file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "initialization", "renewal_ceara_v4_0_minimal_no_vaccine_recovery_fit.rds"))
   message("[v4.0 recovery] HMC gate: ", if (hmc$hmc_pass) "PASS" else "FAIL")
   invisible(list(recovery = recovery, hmc = hmc))
 }

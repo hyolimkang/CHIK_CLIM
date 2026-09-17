@@ -17,7 +17,7 @@ if (!exists("ROOT")) {
 }
 FOLDER_DIR <- project_path("02_Script/07_national_pipeline/07_provisional_climate_susceptibility_checkpoint")
 ALLOW_REFIT <- identical(Sys.getenv("NATIONAL_ALLOW_REFIT", "FALSE"), "TRUE")
-TABLE_DIR <- project_path("03_Output/tables/national_wave_analysis")
+TABLE_DIR <- project_path("03_Output/07_national_pipeline/tables/national_wave_analysis")
 
 run_gated <- function(step, fname, fp, fun_name) {
   message(sprintf("\n[07_provisional_climate_susceptibility_checkpoint] %s ...", fname))

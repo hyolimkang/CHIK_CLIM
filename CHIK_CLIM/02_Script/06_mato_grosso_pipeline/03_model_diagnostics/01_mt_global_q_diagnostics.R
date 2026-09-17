@@ -8,9 +8,9 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble); library(ggplot2); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/mato_grosso/v4_9_replication")
-table_dir <- file.path(root, "03_Output/tables/mato_grosso_v4_9_replication")
-figure_dir <- file.path(root, "03_Output/figures/mato_grosso_v4_9_replication")
+base_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication")
+table_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/tables/mato_grosso_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/figures/mato_grosso_v4_9_replication")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 b <- readRDS(file.path(base_dir, "outputs/caseonly/mt_global_q_case_only.rds"))
@@ -126,7 +126,7 @@ write_csv(annual_pred_summary, file.path(table_dir, "MT_global_q_annual_PPC.csv"
 # early (2017-2019) epidemic from the late (2024-2025) recurrence, per
 # Section 12's explicit question: can one transmission/susceptibility
 # history reproduce both?
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
 mt_waves <- wave_census |> dplyr::filter(state == "MT", major_epidemic_primary == TRUE) |>
   transmute(wave_id, start_week = as.Date(onset_week, format = "%m/%d/%Y"), end_week = as.Date(end_week, format = "%m/%d/%Y"))
 peak_check <- bind_rows(lapply(seq_len(nrow(mt_waves)), function(i) {

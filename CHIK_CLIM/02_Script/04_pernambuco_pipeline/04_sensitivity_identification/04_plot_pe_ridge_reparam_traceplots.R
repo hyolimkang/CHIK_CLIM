@@ -10,10 +10,10 @@ suppressPackageStartupMessages({ library(rstan); library(bayesplot); library(ggp
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
 FIT_TAG <- Sys.getenv("FIT_TAG", "pe_ridge_U14_full")
-bundle <- readRDS(file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication/outputs/modelC", paste0(FIT_TAG, ".rds")))
+bundle <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication/outputs/modelC", paste0(FIT_TAG, ".rds")))
 fit <- bundle$fit
 
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/modelC_ridge_reparam")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/modelC_ridge_reparam")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 pars_to_trace <- c("logit_q", "q", "alpha_R", "gamma_ridge", "phi_obs", "sigma_season_year")

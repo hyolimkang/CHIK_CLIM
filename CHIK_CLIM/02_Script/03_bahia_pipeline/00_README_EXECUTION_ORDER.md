@@ -25,12 +25,11 @@ Sys.setenv(RUN_FROM_STAGE = "1", RUN_TO_STAGE = "5")
 source("02_Script/03_bahia_pipeline/99_run_bahia_pipeline.R")
 ```
 
-Outputs remain at their original locations under
-`40_renewal_model/30_bahia_v4_9_replication/outputs*/` and
-`03_Output/tables|figures/{bahia_v4_9_replication,bahia_spatial_turnover_diagnostic,bahia_global_q_local_consistency_audit}/`
-— this refactor did not move or rename any existing result (a separate,
-not-yet-completed step will migrate these to `03_Output/model_fits/bahia/...`
-under the project's extension-based output rule).
+Outputs live under `03_Output/03_bahia_pipeline/`:
+fitted Stan objects in `model_fits/v4_9_replication/`, tables/figures in
+`tables|figures/{bahia_v4_9_replication,bahia_spatial_turnover_diagnostic,
+bahia_global_q_local_consistency_audit,renewal_bahia_v4_9_*}/`, and design/
+result reports in `reports/`.
 
 See `REFACTOR_MIGRATION_MAP.csv` (in `02_ceara_pipeline/`, extended with a
 Bahia section) for the full old -> new script mapping.

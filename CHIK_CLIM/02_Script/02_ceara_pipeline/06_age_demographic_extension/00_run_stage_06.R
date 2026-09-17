@@ -20,7 +20,7 @@ if (!exists("ROOT")) {
 
 STAGE_DIR <- project_path("02_Script/02_ceara_pipeline/06_age_demographic_extension")
 
-climate_fit_path <- project_path("03_Output/model_fits/ceara/climate_forced_v4_9/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
+climate_fit_path <- project_path("03_Output/02_ceara_pipeline/model_fits/climate_forced/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
 age_pop_source_path <- project_path("01_Data/ibge_pop_uf_single_age_expanded_2015_2024.rds")
 missing <- c(climate_fit_path, age_pop_source_path)[!file.exists(c(climate_fit_path, age_pop_source_path))]
 if (length(missing) > 0) {

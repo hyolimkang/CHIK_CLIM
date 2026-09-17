@@ -54,7 +54,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 }
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/ceara/climate_forced_v4_9")
+base_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/climate_forced")
 
 plot_ce_climate_canary_six_panel <- function() {
   bundle <- readRDS(file.path(base_dir, "outputs/ce_canary/ce_climate_forced_canary_q0.05.rds"))
@@ -194,8 +194,8 @@ plot_ce_climate_canary_six_panel <- function() {
       )
     )
 
-  figure_dir <- file.path(root, "03_Output/figures/climate_forced_v4_9")
-  table_dir <- file.path(root, "03_Output/tables/climate_forced_v4_9")
+  figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/climate_forced_v4_9")
+  table_dir <- file.path(root, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
   output_base <- "CE_climate_canary_six_panel"

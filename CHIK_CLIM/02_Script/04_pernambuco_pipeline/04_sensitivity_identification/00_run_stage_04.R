@@ -16,7 +16,7 @@ if (!exists("ROOT")) {
 }
 STAGE_DIR <- project_path("02_Script/04_pernambuco_pipeline/04_sensitivity_identification")
 ALLOW_REFIT <- identical(Sys.getenv("PERNAMBUCO_ALLOW_REFIT", "FALSE"), "TRUE")
-BASE_OUT <- project_path("03_Output/model_fits/pernambuco/v4_9_replication")
+BASE_OUT <- project_path("03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 
 message("\n[Stage 04] 01/09: fit_pe_global_q_ridge_reparam (modelC) ...")
 modelC_fit <- file.path(BASE_OUT, "outputs/modelC/pe_ridge_U14_pilot.rds")

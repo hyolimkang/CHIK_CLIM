@@ -6,7 +6,7 @@ project_root_v2 <- function() {
 }
 source(file.path(project_root_v2(), "02_Script", "90_development_archive", "06_legacy_susceptibility", "prepare_dynamic_annual_foi_data.R"))
 prepared_v2 <- build_dynamic_annual_foi_data(write_outputs = FALSE)
-out_dir <- project_path("03_Output", "tables", "annual_foi_shape_v2")
+out_dir <- project_path("03_Output", "07_national_pipeline", "tables", "annual_foi_shape_v2")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 saveRDS(prepared_v2, file.path(out_dir, "annual_foi_shape_v2_input.rds"))
 readr::write_csv(prepared_v2$annual, file.path(out_dir, "annual_foi_shape_v2_input_audit.csv"))

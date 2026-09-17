@@ -18,7 +18,7 @@ if (!exists("ROOT")) {
 }
 STAGE_DIR <- project_path("02_Script/03_bahia_pipeline/02_transmission_fitting")
 ALLOW_REFIT <- identical(Sys.getenv("BAHIA_ALLOW_REFIT", "FALSE"), "TRUE")
-BASE_OUT <- project_path("03_Output/model_fits/bahia/v4_9_replication")
+BASE_OUT <- project_path("03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 
 message("\n[Stage 02] 01/03: fit_bahia_v4_9 (case-only, q=0.05 primary) ...")
 primary_fit <- file.path(BASE_OUT, "outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds")

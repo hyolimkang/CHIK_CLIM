@@ -21,12 +21,12 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(here); library(dplyr); library(readr); library(tibble); library(ggplot2); library(tidyr) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/climate_forced_v4_9")
-figure_dir <- file.path(root, "03_Output/figures/climate_forced_v4_9")
+table_dir <- file.path(root, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9")
+figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/climate_forced_v4_9")
 theme_v4 <- theme_classic(base_size = 9) + theme(panel.grid.major.y = element_line(colour = "grey90"))
 
 # ---- Load CE q=0.05's exact fitting-window harmonic values + dates ----
-ce_bundle <- readRDS(file.path(root, "03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds"))
+ce_bundle <- readRDS(file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds"))
 ce_dates <- as.Date(ce_bundle$weekly_data$week_start)
 harmonics <- tibble(week_start = ce_dates,
                      seasonal_sin = ce_bundle$stan_data$seasonal_sin, seasonal_cos = ce_bundle$stan_data$seasonal_cos,

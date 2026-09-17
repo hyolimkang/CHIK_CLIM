@@ -16,12 +16,12 @@ if (!exists("ROOT")) {
 
 STAGE_DIR <- project_path("02_Script/02_ceara_pipeline/08_impact_summaries")
 
-three_arm_results_path <- project_path("03_Output/results/ceara_historical_age12_vaccine_counterfactual/three_arm_results.rds")
+three_arm_results_path <- project_path("03_Output/02_ceara_pipeline/results/ceara_historical_age12_vaccine_counterfactual/three_arm_results.rds")
 if (!file.exists(three_arm_results_path)) {
   stop("Missing prerequisite:\n  ", three_arm_results_path,
        "\n\nRun Stage 07 first:\n  07_counterfactuals (00_run_stage_07.R)", call. = FALSE)
 }
-qa_summary_path <- project_path("03_Output/diagnostics/ceara_historical_age12_vaccine_counterfactual/QA_overall_summary.csv")
+qa_summary_path <- project_path("03_Output/02_ceara_pipeline/diagnostics/ceara_historical_age12_vaccine_counterfactual/QA_overall_summary.csv")
 if (!file.exists(qa_summary_path)) {
   stop("Missing prerequisite (three-arm result has not been validated):\n  ", qa_summary_path,
        "\n\nRun Stage 07 first (it performs the counterfactual simulation AND its validation):\n  07_counterfactuals (00_run_stage_07.R)", call. = FALSE)

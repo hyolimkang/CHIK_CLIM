@@ -12,7 +12,7 @@ root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine
 setwd(root)
 source(file.path(root, "02_Script/00_shared/functions/01_build_ceara_state_weekly.R"))
 
-table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication")
+table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 DATE_START <- as.Date("2015-01-04")
@@ -77,20 +77,20 @@ md <- c(
   sprintf("- NA values: %d", audit$n_na_any),
   "", "## Sources reused (unmodified)", "",
   "- `02_Script/00_shared/functions/01_build_ceara_state_weekly.R` (`build_state_weekly()`, UF-agnostic)",
-  "- `02_Script/stan/renewal_bahia_v4_9_global_q_multisite_serology.stan` (global-q, J_sero>=0, state-agnostic)",
+  "- `02_Script/00_shared/stan/current/multistate/renewal_bahia_v4_9_global_q_multisite_serology.stan` (global-q, J_sero>=0, state-agnostic)",
   "- `02_Script/00_shared/legacy_model_functions/17_v4_0_minimal_no_vaccine/01_fit_v4_0_minimal_no_vaccine.R` (`generation_weights()`, `compute_hmc_gate()`)",
   "- `02_Script/00_shared/legacy_model_functions/22_v4_3_short_2015_2019_q_calibration/scripts/02_fit_v4_3.R` (`make_v4_3_data()`, `load_td14_scalar_inits()`)",
-  "- `03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv` (episode definitions, RJ rows, unmodified)",
+  "- `03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv` (episode definitions, RJ rows, unmodified)",
   "", "## RJ-specific preprocessing (unavoidable, mechanical only)", "",
   "- `02_Script/00_data_prep/09d_fetch_rio_de_janeiro_sinasc_weekly_births.R` (UF_PREFIX=\"33\", verbatim copy of the PE/BA script)",
   "- `02_Script/00_data_prep/10d_build_rio_de_janeiro_weekly_demography.R` (UF_CODE=33L, verbatim copy)",
   "", "CE/BA/PE models/results/scripts are UNMODIFIED by this work."
 )
-writeLines(md, file.path(dirname(table_dir), "..", "..") |> file.path("03_Output/reports/rio_de_janeiro_v4_9_replication/RJ_v49_input_audit.md"))
+writeLines(md, file.path(dirname(table_dir), "..", "..") |> file.path("03_Output/05_rio_de_janeiro_pipeline/reports/rio_de_janeiro_v4_9_replication/RJ_v49_input_audit.md"))
 message("[saved] RJ_v49_input_audit.md")
 
 # ---- Seed-qualification check, SAME rule as CE/BA/PE ------------------------
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
 rj_major_waves <- wave_census |> dplyr::filter(state == "RJ", major_epidemic_primary == TRUE) |>
   transmute(wave_id, wave_order,
             onset_week = as.Date(onset_week, format = "%m/%d/%Y"),

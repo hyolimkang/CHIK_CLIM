@@ -56,7 +56,7 @@ here::i_am("CHIK_CLIM.Rproj")
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v4_0_minimal_no_vaccine", "01_fit_v4_0_minimal_no_vaccine.R"))
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_8_seeded_recurrence")
+base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_8_seeded_recurrence")
 
 Q_GRID <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30) # identical grid to v4.7
 SEED_START_DATE <- as.Date("2022-01-02")
@@ -134,7 +134,7 @@ run_fit_v4_8 <- function(qval = as.numeric(Sys.getenv("QVAL", "0.10"))) {
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_v4_8_init_fn(prepared$stan_data$Y, td14_scalar_inits)
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_ceara_v4_8_seeded_recurrence.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "ceara", "renewal_ceara_v4_8_seeded_recurrence.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

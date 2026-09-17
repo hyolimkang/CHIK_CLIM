@@ -14,7 +14,7 @@ if (!exists("ROOT")) {
 FOLDER_DIR <- project_path("02_Script/07_national_pipeline/10_grid_susceptibility_reconstruction")
 ALLOW_REFIT <- identical(Sys.getenv("NATIONAL_ALLOW_REFIT", "FALSE"), "TRUE")
 Sys.setenv(GRID_SUSC_OUTPUT_TAG = "allfoi_s1_spatial_scale_v2") # matches the actual saved output tag; both scripts' own internal default ("") does not correspond to where the accepted results live
-TABLE_DIR <- project_path("03_Output/tables/national_grid_susceptibility/allfoi_s1_spatial_scale_v2")
+TABLE_DIR <- project_path("03_Output/07_national_pipeline/tables/national_grid_susceptibility/allfoi_s1_spatial_scale_v2")
 
 message("\n[10_grid_susceptibility_reconstruction] 01/02: reconstruct_brazil_grid_susceptibility ...")
 fp <- file.path(TABLE_DIR, "brazil_chik_uf_bottomup_susceptibility.csv")

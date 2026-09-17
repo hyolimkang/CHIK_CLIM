@@ -20,7 +20,7 @@ audit_root <- function() {
 }
 
 load_mode_fit <- function(root, tag) {
-  path <- file.path(root, "03_Output/model_fits/ceara/v4_3_short_2015_2019_q_calibration/outputs", tag, paste0("renewal_ceara_v4_3_fit_", tag, ".rds"))
+  path <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_3_short_2015_2019_q_calibration/outputs", tag, paste0("renewal_ceara_v4_3_fit_", tag, ".rds"))
   readRDS(path)
 }
 
@@ -58,7 +58,7 @@ decompose_posterior <- function(bundle, label) {
 
 run_mode_audit_analysis <- function() {
   root <- audit_root()
-  base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+  base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 
   low_bundle <- load_mode_fit(root, "modeB_lowclean")
   high_bundle <- load_mode_fit(root, "modeB_high")
@@ -90,7 +90,7 @@ run_mode_audit_analysis <- function() {
   # freshly compiled stanmodel (identical source, not a model change) before
   # calling it.
   message("[mode audit] recompiling stanmodel and reattaching a live log_prob instance for bridge sampling...")
-  fresh_model <- rstan::stan_model(file.path(root, "02_Script", "stan", "renewal_ceara_v4_3_weak_q.stan"))
+  fresh_model <- rstan::stan_model(file.path(root, "02_Script", "00_shared", "stan", "current", "ceara", "renewal_ceara_v4_3_weak_q.stan"))
   reattach_live_log_prob <- function(bundle) {
     throwaway <- rstan::sampling(fresh_model, data = bundle$stan_data, chains = 1, iter = 2, warmup = 1, refresh = 0)
     bundle$fit@stanmodel <- fresh_model

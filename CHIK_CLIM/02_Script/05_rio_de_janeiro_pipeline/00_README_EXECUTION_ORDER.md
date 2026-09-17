@@ -24,13 +24,10 @@ Sys.setenv(RUN_FROM_STAGE = "1", RUN_TO_STAGE = "3")
 source("02_Script/05_rio_de_janeiro_pipeline/99_run_rio_de_janeiro_pipeline.R")
 ```
 
-Outputs remain at their original locations under
-`40_renewal_model/34_rio_de_janeiro_v4_9_replication/outputs/` and
-`03_Output/tables|figures/rio_de_janeiro_v4_9_replication/{,city}` -- this
-refactor did not move or rename any existing result (a separate,
-not-yet-completed step will migrate these to
-`03_Output/model_fits/rio_de_janeiro/...` under the project's
-extension-based output rule).
+Outputs live under `03_Output/05_rio_de_janeiro_pipeline/`: fitted Stan
+objects in `model_fits/v4_9_replication/` (state and city fits together),
+tables/figures in `tables|figures/rio_de_janeiro_v4_9_replication/`, and
+design/result reports in `reports/`.
 
 See `REFACTOR_MIGRATION_MAP.csv` (in `02_ceara_pipeline/`, extended with a
 Rio de Janeiro section) for the full old -> new script mapping.

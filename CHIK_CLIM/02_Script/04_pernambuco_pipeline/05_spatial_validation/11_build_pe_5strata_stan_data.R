@@ -14,8 +14,8 @@ root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/17_v4_0_minimal_no_vaccine/01_fit_v4_0_minimal_no_vaccine.R"))
 source(file.path(root, "02_Script/04_pernambuco_pipeline/02_transmission_fitting/01_build_pe_serology_window.R"))
 
-spatial_table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_model")
-turnover_table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+spatial_table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_model")
+turnover_table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
 
 STRATUM_LEVELS <- c("1_Recife", "2_Metropolitana_remainder", "3_Agreste", "4_Sertao", "5_Vale_Sao_Francisco_Araripe")
 RECIFE_INDEX <- 1L
@@ -33,7 +33,7 @@ build_pe_5strata_stan_data <- function() {
   stratum_lookup <- read_csv(file.path(spatial_table_dir, "PE_spatial_stratum_lookup.csv"), show_col_types = FALSE,
                               col_types = cols(muni6 = col_character()))
   pe_panel <- readRDS(file.path(turnover_table_dir, "pe_municipality_week_panel.rds")) |> mutate(muni6 = as.character(muni6))
-  weekly_state <- readRDS(file.path(root, "03_Output/tables/pernambuco_v4_9_replication/pernambuco_weekly_input.rds"))
+  weekly_state <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/pernambuco_weekly_input.rds"))
 
   panel_stratum <- pe_panel |> left_join(stratum_lookup |> select(muni6, final_model_stratum), by = "muni6")
   if (any(is.na(panel_stratum$final_model_stratum))) stop("STOP: unassigned municipality in the case panel.")

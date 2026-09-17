@@ -12,7 +12,7 @@ suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble)
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
 v4_7_dir <- file.path(root, "02_Script/90_development_archive/02_historical_renewal_versions/26_v4_7_fixed_q_full_period")
-v4_8_dir <- file.path(root, "03_Output/model_fits/ceara/v4_8_seeded_recurrence")
+v4_8_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_8_seeded_recurrence")
 Q_GRID <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30)
 
 load_bundle <- function(dir, version, q) {
@@ -141,7 +141,7 @@ pG <- ggplot(summary_df, aes(q)) +
   labs(title = "G. Susceptible fraction immediately before the 2022 seed, by q", x = "q", y = "S proportion") + theme_v4
 
 figure <- (pA) / (pB | pC | pD) / (pE | pF | pG) + plot_layout(heights = c(2.4, 1, 1))
-figure_dir <- file.path(root, "03_Output/figures/renewal_v4_8_seeded_recurrence")
+figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/renewal_v4_8_seeded_recurrence")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 out_path <- file.path(figure_dir, "v4_8_seeded_recurrence_summary.png")
 ggsave(out_path, figure, width = 240, height = 320, units = "mm", dpi = 300)

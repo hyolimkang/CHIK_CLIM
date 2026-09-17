@@ -14,12 +14,12 @@
 # Inputs
 # ------
 # - 01_Data/ce_weekly_2014_2025.rds
-# - 03_Output/tables/chik_state_epidemic_wave_audit.csv
+# - 03_Output/07_national_pipeline/tables/chik_state_epidemic_wave_audit.csv
 #
 # Outputs
 # -------
-# - 02_Script/stan/renewal_ceara_episode_re_fit.rds
-# - 03_Output/tables/renewal_episode_re/ceara_early_phase_re/episode_windows.csv
+# - 03_Output/07_national_pipeline/model_fits/episode_renewal/renewal_ceara_episode_re_fit.rds
+# - 03_Output/07_national_pipeline/tables/renewal_episode_re/ceara_early_phase_re/episode_windows.csv
 #
 # Environment overrides: RENEWAL_EPISODE_ITER, RENEWAL_EPISODE_WARMUP,
 # RENEWAL_EPISODE_CHAINS. Defaults are 2,000 / 1,000 / 4.
@@ -75,7 +75,7 @@ read_positive_integer_env <- function(name, default) {
 # -----------------------------------------------------------------------------
 
 read_ceara_episode_starts <- function(settings) {
-  audit_path <- here::here("03_Output", "tables", "chik_state_epidemic_wave_audit.csv")
+  audit_path <- here::here("03_Output", "07_national_pipeline", "tables", "chik_state_epidemic_wave_audit.csv")
   audit <- read.csv(audit_path, stringsAsFactors = FALSE)
 
   episodes <- audit |>
@@ -216,10 +216,10 @@ run_episode_renewal_fit <- function() {
 
   episode_input <- read_ceara_episode_starts(episode_settings)
   incidence_input <- read_ceara_weekly_cases()
-  stan_source <- here::here("02_Script", "stan", "renewal_ceara_episode_re.stan")
-  output_path <- here::here("02_Script", "stan", "renewal_ceara_episode_re_fit.rds")
+  stan_source <- here::here("02_Script", "00_shared", "stan", "current", "national", "renewal_ceara_episode_re.stan")
+  output_path <- here::here("03_Output", "07_national_pipeline", "model_fits", "episode_renewal", "renewal_ceara_episode_re_fit.rds")
   table_directory <- here::here(
-    "03_Output", "tables", "renewal_episode_re", "ceara_early_phase_re"
+    "03_Output", "07_national_pipeline", "tables", "renewal_episode_re", "ceara_early_phase_re"
   )
   dir.create(table_directory, recursive = TRUE, showWarnings = FALSE)
 

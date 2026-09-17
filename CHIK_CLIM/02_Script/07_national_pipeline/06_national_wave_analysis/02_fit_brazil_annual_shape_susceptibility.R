@@ -124,7 +124,7 @@ run_national_annual_shape <- function() {
   states <- sort(unique(demography$state))
   requested <- Sys.getenv("NATIONAL_ANNUAL_SHAPE_STATES", "")
   if (nzchar(requested)) states <- strsplit(requested, ",", fixed = TRUE)[[1]]
-  model <- stan_model(national_path("02_Script", "stan", "chik_dynamic_annual_foi_shape_v2.stan"))
+  model <- stan_model(national_path("02_Script", "00_shared", "stan", "current", "national", "chik_dynamic_annual_foi_shape_v2.stan"))
   fits <- list(); audit <- list(); annual_out <- list(); q_out <- list(); anchors <- list()
 
   # Fixed portability gate before the remaining state batch.

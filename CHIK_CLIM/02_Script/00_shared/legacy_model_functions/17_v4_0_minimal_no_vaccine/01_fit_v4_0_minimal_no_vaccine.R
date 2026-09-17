@@ -60,10 +60,10 @@ v4_paths <- function(root = v4_root()) {
   suffix <- if (identical(run_tag, "base")) "" else paste0("_", run_tag)
   list(
     root = root,
-    stan = file.path(root, "02_Script", "stan", "renewal_ceara_v4_0_minimal_no_vaccine.stan"),
-    fit = file.path(root, "02_Script", "stan", paste0("renewal_ceara_v4_0_minimal_no_vaccine_fit", suffix, ".rds")),
-    tables = file.path(root, "03_Output", "tables", paste0("renewal_v4_0_minimal_no_vaccine", suffix)),
-    figures = file.path(root, "03_Output", "figures", paste0("renewal_v4_0_minimal_no_vaccine", suffix)),
+    stan = file.path(root, "02_Script", "00_shared", "stan", "current", "initialization", "renewal_ceara_v4_0_minimal_no_vaccine.stan"),
+    fit = file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "initialization", paste0("renewal_ceara_v4_0_minimal_no_vaccine_fit", suffix, ".rds")),
+    tables = file.path(root, "03_Output", "02_ceara_pipeline", "tables", paste0("renewal_v4_0_minimal_no_vaccine", suffix)),
+    figures = file.path(root, "03_Output", "02_ceara_pipeline", "figures", "transmission", paste0("renewal_v4_0_minimal_no_vaccine", suffix)),
     run_tag = run_tag
   )
 }

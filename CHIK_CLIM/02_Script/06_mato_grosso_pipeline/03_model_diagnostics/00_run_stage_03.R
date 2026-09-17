@@ -10,7 +10,7 @@ if (!exists("ROOT")) {
   source(setup_path, local = .GlobalEnv)
 }
 STAGE_DIR <- project_path("02_Script/06_mato_grosso_pipeline/03_model_diagnostics")
-BASE_OUT <- project_path("03_Output/model_fits/mato_grosso/v4_9_replication")
+BASE_OUT <- project_path("03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication")
 primary_fit <- file.path(BASE_OUT, "outputs/caseonly/mt_global_q_case_only.rds")
 if (!file.exists(primary_fit)) {
   stop("Missing prerequisite:\n  ", primary_fit, "\n\nRun Stage 02 first:\n  02_transmission_fitting (00_run_stage_02.R)", call. = FALSE)

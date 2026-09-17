@@ -10,10 +10,10 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(tidyr); library(ggplot2); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-spatial_table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_model")
-spatial_figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/spatial_model")
+spatial_table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_model")
+spatial_figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/spatial_model")
 dir.create(spatial_figure_dir, recursive = TRUE, showWarnings = FALSE)
-turnover_table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+turnover_table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
 
 stratum_lookup <- read_csv(file.path(spatial_table_dir, "PE_spatial_stratum_lookup.csv"), show_col_types = FALSE,
                             col_types = cols(muni6 = col_character()))
@@ -142,7 +142,7 @@ md_lines <- c(md_lines, "",
   "state-level trajectory is visibly composed of asynchronous regional",
   "epidemics, or whether all 5 strata rise and fall together. See the",
   "dominant-stratum and key-wave tables above for the quantitative answer.")
-pe_reports_dir <- file.path(root, "03_Output/reports/pernambuco_v4_9_replication")
+pe_reports_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/reports/pernambuco_v4_9_replication")
 dir.create(pe_reports_dir, recursive = TRUE, showWarnings = FALSE)
 writeLines(md_lines, file.path(pe_reports_dir, "PE_5strata_input_audit.md"))
 message("\n[saved] ", file.path(pe_reports_dir, "PE_5strata_input_audit.md"))

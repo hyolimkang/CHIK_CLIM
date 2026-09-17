@@ -9,12 +9,12 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(here); library(rstan); library(posterior); library(dplyr); library(readr); library(tibble); library(ggplot2); library(patchwork) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/ceara/climate_forced_v4_9")
-table_dir <- file.path(root, "03_Output/tables/climate_forced_v4_9")
-figure_dir <- file.path(root, "03_Output/figures/climate_forced_v4_9")
+base_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/climate_forced")
+table_dir <- file.path(root, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9")
+figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/climate_forced_v4_9")
 theme_v4 <- theme_classic(base_size = 9) + theme(panel.grid.major.y = element_line(colour = "grey90"))
 
-baseline <- readRDS(file.path(root, "03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds"))
+baseline <- readRDS(file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds"))
 climate <- readRDS(file.path(base_dir, "outputs/ce_canary/ce_climate_forced_canary_q0.05.rds"))
 dates <- as.Date(climate$weekly_data$week_start)
 stopifnot(identical(dates, as.Date(baseline$weekly_data$week_start)))

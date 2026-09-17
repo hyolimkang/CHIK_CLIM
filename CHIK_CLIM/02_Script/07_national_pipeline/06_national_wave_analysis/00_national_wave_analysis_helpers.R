@@ -30,9 +30,9 @@ national_path <- function(...) file.path(national_project_root(), ...)
 
 national_output_paths <- function() {
   list(
-    table = national_path("03_Output", "tables", "national_wave_analysis"),
-    figure = national_path("03_Output", "figures", "national_wave_analysis"),
-    fit = national_path("02_Script", "stan", "national_wave_analysis")
+    table = national_path("03_Output", "07_national_pipeline", "tables", "national_wave_analysis"),
+    figure = national_path("03_Output", "07_national_pipeline", "figures", "national_wave_analysis"),
+    fit = national_path("03_Output", "07_national_pipeline", "model_fits", "national_wave_analysis")
   )
 }
 
@@ -44,7 +44,7 @@ ensure_national_output_dirs <- function() {
 
 read_national_wave_census <- function() {
   census_path <- national_path(
-    "03_Output", "tables", "national_wave_census_v2", "brazil_chik_wave_census_v2.csv"
+    "03_Output", "07_national_pipeline", "tables", "national_wave_census_v2", "brazil_chik_wave_census_v2.csv"
   )
   if (!file.exists(census_path)) stop("Frozen V2 wave census is missing: ", census_path)
   parse_census_date <- function(x) {

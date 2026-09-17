@@ -29,7 +29,7 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "27_v4_8_seeded_recurrence", "scripts", "01_fit_v4_8.R"))
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "28_v4_9_hierarchical_seasonality", "scripts", "01_fit_v4_9.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_9_hierarchical_seasonality")
+base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_9_hierarchical_seasonality")
 
 run_fit_v4_9_serology_ablation <- function(qval = 0.05) {
   tag <- paste0("q", sprintf("%.2f", qval), "_serology_ablation")
@@ -66,7 +66,7 @@ run_fit_v4_9_serology_ablation <- function(qval = 0.05) {
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_v4_9_init_fn(prepared$stan_data$Y, td14_scalar_inits)
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_ceara_v4_9_serology_ablation.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "ceara", "renewal_ceara_v4_9_serology_ablation.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

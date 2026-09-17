@@ -6,10 +6,10 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble); library(ggplot2); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
+base_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 # NOTE: kept at the TOP level (not a subfolder) -- these are the exact
 # named deliverables from the design spec's Section 15 output list.
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 theme_v4 <- theme_classic(base_size = 9) + theme(panel.grid.major.y = element_line(colour = "grey90"))
 

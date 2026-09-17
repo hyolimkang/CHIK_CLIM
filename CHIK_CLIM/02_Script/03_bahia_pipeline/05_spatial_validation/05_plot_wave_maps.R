@@ -11,8 +11,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(sf); library(ggplot2); library(viridis) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_spatial_turnover_diagnostic")
-figure_dir <- file.path(root, "03_Output/figures/bahia_spatial_turnover_diagnostic")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_spatial_turnover_diagnostic")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/bahia_spatial_turnover_diagnostic")
 
 burden <- read_csv(file.path(table_dir, "bahia_municipality_wave_burden.csv"), show_col_types = FALSE,
                     col_types = cols(muni6 = col_character()))

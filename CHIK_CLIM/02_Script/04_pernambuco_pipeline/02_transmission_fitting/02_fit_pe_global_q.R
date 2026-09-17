@@ -24,7 +24,7 @@ source(file.path(root, "02_Script/00_shared/legacy_model_functions/17_v4_0_minim
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/22_v4_3_short_2015_2019_q_calibration/scripts/02_fit_v4_3.R"))
 source(file.path(root, "02_Script/04_pernambuco_pipeline/02_transmission_fitting/01_build_pe_serology_window.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
+base_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 SERO_GEOGRAPHIC_SD <- 1.0 # SAME fixed value as Bahia -- not tuned for PE
 LOGIT_Q_PRIOR_MEAN <- qlogis(0.10) # SAME prior as Bahia -- not tuned for PE
 LOGIT_Q_PRIOR_SD <- 1.0
@@ -99,7 +99,7 @@ run_fit_pe_global_q <- function(tag = Sys.getenv("TAG", NA), stage = Sys.getenv(
   settings <- list(warmup = as.integer(Sys.getenv("WARMUP", default_warmup)),
                     iter_sampling = as.integer(Sys.getenv("ITER_SAMPLING", default_sampling)))
 
-  weekly <- readRDS(file.path(root, "03_Output/tables/pernambuco_v4_9_replication/pernambuco_weekly_input.rds"))
+  weekly <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/pernambuco_weekly_input.rds"))
   prepared <- make_pe_global_q_data(weekly, fixed$imports_per_week, fixed$year_effect_prior_sd, sero_on = sero_on)
 
   iter_total <- settings$warmup + settings$iter_sampling
@@ -107,7 +107,7 @@ run_fit_pe_global_q <- function(tag = Sys.getenv("TAG", NA), stage = Sys.getenv(
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_pe_global_q_init_fn(prepared$stan_data$Y, prepared$stan_data$J_sero, td14_scalar_inits)
 
-  stan_path <- file.path(root, "02_Script/stan/renewal_bahia_v4_9_global_q_multisite_serology.stan")
+  stan_path <- file.path(root, "02_Script/00_shared/stan/current/multistate/renewal_bahia_v4_9_global_q_multisite_serology.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

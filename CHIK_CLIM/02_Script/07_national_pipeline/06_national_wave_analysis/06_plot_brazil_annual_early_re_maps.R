@@ -89,8 +89,8 @@ annual_map <- function(year_value, geometry, state_year, fill_limits, show_legen
 
 run_annual_early_re_maps <- function() {
   root <- map_root()
-  table_path <- file.path(root, "03_Output", "tables", "national_wave_analysis", "brazil_chik_wave_analysis_master.csv")
-  figure_dir <- file.path(root, "03_Output", "figures", "national_wave_analysis", "annual_early_re_maps")
+  table_path <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_wave_analysis", "brazil_chik_wave_analysis_master.csv")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_wave_analysis", "annual_early_re_maps")
   if (!file.exists(table_path)) stop("Master wave table is missing; run 04_build_brazil_wave_analysis_master.R first.")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   years <- 2015:2025
@@ -122,7 +122,7 @@ run_annual_early_re_maps <- function() {
   grid::grid.newpage(); grid::grid.raster(image, interpolate = TRUE)
   grDevices::dev.off()
   write_csv(st_drop_geometry(geometry$state_points) |> left_join(state_year, by = "state"),
-            file.path(root, "03_Output", "tables", "national_wave_analysis", "brazil_chik_annual_early_re_map_display_data.csv"))
+            file.path(root, "03_Output", "07_national_pipeline", "tables", "national_wave_analysis", "brazil_chik_annual_early_re_map_display_data.csv"))
   message("[save] ", output_path)
   invisible(output_path)
 }

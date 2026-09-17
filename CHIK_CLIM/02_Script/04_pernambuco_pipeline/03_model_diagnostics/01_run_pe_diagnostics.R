@@ -9,8 +9,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication")
+base_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication")
 
 A <- readRDS(file.path(base_dir, "outputs/modelA_caseonly/renewal_pe_global_q_fit_modelA_caseonly.rds"))
 B <- readRDS(file.path(base_dir, "outputs/modelB_U14/renewal_pe_global_q_fit_modelB_U14.rds"))
@@ -64,7 +64,7 @@ write_csv(immune_summary, file.path(table_dir, "pernambuco_immune_fraction_A_vs_
 message("\n[saved] pernambuco_q_correlations_A_vs_B.csv, pernambuco_immune_fraction_A_vs_B.csv")
 
 # ---- Section 9: wave-level case PPC (existing objective PE census) --------
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"), show_col_types = FALSE)
 pe_waves <- wave_census |> dplyr::filter(state == "PE", major_epidemic_primary == TRUE) |>
   transmute(wave_id, onset_week = as.Date(onset_week, format = "%m/%d/%Y"),
             peak_week_obs = as.Date(peak_week, format = "%m/%d/%Y"),

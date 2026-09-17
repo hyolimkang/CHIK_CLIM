@@ -31,7 +31,7 @@ STAGE_DIR <- file.path(PIPELINE_DIR, "02_transmission_fitting")
 ALLOW_REFIT <- identical(Sys.getenv("CEARA_ALLOW_REFIT", "FALSE"), "TRUE")
 
 # ---- Stage 01 prerequisite ----
-climate_covariates_path <- project_path("03_Output/tables/climate_forced_v4_9/climate_anomaly_covariates.csv")
+climate_covariates_path <- project_path("03_Output/02_ceara_pipeline/tables/climate_forced_v4_9/climate_anomaly_covariates.csv")
 if (!file.exists(climate_covariates_path)) {
   stop("Missing prerequisite:\n  ", climate_covariates_path,
        "\n\nRun Stage 01 first:\n  01_input_preparation (00_run_stage_01.R)", call. = FALSE)
@@ -40,7 +40,7 @@ message("[Stage 02] Prerequisite OK: Stage 01 climate covariates found.")
 
 # ---- STEP 02A: td14 sampler-initialisation posterior ----
 message("\nSTEP 02A: checking td14 initialisation posterior")
-td14_path <- project_path("02_Script/stan/renewal_ceara_v4_0_minimal_no_vaccine_fit_td14.rds")
+td14_path <- project_path("03_Output/02_ceara_pipeline/model_fits/initialization/renewal_ceara_v4_0_minimal_no_vaccine_fit_td14.rds")
 if (file.exists(td14_path)) {
   message("  Found: ", td14_path, " -- reusing (not refit).")
 } else if (ALLOW_REFIT) {
@@ -58,7 +58,7 @@ if (file.exists(td14_path)) {
 
 # ---- STEP 02B: baseline (non-climate) v4.9 q=0.05 ----
 message("\nSTEP 02B: fitting baseline v4.9 q=0.05")
-v49_baseline_path <- project_path("03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds")
+v49_baseline_path <- project_path("03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds")
 if (file.exists(v49_baseline_path)) {
   message("  Found: ", v49_baseline_path, " -- reusing (not refit).")
 } else if (ALLOW_REFIT) {
@@ -74,7 +74,7 @@ if (file.exists(v49_baseline_path)) {
 
 # ---- STEP 02C: climate-forced v4.9 q=0.05 (the accepted canary) ----
 message("\nSTEP 02C: fitting climate-forced v4.9 q=0.05")
-climate_fit_path <- project_path("03_Output/model_fits/ceara/climate_forced_v4_9/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
+climate_fit_path <- project_path("03_Output/02_ceara_pipeline/model_fits/climate_forced/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
 if (file.exists(climate_fit_path)) {
   message("  Found: ", climate_fit_path, " -- reusing (not refit).")
 } else if (ALLOW_REFIT) {

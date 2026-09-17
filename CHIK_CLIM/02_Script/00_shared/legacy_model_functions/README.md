@@ -16,9 +16,10 @@ model structure is built on.
 | `28_v4_9_hierarchical_seasonality/` | The current frozen v4.9 structure every state's "v4.9 replication" is built on |
 
 Their own accepted Stan fit outputs (`.rds`, chain CSVs) live under
-`03_Output/model_fits/ceara/<version>/` per the project's extension-based
-placement rule (`.R` -> `02_Script`, `.rds` -> `03_Output/model_fits/`) --
-only the scripts and their audit/design docs stayed here.
+`03_Output/02_ceara_pipeline/model_fits/{initialization,baseline}/<version>/`
+per the project's extension-based placement rule (`.R` -> `02_Script`,
+`.rds` -> `03_Output/`) -- only the scripts and their audit/design docs
+stayed here.
 
 Do not move or rename these without first re-checking every live pipeline
 that sources them (`grep -rl "legacy_model_functions" 02_Script/`).

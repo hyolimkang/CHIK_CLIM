@@ -31,7 +31,7 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v
 # ^ reuses make_v4_3_data(), find_sero_week_index(), load_td14_scalar_inits() defined there.
 # (sourcing 02_fit_v4_3.R does NOT auto-run because of its `if (sys.nframe()==0L)` guard.)
 
-base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 
 mode_q_ranges <- list(low = c(0.04, 0.05, 0.06, 0.07), high = c(0.75, 0.80, 0.85, 0.90),
                       lowclean = c(0.045, 0.05, 0.055))
@@ -78,7 +78,7 @@ run_fit_mode_targeted <- function(mode = Sys.getenv("MODE", "low")) {
                  eta_q = qlogis(q_inits[(cid - 1L) %% length(q_inits) + 1L])))
   }
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_ceara_v4_3_weak_q.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "ceara", "renewal_ceara_v4_3_weak_q.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

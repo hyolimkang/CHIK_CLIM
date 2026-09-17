@@ -9,7 +9,7 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble); library(readr); library(ggplot2) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 
 load_multisite <- function(q, stage = "pilot") {
   tag <- paste0("q", sprintf("%.2f", q))
@@ -79,7 +79,7 @@ message("\n=== 2017 case total/peak ==="); print(as.data.frame(case_all))
 message("\n=== 2018/2025 immune fraction ==="); print(as.data.frame(immune_all))
 message("\n=== 6-survey serology comparison ==="); print(as.data.frame(sero_table <- sero_all))
 
-table_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_multisite_serology")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_multisite_serology")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 write_csv(sero_all, file.path(table_dir, "bahia_multisite_serology_ppc_by_q.csv"))
 write_csv(hmc_all, file.path(table_dir, "bahia_multisite_hmc_diagnostics_by_q.csv"))
@@ -102,7 +102,7 @@ p_compare <- ggplot(sero_plot_df |> dplyr::filter(!is.na(q)), aes(factor(q), med
   labs(title = "Bahia 6-site serology: state vs geo-adjusted prediction by q (dashed = observed)", x = "q", y = "seroprevalence") +
   theme_v4 + theme(legend.position = "bottom", strip.background = element_blank())
 
-figure_dir <- file.path(root, "03_Output/figures/renewal_bahia_v4_9_multisite_serology")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_multisite_serology")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 ggsave(file.path(figure_dir, "bahia_multisite_serology_comparison_by_q.png"), p_compare, width = 220, height = 160, units = "mm", dpi = 300)
 message("[saved] ", file.path(figure_dir, "bahia_multisite_serology_comparison_by_q.png"))

@@ -54,7 +54,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 }
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/ceara/v4_8_seeded_recurrence")
+base_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_8_seeded_recurrence")
 
 plot_v4_8_six_panel <- function(qval) {
   tag <- paste0("q", sprintf("%.2f", qval))
@@ -193,8 +193,8 @@ plot_v4_8_six_panel <- function(qval) {
       )
     )
 
-  figure_dir <- file.path(root, "03_Output/figures/renewal_v4_8_seeded_recurrence")
-  table_dir <- file.path(root, "03_Output/tables/renewal_v4_8_seeded_recurrence")
+  figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/renewal_v4_8_seeded_recurrence")
+  table_dir <- file.path(root, "03_Output/02_ceara_pipeline/tables/renewal_v4_8_seeded_recurrence")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 

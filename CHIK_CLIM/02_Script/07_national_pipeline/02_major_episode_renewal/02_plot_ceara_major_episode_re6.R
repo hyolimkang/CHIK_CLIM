@@ -105,15 +105,15 @@ make_ppc_table <- function(bundle) {
 run_major_episode_diagnostics <- function() {
   fit_path <- Sys.getenv(
     "RENEWAL_MAJOR_EPISODE_FIT",
-    here::here("02_Script", "stan", "renewal_ceara_major_episode_re6_fit.rds")
+    here::here("03_Output", "07_national_pipeline", "model_fits", "major_episode_renewal", "renewal_ceara_major_episode_re6_fit.rds")
   )
   if (!file.exists(fit_path)) stop("Fit bundle not found: ", fit_path)
 
   table_directory <- here::here(
-    "03_Output", "tables", "renewal_major_episode_re", "ceara_major_outbreaks_6wk"
+    "03_Output", "07_national_pipeline", "tables", "renewal_major_episode_re", "ceara_major_outbreaks_6wk"
   )
   figure_directory <- here::here(
-    "03_Output", "figures", "renewal_major_episode_re", "ceara_major_outbreaks_6wk"
+    "03_Output", "07_national_pipeline", "figures", "renewal_major_episode_re", "ceara_major_outbreaks_6wk"
   )
   dir.create(table_directory, recursive = TRUE, showWarnings = FALSE)
   dir.create(figure_directory, recursive = TRUE, showWarnings = FALSE)

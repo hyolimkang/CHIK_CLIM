@@ -6,8 +6,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2); library(tidyr) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_global_q_local_consistency_audit")
-figure_dir <- file.path(root, "03_Output/figures/bahia_global_q_local_consistency_audit")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_global_q_local_consistency_audit")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/bahia_global_q_local_consistency_audit")
 theme_v4 <- theme_classic(base_size = 9) + theme(panel.grid.major.y = element_line(colour = "grey90"))
 
 case_implied_wide <- read_csv(file.path(table_dir, "bahia_serology_case_implied_attack_by_q.csv"), show_col_types = FALSE)

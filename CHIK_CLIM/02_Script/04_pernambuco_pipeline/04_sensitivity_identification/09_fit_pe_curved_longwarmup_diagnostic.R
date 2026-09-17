@@ -25,9 +25,9 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 source(file.path(root, "02_Script", "04_pernambuco_pipeline", "02_transmission_fitting", "01_build_pe_serology_window.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "pernambuco", "v4_9_replication")
+base_dir <- file.path(root, "03_Output", "04_pernambuco_pipeline", "model_fits", "v4_9_replication")
 out_dir <- file.path(base_dir, "outputs", "modelD")
-table_dir <- file.path(root, "03_Output", "tables", "pernambuco_v4_9_curved_reparam")
+table_dir <- file.path(root, "03_Output", "04_pernambuco_pipeline", "tables", "pernambuco_v4_9_curved_reparam")
 
 LOGIT_Q_PRIOR_MEAN <- qlogis(0.10)
 LOGIT_Q_PRIOR_SD <- 1.0
@@ -131,7 +131,7 @@ run_longwarmup_diagnostic <- function() {
   progress_dir <- file.path(out_dir, "chains_longwarmup")
   dir.create(progress_dir, recursive = TRUE, showWarnings = FALSE)
 
-  weekly <- readRDS(file.path(root, "03_Output", "tables", "pernambuco_v4_9_replication", "pernambuco_weekly_input.rds"))
+  weekly <- readRDS(file.path(root, "03_Output", "04_pernambuco_pipeline", "tables", "pernambuco_v4_9_replication", "pernambuco_weekly_input.rds"))
   prepared <- make_pe_curved_data(weekly, sero_on = TRUE)
 
   init_list <- tryCatch(build_posterior_informed_inits(), error = function(e) {
@@ -152,7 +152,7 @@ run_longwarmup_diagnostic <- function() {
   }
   init_fn <- function(chain_id = 1L) init_list[[(as.integer(chain_id) - 1L) %% 4L + 1L]]
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_pernambuco_v4_9_global_q_curved_reparam.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "pernambuco", "renewal_pernambuco_v4_9_global_q_curved_reparam.stan")
   sample_file <- file.path(progress_dir, "chain")
 
   started <- Sys.time()

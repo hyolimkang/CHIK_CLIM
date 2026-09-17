@@ -11,7 +11,7 @@ if (!exists("ROOT")) {
   source(setup_path, local = .GlobalEnv)
 }
 STAGE_DIR <- project_path("02_Script/04_pernambuco_pipeline/03_model_diagnostics")
-BASE_OUT <- project_path("03_Output/model_fits/pernambuco/v4_9_replication")
+BASE_OUT <- project_path("03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 required_tags <- c("modelA_caseonly", "modelB_U14")
 fit_paths <- file.path(BASE_OUT, "outputs", required_tags, paste0("renewal_pe_global_q_fit_", required_tags, ".rds"))
 missing <- fit_paths[!file.exists(fit_paths)]
@@ -27,7 +27,7 @@ source(file.path(STAGE_DIR, "01_run_pe_diagnostics.R"), local = .GlobalEnv)
 message("\n[Stage 03] 02/06: plot_pe_figures ...")
 source(file.path(STAGE_DIR, "02_plot_pe_figures.R"), local = .GlobalEnv)
 
-if (file.exists(project_path("03_Output/model_fits/bahia/v4_9_replication/outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds"))) {
+if (file.exists(project_path("03_Output/03_bahia_pipeline/model_fits/v4_9_replication/outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds"))) {
   message("\n[Stage 03] 03/06: cross_state_comparison (CE/BA/PE) ...")
   source(file.path(STAGE_DIR, "03_cross_state_comparison.R"), local = .GlobalEnv)
 } else {

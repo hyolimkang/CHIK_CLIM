@@ -11,7 +11,7 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(here); library(dplyr); library(readr); library(tidyr) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/climate_forced_v4_9")
+table_dir <- file.path(root, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 CE_UF_CODE <- 23L

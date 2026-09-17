@@ -28,7 +28,7 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 source(file.path(root, "02_Script", "03_bahia_pipeline", "02_transmission_fitting", "02_build_bahia_serology_windows.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "bahia", "v4_9_replication")
+base_dir <- file.path(root, "03_Output", "03_bahia_pipeline", "model_fits", "v4_9_replication")
 SERO_GEOGRAPHIC_SD <- 1.0 # FIXED, not estimated (per instruction)
 
 make_bahia_multisite_data <- function(weekly, imports_per_week, year_effect_prior_sd, q) {
@@ -100,7 +100,7 @@ run_fit_bahia_multisite <- function(qval = as.numeric(Sys.getenv("QVAL", "0.05")
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_bahia_multisite_init_fn(prepared$stan_data$Y, prepared$stan_data$J_sero, td14_scalar_inits)
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_ceara_v4_9_bahia_multisite_serology.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "multistate", "renewal_ceara_v4_9_bahia_multisite_serology.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

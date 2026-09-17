@@ -57,7 +57,7 @@ expensive Stan refit.
 
 | Step | Folder | Main action | Refits Stan? | Main output |
 |------|--------|-------------|:---:|-------------|
-| 01 | `01_input_preparation` | Build & QC climate anomaly covariates (temperature/precipitation, 3 lag specs) | NO | `03_Output/tables/climate_forced_v4_9/climate_anomaly_covariates.csv` |
+| 01 | `01_input_preparation` | Build & QC climate anomaly covariates (temperature/precipitation, 3 lag specs) | NO | `03_Output/02_ceara_pipeline/tables/climate_forced_v4_9/climate_anomaly_covariates.csv` |
 | 02 | `02_transmission_fitting` | Fit the climate-forced v4.9 model (reusing td14 init and the baseline v4.9 fit if present) | **YES** | `36_climate_forced_v4_9/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds` |
 | 03 | `03_model_diagnostics` | Validate the accepted fit; plot the six-panel historical reconstruction | NO | Six-panel figure + fit diagnostics tables |
 | 04 | *(not applicable)* | -- | -- | -- |
@@ -65,7 +65,7 @@ expensive Stan refit.
 | 06 | `06_age_demographic_extension` | Build age population shares; reconstruct single-year age-specific S/U from the accepted fit; confirm the age-cohort simulator exactly reproduces the accepted fit with vaccination OFF | NO | `CE_age_population_shares.csv`, age-diagnostic arrays/figures, closed-loop replay validation |
 | 07 | `07_counterfactuals` | Simulate the historical age-12 routine-vaccination counterfactual (3 arms x 200 posterior draws); vaccine engine unit tests, cohort eligibility QA, full A/B/C counterfactual QA (10 checks) | NO | `three_arm_results.rds`; QA diagnostic CSVs/markdown -- **fails loudly** on any substantive failure |
 | 08 | `08_impact_summaries` | Summarise impacts (Tables 1-3) and calculate + validate NNV | NO | Impact/NNV tables |
-| 09 | `09_figures_reporting` | Main, supplementary, and NNV publication figures | NO | `03_Output/figures/.../{main,supplementary,nnv}/` |
+| 09 | `09_figures_reporting` | Main, supplementary, and NNV publication figures | NO | `03_Output/02_ceara_pipeline/figures/vaccine/.../{main,supplementary,nnv}/` |
 
 **Stage 02 is the ONLY stage that refits Stan.** Stages 03-09 all reuse the
 accepted posterior. Stage 07 runs the vaccine counterfactual **simulation**
@@ -108,37 +108,30 @@ Age reconstruction and vaccination (Stage 06/07) are **not** separately
 refitted Stan models — both are deterministic/simulation post-processing
 of the single accepted Stage 02 posterior.
 
-## Relationship to folders 36 and 37 (in `40_renewal_model/`)
+## Output locations
 
-- `40_renewal_model/36_climate_forced_v4_9/` and
-  `40_renewal_model/37_ceara_historical_age12_vaccine_counterfactual/` keep
-  their **outputs** (`outputs/`, `results/`, `tables/`, `diagnostics/`,
-  `reports/`, and the corresponding `03_Output/figures/...` directories) —
-  this refactor did not move or rename any existing result.
-- Their `scripts/` subfolders are now **empty**: every active script that
-  used to live there has moved here (see `REFACTOR_MIGRATION_MAP.csv` for
-  the full old -> new mapping, including the later top-level relocation
-  from `40_renewal_model/38_ceara_current_pipeline/` to this folder). A
-  short `README_ACTIVE_SCRIPTS_MOVED.md` in each of those two folders
-  points here.
-- `36_climate_forced_v4_9/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds`
-  remains the single accepted upstream fit that Stages 03-09 all read (its
-  eventual relocation to `03_Output/model_fits/ceara/current/` under the
-  project's extension-based output rule is a separate, not-yet-completed
-  step -- see the parent reorganisation notes).
+All outputs live under `03_Output/02_ceara_pipeline/`, split by category:
+`model_fits/{initialization,baseline,climate_forced}/` for fitted Stan
+objects, `tables/`, `figures/{transmission,vaccine}/`, `results/`,
+`diagnostics/`, and `reports/` for everything downstream. The single
+accepted climate-forced fit that Stages 03-09 all read now lives at
+`03_Output/02_ceara_pipeline/model_fits/climate_forced/outputs/ce_canary/
+ce_climate_forced_canary_q0.05.rds`.
 
 ## Relationship to the model-development history
 
-Ceará's model-development lineage (`40_renewal_model/01_v1` through
-`35_mato_grosso_v4_9_replication`) documents how the current model was
-developed, replicated across other Brazilian states, or audited for
-identifiability — it is frozen history and is **not** part of the current
-Ceará execution path (destined for `90_development_archive/` in a later
-step of the ongoing repository reorganisation). This pipeline sources a
-handful of its functions directly where the current model still depends on
-them (e.g. Stage 02 reuses the exact frozen v4.0/v4.9 fitting functions
-unchanged), but you should not need to open or manually run those folders
-yourself for the current analysis.
+Ceará's model-development lineage (v1 through the other states' v4.9
+replications) documents how the current model was developed, replicated
+across other Brazilian states, or audited for identifiability — it is
+frozen history and lives entirely under
+`02_Script/90_development_archive/02_historical_renewal_versions/`, with
+its outputs under `03_Output/90_development_archive/`. It is **not** part
+of the current Ceará execution path. This pipeline sources a handful of
+functions directly from `02_Script/00_shared/legacy_model_functions/`
+where the current model still depends on them (e.g. Stage 02 reuses the
+exact frozen v4.0/v4.9 fitting functions unchanged), but you should not
+need to open or manually run the archive yourself for the current
+analysis.
 
 ## Forcing a Stage 02 refit
 

@@ -33,7 +33,7 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 source(file.path(root, "02_Script", "03_bahia_pipeline", "02_transmission_fitting", "02_build_bahia_serology_windows.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "bahia", "v4_9_replication")
+base_dir <- file.path(root, "03_Output", "03_bahia_pipeline", "model_fits", "v4_9_replication")
 SERO_GEOGRAPHIC_SD <- 1.0 # FIXED, not estimated
 LOGIT_Q_PRIOR_MEAN <- qlogis(0.10) # logit(0.10)
 LOGIT_Q_PRIOR_SD <- 1.0 # deliberately broad regularising prior; NOT tightened post-hoc
@@ -128,7 +128,7 @@ run_fit_bahia_global_q <- function(qval_tag = Sys.getenv("QTAG", "on"),
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_bahia_global_q_init_fn(prepared$stan_data$Y, prepared$stan_data$J_sero, td14_scalar_inits)
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_bahia_v4_9_global_q_multisite_serology.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "multistate", "renewal_bahia_v4_9_global_q_multisite_serology.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

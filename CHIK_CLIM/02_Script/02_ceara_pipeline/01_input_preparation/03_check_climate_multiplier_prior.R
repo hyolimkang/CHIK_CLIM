@@ -18,8 +18,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2); library(tidyr) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir  <- file.path(root, "03_Output/tables/climate_forced_v4_9")
-figure_dir <- file.path(root, "03_Output/figures/climate_forced_v4_9")
+table_dir  <- file.path(root, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9")
+figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/climate_forced_v4_9")
 
 set.seed(20260916)
 N_PRIOR_DRAWS <- 4000

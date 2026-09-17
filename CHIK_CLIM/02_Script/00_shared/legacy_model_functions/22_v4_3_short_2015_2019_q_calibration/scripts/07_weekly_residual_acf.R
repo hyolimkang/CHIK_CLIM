@@ -42,7 +42,7 @@ randomized_residuals <- function(observed, mu_draws, phi_draws, seed = 20260912L
 
 run_weekly_residual_acf <- function() {
   root <- acf_root()
-  base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+  base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 
   analyse_mode <- function(tag, label) {
     bundle <- readRDS(file.path(base_dir, "outputs", tag, paste0("renewal_ceara_v4_3_fit_", tag, ".rds")))
@@ -86,7 +86,7 @@ run_weekly_residual_acf <- function() {
     labs(title = "C. Observed vs posterior-expected weekly cases", x = NULL, y = "cases") + theme_v4
 
   figure <- p_acf / p_resid / p_obs
-  figure_dir <- file.path(root, "03_Output", "figures", "renewal_v4_3_short_2015_2019_q_calibration")
+  figure_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "figures", "transmission", "renewal_v4_3_short_2015_2019_q_calibration")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   ggsave(file.path(figure_dir, "weekly_residual_acf.png"), figure, width = 200, height = 220, units = "mm", dpi = 300)
   message("[residual ACF] figure saved: ", file.path(figure_dir, "weekly_residual_acf.png"))

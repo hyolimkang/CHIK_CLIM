@@ -11,22 +11,22 @@ if (!exists("ROOT")) stop("ROOT not found -- source CHIK_CLIM/00_project_setup.R
 # convention on 2026-09-17 (extension/category-based placement rule); no
 # content or values changed, only location.
 DIR_SCRIPTS <- file.path(ROOT, "02_Script/02_ceara_pipeline/07_counterfactuals")
-DIR_RESULTS <- file.path(ROOT, "03_Output/results/ceara_historical_age12_vaccine_counterfactual")
-DIR_TABLES <- file.path(ROOT, "03_Output/tables/ceara_historical_age12_vaccine_counterfactual")
-DIR_DIAGNOSTICS <- file.path(ROOT, "03_Output/diagnostics/ceara_historical_age12_vaccine_counterfactual")
-DIR_REPORTS <- file.path(ROOT, "03_Output/reports/ceara_historical_age12_vaccine_counterfactual")
+DIR_RESULTS <- file.path(ROOT, "03_Output/02_ceara_pipeline/results/ceara_historical_age12_vaccine_counterfactual")
+DIR_TABLES <- file.path(ROOT, "03_Output/02_ceara_pipeline/tables/ceara_historical_age12_vaccine_counterfactual")
+DIR_DIAGNOSTICS <- file.path(ROOT, "03_Output/02_ceara_pipeline/diagnostics/ceara_historical_age12_vaccine_counterfactual")
+DIR_REPORTS <- file.path(ROOT, "03_Output/02_ceara_pipeline/reports/ceara_historical_age12_vaccine_counterfactual")
 # Figures follow the project-wide convention (03_Output/figures/<analysis>/),
 # not the script-local tree -- moved here so all analyses are discoverable
 # in one place; consolidated from 37_.../figures/ on 2026-09-17.
-DIR_FIG_ROOT <- file.path(ROOT, "03_Output/figures/ceara_historical_age12_vaccine_counterfactual")
+DIR_FIG_ROOT <- file.path(ROOT, "03_Output/02_ceara_pipeline/figures/vaccine/ceara_historical_age12_vaccine_counterfactual")
 DIR_FIG_MAIN <- file.path(DIR_FIG_ROOT, "main")
 DIR_FIG_SUPP <- file.path(DIR_FIG_ROOT, "supplementary")
 DIR_FIG_NNV <- file.path(DIR_FIG_ROOT, "nnv")
 for (d in c(DIR_RESULTS, DIR_TABLES, DIR_FIG_MAIN, DIR_FIG_SUPP, DIR_FIG_NNV, DIR_DIAGNOSTICS, DIR_REPORTS)) dir.create(d, recursive = TRUE, showWarnings = FALSE)
 
 # Upstream (READ-ONLY) accepted sources -- never written to by this analysis.
-ACCEPTED_CLIMATE_FIT <- file.path(ROOT, "03_Output/model_fits/ceara/climate_forced_v4_9/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
-ACCEPTED_AGE_SHARES <- file.path(ROOT, "03_Output/tables/climate_forced_v4_9/CE_age_population_shares.csv")
+ACCEPTED_CLIMATE_FIT <- file.path(ROOT, "03_Output/02_ceara_pipeline/model_fits/climate_forced/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
+ACCEPTED_AGE_SHARES <- file.path(ROOT, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9/CE_age_population_shares.csv")
 ACCEPTED_SIMULATOR <- file.path(ROOT, "02_Script/02_ceara_pipeline/06_age_demographic_extension/02_age_cohort_simulator.R") # moved from 36/.../07_age_cohort_simulator.R in the pipeline refactor
 
 # Historical analysis window: 2015 through 2021 INCLUSIVE, stopping before

@@ -36,7 +36,7 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(stringr); library(tibble) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_model")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_model")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 # ---- Official GERES -> municipality lists (verbatim, ASCII-normalised for matching) ----
@@ -139,7 +139,7 @@ stopifnot(!any(is.na(matched$final_model_stratum)))
 # district, not a municipality, and is absent from the case panel and from
 # the national demography series used elsewhere in this project -- flagged
 # with NA population, not imputed.
-pe_panel <- readRDS(file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic/pe_municipality_week_panel.rds"))
+pe_panel <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic/pe_municipality_week_panel.rds"))
 pop_latest <- pe_panel |> dplyr::filter(week_start == max(week_start)) |> select(muni6, population)
 
 # ---- Section 2: four-macroregion sensitivity partition (prepared, NOT fit) ----

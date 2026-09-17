@@ -13,7 +13,7 @@ if (!exists("ROOT")) {
   source(setup_path, local = .GlobalEnv)
 }
 STAGE_DIR <- project_path("02_Script/03_bahia_pipeline/05_spatial_validation")
-primary_fit <- project_path("03_Output/model_fits/bahia/v4_9_replication/outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds")
+primary_fit <- project_path("03_Output/03_bahia_pipeline/model_fits/v4_9_replication/outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds")
 panel_path <- project_path("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds")
 missing <- c(primary_fit, panel_path)[!file.exists(c(primary_fit, panel_path))]
 if (length(missing) > 0) {

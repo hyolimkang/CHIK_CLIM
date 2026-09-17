@@ -33,9 +33,9 @@ project_path <- function(...) file.path(project_root(), ...)
 
 output_paths <- function() {
   list(
-    table = project_path("03_Output", "tables", "episode_susceptibility", "ceara_pilot_v1"),
-    figure = project_path("03_Output", "figures", "episode_susceptibility", "ceara_pilot_v1"),
-    fit = project_path("02_Script", "stan", "ceara_episode_susceptibility_pilot_v1_fit.rds"),
+    table = project_path("03_Output", "07_national_pipeline", "tables", "episode_susceptibility", "ceara_pilot_v1"),
+    figure = project_path("03_Output", "07_national_pipeline", "figures", "episode_susceptibility", "ceara_pilot_v1"),
+    fit = project_path("03_Output", "07_national_pipeline", "model_fits", "episode_susceptibility", "ceara_episode_susceptibility_pilot_v1_fit.rds"),
     documentation = normalizePath(file.path(project_root(), "..", "docs"), mustWork = TRUE)
   )
 }
@@ -270,11 +270,11 @@ write_pilot_documentation <- function(paths, bundle, hmc, smoothed_draws, filter
     group_by(draw) |>
     summarise(total = sum(latent_infections), .groups = "drop") |>
     pull(total)
-  foi_path <- project_path("03_Output", "tables", "ce_foi_summary_brazil_ceara.csv")
-  burden_path <- project_path("03_Output", "tables", "ce_burden_infection_summary.csv")
+  foi_path <- project_path("03_Output", "90_development_archive", "tables_loose", "ce_foi_summary_brazil_ceara.csv")
+  burden_path <- project_path("03_Output", "90_development_archive", "tables_loose", "ce_burden_infection_summary.csv")
   foi_note <- if (file.exists(foi_path)) paste(readLines(foi_path, n = 2L), collapse = " / ") else "Not available."
   burden_note <- if (file.exists(burden_path)) paste(readLines(burden_path, n = 2L), collapse = " / ") else "Not available."
-  v22_short_fit <- project_path("02_Script", "stan", "renewal_ceara_v2_2_fit.rds")
+  v22_short_fit <- project_path("03_Output", "90_development_archive", "model_fits", "renewal_v2_2", "renewal_ceara_v2_2_fit.rds")
 
   document <- c(
     "# Ceara episode-sequential susceptibility pilot",

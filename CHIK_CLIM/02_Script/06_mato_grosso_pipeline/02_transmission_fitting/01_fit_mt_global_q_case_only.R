@@ -22,7 +22,7 @@ here::i_am("CHIK_CLIM.Rproj")
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/17_v4_0_minimal_no_vaccine/01_fit_v4_0_minimal_no_vaccine.R"))
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/22_v4_3_short_2015_2019_q_calibration/scripts/02_fit_v4_3.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/mato_grosso/v4_9_replication")
+base_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication")
 out_dir <- file.path(base_dir, "outputs", "caseonly")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -77,7 +77,7 @@ run_fit_mt_global_q_case_only <- function() {
   progress_dir <- file.path(out_dir, "chains")
   dir.create(progress_dir, recursive = TRUE, showWarnings = FALSE)
 
-  weekly <- readRDS(file.path(root, "03_Output/tables/mato_grosso_v4_9_replication/mato_grosso_weekly_input.rds"))
+  weekly <- readRDS(file.path(root, "03_Output/06_mato_grosso_pipeline/tables/mato_grosso_v4_9_replication/mato_grosso_weekly_input.rds"))
   prepared <- make_mt_global_q_data(weekly)
   Y <- prepared$stan_data$Y
   message("MT case-only Stan data: N=", prepared$stan_data$N, " Y=", Y, " J_sero=", prepared$stan_data$J_sero)
@@ -91,7 +91,7 @@ run_fit_mt_global_q_case_only <- function() {
                      i, v$logit_q, plogis(v$logit_q), v$alpha_R, v$phi_obs))
   }
 
-  stan_path <- file.path(root, "02_Script/stan/renewal_bahia_v4_9_global_q_multisite_serology.stan")
+  stan_path <- file.path(root, "02_Script/00_shared/stan/current/multistate/renewal_bahia_v4_9_global_q_multisite_serology.stan")
   sample_file <- file.path(progress_dir, "chain")
 
   started <- Sys.time()

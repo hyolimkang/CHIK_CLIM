@@ -25,12 +25,12 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 source(file.path(root, "02_Script", "04_pernambuco_pipeline", "02_transmission_fitting", "01_build_pe_serology_window.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "pernambuco", "v4_9_replication")
+base_dir <- file.path(root, "03_Output", "04_pernambuco_pipeline", "model_fits", "v4_9_replication")
 # Short path -- the original "modelC_global_q_ridge_reparam" out_dir plus
 # this OneDrive path's own length pushed saveRDS() past Windows' 260-char
 # MAX_PATH and silently lost a completed 4-chain fit once already.
 out_dir <- file.path(base_dir, "outputs", "modelC")
-table_dir <- file.path(root, "03_Output", "tables", "pernambuco_v4_9_ridge_reparam")
+table_dir <- file.path(root, "03_Output", "04_pernambuco_pipeline", "tables", "pernambuco_v4_9_ridge_reparam")
 
 LOGIT_Q_PRIOR_MEAN <- qlogis(0.10)
 LOGIT_Q_PRIOR_SD <- 1.0
@@ -119,11 +119,11 @@ run_pe_v4_9_global_q_ridge_reparam <- function(
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   progress_dir <- file.path(out_dir, "chains")
   dir.create(progress_dir, recursive = TRUE, showWarnings = FALSE)
-  weekly <- readRDS(file.path(root, "03_Output", "tables", "pernambuco_v4_9_replication", "pernambuco_weekly_input.rds"))
+  weekly <- readRDS(file.path(root, "03_Output", "04_pernambuco_pipeline", "tables", "pernambuco_v4_9_replication", "pernambuco_weekly_input.rds"))
   prepared <- make_pe_ridge_data(weekly, sero_on = sero_on)
   scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_pe_ridge_init_fn(prepared$stan_data$Y, prepared$stan_data$J_sero, scalar_inits)
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_pernambuco_v4_9_global_q_ridge_reparam.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "pernambuco", "renewal_pernambuco_v4_9_global_q_ridge_reparam.stan")
   ad_tag <- if (settings$adapt_delta != 0.95) paste0("_ad", gsub("\\.", "", sprintf("%.2f", settings$adapt_delta))) else ""
   sample_file <- file.path(progress_dir, paste0("chain_", if (sero_on) "U14" else "caseonly", ad_tag))
 

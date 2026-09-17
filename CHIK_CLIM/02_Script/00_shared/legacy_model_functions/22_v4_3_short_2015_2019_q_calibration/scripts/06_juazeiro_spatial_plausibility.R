@@ -20,7 +20,7 @@ spatial_root <- function() {
 
 run_juazeiro_spatial_plausibility <- function() {
   root <- spatial_root()
-  out_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+  out_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 
   panel <- readRDS(file.path(root, "01_Data", "chik_dlnm_panel_muni_week_2015_2025.rds"))
   panel <- panel |> mutate(muni6 = as.character(muni6), week_start = as.Date(week_start))

@@ -17,7 +17,7 @@ root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine
 setwd(root)
 source(file.path(root, "02_Script/00_shared/functions/01_build_ceara_state_weekly.R"))
 
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 DATE_START <- as.Date("2015-01-04")

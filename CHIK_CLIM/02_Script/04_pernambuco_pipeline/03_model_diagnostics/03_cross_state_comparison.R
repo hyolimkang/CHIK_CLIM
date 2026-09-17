@@ -12,11 +12,11 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble); library(readr) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication")
 
-ce <- readRDS(file.path(root, "03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds"))
-ba <- readRDS(file.path(root, "03_Output/model_fits/bahia/v4_9_replication/outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds"))
-pe <- readRDS(file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication/outputs/modelB_U14/renewal_pe_global_q_fit_modelB_U14.rds"))
+ce <- readRDS(file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds"))
+ba <- readRDS(file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication/outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds"))
+pe <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication/outputs/modelB_U14/renewal_pe_global_q_fit_modelB_U14.rds"))
 
 immune_at <- function(bundle, year) {
   dates <- as.Date(bundle$weekly_data$week_start)

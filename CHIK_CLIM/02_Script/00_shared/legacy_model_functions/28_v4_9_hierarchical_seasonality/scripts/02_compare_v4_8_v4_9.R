@@ -9,8 +9,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble); library(readr); library(ggplot2); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-v4_8_dir <- file.path(root, "03_Output/model_fits/ceara/v4_8_seeded_recurrence")
-v4_9_dir <- file.path(root, "03_Output/model_fits/ceara/v4_9_hierarchical_seasonality")
+v4_8_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_8_seeded_recurrence")
+v4_9_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality")
 Q_GRID <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30)
 
 load_bundle <- function(dir, version, q) {
@@ -168,7 +168,7 @@ p_R <- ggplot(traj_df, aes(week_start)) +
   theme_v4 + theme(legend.position = "bottom")
 
 figure2 <- (p_burden_2017 | p_burden_2022) / (p_peak_2017 | p_peak_2022) / (p_phi | p_S | p_R)
-figure_dir <- file.path(root, "03_Output/figures/renewal_v4_9_hierarchical_seasonality")
+figure_dir <- file.path(root, "03_Output/02_ceara_pipeline/figures/transmission/renewal_v4_9_hierarchical_seasonality")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 ggsave(file.path(figure_dir, "v4_8_vs_v4_9_diagnostics.png"), figure2, width = 260, height = 300, units = "mm", dpi = 300)
 message("[compare] figure saved: ", file.path(figure_dir, "v4_8_vs_v4_9_diagnostics.png"))

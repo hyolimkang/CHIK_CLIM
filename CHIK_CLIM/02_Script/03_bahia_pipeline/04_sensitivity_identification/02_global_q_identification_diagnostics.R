@@ -11,7 +11,7 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(tibble); library(readr) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 
 b <- readRDS(file.path(base_dir, "outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds")) # "on_full2" matches the actual saved fit tag; the script's original "pilot" default never corresponded to any saved fit
 fit <- b$fit
@@ -75,7 +75,7 @@ fixed_decomp <- tibble(survey_id = fixed$sero_audit$sero_id, eta_geo_median_fixe
 comparison <- left_join(decomp |> select(survey_id, eta_geo_median_global_q = eta_geo_median), fixed_decomp, by = "survey_id")
 print(as.data.frame(comparison))
 
-table_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_global_q_multisite_serology")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_global_q_multisite_serology")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 write_csv(cor_table, file.path(table_dir, "global_q_posterior_correlations.csv"))
 write_csv(decomp, file.path(table_dir, "global_q_serology_decomposition.csv"))

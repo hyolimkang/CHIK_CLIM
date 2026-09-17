@@ -23,14 +23,14 @@ summarise_q_draws <- function(x, prefix = "q_implied") {
 
 run_annual_q_implied_diagnostic <- function() {
   root <- q_root()
-  table_dir <- file.path(root, "03_Output", "tables", "national_wave_analysis", "q_implied")
-  figure_dir <- file.path(root, "03_Output", "figures", "national_wave_analysis", "q_implied")
-  fit_path <- file.path(root, "02_Script", "stan", "national_wave_analysis", "brazil_chik_annual_shape_fits.rds")
+  table_dir <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_wave_analysis", "q_implied")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_wave_analysis", "q_implied")
+  fit_path <- file.path(root, "03_Output", "07_national_pipeline", "model_fits", "national_wave_analysis", "brazil_chik_annual_shape_fits.rds")
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   if (!file.exists(fit_path)) stop("Annual SHAPE fit bundle is missing.")
   bundle <- readRDS(fit_path)
-  hmc <- read_csv(file.path(root, "03_Output", "tables", "national_wave_analysis", "brazil_chik_annual_shape_hmc_gate.csv"), show_col_types = FALSE) |>
+  hmc <- read_csv(file.path(root, "03_Output", "07_national_pipeline", "tables", "national_wave_analysis", "brazil_chik_annual_shape_hmc_gate.csv"), show_col_types = FALSE) |>
     select(state, annual_hmc_pass = hmc_pass)
 
   # Existing externally informed reference: p_symp ~ Beta(30,28) and

@@ -14,7 +14,7 @@
 # passed through to Stage 08 impact/NNV summaries).
 #
 # This is SIMULATION using the accepted fit, NOT a Stan refit. Results are
-# written under 03_Output/results/ceara_historical_age12_vaccine_counterfactual/
+# written under 03_Output/02_ceara_pipeline/results/ceara_historical_age12_vaccine_counterfactual/
 # (see 01_config.R's DIR_RESULTS), not under this pipeline directory.
 
 if (!exists("ROOT")) {
@@ -26,8 +26,8 @@ if (!exists("ROOT")) {
 
 STAGE_DIR <- project_path("02_Script/02_ceara_pipeline/07_counterfactuals")
 
-climate_fit_path <- project_path("03_Output/model_fits/ceara/climate_forced_v4_9/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
-age_shares_path <- project_path("03_Output/tables/climate_forced_v4_9/CE_age_population_shares.csv")
+climate_fit_path <- project_path("03_Output/02_ceara_pipeline/model_fits/climate_forced/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
+age_shares_path <- project_path("03_Output/02_ceara_pipeline/tables/climate_forced_v4_9/CE_age_population_shares.csv")
 missing <- c(climate_fit_path, age_shares_path)[!file.exists(c(climate_fit_path, age_shares_path))]
 if (length(missing) > 0) {
   stop("Missing prerequisite(s):\n  ", paste(missing, collapse = "\n  "),
@@ -65,4 +65,4 @@ source(file.path(STAGE_DIR, "09_routine_age12_eligibility_qa.R"), local = .Globa
 message("\n[Stage 07] 10/10: validate_historical_counterfactual (fails loudly on any QA failure) ...")
 source(file.path(STAGE_DIR, "10_validate_historical_counterfactual.R"), local = .GlobalEnv)
 
-message("\n[Stage 07] Complete. Results saved under 03_Output/results/ceara_historical_age12_vaccine_counterfactual/.")
+message("\n[Stage 07] Complete. Results saved under 03_Output/02_ceara_pipeline/results/ceara_historical_age12_vaccine_counterfactual/.")

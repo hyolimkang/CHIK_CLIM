@@ -14,7 +14,7 @@ if (!exists("ROOT")) {
 }
 FOLDER_DIR <- project_path("02_Script/07_national_pipeline/06_national_wave_analysis")
 ALLOW_REFIT <- identical(Sys.getenv("NATIONAL_ALLOW_REFIT", "FALSE"), "TRUE")
-TABLE_DIR <- project_path("03_Output/tables/national_wave_analysis")
+TABLE_DIR <- project_path("03_Output/07_national_pipeline/tables/national_wave_analysis")
 
 message("\n[06_national_wave_analysis] 01/08: fit_brazil_major_wave_early_re ...")
 fp <- file.path(TABLE_DIR, "brazil_chik_major_wave_early_re.csv")

@@ -126,8 +126,19 @@ project_path <- function(...) file.path(ROOT, ...)
 DIR_DATA    <- project_path("01_Data")
 DIR_SCRIPT  <- project_path("02_Script")
 DIR_OUTPUT  <- project_path("03_Output")
-DIR_STAN    <- project_path("02_Script", "stan")
-DIR_RENEWAL <- project_path("02_Script", "40_renewal_model")
+DIR_STAN    <- project_path("02_Script", "00_shared", "stan", "current")
+
+# Per-pipeline output roots, mirroring 02_Script's numbered pipeline folders.
+# `output_path("02_ceara_pipeline", "model_fits", "baseline")` is equivalent
+# to `project_path("03_Output", "02_ceara_pipeline", "model_fits", "baseline")`.
+output_path <- function(pipeline, ...) file.path(DIR_OUTPUT, pipeline, ...)
+
+OUT_CEARA        <- output_path("02_ceara_pipeline")
+OUT_BAHIA        <- output_path("03_bahia_pipeline")
+OUT_PERNAMBUCO   <- output_path("04_pernambuco_pipeline")
+OUT_RIO          <- output_path("05_rio_de_janeiro_pipeline")
+OUT_MATO_GROSSO  <- output_path("06_mato_grosso_pipeline")
+OUT_NATIONAL     <- output_path("07_national_pipeline")
 
 # ----------------------------------------------------------------
 # 5. Lightweight Ceara core-input check (reports only; never halts startup)
@@ -143,7 +154,7 @@ check_ceara_core_inputs <- function() {
     "01_Data/ibge_population_projection_uf_2024revision.rds",
     "01_Data/ceara_weekly_demography_2015_2025.rds",
     "01_Data/ibge_pop_uf_single_age_expanded_2015_2024.rds",
-    "03_Output/tables/national_wave_analysis/brazil_chik_uf_weekly_climate.csv"
+    "03_Output/07_national_pipeline/tables/national_wave_analysis/brazil_chik_uf_weekly_climate.csv"
   )
   tibble::tibble(file = files, exists = file.exists(project_path(files)))
 }

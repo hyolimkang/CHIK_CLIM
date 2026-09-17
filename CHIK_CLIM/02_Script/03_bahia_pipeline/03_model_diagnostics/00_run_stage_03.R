@@ -10,7 +10,7 @@ if (!exists("ROOT")) {
   source(setup_path, local = .GlobalEnv)
 }
 STAGE_DIR <- project_path("02_Script/03_bahia_pipeline/03_model_diagnostics")
-BASE_OUT <- project_path("03_Output/model_fits/bahia/v4_9_replication")
+BASE_OUT <- project_path("03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 primary_fit <- file.path(BASE_OUT, "outputs/q0.05/renewal_bahia_v4_9_fit_q0.05.rds")
 if (!file.exists(primary_fit)) {
   stop("Missing prerequisite:\n  ", primary_fit, "\n\nRun Stage 02 first:\n  02_transmission_fitting (00_run_stage_02.R)", call. = FALSE)

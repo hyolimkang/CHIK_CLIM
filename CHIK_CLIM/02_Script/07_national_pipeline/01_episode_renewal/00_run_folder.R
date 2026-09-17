@@ -12,7 +12,7 @@ if (!exists("ROOT")) {
 }
 FOLDER_DIR <- project_path("02_Script/07_national_pipeline/01_episode_renewal")
 ALLOW_REFIT <- identical(Sys.getenv("NATIONAL_ALLOW_REFIT", "FALSE"), "TRUE")
-fp <- project_path("02_Script/stan/renewal_ceara_episode_re_fit.rds")
+fp <- project_path("03_Output/07_national_pipeline/model_fits/episode_renewal/renewal_ceara_episode_re_fit.rds")
 
 message("\n[01_episode_renewal] 01/02: fit_ceara_episode_re ...")
 if (file.exists(fp)) {

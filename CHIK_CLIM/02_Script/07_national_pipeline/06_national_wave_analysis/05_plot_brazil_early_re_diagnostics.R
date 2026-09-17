@@ -17,8 +17,8 @@ plot_re_root <- function() {
 
 run_early_re_diagnostics <- function() {
   root <- plot_re_root()
-  table_path <- file.path(root, "03_Output", "tables", "national_wave_analysis", "brazil_chik_major_wave_early_re.csv")
-  figure_dir <- file.path(root, "03_Output", "figures", "national_wave_analysis", "early_re")
+  table_path <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_wave_analysis", "brazil_chik_major_wave_early_re.csv")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_wave_analysis", "early_re")
   if (!file.exists(table_path)) stop("Early-Re output is missing; run 01_fit_brazil_major_wave_early_re.R first.")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   waves <- read_csv(table_path, show_col_types = FALSE) |>

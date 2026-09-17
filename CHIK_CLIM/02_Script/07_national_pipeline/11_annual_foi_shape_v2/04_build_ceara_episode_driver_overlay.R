@@ -37,15 +37,15 @@ qfun <- function(x, probability) unname(stats::quantile(x, probability, na.rm = 
 
 read_major_episode_table <- function(root) {
   window_path <- file.path(
-    root, "03_Output", "tables", "renewal_major_episode_re",
+    root, "03_Output", "07_national_pipeline", "tables", "renewal_major_episode_re",
     "ceara_major_outbreaks_6wk", "major_episode_six_week_windows.csv"
   )
   re6_path <- file.path(
-    root, "03_Output", "tables", "renewal_major_episode_re",
+    root, "03_Output", "07_national_pipeline", "tables", "renewal_major_episode_re",
     "ceara_major_outbreaks_6wk", "major_episode_re6_summary.csv"
   )
   re_all_path <- file.path(
-    root, "03_Output", "tables", "renewal_episode_re", "ceara_early_phase_re",
+    root, "03_Output", "07_national_pipeline", "tables", "renewal_episode_re", "ceara_early_phase_re",
     "episode_re_summary.csv"
   )
   if (!all(file.exists(c(window_path, re6_path, re_all_path)))) {
@@ -87,7 +87,7 @@ read_major_episode_table <- function(root) {
 }
 
 annual_s_onset <- function(root, episodes, primary_fit) {
-  fit_path <- file.path(root, "02_Script", "stan", paste0("annual_foi_shape_v2_", primary_fit, ".rds"))
+  fit_path <- file.path(root, "03_Output", "07_national_pipeline", "model_fits", "annual_foi_shape_v2", paste0("annual_foi_shape_v2_", primary_fit, ".rds"))
   if (!file.exists(fit_path)) stop("Primary annual posterior fit is missing: ", fit_path)
   bundle <- readRDS(fit_path)
   draws <- rstan::extract(bundle$fit, pars = "S_start", permuted = TRUE)$S_start
@@ -160,7 +160,7 @@ episode_recurrence_covariates <- function(episodes) {
 
 write_q_implied_draws <- function(root, table_dir) {
   paths <- list.files(
-    file.path(root, "02_Script", "stan"),
+    file.path(root, "03_Output", "07_national_pipeline", "model_fits", "annual_foi_shape_v2"),
     pattern = "^annual_foi_shape_v2_.*\\.rds$", full.names = TRUE
   )
   paths <- paths[!grepl("chik_dynamic", paths)]
@@ -203,7 +203,7 @@ make_overlay_plot <- function(root, episodes, climate, episode_table, figure_dir
   cases <- readRDS(file.path(root, "01_Data", "ce_weekly_2014_2025.rds")) |>
     transmute(week_start = as.Date(week_start), cases = as.numeric(cases))
   annual <- read_csv(
-    file.path(root, "03_Output", "tables", "annual_foi_shape_v2",
+    file.path(root, "03_Output", "07_national_pipeline", "tables", "annual_foi_shape_v2",
               "annual_foi_shape_v2_annual_posterior_summary.csv"),
     show_col_types = FALSE
   ) |>
@@ -266,8 +266,8 @@ make_overlay_plot <- function(root, episodes, climate, episode_table, figure_dir
 
 build_ceara_episode_driver_overlay <- function(primary_fit = "M1v2_SHAPE_s0_75") {
   root <- project_root_v2()
-  table_dir <- file.path(root, "03_Output", "tables", "annual_foi_shape_v2", "ceara_major_episode_drivers")
-  figure_dir <- file.path(root, "03_Output", "figures", "annual_foi_shape_v2", "ceara_major_episode_drivers")
+  table_dir <- file.path(root, "03_Output", "07_national_pipeline", "tables", "annual_foi_shape_v2", "ceara_major_episode_drivers")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "annual_foi_shape_v2", "ceara_major_episode_drivers")
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 

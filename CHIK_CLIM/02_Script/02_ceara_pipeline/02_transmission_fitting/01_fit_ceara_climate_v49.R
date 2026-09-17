@@ -32,8 +32,8 @@ source(file.path(root, "02_Script/00_shared/legacy_model_functions/22_v4_3_short
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/27_v4_8_seeded_recurrence/scripts/01_fit_v4_8.R"))
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/28_v4_9_hierarchical_seasonality/scripts/01_fit_v4_9.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/ceara/climate_forced_v4_9")
-table_dir <- file.path(root, "03_Output/tables/climate_forced_v4_9")
+base_dir <- file.path(root, "03_Output/02_ceara_pipeline/model_fits/climate_forced")
+table_dir <- file.path(root, "03_Output/02_ceara_pipeline/tables/climate_forced_v4_9")
 out_dir <- file.path(base_dir, "outputs", "ce_canary")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -86,7 +86,7 @@ run_smoke_test <- function() {
                    prepared$stan_data$N, prepared$stan_data$Y, min(prepared$stan_data$z_T_anom), max(prepared$stan_data$z_T_anom),
                    min(prepared$stan_data$z_P_anom), max(prepared$stan_data$z_P_anom)))
 
-  stan_path <- file.path(root, "02_Script/stan/renewal_ceara_v4_9_climate_forced_canary.stan")
+  stan_path <- file.path(root, "02_Script/00_shared/stan/current/ceara/renewal_ceara_v4_9_climate_forced_canary.stan")
   message("Compiling ", stan_path, " ...")
   mod <- rstan::stan_model(file = stan_path)
   message("Compiled OK.")
@@ -113,7 +113,7 @@ run_full_canary_fit <- function() {
   message(sprintf("[CE climate canary] Stan data: N=%d, Y=%d, q=%.2f (fixed, unchanged from frozen v4.9)",
                    prepared$stan_data$N, prepared$stan_data$Y, QVAL))
 
-  stan_path <- file.path(root, "02_Script/stan/renewal_ceara_v4_9_climate_forced_canary.stan")
+  stan_path <- file.path(root, "02_Script/00_shared/stan/current/ceara/renewal_ceara_v4_9_climate_forced_canary.stan")
   mod <- rstan::stan_model(file = stan_path)
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_climate_init_fn(prepared$stan_data$Y, td14_scalar_inits)

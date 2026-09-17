@@ -15,8 +15,8 @@ if (!exists("ROOT")) {
 
 STAGE_DIR <- project_path("02_Script/02_ceara_pipeline/03_model_diagnostics")
 
-v49_baseline_path <- project_path("03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds")
-climate_fit_path <- project_path("03_Output/model_fits/ceara/climate_forced_v4_9/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
+v49_baseline_path <- project_path("03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds")
+climate_fit_path <- project_path("03_Output/02_ceara_pipeline/model_fits/climate_forced/outputs/ce_canary/ce_climate_forced_canary_q0.05.rds")
 missing <- c(v49_baseline_path, climate_fit_path)[!file.exists(c(v49_baseline_path, climate_fit_path))]
 if (length(missing) > 0) {
   stop("Missing prerequisite(s):\n  ", paste(missing, collapse = "\n  "),

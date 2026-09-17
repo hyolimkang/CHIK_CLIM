@@ -23,12 +23,10 @@ Sys.setenv(RUN_FROM_STAGE = "1", RUN_TO_STAGE = "3")
 source("02_Script/06_mato_grosso_pipeline/99_run_mato_grosso_pipeline.R")
 ```
 
-Outputs remain at their original locations under
-`40_renewal_model/35_mato_grosso_v4_9_replication/outputs/` and
-`03_Output/tables|figures/mato_grosso_v4_9_replication/` -- this refactor
-did not move or rename any existing result (a separate, not-yet-completed
-step will migrate these to `03_Output/model_fits/mato_grosso/...` under the
-project's extension-based output rule).
+Outputs live under `03_Output/06_mato_grosso_pipeline/`: fitted Stan objects
+in `model_fits/v4_9_replication/`, tables/figures in
+`tables|figures/mato_grosso_v4_9_replication/`, and design/result reports
+in `reports/`.
 
 See `REFACTOR_MIGRATION_MAP.csv` (in `02_ceara_pipeline/`, extended with a
 Mato Grosso section) for the full old -> new script mapping.

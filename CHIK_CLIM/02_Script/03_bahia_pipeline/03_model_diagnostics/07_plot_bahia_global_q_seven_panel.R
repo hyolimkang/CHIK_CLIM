@@ -5,7 +5,7 @@
 # (median + 50%/95% CrI, time-constant) instead of a fixed flat line, since
 # q is estimated here rather than fixed data.
 #
-# Figures saved under 03_Output/figures/renewal_bahia_v4_9_global_q_multisite_serology/.
+# Figures saved under 03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_global_q_multisite_serology/.
 
 required_packages <- c("here", "rstan", "ggplot2", "dplyr", "patchwork", "scales", "tibble")
 missing_packages <- required_packages[!vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)]
@@ -54,7 +54,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 }
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-base_dir <- file.path(root, "03_Output/model_fits/bahia/v4_9_replication")
+base_dir <- file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication")
 
 plot_bahia_global_q_seven_panel <- function(tag = "pilot", stage = "pilot") {
   bundle <- readRDS(file.path(base_dir, "outputs_global_q_multisite_serology", tag, paste0("renewal_bahia_global_q_fit_", tag, ".rds")))
@@ -223,8 +223,8 @@ plot_bahia_global_q_seven_panel <- function(tag = "pilot", stage = "pilot") {
   }
 
   subfolder <- if (tag == "off") "sero_off" else "sero_on"
-  figure_dir <- file.path(root, "03_Output/figures/renewal_bahia_v4_9_global_q_multisite_serology", subfolder)
-  table_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_global_q_multisite_serology")
+  figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/renewal_bahia_v4_9_global_q_multisite_serology", subfolder)
+  table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_global_q_multisite_serology")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 

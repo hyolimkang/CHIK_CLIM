@@ -51,7 +51,7 @@ add_interval_layers <- function(plot, data, colour, fill = colour) {
 }
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-base_dir <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
+base_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 
 plot_pe_panel <- function(tag, stage = "pilot") {
   bundle <- readRDS(file.path(base_dir, "outputs", tag, paste0("renewal_pe_global_q_fit_", tag, ".rds")))
@@ -233,8 +233,8 @@ plot_pe_panel <- function(tag, stage = "pilot") {
   }
 
   subfolder <- if (has_serology) "modelB_U14" else "modelA_caseonly"
-  figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication", subfolder)
-  table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication")
+  figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication", subfolder)
+  table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 

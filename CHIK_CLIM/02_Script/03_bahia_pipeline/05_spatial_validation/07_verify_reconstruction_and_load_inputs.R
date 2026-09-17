@@ -10,16 +10,16 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_global_q_local_consistency_audit")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_global_q_local_consistency_audit")
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 # ---- A/B: municipality-week panel (reuse the already-validated one from ----
 #           the spatial-turnover diagnostic -- same source, same window)
-turnover_table_dir <- file.path(root, "03_Output/tables/bahia_spatial_turnover_diagnostic")
+turnover_table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_spatial_turnover_diagnostic")
 bahia_panel <- readRDS(file.path(turnover_table_dir, "bahia_municipality_week_panel.rds"))
 
 # ---- D: the current full Bahia global-q + geo-adjusted-serology fit --------
-fit_bundle <- readRDS(file.path(root, "03_Output/model_fits/bahia/v4_9_replication",
+fit_bundle <- readRDS(file.path(root, "03_Output/03_bahia_pipeline/model_fits/v4_9_replication",
                                  "outputs_global_q_multisite_serology/on_full2/renewal_bahia_global_q_fit_on_full2.rds"))
 fit <- fit_bundle$fit
 weekly_data <- fit_bundle$weekly_data

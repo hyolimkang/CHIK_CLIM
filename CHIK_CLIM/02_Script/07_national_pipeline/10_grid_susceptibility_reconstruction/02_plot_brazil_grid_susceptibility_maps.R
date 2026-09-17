@@ -28,8 +28,8 @@ map_root <- function() {
 
 map_paths <- function(root = map_root()) {
   output_tag <- Sys.getenv("GRID_SUSC_OUTPUT_TAG", "")
-  table_root <- file.path(root, "03_Output", "tables", "national_grid_susceptibility")
-  figure_root <- file.path(root, "03_Output", "figures", "national_grid_susceptibility")
+  table_root <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_grid_susceptibility")
+  figure_root <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_grid_susceptibility")
   if (nzchar(output_tag)) {
     table_root <- file.path(table_root, output_tag)
     figure_root <- file.path(figure_root, output_tag)

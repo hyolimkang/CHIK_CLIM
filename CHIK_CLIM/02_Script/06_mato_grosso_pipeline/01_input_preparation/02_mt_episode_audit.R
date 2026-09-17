@@ -9,10 +9,10 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-table_dir <- file.path(root, "03_Output/tables/mato_grosso_v4_9_replication")
-figure_dir <- file.path(root, "03_Output/figures/mato_grosso_v4_9_replication")
+table_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/tables/mato_grosso_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/06_mato_grosso_pipeline/figures/mato_grosso_v4_9_replication")
 
-wave_census <- read_csv(file.path(root, "03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"),
+wave_census <- read_csv(file.path(root, "03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv"),
                          show_col_types = FALSE)
 mt_waves_all <- wave_census |> dplyr::filter(state == "MT") |>
   transmute(wave_id, wave_order, major_epidemic_primary,

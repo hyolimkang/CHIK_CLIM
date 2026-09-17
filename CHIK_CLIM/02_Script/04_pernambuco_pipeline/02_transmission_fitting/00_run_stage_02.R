@@ -18,7 +18,7 @@ if (!exists("ROOT")) {
 }
 STAGE_DIR <- project_path("02_Script/04_pernambuco_pipeline/02_transmission_fitting")
 ALLOW_REFIT <- identical(Sys.getenv("PERNAMBUCO_ALLOW_REFIT", "FALSE"), "TRUE")
-BASE_OUT <- project_path("03_Output/model_fits/pernambuco/v4_9_replication")
+BASE_OUT <- project_path("03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 
 message("\n[Stage 02] 01/02: fit_pe_global_q (modelA_caseonly / modelB_U14 / modelB_U14_full) ...")
 required_tags <- c("modelA_caseonly", "modelB_U14", "modelB_U14_full")

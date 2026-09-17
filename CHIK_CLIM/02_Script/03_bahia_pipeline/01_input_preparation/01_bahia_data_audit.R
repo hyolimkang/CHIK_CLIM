@@ -49,7 +49,7 @@ cat("=== Bahia data audit ===\n")
 for (nm in names(report)) cat(sprintf("%-38s: %s\n", nm, report[[nm]]))
 
 audit_df <- tibble::tibble(check = names(report), value = as.character(unlist(report)))
-out_dir <- file.path(root, "03_Output/tables/renewal_bahia_v4_9_replication")
+out_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/renewal_bahia_v4_9_replication")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 write_csv(audit_df, file.path(out_dir, "bahia_data_audit.csv"))
 message("\n[saved] ", file.path(out_dir, "bahia_data_audit.csv"))

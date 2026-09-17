@@ -16,7 +16,7 @@ FOLDER_DIR <- project_path("02_Script/07_national_pipeline/11_annual_foi_shape_v
 ALLOW_REFIT <- identical(Sys.getenv("NATIONAL_ALLOW_REFIT", "FALSE"), "TRUE")
 
 message("\n[11_annual_foi_shape_v2] 01/04: prepare_annual_foi_shape_v2 ...")
-fp <- project_path("03_Output/tables/annual_foi_shape_v2/annual_foi_shape_v2_input.rds")
+fp <- project_path("03_Output/07_national_pipeline/tables/annual_foi_shape_v2/annual_foi_shape_v2_input.rds")
 if (file.exists(fp)) {
   message("  Found: ", fp, " -- reusing (not rebuilt).")
 } else if (ALLOW_REFIT) {
@@ -26,7 +26,7 @@ if (file.exists(fp)) {
 }
 
 message("\n[11_annual_foi_shape_v2] 02/04: fit_annual_foi_shape_v2 (6 SHAPE/NB2 sensitivity variants) ...")
-fp <- project_path("03_Output/tables/annual_foi_shape_v2/annual_foi_shape_v2_fit_manifest.csv")
+fp <- project_path("03_Output/07_national_pipeline/tables/annual_foi_shape_v2/annual_foi_shape_v2_fit_manifest.csv")
 if (file.exists(fp)) {
   message("  Found: ", fp, " -- reusing (not refit).")
 } else if (ALLOW_REFIT) {

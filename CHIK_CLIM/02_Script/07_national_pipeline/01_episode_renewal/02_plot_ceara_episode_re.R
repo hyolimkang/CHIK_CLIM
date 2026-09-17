@@ -127,15 +127,15 @@ make_hmc_figure <- function(hmc_table) {
 run_episode_renewal_diagnostics <- function() {
   fit_path <- Sys.getenv(
     "RENEWAL_EPISODE_FIT",
-    here::here("02_Script", "stan", "renewal_ceara_episode_re_fit.rds")
+    here::here("03_Output", "07_national_pipeline", "model_fits", "episode_renewal", "renewal_ceara_episode_re_fit.rds")
   )
   if (!file.exists(fit_path)) stop("Fit bundle not found: ", fit_path)
 
   table_directory <- here::here(
-    "03_Output", "tables", "renewal_episode_re", "ceara_early_phase_re"
+    "03_Output", "07_national_pipeline", "tables", "renewal_episode_re", "ceara_early_phase_re"
   )
   figure_directory <- here::here(
-    "03_Output", "figures", "renewal_episode_re", "ceara_early_phase_re"
+    "03_Output", "07_national_pipeline", "figures", "renewal_episode_re", "ceara_early_phase_re"
   )
   dir.create(table_directory, recursive = TRUE, showWarnings = FALSE)
   dir.create(figure_directory, recursive = TRUE, showWarnings = FALSE)

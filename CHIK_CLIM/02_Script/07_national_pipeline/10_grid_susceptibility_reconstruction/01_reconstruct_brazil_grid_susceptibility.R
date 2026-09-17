@@ -39,8 +39,8 @@ grid_settings <- list(
 
 grid_paths <- function(root = grid_root()) {
   output_tag <- Sys.getenv("GRID_SUSC_OUTPUT_TAG", "")
-  table_root <- file.path(root, "03_Output", "tables", "national_grid_susceptibility")
-  figure_root <- file.path(root, "03_Output", "figures", "national_grid_susceptibility")
+  table_root <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_grid_susceptibility")
+  figure_root <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_grid_susceptibility")
   if (nzchar(output_tag)) {
     table_root <- file.path(table_root, output_tag)
     figure_root <- file.path(figure_root, output_tag)
@@ -50,7 +50,7 @@ grid_paths <- function(root = grid_root()) {
     table = table_root,
     figure = figure_root,
     grid = file.path(table_root, "grid_selected_years"),
-    fit = file.path(root, "02_Script", "stan", "national_wave_analysis", "brazil_chik_annual_shape_fits.rds"),
+    fit = file.path(root, "03_Output", "07_national_pipeline", "model_fits", "national_wave_analysis", "brazil_chik_annual_shape_fits.rds"),
     uf_ensemble = file.path(root, "01_Data", "brazil_uf_foi_ensemble.csv")
   )
 }

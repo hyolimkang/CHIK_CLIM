@@ -14,10 +14,10 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(data.table); library(dplyr); library(ggplot2); library(tidyr); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-pe_root <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
+pe_root <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 chains_dir <- file.path(pe_root, "outputs/spatial5/chains")
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_model")
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/spatial5")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_model")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/spatial5")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 R_STRATA <- 5

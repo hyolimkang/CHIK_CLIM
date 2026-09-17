@@ -7,8 +7,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2); library(tidyr) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
 
 metrics <- read_csv(file.path(table_dir, "pe_wave_turnover_metrics.csv"), show_col_types = FALSE)
 waves <- read_csv(file.path(table_dir, "pe_wave_definitions.csv"), show_col_types = FALSE) |> arrange(start_week)

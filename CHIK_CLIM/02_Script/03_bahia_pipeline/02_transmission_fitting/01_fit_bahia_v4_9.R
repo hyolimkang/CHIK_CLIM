@@ -15,7 +15,7 @@
 # transition ever requiring re-seeding; all other Ceara transitions, up to
 # 56 weeks, were handled by the continuous renewal process alone) to
 # Bahia's 8 inter-wave gaps (14-49 weeks, from
-# 03_Output/tables/national_wave_analysis/brazil_chik_wave_analysis_master.csv)
+# 03_Output/07_national_pipeline/tables/national_wave_analysis/brazil_chik_wave_analysis_master.csv)
 # finds NONE qualify for external re-seeding. is_seed is therefore all-zero
 # and every week is included in the likelihood (fit_index = 1:N).
 #
@@ -42,7 +42,7 @@ here::i_am("CHIK_CLIM.Rproj")
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v4_0_minimal_no_vaccine", "01_fit_v4_0_minimal_no_vaccine.R"))
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "bahia", "v4_9_replication")
+base_dir <- file.path(root, "03_Output", "03_bahia_pipeline", "model_fits", "v4_9_replication")
 
 Q_GRID <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30) # identical grid to the final Ceara sensitivity analysis; q=0.05 not privileged
 
@@ -113,7 +113,7 @@ run_fit_bahia_v4_9 <- function(qval = as.numeric(Sys.getenv("QVAL", "0.05")), st
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_bahia_init_fn(prepared$stan_data$Y, td14_scalar_inits)
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_ceara_v4_9_hierarchical_seasonality_optional_serology.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "multistate", "renewal_ceara_v4_9_hierarchical_seasonality_optional_serology.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

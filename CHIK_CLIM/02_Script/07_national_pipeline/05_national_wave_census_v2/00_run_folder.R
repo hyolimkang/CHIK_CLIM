@@ -14,7 +14,7 @@ if (!exists("ROOT")) {
 }
 FOLDER_DIR <- project_path("02_Script/07_national_pipeline/05_national_wave_census_v2")
 ALLOW_REFIT <- identical(Sys.getenv("NATIONAL_ALLOW_REFIT", "FALSE"), "TRUE")
-fp <- project_path("03_Output/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv")
+fp <- project_path("03_Output/07_national_pipeline/tables/national_wave_census_v2/brazil_chik_wave_census_v2.csv")
 
 message("\n[05_national_wave_census_v2] build_brazil_chik_wave_census_v2 ...")
 if (file.exists(fp)) {

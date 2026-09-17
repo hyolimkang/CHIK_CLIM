@@ -19,9 +19,9 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2); library(tidyr); library(patchwork) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-pe_root <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_model")
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/spatial_Rfixed_feasibility")
+pe_root <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_model")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/spatial_Rfixed_feasibility")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 STRATUM_LEVELS <- c("1_Recife", "2_Metropolitana_remainder", "3_Agreste", "4_Sertao", "5_Vale_Sao_Francisco_Araripe")

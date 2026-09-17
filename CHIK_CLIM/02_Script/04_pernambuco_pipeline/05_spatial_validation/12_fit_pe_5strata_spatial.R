@@ -22,7 +22,7 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 source(file.path(root, "02_Script", "04_pernambuco_pipeline", "05_spatial_validation", "11_build_pe_5strata_stan_data.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "pernambuco", "v4_9_replication")
+base_dir <- file.path(root, "03_Output", "04_pernambuco_pipeline", "model_fits", "v4_9_replication")
 out_dir <- file.path(base_dir, "outputs", "spatial5")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -55,7 +55,7 @@ run_pilot <- function() {
   settings <- list(warmup = 1000L, sampling = 500L, chains = 4L, adapt_delta = 0.95, max_treedepth = 14L, metric = "dense_e")
   progress_dir <- file.path(out_dir, "chains")
   dir.create(progress_dir, recursive = TRUE, showWarnings = FALSE)
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_pernambuco_v4_9_5strata_spatial.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "pernambuco", "renewal_pernambuco_v4_9_5strata_spatial.stan")
   sample_file <- file.path(progress_dir, "chain")
 
   started <- Sys.time()

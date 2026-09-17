@@ -364,8 +364,8 @@ write_visual_audit <- function(state_week, primary_census, ceara_result, output_
 
 build_brazil_chik_episode_census <- function() {
   root <- project_root_census()
-  table_dir <- file.path(root, "03_Output", "tables", "national_episode_census")
-  figure_dir <- file.path(root, "03_Output", "figures", "national_episode_census")
+  table_dir <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_episode_census")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_episode_census")
   dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   panel_path <- file.path(root, "01_Data", "chik_brazil_muni_week_2015_2025.rds")
@@ -433,7 +433,7 @@ build_brazil_chik_episode_census <- function() {
     summarise_definition(dplyr::filter(all_census, definition == name), name, uf_lookup$state)
   }))
   write_csv(summary_table, file.path(table_dir, "brazil_chik_episode_census_summary.csv"))
-  old_audit_path <- file.path(root, "03_Output", "tables", "chik_state_epidemic_wave_audit.csv")
+  old_audit_path <- file.path(root, "03_Output", "07_national_pipeline", "tables", "chik_state_epidemic_wave_audit.csv")
   ce_audit <- ceara_quiet_audit(state_week, primary, old_audit_path)
   write_csv(ce_audit$result, file.path(table_dir, "ceara_2016_2017_quiet_interval_audit.csv"))
   write_csv(ce_audit$old_ce, file.path(table_dir, "ceara_previous_wave_audit_comparison.csv"))

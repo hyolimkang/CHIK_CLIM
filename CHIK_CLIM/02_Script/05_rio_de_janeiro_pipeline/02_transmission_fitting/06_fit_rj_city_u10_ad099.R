@@ -20,10 +20,10 @@ source(file.path(root, "02_Script/00_shared/legacy_model_functions/17_v4_0_minim
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/22_v4_3_short_2015_2019_q_calibration/scripts/02_fit_v4_3.R"))
 source(file.path(root, "02_Script/05_rio_de_janeiro_pipeline/02_transmission_fitting/05_fit_rj_city_u10.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication")
+base_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
 out_dir <- file.path(base_dir, "outputs", "city_u10_ad099")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication/city")
+table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication/city")
 
 run_fit_rj_city_u10_ad099 <- function() {
   settings <- list(warmup = 1200L, sampling = 1000L, chains = 4L, adapt_delta = 0.99, max_treedepth = 14L, metric = "dense_e")
@@ -40,7 +40,7 @@ run_fit_rj_city_u10_ad099 <- function() {
   scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_dispersed_init_fn(Y, scalar_inits)
 
-  stan_path <- file.path(root, "02_Script/stan/renewal_riodejaneiro_city_v4_9_global_q_logitnormal_serology.stan")
+  stan_path <- file.path(root, "02_Script/00_shared/stan/current/rio_de_janeiro/renewal_riodejaneiro_city_v4_9_global_q_logitnormal_serology.stan")
   sample_file <- file.path(progress_dir, "chain")
 
   started <- Sys.time()

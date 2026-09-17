@@ -27,17 +27,17 @@ source(file.path(root, "02_Script/00_shared/legacy_model_functions/17_v4_0_minim
 source(file.path(root, "02_Script/00_shared/legacy_model_functions/22_v4_3_short_2015_2019_q_calibration/scripts/02_fit_v4_3.R"))
 source(file.path(root, "02_Script/05_rio_de_janeiro_pipeline/02_transmission_fitting/01_fit_rj_global_q_case_only.R"))
 
-base_dir <- file.path(root, "03_Output/model_fits/rio_de_janeiro/v4_9_replication")
+base_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/model_fits/v4_9_replication")
 out_dir <- file.path(base_dir, "outputs", "fixedq")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-table_dir <- file.path(root, "03_Output/tables/rio_de_janeiro_v4_9_replication")
-figure_dir <- file.path(root, "03_Output/figures/rio_de_janeiro_v4_9_replication")
+table_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/tables/rio_de_janeiro_v4_9_replication")
+figure_dir <- file.path(root, "03_Output/05_rio_de_janeiro_pipeline/figures/rio_de_janeiro_v4_9_replication")
 
 Q_GRID <- c(0.0100, 0.0125, 0.0150, 0.0175, 0.0200) # targeted, centred on the global-q posterior's 95% CrI [0.013, 0.018]
 FIXED_Q_PRIOR_SD <- 0.02 # tight enough to pin q to within ~+/-2% multiplicatively
 
 weekly <- readRDS(file.path(table_dir, "rio_de_janeiro_weekly_input.rds"))
-stan_path <- file.path(root, "02_Script/stan/renewal_bahia_v4_9_global_q_multisite_serology.stan")
+stan_path <- file.path(root, "02_Script/00_shared/stan/current/multistate/renewal_bahia_v4_9_global_q_multisite_serology.stan")
 
 fit_one_q <- function(q_target) {
   prepared <- make_rj_global_q_data(weekly)

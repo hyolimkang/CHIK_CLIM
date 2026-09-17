@@ -7,10 +7,10 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(ggplot2); library(dplyr); library(tibble) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/modelD_curved_reparam")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/modelD_curved_reparam")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
-b <- readRDS(file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication/outputs/modelD/pe_curved_U14_pilot.rds"))
+b <- readRDS(file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication/outputs/modelD/pe_curved_U14_pilot.rds"))
 fit <- b$fit
 
 get_flat <- function(par) {

@@ -7,8 +7,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(ggplot2); library(tidyr) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_spatial_turnover_diagnostic")
-figure_dir <- file.path(root, "03_Output/figures/bahia_spatial_turnover_diagnostic")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_spatial_turnover_diagnostic")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/bahia_spatial_turnover_diagnostic")
 
 metrics <- read_csv(file.path(table_dir, "bahia_wave_turnover_metrics.csv"), show_col_types = FALSE)
 waves <- read_csv(file.path(table_dir, "bahia_wave_definitions.csv"), show_col_types = FALSE) |> arrange(start_week)

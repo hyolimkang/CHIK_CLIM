@@ -16,9 +16,9 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(tibble); library(tidyr); library(sf); library(ggplot2); library(rstan) })
 
 root <- "C:/Users/user/OneDrive - London School of Hygiene and Tropical Medicine/Documents/GitHub/CHIK_CLIM/CHIK_CLIM"
-pe_root <- file.path(root, "03_Output/model_fits/pernambuco/v4_9_replication")
-table_dir <- file.path(root, "03_Output/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
-figure_dir <- file.path(root, "03_Output/figures/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+pe_root <- file.path(root, "03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
+table_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/tables/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
+figure_dir <- file.path(root, "03_Output/04_pernambuco_pipeline/figures/pernambuco_v4_9_replication/spatial_turnover_diagnostic")
 
 pe_panel <- readRDS(file.path(table_dir, "pe_municipality_week_panel.rds"))
 

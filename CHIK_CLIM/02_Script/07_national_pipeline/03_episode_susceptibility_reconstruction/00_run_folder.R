@@ -19,7 +19,7 @@ if (!exists("ROOT")) {
 }
 FOLDER_DIR <- project_path("02_Script/07_national_pipeline/03_episode_susceptibility_reconstruction")
 ALLOW_REFIT <- identical(Sys.getenv("NATIONAL_ALLOW_REFIT", "FALSE"), "TRUE")
-fp <- project_path("02_Script/stan/ceara_episode_susceptibility_pilot_v1_fit.rds")
+fp <- project_path("03_Output/07_national_pipeline/model_fits/episode_susceptibility/ceara_episode_susceptibility_pilot_v1_fit.rds")
 
 message("\n[03_episode_susceptibility_reconstruction] 01/02: fit_ceara_episode_susceptibility ...")
 if (file.exists(fp)) {

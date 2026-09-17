@@ -21,12 +21,12 @@ if (!exists("ROOT")) {
 
 STAGE_DIR <- project_path("02_Script/02_ceara_pipeline/01_input_preparation")
 
-national_climate_path <- project_path("03_Output/tables/national_wave_analysis/brazil_chik_uf_weekly_climate.csv")
+national_climate_path <- project_path("03_Output/07_national_pipeline/tables/national_wave_analysis/brazil_chik_uf_weekly_climate.csv")
 if (!file.exists(national_climate_path)) {
   stop("Missing prerequisite:\n  ", national_climate_path,
        "\n\nThis is built by the national pipeline's provisional climate-susceptibility checkpoint (02_Script/07_national_pipeline/07_provisional_climate_susceptibility_checkpoint/), not by this stage.", call. = FALSE)
 }
-v49_baseline_path <- project_path("03_Output/model_fits/ceara/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds")
+v49_baseline_path <- project_path("03_Output/02_ceara_pipeline/model_fits/baseline/v4_9_hierarchical_seasonality/outputs/q0.05/renewal_ceara_v4_9_fit_q0.05.rds")
 if (!file.exists(v49_baseline_path)) {
   stop("Missing prerequisite (needed by script 02 of this stage):\n  ", v49_baseline_path,
        "\n\nRun Stage 02 (STEP 02B) first:\n  02_transmission_fitting (00_run_stage_02.R)", call. = FALSE)
@@ -42,6 +42,6 @@ source(file.path(STAGE_DIR, "02_check_climate_orthogonality_and_priors.R"), loca
 message("\n[Stage 01] 03/03: check_climate_multiplier_prior ...")
 source(file.path(STAGE_DIR, "03_check_climate_multiplier_prior.R"), local = .GlobalEnv)
 
-final_product <- project_path("03_Output/tables/climate_forced_v4_9/climate_anomaly_covariates.csv")
+final_product <- project_path("03_Output/02_ceara_pipeline/tables/climate_forced_v4_9/climate_anomaly_covariates.csv")
 if (!file.exists(final_product)) stop("Stage 01 ran but did not produce the expected product: ", final_product, call. = FALSE)
 message("\n[Stage 01] Complete. Required product present: ", final_product)

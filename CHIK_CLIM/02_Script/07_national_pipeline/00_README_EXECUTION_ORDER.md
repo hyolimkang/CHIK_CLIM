@@ -52,13 +52,12 @@ Sys.setenv(NATIONAL_ALLOW_REFIT = "TRUE")
 source("02_Script/07_national_pipeline/99_run_national_pipeline.R")
 ```
 
-Outputs remain at their original locations under `03_Output/tables|figures/
-{national_episode_census,national_wave_census_v2,national_wave_analysis,
-national_grid_susceptibility,annual_foi_shape_v2}/`, `02_Script/stan/`
-(episode/major-episode/episode-susceptibility/annual-foi-shape-v2 fits), and
-`03_Output/{tables,figures}/{episode_susceptibility,renewal_episode_re,
-renewal_major_episode_re}/` -- this refactor did not move or rename any
-existing result.
+Outputs live under `03_Output/07_national_pipeline/`: tables/figures in
+`tables|figures/{national_episode_census,national_wave_census_v2,
+national_wave_analysis,national_grid_susceptibility,annual_foi_shape_v2,
+episode_susceptibility,renewal_episode_re,renewal_major_episode_re}/`, and
+fitted Stan objects for this pipeline's own stages (episode/major-episode/
+episode-susceptibility/annual-foi-shape-v2) in `model_fits/`.
 
 See `REFACTOR_MIGRATION_MAP.csv` (in `02_ceara_pipeline/`, extended with a
 National section) for the full old -> new script mapping.

@@ -17,8 +17,8 @@ sus_plot_root <- function() {
 
 run_susceptibility_diagnostics <- function() {
   root <- sus_plot_root()
-  table_dir <- file.path(root, "03_Output", "tables", "national_wave_analysis")
-  figure_dir <- file.path(root, "03_Output", "figures", "national_wave_analysis", "susceptibility")
+  table_dir <- file.path(root, "03_Output", "07_national_pipeline", "tables", "national_wave_analysis")
+  figure_dir <- file.path(root, "03_Output", "07_national_pipeline", "figures", "national_wave_analysis", "susceptibility")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   weekly <- read_csv(file.path(table_dir, "brazil_chik_weekly_susceptibility_summary.csv"), show_col_types = FALSE) |>
     mutate(week_start = as.Date(week_start))

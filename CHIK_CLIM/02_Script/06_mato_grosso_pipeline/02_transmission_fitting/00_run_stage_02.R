@@ -14,7 +14,7 @@ if (!exists("ROOT")) {
 }
 STAGE_DIR <- project_path("02_Script/06_mato_grosso_pipeline/02_transmission_fitting")
 ALLOW_REFIT <- identical(Sys.getenv("MATO_GROSSO_ALLOW_REFIT", "FALSE"), "TRUE")
-BASE_OUT <- project_path("03_Output/model_fits/mato_grosso/v4_9_replication")
+BASE_OUT <- project_path("03_Output/06_mato_grosso_pipeline/model_fits/v4_9_replication")
 
 message("\n[Stage 02] 01/03: fit_mt_global_q_case_only ...")
 fp <- file.path(BASE_OUT, "outputs/caseonly/mt_global_q_case_only.rds")

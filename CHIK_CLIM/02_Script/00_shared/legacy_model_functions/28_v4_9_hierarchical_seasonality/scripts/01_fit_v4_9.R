@@ -33,7 +33,7 @@ source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "17_v
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "22_v4_3_short_2015_2019_q_calibration", "scripts", "02_fit_v4_3.R"))
 source(file.path(root, "02_Script", "00_shared", "legacy_model_functions", "27_v4_8_seeded_recurrence", "scripts", "01_fit_v4_8.R"))
 
-base_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_9_hierarchical_seasonality")
+base_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_9_hierarchical_seasonality")
 
 Q_GRID <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30) # identical grid to v4.7/v4.8
 
@@ -103,7 +103,7 @@ run_fit_v4_9 <- function(qval = as.numeric(Sys.getenv("QVAL", "0.10"))) {
   td14_scalar_inits <- load_td14_scalar_inits(root)
   init_fn <- make_v4_9_init_fn(prepared$stan_data$Y, td14_scalar_inits)
 
-  stan_path <- file.path(root, "02_Script", "stan", "renewal_ceara_v4_9_hierarchical_seasonality.stan")
+  stan_path <- file.path(root, "02_Script", "00_shared", "stan", "current", "ceara", "renewal_ceara_v4_9_hierarchical_seasonality.stan")
   started <- Sys.time()
   fit <- rstan::stan(
     file = stan_path, data = prepared$stan_data,

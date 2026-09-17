@@ -10,7 +10,7 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(tibble); library(tidyr) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_global_q_local_consistency_audit")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_global_q_local_consistency_audit")
 
 inputs <- readRDS(file.path(table_dir, "audit_inputs_bundle.rds"))
 bahia_panel <- inputs$bahia_panel

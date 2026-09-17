@@ -58,7 +58,7 @@ read_ceara_notified_weekly <- function(settings) {
 }
 
 read_ceara_audit_episodes <- function(settings) {
-  audit_path <- project_path("03_Output", "tables", "chik_state_epidemic_wave_audit.csv")
+  audit_path <- project_path("03_Output", "07_national_pipeline", "tables", "chik_state_epidemic_wave_audit.csv")
   episodes <- read.csv(audit_path, stringsAsFactors = FALSE) |>
     dplyr::filter(uf == settings$state_abbreviation) |>
     transmute(
@@ -217,13 +217,13 @@ prepare_ceara_episode_periods <- function() {
 
 if (sys.nframe() == 0L) {
   output_directory <- project_path(
-    "03_Output", "tables", "episode_susceptibility", "ceara_pilot_v1"
+    "03_Output", "07_national_pipeline", "tables", "episode_susceptibility", "ceara_pilot_v1"
   )
   dir.create(output_directory, recursive = TRUE, showWarnings = FALSE)
   prepared <- prepare_ceara_episode_periods()
   saveRDS(
     prepared,
-    project_path("02_Script", "stan", "ceara_episode_susceptibility_periods.rds")
+    project_path("01_Data", "processed", "model_inputs", "ceara_episode_susceptibility_periods.rds")
   )
   write.csv(prepared$periods, file.path(output_directory, "ceara_period_definition.csv"), row.names = FALSE)
   write.csv(prepared$episodes, file.path(output_directory, "ceara_episode_definition.csv"), row.names = FALSE)

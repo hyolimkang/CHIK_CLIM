@@ -14,8 +14,8 @@ if (!exists("ROOT")) {
 }
 
 STAGE_DIR <- project_path("02_Script/02_ceara_pipeline/09_figures_reporting")
-RESULTS_DIR_HISTVAX <- project_path("03_Output/results/ceara_historical_age12_vaccine_counterfactual")
-TABLES_DIR_HISTVAX <- project_path("03_Output/tables/ceara_historical_age12_vaccine_counterfactual")
+RESULTS_DIR_HISTVAX <- project_path("03_Output/02_ceara_pipeline/results/ceara_historical_age12_vaccine_counterfactual")
+TABLES_DIR_HISTVAX <- project_path("03_Output/02_ceara_pipeline/tables/ceara_historical_age12_vaccine_counterfactual")
 
 required_files <- c(
   file.path(RESULTS_DIR_HISTVAX, "three_arm_results.rds"),

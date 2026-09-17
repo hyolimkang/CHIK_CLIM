@@ -31,7 +31,7 @@ if (!exists("ROOT")) {
 }
 STAGE_DIR <- project_path("02_Script/04_pernambuco_pipeline/05_spatial_validation")
 ALLOW_REFIT <- identical(Sys.getenv("PERNAMBUCO_ALLOW_REFIT", "FALSE"), "TRUE")
-BASE_OUT <- project_path("03_Output/model_fits/pernambuco/v4_9_replication")
+BASE_OUT <- project_path("03_Output/04_pernambuco_pipeline/model_fits/v4_9_replication")
 panel_path <- project_path("01_Data/chik_dlnm_panel_muni_week_2015_2025.rds")
 modelB_fit <- file.path(BASE_OUT, "outputs/modelB_U14/renewal_pe_global_q_fit_modelB_U14.rds")
 missing <- c(panel_path, modelB_fit)[!file.exists(c(panel_path, modelB_fit))]

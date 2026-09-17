@@ -10,8 +10,8 @@ if (length(missing_packages)) stop("Missing package(s): ", paste(missing_package
 suppressPackageStartupMessages({ library(rstan); library(dplyr); library(readr); library(tibble); library(ggplot2) })
 
 root <- ROOT # from 00_project_setup.R (sourced by the stage runner / .Rprofile) -- no scientific change
-table_dir <- file.path(root, "03_Output/tables/bahia_global_q_local_consistency_audit")
-figure_dir <- file.path(root, "03_Output/figures/bahia_global_q_local_consistency_audit")
+table_dir <- file.path(root, "03_Output/03_bahia_pipeline/tables/bahia_global_q_local_consistency_audit")
+figure_dir <- file.path(root, "03_Output/03_bahia_pipeline/figures/bahia_global_q_local_consistency_audit")
 dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
 
 inputs <- readRDS(file.path(table_dir, "audit_inputs_bundle.rds"))

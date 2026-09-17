@@ -17,7 +17,7 @@ prior_root <- function() {
 
 run_plot_weak_q_prior <- function() {
   root <- prior_root()
-  out_dir <- file.path(root, "03_Output", "model_fits", "ceara", "v4_3_short_2015_2019_q_calibration")
+  out_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "model_fits", "baseline", "v4_3_short_2015_2019_q_calibration")
 
   n_mc <- 2e6
   set.seed(20260912L)
@@ -42,7 +42,7 @@ run_plot_weak_q_prior <- function() {
     labs(title = "v4.3 weak calibration prior on q (pre-registered, not tuned post-hoc)",
          subtitle = "eta_q ~ normal(logit(0.05), 1.25), q = inv_logit(eta_q)", x = "q", y = "Monte Carlo density (count)") +
     theme_classic(base_size = 9)
-  figure_dir <- file.path(root, "03_Output", "figures", "renewal_v4_3_short_2015_2019_q_calibration")
+  figure_dir <- file.path(root, "03_Output", "02_ceara_pipeline", "figures", "transmission", "renewal_v4_3_short_2015_2019_q_calibration")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
   ggsave(file.path(figure_dir, "weak_q_prior.png"), p, width = 180, height = 120, units = "mm", dpi = 300)
   message("[weak q prior] figure saved: ", file.path(figure_dir, "weak_q_prior.png"))
