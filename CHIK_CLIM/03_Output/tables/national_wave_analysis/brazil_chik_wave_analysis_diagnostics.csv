@@ -8,9 +8,9 @@ early_Re,primary_usable_Re6,119
 susceptibility,states_fitted,27
 susceptibility,states_passing_HMC,25
 susceptibility,states_failing_HMC,2
-susceptibility,annual_lambda_min_q025,1.1298432352017577e-4
-susceptibility,annual_lambda_max_q975,0.16468687418373243
-susceptibility,median_end_2025_S_prop,0.8902142355004191
+susceptibility,annual_lambda_min_q025,1.13e-4
+susceptibility,annual_lambda_max_q975,0.164686874
+susceptibility,median_end_2025_S_prop,0.89
 susceptibility,maximum_weekly_annual_S_discrepancy_prop,0.00128588058561044
 integration,major_waves_with_S_onset,142
 integration,major_waves_with_usable_Re6,119

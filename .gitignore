@@ -123,8 +123,15 @@ CHIK_CLIM/03_Output/**/*.rds
 # Raw per-chain CmdStan-style sampler progress CSVs (used only for
 # real-time HMC monitoring while a fit runs; can total several GB) and the
 # legacy top-level progress-CSV cache -- regenerate by rerunning the fit.
+# Covers both 02_Script/ (older/frozen fit locations) and 03_Output/model_fits/
+# (the extension-based placement rule's target for all accepted fit bundles).
 CHIK_CLIM/02_Script/**/chains*/
+CHIK_CLIM/03_Output/**/chains*/
 CHIK_CLIM/02_Script/stan/sampling_progress/
+
+# Per-fit run logs (console output redirected to file while a Stan fit was
+# running) -- not scientific record, safe to regenerate by rerunning the fit.
+CHIK_CLIM/03_Output/**/*.log
 
 # Raster / model outputs (large)
 CHIK_CLIM/01_Data/*.tif

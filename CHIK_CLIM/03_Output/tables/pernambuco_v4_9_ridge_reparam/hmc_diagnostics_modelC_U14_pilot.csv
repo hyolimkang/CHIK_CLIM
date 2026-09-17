@@ -1,0 +1,10 @@
+metric,value
+divergences,0
+max_treedepth_hits,36
+maximum_Rhat,-Inf
+minimum_bulk_ESS,Inf
+minimum_tail_ESS,Inf
+BFMI_chain_1,0.9211710745031169
+BFMI_chain_2,0.8247521502929027
+BFMI_chain_3,0.9414138185400187
+BFMI_chain_4,0.7359549391636909
