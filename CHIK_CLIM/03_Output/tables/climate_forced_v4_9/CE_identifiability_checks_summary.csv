@@ -1,0 +1,5 @@
+check,value
+"cor(z_T_anom, z_P_anom)",-0.3889532899910169
+"max |cor(anomaly, harmonic)|",0.019245067193316638
+mean T_anom (overall),-2.3829089890194655e-4
+mean P_anom (overall),0.0014358779805569404

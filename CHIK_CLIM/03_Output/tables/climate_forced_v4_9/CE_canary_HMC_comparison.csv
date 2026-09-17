@@ -1,0 +1,3 @@
+model,divergences,max_treedepth_hits,max_rhat_classic,max_rhat_rank_normalised,min_ess_bulk_rank_normalised,min_ess_tail_rank_normalised,hmc_pass_classic_gate
+baseline v4.9 (q=0.05),0,0,1.0008029845403268,1.0029187587003916,570.9359049307503,581.1251173329839,TRUE
+climate-forced canary (q=0.05),0,0,1.009703878720831,1.009820168885161,469.92896946207225,378.4173328203906,TRUE

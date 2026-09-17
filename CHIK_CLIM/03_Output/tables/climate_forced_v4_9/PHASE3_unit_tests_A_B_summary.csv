@@ -1,0 +1,3 @@
+test,max_abs_diff_S,max_abs_diff_X,doses_administered_total,effective_protected_total,result
+A: coverage=0,0,0,0,0,PASS
+B: VE_infection=0,0,0,1251252.2138978788,0,PASS

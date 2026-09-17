@@ -1,0 +1,10 @@
+check,pass
+qa1_arm_A_matches_accepted,TRUE
+qa2_3_conservation,TRUE
+qa4_no_duplicate_vaccination,TRUE
+qa5_arm_C_zero_pathway_groups_match_A,TRUE
+qa6_arm_B_indirect_has_lag,TRUE
+qa7_R0_identical,TRUE
+qa8_Reff_allowed_to_differ,TRUE
+qa9_lambda_divergence_week,NA
+qa10_decomposition_identity,TRUE

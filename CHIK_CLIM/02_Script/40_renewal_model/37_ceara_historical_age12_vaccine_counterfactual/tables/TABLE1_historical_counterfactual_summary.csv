@@ -1,0 +1,3 @@
+scenario,cumulative_infections_median,cumulative_infections_lo95,cumulative_infections_hi95,cumulative_reported_cases_median,peak_weekly_infections_median,final_S_prop_median,doses_median,infections_averted_median,infections_averted_lo95,infections_averted_hi95,percent_reduction_median
+A: No vaccine,2463215.2266773097,2271192.5060505336,2745044.3715693518,123160.76133386549,112012.73642419945,0.7413987390432959,0,NA,NA,NA,NA
+B: Routine age-12 (stress test),1927811.0148484104,1704723.3254297492,2265600.7855306217,96390.55074242053,72156.24936719413,0.7139670406285749,913032.0590248335,538772.6320432008,473373.9997588451,567351.2775607046,21.830630507189586

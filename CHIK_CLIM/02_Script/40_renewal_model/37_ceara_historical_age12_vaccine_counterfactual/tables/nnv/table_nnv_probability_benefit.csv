@@ -1,0 +1,5 @@
+quantity,probability
+Pr(infections_averted > 0),1
+Pr(infections_averted <= 0),0
+Pr(reported_cases_averted > 0),1
+Pr(reported_cases_averted <= 0),0

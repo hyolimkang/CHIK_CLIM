@@ -1,0 +1,6 @@
+age_group,programme_doses_per_infection_averted_in_group_median,programme_doses_per_infection_averted_in_group_lo95,programme_doses_per_infection_averted_in_group_hi95,note
+0-11,11.298551978326579,10.412904647508046,13.734121021226972,"DIAGNOSTIC ONLY -- programme doses are administered to age 12, not to this group; this is NOT an age-specific NNV"
+12,26.79854599785422,24.0903320374792,29.075215223793435,"DIAGNOSTIC ONLY -- programme doses are administered to age 12, not to this group; this is NOT an age-specific NNV"
+13-17,10.5192856193981,9.861267658614654,11.063523693983258,"DIAGNOSTIC ONLY -- programme doses are administered to age 12, not to this group; this is NOT an age-specific NNV"
+18-64,3.0776529407219497,2.854070857618098,3.688797597154276,"DIAGNOSTIC ONLY -- programme doses are administered to age 12, not to this group; this is NOT an age-specific NNV"
+65+,22.91543155744324,20.486078496548174,30.58129475933961,"DIAGNOSTIC ONLY -- programme doses are administered to age 12, not to this group; this is NOT an age-specific NNV"
