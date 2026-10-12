@@ -1,0 +1,2 @@
+check,n_draws_checked,max_abs_error,pass
+log_R0(t) = alpha_R + year_effect[year_id(t)] + A_year[year_id(t)]*(beta_sin1*sin1+beta_cos1*cos1) + beta_sin2*sin2+beta_cos2*cos2 + beta_T*z_T_anom(t) + beta_P*z_P_anom(t),50,4.440892098500626e-16,TRUE

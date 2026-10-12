@@ -1,0 +1,11 @@
+item,value
+temperature lag window,"mean of weeks (t-2, t-1, t): primary lag spec, NOT re-derived here"
+precipitation lag window,"sum of weeks (t-6...t-2): primary lag spec, NOT re-derived here"
+temperature transform,raw mean temperature (deg C)
+precipitation transform,"log1p(summed precipitation, mm)"
+climatology reference,"mean lagged value by (state, ISO week-of-year) across all available years, state=CE"
+standardisation,"pooled mean/SD across CE/BA/RJ/MT (T_anom_mean=0.0000, T_anom_sd=0.7663, P_anom_mean=-0.0000, P_anom_sd=0.5016)"
+boundary-week NA handling,"set to 0 (assume average climate) for the earliest weeks in 2015-01/02 lacking a full lag window -- disclosed, not imputed"
+fixed q,"0.05 (fixed scenario input, not estimated in this or any other current-pipeline fit)"
+generation interval,"G=8 weeks, Gamma(shape=4, rate=2), discretised and renormalised to sum to 1"
+seasonal period (weeks),52.1775 (365.25/7)

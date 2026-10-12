@@ -1,0 +1,5 @@
+item,status
+q (ascertainment fraction),"FIXED at 0.05 in every current-pipeline fit (this one included); not estimated, not uniquely identified by this or any other fit"
+lag specification,"Only the 'primary' lag spec (T: mean t-2..t; P: sum t-6..t-2) was ever fit to the climate-forced Stan model. 'sensitivity_A' (T: t-1..t; P: t-4..t-1) and 'sensitivity_B' (T: t-3..t-1; P: t-8..t-3) anomaly series are already computed (climate_anomaly_covariates.csv) but have NEVER been fit -- this is a required, not-yet-performed sensitivity check, not an expensive refit done here per instruction"
+multi-state pooling,"No multi-state/pooled climate coefficient model exists yet (CLIMATE_V49_CANARY_ASSESSMENT.md explicitly stops before this 'Phase 4' step); beta_T/beta_P are CE-specific, single-state estimates only"
+q-sensitivity sweep availability,"The existing q in {0.05,0.10,0.15,0.20,0.25,0.30} sweep (v4.7/v4.8/v4.9 baseline) contains NO climate forcing at all -- it is a q-identifiability check for the NON-climate model and must not be read as a sensitivity analysis of beta_T/beta_P"

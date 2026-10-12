@@ -1,0 +1,16 @@
+section,check,pass,detail
+A,Historical replay reproduces S/U/X,TRUE,"draw=141, max relative error S=0.00e+00 U=0.00e+00 X=0.00e+00"
+B,Mass conservation S(t)+U(t)=N_start(t),TRUE,max abs error = 2.421e-08
+C,Zero introduction pressure -> zero infections,TRUE,"max X = 0.000e+00 (R0=2.0, 100 weeks, zero history, zero imports)"
+C,"Zero introduction pressure, stochastic mode",TRUE,max X = 0.000e+00
+F,Forcing identity: beta=0 == z=0 (C0 vs C2),TRUE,max abs log_R0 difference = 0.000e+00
+2.2,compute_R0_future() reproduces historical R0(t) exactly,TRUE,max abs error = 0.000e+00
+D,Stochastic replicates produce distinct trajectories,TRUE,"unique cumulative-infection outcomes = 16 / 20 replicates, var(cum_X)=129.2"
+D,Stochastic replicates permit fadeout (zero-infection weeks),TRUE,replicates with >=1 zero-infection week: 20 / 20 (range 458-489 weeks)
+E,Posterior draw index consistent across alpha_R and terminal S (joint propagation),TRUE,"cor(alpha_R, S_terminal) on sample=-0.951 vs full posterior=-0.951"
+G,Future horizon starts strictly after the historical data end date,TRUE,"future starts 2026-01-04, historical ends 2025-12-21"
+G,simulate_renewal_core() accepts no observed-future-data argument,TRUE,"args: R0_vec, w, S0, U0, N_start_vec, N_end_vec, births_vec, deaths_vec, X_recent_history, lambda_import, stochastic, rng_pois, rng_binom, is_seed, X_seed"
+H,"Demographic plausibility (S>=0, U>=0, N>0) on historical replay",TRUE,"checked S(t)>=0, U(t)>=0, N(t)>0 for all weeks"
+I,Same seed reproduces identical trajectory,TRUE,two runs with seed=777
+I,Different seed yields a different trajectory,TRUE,seed=777 vs seed=778
+2.1,Terminal-state bridge lands exactly on N_end(N_hist),TRUE,max abs error across 300 draws = 3.912e-08
