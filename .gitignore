@@ -145,6 +145,11 @@ CHIK_CLIM/01_Data/chik_brazil_muni_month_*.rds
 # Accidental Windows Explorer copy-paste duplicates
 CHIK_CLIM/03_Output/**/* - 복사본.*
 
+# Stray root-level data cache (accidental duplicate of CHIK_CLIM/01_Data/
+# sinasc_cache/, created when a fetch script ran from the wrong working
+# directory; 1.3GB of SINASC raw zips -- regenerate via the fetch scripts).
+/01_Data/
+
 # ---- Keep on GitHub (not ignored) ----
 # CHIK_CLIM/02_Script/*.R
 # CHIK_CLIM/01_Data/sinan_chik_docs/
