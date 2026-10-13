@@ -1,0 +1,5 @@
+contrast,median_diff,lo95,hi95,fraction_positive
+B - A (year-level effect),2351462.5,24856.125,5295314.1,1
+C - A (amplitude effect),1926,-2315.2,116827.92499999999,0.755
+"D - A (both, total)",2607989.5,34769.625,5757272.999999997,1
+Interaction (D-B-C+A),41856.5,-724664.775,2969886.4749999987,0.5855

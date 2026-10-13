@@ -1,0 +1,12 @@
+holdout,generator,mechanism_class,n,probability
+H1,G1_fixed_SD_040,1 No positive M during Reff>1,703,0.3515
+H1,G1_fixed_SD_040,2 Pressure present; no sustained local dominance,3,0.0015
+H1,G1_fixed_SD_040,3 Established; no major annual epidemic,838,0.419
+H1,G1_fixed_SD_040,4 Major annual epidemic,456,0.228
+H1,G2_estimated_tau,1 No positive M during Reff>1,182,0.091
+H1,G2_estimated_tau,3 Established; no major annual epidemic,1607,0.8035
+H1,G2_estimated_tau,4 Major annual epidemic,211,0.1055
+H2,G1_fixed_SD_040,1 No positive M during Reff>1,376,0.188
+H2,G1_fixed_SD_040,4 Major annual epidemic,1624,0.812
+H2,G2_estimated_tau,1 No positive M during Reff>1,120,0.06
+H2,G2_estimated_tau,4 Major annual epidemic,1880,0.94

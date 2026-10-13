@@ -1,0 +1,12 @@
+item,status,finding
+Training/serology,PASS,H1/H2 use only weeks through their cutoffs; eligible 2018 serology is included in both.
+Observed infection seed,PASS,Training data have is_seed=X_seed=0 and no observed holdout infection seed enters simulation.
+Full-period posterior initialization,PASS,Holdouts read only ce_tau_year_training_H1/H2.rds and their own terminal states/history.
+Terminal S/U/history,PASS,advance_terminal_state supplies the omitted final demographic step; 8-week posterior X history is carried forward.
+tau_year draw,PASS-WITH-HMC-CAVEAT,G2 uses tau_year from the matching training-only posterior draw; quantitative results remain provisional.
+Future year-effect recentering,FAIL,Future z_year values are re-centred within each finite holdout. Predictive new-year effects should be marginal draws around the fitted population mean; the current zero-sum constraint is horizon-dependent.
+R0/Reff/seasonal phase,PASS,Reconstructed log-R0 components reproduce saved R0 numerically; absolute seasonal indexing continues from training; Reff=R0*S/N.
+Demography/population,PASS,"S+U=N numerically, states remain nonnegative, and weekly demographic inputs are carried through."
+Importation accounting,PASS,"M_t enters once as M_t/N in the hazard. It is introduction pressure, not realised imported infections or added cases."
+Observation process,PASS,"Reported cases are NegBinomial with mean q*X and fixed q=0.05; aggregate simulation ratio is checked, not used for calibration."
+Climate information,PASS-WITH-CAVEAT,Hindcasts use observed holdout climate and full-2015-2025 anomaly scaling: observed-climate-conditional with preprocessing leakage.

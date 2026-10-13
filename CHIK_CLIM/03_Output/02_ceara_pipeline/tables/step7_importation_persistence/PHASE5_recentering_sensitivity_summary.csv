@@ -1,0 +1,3 @@
+arm,median_sd_year_effect_realised,median_entry_weighted_infectiousness,median_peak_R0,median_peak_Reff,median_cumulative_latent_2022,median_annual_reported_cases_2022,prob_established,prob_major_epidemic,prob_exceed_observed_2022,n
+centered_accepted_convention,0.14248509332141962,4.87904828375941,1.8121843299255853,1.3266647061547578,806.5,40,0.899,0.199,0,2000
+uncentered_diagnostic_arm,0.14248509332141962,4.382160170294789,1.8212550162987455,1.3112487820856429,817,41,0.8925,0.184,0.012,2000

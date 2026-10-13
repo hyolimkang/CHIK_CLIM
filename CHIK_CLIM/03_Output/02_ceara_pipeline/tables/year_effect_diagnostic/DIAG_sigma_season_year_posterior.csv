@@ -1,0 +1,2 @@
+parameter,median,lo95,hi95,prior
+sigma_season_year,0.47569779675414336,0.3420068299814986,0.6509729110451923,"Normal(0, 0.20), truncated at 0 (lower=0 constraint) -- a GENUINE posterior-estimated parameter"

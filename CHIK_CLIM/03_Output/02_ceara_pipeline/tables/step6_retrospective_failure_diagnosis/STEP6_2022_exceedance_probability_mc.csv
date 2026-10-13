@@ -1,0 +1,5 @@
+holdout,generator,n_posterior_draws,n_trajectories,observed_2022,probability_equal_or_exceed,cluster_bootstrap_lo95,cluster_bootstrap_hi95
+H1,G1_fixed_SD_040,100,2000,50986,0.029,0.001,0.066
+H1,G2_estimated_tau,100,2000,50986,0.003,0,0.009
+H2,G1_fixed_SD_040,100,2000,50986,0.304,0.21818333333333337,0.3938291666666667
+H2,G2_estimated_tau,100,2000,50986,0.119,0.06,0.185

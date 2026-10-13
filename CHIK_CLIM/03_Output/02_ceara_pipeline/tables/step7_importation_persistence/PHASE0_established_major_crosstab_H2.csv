@@ -1,0 +1,4 @@
+established,major_epidemic,n,probability
+FALSE,FALSE,57,0.0285
+FALSE,TRUE,43,0.0215
+TRUE,TRUE,1900,0.95

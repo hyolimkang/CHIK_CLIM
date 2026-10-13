@@ -1,0 +1,5 @@
+contrast,median_diff_log1p
+B - A (year-level effect),5.701866665816621
+C - A (amplitude effect),0.2311150466897578
+"D - A (both, total)",5.775958366771229
+Interaction (D-B-C+A),-0.20196840395696558

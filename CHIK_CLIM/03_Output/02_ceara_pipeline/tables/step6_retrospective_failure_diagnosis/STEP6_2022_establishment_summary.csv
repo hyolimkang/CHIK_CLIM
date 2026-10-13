@@ -1,0 +1,5 @@
+holdout,generator,prob_any_latent_infection,prob_favourable_pressure,prob_established,prob_major_epidemic,median_weeks_zero_infections,median_longest_infection_free_run,median_longest_local_dominance_run
+H1,G1_fixed_SD_040,0.9975,0.6485,0.647,0.295,2,1,40
+H1,G2_estimated_tau,1,0.909,0.909,0.1055,0,0,50
+H2,G1_fixed_SD_040,1,0.812,0.812,0.8875,0,0,52
+H2,G2_estimated_tau,1,0.94,0.94,0.9955,0,0,52

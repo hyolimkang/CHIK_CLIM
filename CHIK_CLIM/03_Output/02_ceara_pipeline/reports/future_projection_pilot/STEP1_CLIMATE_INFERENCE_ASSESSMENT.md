@@ -35,7 +35,7 @@ what is executed, not an approximation of it.
 - Generation interval: G=8 weeks, Gamma(shape=4, rate=2), discretised and renormalised.
 - Temperature lag: mean of weeks (t-2, t-1, t). Precipitation lag: log1p(sum of weeks t-6..t-2).
 - Climatology: mean lagged value by (state=CE, ISO week-of-year), averaged across all available years.
-- Standardisation: pooled mean/SD across CE/BA/RJ/MT for the primary lag spec (T_anom_mean=-0.0038, T_anom_sd=1.097, P_anom_mean=0.0126, P_anom_sd=0.756).
+- Standardisation: pooled mean/SD across CE/BA/RJ/MT for the primary lag spec (T_anom_mean=0.0000, T_anom_sd=0.7663, P_anom_mean=-0.0000, P_anom_sd=0.5016). [Corrected 2026-10-13: this line previously read T_anom_sd=1.097, P_anom_sd=0.756 -- a transcription error in this prose paragraph only. The programmatically-generated `STEP1_lag_and_standardisation_specification.csv` from this same audit always correctly showed 0.7663/0.5016, and `02_Script/02_ceara_pipeline/11_climate_robustness/01_phase1_climate_input_audit.R` independently re-derived 0.7663/0.5016 from the raw national climate table and confirmed it matches, to floating-point precision, the z_T_anom/z_P_anom vector actually stored inside the accepted Stan fit. No scaling constant, covariate, or coefficient was ever actually wrong -- only this sentence's wording.]
 - Boundary weeks (2015-01/02) with an incomplete lag window: z-anomaly set to 0 (disclosed, not imputed).
 - q (ascertainment) = 0.05, FIXED, not estimated here or anywhere else in the current pipeline.
 - Imports: 1/week, fixed, deterministic, added as a hazard term (never double-counted as cases).

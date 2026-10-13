@@ -1,0 +1,2 @@
+n_rows,mean_M_import,target_mean,frac_weeks_M_gt_0,target_frac_le,max_abs_N_minus_S_plus_U,min_S,min_U,aggregate_reported_to_latent_ratio
+15600,1.0398076923076922,1,0.10294871794871795,0.1,0,6103392.223412565,2178951.8506681863,0.049958285342989774

@@ -1,0 +1,5 @@
+cell,orig_key,n_rows_match,identical_S,identical_X,identical_Y,identical_R0,identical_Reff,max_abs_diff_S
+H1_G1_fixed_SD_040,H1_G1_fixed_SD_040_observed_1,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,0
+H2_G1_fixed_SD_040,H2_G1_fixed_SD_040_observed_1,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,0
+H1_G2_estimated_tau,H1_G2_estimated_tau_observed_1,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,0
+H2_G2_estimated_tau,H2_G2_estimated_tau_observed_1,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,0

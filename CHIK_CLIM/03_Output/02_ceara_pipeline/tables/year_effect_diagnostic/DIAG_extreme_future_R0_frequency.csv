@@ -1,0 +1,6 @@
+threshold_label,threshold_value,fraction_future_years_exceeding
+historical median annual peak,1.9189179133236807,1
+historical 90th pct annual peak,2.7065647756012057,0.9705
+historical 95th pct annual peak,3.1208796117503335,0.825
+historical 99th pct annual peak,3.3341127963195705,0.721
+historical maximum observed/fitted peak,3.804186903222107,0.4995

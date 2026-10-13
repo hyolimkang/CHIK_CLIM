@@ -1,0 +1,4 @@
+contrast,median_diff,lo95,hi95
+G1 - G0 (fixed-SD year effect vs. neutral),2773518.5,78364.875,5911695.5249999985
+G2 - G0 (estimated-tau year effect vs. neutral),15435,-1018.025,1342970.0749999918
+G2 - G1 (estimated-tau vs. fixed-SD),-2659648,-5512907.05,-68684.77500000004

@@ -1,0 +1,3 @@
+holdout,entry_weighted_infectiousness_median_new,entry_weighted_infectiousness_median_step6,S_prop_median_new,S_prop_median_step6,peak_Reff_median_new,peak_Reff_median_step6,prob_exceed_2022_new,prob_exceed_2022_step6,rel_diff_entry,rel_diff_S,rel_diff_Reff,agree_entry,agree_S,agree_Reff
+H1,4.87904828375941,4.77,0.7416555673188996,0.741,1.3266647061547578,1.41,0,0.003,0.022861275421260006,8.847062333327895e-4,0.05910304528031353,TRUE,TRUE,FALSE
+H2,871.2548024211122,886.4,0.7439244976404423,0.744,1.3457921378730597,1.4,0.1435,0.119,0.017086188604340868,1.0148166607213237e-4,0.03871990151924298,TRUE,TRUE,FALSE

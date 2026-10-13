@@ -1,0 +1,7 @@
+check,pass,detail
+Independently recomputed standardisation SDs match saved scaling_metadata.csv exactly,TRUE,recomputed T_sd=0.766296 / P_sd=0.501622 vs. saved T_sd=0.766296 / P_sd=0.501622
+Earlier STEP1 narrative report's quoted T_anom_sd=1.097/P_anom_sd=0.756 do NOT match the saved/recomputed values,TRUE,"Saved/recomputed: T_sd=0.7663, P_sd=0.5016. STEP1 narrative text (STEP1_CLIMATE_INFERENCE_ASSESSMENT.md Section 1) instead reported 1.097/0.756 -- this is a TRANSCRIPTION ERROR in that report's prose, not a pipeline/data discrepancy: the programmatically-generated STEP1_lag_and_standardisation_specification.csv from the SAME audit run already correctly shows T_sd=0.7663/P_sd=0.5016, matching this independent recomputation exactly. Correcting the narrative text is recommended (see assessment report Section 1)."
+Weekly date alignment: recomputed CE-primary series matches saved covariates CSV row-for-row,TRUE,"recomputed n=575, saved n=575, matched n=575"
+"Recomputed z_T_anom/z_P_anom (CE, primary) match saved covariates CSV",TRUE,"max abs diff: z_T=2.22e-16, z_P=4.44e-16 (allowing for the known NA boundary weeks, compared below)"
+Boundary-week count matches documented disclosure (a handful of weeks in 2015-01/02),TRUE,"5 weeks had NA anomaly before the NA->0 fill, at: 2015-01-04"
+Reconstructed weekly z_T_anom/z_P_anom (independent rebuild + documented NA->0 rule) EXACTLY match the vector stored inside the accepted M0 Stan fit bundle,TRUE,"max abs diff vs. actual Stan input: z_T=0.00e+00, z_P=0.00e+00 across all 573 fitted weeks"

@@ -1,0 +1,7 @@
+lambda_id,outcome,n,median_weeks_favourable_to_peak,median_longest_increasing_run,median_week_to_100,prob_never_reach_100,median_week_to_1000,prob_never_reach_1000,prob_extinct_after_favourable,median_ratio_local_to_import_favourable
+I0,Major annual epidemic,248,NA,13,1,0,2,0,0,230929788.58930045
+I0,No major annual epidemic,1752,NA,0,10,0.7905251141552512,18,0.928082191780822,0.661839863713799,0
+I2,Major annual epidemic,398,16,14,1,0,5,0,0,65513443.39716452
+I2,No major annual epidemic,1602,14,3,11,0.07178526841448189,20,0.6903870162297129,0,817706.4911517445
+I3,Major annual epidemic,622,18,15,2.5,0,7.5,0,0,1550.9665610420554
+I3,No major annual epidemic,1378,14,4,5,0.018142235123367198,19,0.22060957910014514,0,27.707204617272424

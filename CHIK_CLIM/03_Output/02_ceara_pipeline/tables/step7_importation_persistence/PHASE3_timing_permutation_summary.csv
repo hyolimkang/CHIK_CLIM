@@ -1,0 +1,3 @@
+arm,median_entry_weighted_infectiousness,median_frac_import_during_favourable,median_cumulative_latent_2022,median_annual_reported_cases_2022,prob_established,prob_major_epidemic,prob_exceed_observed_2022,n
+T0_original_timing,4.87904828375941,0.3290112430387727,806.5,40,0.899,0.199,0,2000
+T1_permuted_timing,5.087418957523303,0.327149020147781,845.5,41,0.8965,0.1985,5e-4,2000

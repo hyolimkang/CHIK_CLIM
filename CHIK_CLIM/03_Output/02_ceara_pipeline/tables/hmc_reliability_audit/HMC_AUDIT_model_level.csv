@@ -1,0 +1,6 @@
+model,label,total_post_warmup_iter,total_divergences,overall_divergence_rate,total_max_treedepth_hits,min_ebfmi,max_rhat,worst_rhat_par,min_ess_bulk,worst_ess_bulk_par,min_ess_tail,worst_ess_tail_par
+P1,"P1: full period, HalfNormal(0,0.20)",1600,20,0.0125,0,0.7242262223406037,1.035442010989446,tau_year,112.3570850557062,tau_year,56.0386924993349,A_year[7]
+P2,"P2: full period, HalfNormal(0,0.40) [PRIMARY]",1600,2,0.00125,0,0.7164220281471004,1.0106146345609666,log_R0[206],275.3980513815814,tau_year,278.3947557482485,z_year[3]
+P3,"P3: full period, HalfNormal(0,0.80)",1600,5,0.003125,0,0.7158942587050566,1.0140278627466264,log_R0[281],334.6405114197155,tau_year,415.99846360766696,z_season_year[2]
+H1,H1: training-only 2015-2019,1600,5,0.003125,0,0.735272829566779,1.0133862183743014,z_season_year[2],220.26836491929032,z_season_year[2],139.74911982970505,z_season_year[2]
+H2,H2: training-only 2015-2021,1600,10,0.00625,0,0.8567238408757654,1.0194673532364256,tau_year,386.5183757666508,tau_year,291.6362520991159,tau_year

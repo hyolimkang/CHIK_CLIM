@@ -1,0 +1,2 @@
+statistic,point_estimate_new_run,step6_reported_value,cluster_bootstrap_lo95,cluster_bootstrap_hi95,n_posterior_draws,sd_p_major_across_draws
+prob_major_epidemic_H1_G2_lambda1,0.199,0.1055,0.127,0.27751250000000005,100,0.37832565737774515

@@ -1,0 +1,3 @@
+limitation
+"Future year effects are re-centred (sum to zero) within each finite holdout horizon, shrinking the marginal SD from tau_year to tau_year*sqrt((K-1)/K) -- quantified in Step 6, not corrected here except in the explicit, isolated Phase 5 arm."
+"Climate anomaly standardisation (z_T_anom/z_P_anom) uses scaling constants estimated over the FULL 2015-2025 period, not training-only -- a small, disclosed, uncorrected preprocessing leakage common to every arm in this module."

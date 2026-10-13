@@ -1,0 +1,15 @@
+item,value
+year_effect construction,"year_effect[y] = year_effect_prior_sd * (z_year[y] - mean(z_year)), z_year ~ std_normal()"
+year_effect_prior_sd (fixed),"0.40 (DATA, not estimated -- this is exactly what Phase 1 replaces with estimated tau_year)"
+A_year construction,"A_year[y] = exp(sigma_season_year * z_season_year[y]), z_season_year ~ std_normal()"
+sigma_season_year prior,"sigma_season_year ~ Normal(0,0.20), lower=0 (HalfNormal) -- genuinely ESTIMATED, unchanged by this study"
+2018 serology anchor,"t_sero index=194 (2018-09-16), sero_pos=103/404, kappa_sero=50 (Beta-Binomial)"
+serology likelihood,"sero_pos ~ beta_binomial(sero_n, alpha_sero, beta_sero); alpha/beta_sero derived from immune_prop[t_sero]"
+2022 conditioned seed,is_seed=1 for 8 weeks starting 2022-01-02; X_seed=cases/q; excluded from case likelihood via fit_index (N_fit=565 of N=573)
+fixed q,"0.05 (fixed scenario input, not estimated)"
+imports_per_week,"1.00 /week (fixed, added as a hazard term, never double-counted as cases)"
+generation interval,"G=8 weeks, Gamma(shape=4,rate=2), discretised/renormalised"
+initial susceptibility,S[1] = N_start[1] (fully susceptible at 2015-01-04); U[1] = 0 (no prior immunity assumed at series start)
+climate coefficients,"beta_T, beta_P ~ Normal(0,0.15); log_R0[t] += beta_T*z_T_anom[t] + beta_P*z_P_anom[t]; UNCHANGED by this study"
+N (historical weeks),573
+Y (historical years),11

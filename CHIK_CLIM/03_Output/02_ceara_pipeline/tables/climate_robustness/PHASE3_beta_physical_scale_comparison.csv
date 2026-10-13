@@ -1,0 +1,11 @@
+model,parameter,lag_spec,covariate_sd,physical_unit,posterior_median,beta_per_physical_unit_median,beta_per_physical_unit_lo95,beta_per_physical_unit_hi95
+M0,beta_T,primary,0.7662961515586815,per 1 degC of lagged mean-temperature anomaly,-0.016086203977219493,-0.020992150286151662,-0.09210802197214286,0.04236398829030898
+M0,beta_P,primary,0.5016222471506976,per 1 unit of log1p(lagged summed precipitation mm) anomaly (NOT raw mm -- precipitation's own transform is already log-scale),0.024252829129915825,0.048348790883331334,-0.007006114343522307,0.10411770521635562
+M1,beta_T,sensitivity_A,0.847664628103114,per 1 degC of lagged mean-temperature anomaly,-0.016134905049645102,-0.019034538560080597,-0.08093412250159132,0.04818580881521337
+M1,beta_P,sensitivity_A,0.5274075890862058,per 1 unit of log1p(lagged summed precipitation mm) anomaly (NOT raw mm -- precipitation's own transform is already log-scale),0.02093497725489367,0.039694114548419604,-0.018624135276387895,0.09770880657819668
+M2,beta_T,sensitivity_B,0.7661792788188027,per 1 degC of lagged mean-temperature anomaly,-0.020035178295804423,-0.02614946507910277,-0.09270112721821575,0.035821265171957446
+M2,beta_P,sensitivity_B,0.4793627614809835,per 1 unit of log1p(lagged summed precipitation mm) anomaly (NOT raw mm -- precipitation's own transform is already log-scale),0.02261524245540203,0.04717772065884426,-0.0068256179680285895,0.10228476577526328
+M3,beta_T,primary,0.7662961515586815,per 1 degC of lagged mean-temperature anomaly,-0.012317866887357623,-0.01607455141501431,-0.08529919061473386,0.048327878262684545
+M3,beta_P,primary,0.5016222471506976,per 1 unit of log1p(lagged summed precipitation mm) anomaly (NOT raw mm -- precipitation's own transform is already log-scale),0.024098918006947904,0.04804196413503187,-0.00575186915877161,0.10629677104119727
+M4,beta_T,primary,0.7662961515586815,per 1 degC of lagged mean-temperature anomaly,-0.01576310008494957,-0.020570506654492133,-0.08234135167446321,0.04162900830830217
+M4,beta_P,primary,0.5016222471506976,per 1 unit of log1p(lagged summed precipitation mm) anomaly (NOT raw mm -- precipitation's own transform is already log-scale),0.02414675081922649,0.048137320376806,-0.00880336161672498,0.10196414893824274

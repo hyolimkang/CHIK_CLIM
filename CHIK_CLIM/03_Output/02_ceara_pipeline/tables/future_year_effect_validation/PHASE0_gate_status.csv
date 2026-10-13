@@ -1,0 +1,4 @@
+check,pass
+Accepted M0 fit loads and matches documented structure,TRUE
+New tau_year Stan model compiles,TRUE
+New tau_year Stan model smoke-tests on real full-period data,TRUE
